@@ -32,3 +32,5 @@ npm run dev
 - 增加 `/docs/get-started`、`/docs/calendar`、`/docs/messaging` 等中文教程
 - 加入 analytics（Vercel Analytics / Plausible）
 - 加入表单（收集邮箱/微信）和 CTA
+
+# weclaw-site
