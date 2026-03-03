@@ -1,0 +1,7 @@
+[install]
+# Use Chinese npm mirror for better connectivity
+registry = "https://registry.npmmirror.com"
+
+[install.cache]
+# Enable caching
+disable = false

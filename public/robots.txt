@@ -1,0 +1,16 @@
+# robots.txt for weclaw.com
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://weclaw.com/sitemap.xml
+
+# Crawl-delay for specific bots
+User-agent: Baiduspider
+Crawl-delay: 1
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
