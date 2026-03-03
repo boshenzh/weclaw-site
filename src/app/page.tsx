@@ -5,7 +5,7 @@ import IntegrationLogos from "@/components/IntegrationLogos";
 const pricing = [
   {
     name: "托管部署",
-    price: "¥20,000",
+    price: "¥8,800",
     description: "推荐方案 - 我们在云端部署和维护",
     features: [
       "云端 VPS 部署",
@@ -19,7 +19,7 @@ const pricing = [
   },
   {
     name: "Mac Mini 远程",
-    price: "¥35,000",
+    price: "¥15,800",
     description: "包含 iMessage 集成",
     features: [
       "Mac Mini 远程部署",
@@ -33,8 +33,8 @@ const pricing = [
   },
   {
     name: "Mac Mini 上门",
-    price: "¥42,000",
-    description: "仅限北京/上海/深圳",
+    price: "¥19,800",
+    description: "仅限深圳",
     features: [
       "工程师上门部署",
       "支持 iMessage",
@@ -47,7 +47,7 @@ const pricing = [
   },
   {
     name: "额外智能体",
-    price: "¥5,800",
+    price: "¥4,800",
     description: "为团队成员添加一个 AI 助手",
     features: [
       "独立的 AI 智能体",
@@ -128,22 +128,18 @@ const whyUs = [
   {
     title: "当天上线",
     desc: "不是几周，不是几天。付款后当天完成部署，立即开始使用。",
-    icon: "⚡",
   },
   {
     title: "安全加固",
     desc: "OAuth 中间件、Docker 沙箱、防火墙配置、审计日志。从第一天起就是企业级安全。",
-    icon: "🔒",
   },
   {
     title: "14 天超级护理",
     desc: "专属微信群直接支持，包括工作流调优、权限扩展、边界情况修复。",
-    icon: "💬",
   },
   {
     title: "持续维护可选",
     desc: "14 天后可选择付费托管护理计划，获得持续监控、更新和支持。",
-    icon: "🔧",
   },
 ];
 
@@ -272,13 +268,6 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             <Link href="/" className="flex items-center gap-3">
-              <Image
-                src="/logos/weclaw-logo.png"
-                alt="喂龙虾"
-                width={160}
-                height={53}
-                className="h-12 w-auto"
-              />
               <span className="text-2xl font-semibold tracking-tight">
                 喂龙虾
               </span>
@@ -327,11 +316,20 @@ export default function Home() {
               正在接受新客户
             </div>
 
-            <h1 className="text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6">
-              我们喂你部署和维护
-              <br />
-              团队的 AI 助手
-            </h1>
+            <div className="flex flex-col items-center justify-center mb-6">
+              <Image
+                src="/logos/weclaw-logo.png"
+                alt="喂龙虾"
+                width={2816}
+                height={1536}
+                className="w-auto h-32 mb-6"
+              />
+              <h1 className="text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+                我们喂你部署和维护
+                <br />
+                团队的 AI 助手
+              </h1>
+            </div>
 
             <p className="text-xl text-zinc-600 leading-relaxed mb-4 max-w-2xl mx-auto">
               远程部署，全球服务，从第一天起就安全加固。
@@ -406,6 +404,9 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Integration Logos Section */}
+        <IntegrationLogos />
+
         {/* Features Section */}
         <section id="how-it-works" className="bg-zinc-50 py-20 lg:py-28">
           <div className="mx-auto max-w-6xl px-6 lg:px-8">
@@ -424,8 +425,7 @@ export default function Home() {
                   key={item.title}
                   className="bg-white rounded-2xl p-8 border border-zinc-200 hover:border-zinc-300 hover:shadow-lg transition-all"
                 >
-                  <div className="text-4xl mb-4">{item.icon}</div>
-                  <h3 className="text-lg font-semibold text-zinc-950 mb-2">
+                  <h3 className="text-lg font-semibold text-zinc-950 mb-3">
                     {item.title}
                   </h3>
                   <p className="text-sm text-zinc-600 leading-relaxed">
@@ -465,9 +465,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Integration Logos Section */}
-        <IntegrationLogos />
-
         {/* Pricing Section */}
         <section id="pricing" className="bg-white py-20 lg:py-28">
           <div className="mx-auto max-w-6xl px-6 lg:px-8">
@@ -476,7 +473,7 @@ export default function Home() {
                 简单透明的价格
               </h2>
               <p className="text-xl text-zinc-600 max-w-2xl mx-auto">
-                一次性费用，包含部署和 14 天专属支持。之后可选月度维护。
+                一次性设置费用，包含部署和 14 天超级护理支持。
               </p>
             </div>
 
@@ -547,10 +544,40 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="mt-12 text-center">
-              <p className="text-sm text-zinc-500">
-                所有价格包含 14 天"超级关怀"支持期。月度维护可选（¥3,000/月）。
+            <div className="mt-12 text-center space-y-4">
+              <p className="text-zinc-600">
+                所有价格为一次性设置费用，包含 14 天超级护理支持。
               </p>
+              <div className="bg-zinc-50 rounded-xl p-6 max-w-2xl mx-auto border border-zinc-200">
+                <h3 className="text-lg font-semibold text-zinc-950 mb-3">
+                  持续维护（可选）
+                </h3>
+                <p className="text-sm text-zinc-600 mb-4">
+                  14
+                  天后，您可以选择托管护理计划，获得持续监控、更新和技术支持。
+                </p>
+                <div className="grid md:grid-cols-2 gap-4 text-sm">
+                  <div className="bg-white rounded-lg p-4 border border-zinc-200">
+                    <div className="font-semibold text-zinc-950 mb-2">
+                      基础设施成本
+                    </div>
+                    <div className="text-zinc-600">
+                      • 云 VPS：¥35-70/月（您自行承担）
+                      <br />• Mac Mini 硬件：约 ¥4,200（一次性）
+                    </div>
+                  </div>
+                  <div className="bg-white rounded-lg p-4 border border-zinc-200">
+                    <div className="font-semibold text-zinc-950 mb-2">
+                      托管护理计划
+                    </div>
+                    <div className="text-zinc-600">
+                      具体价格请预约咨询讨论
+                      <br />
+                      包含持续监控、更新和支持
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

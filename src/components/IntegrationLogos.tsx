@@ -4,18 +4,18 @@ import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 const integrations = [
-  { name: '飞书', logo: '/logos/feishu.svg' },
-  { name: '钉钉', logo: '/logos/dingding.svg' },
-  { name: '企业微信', logo: '/logos/wecom.svg' },
-  { name: 'QQ', logo: '/logos/qq.svg' },
-  { name: 'Telegram', logo: '/logos/telegram.svg' },
-  { name: 'Slack', logo: '/logos/slack.svg' },
-  { name: 'Notion', logo: '/logos/notion.svg' },
-  { name: 'Gmail', logo: 'https://cdn.simpleicons.org/gmail/EA4335' },
-  { name: 'WhatsApp', logo: 'https://cdn.simpleicons.org/whatsapp/25D366' },
-  { name: 'Discord', logo: 'https://cdn.simpleicons.org/discord/5865F2' },
-  { name: 'GitHub', logo: 'https://cdn.simpleicons.org/github/181717' },
-  { name: 'Calendar', logo: 'https://cdn.simpleicons.org/googlecalendar/4285F4' },
+  { name: '飞书', logo: 'https://www.svgrepo.com/show/387897/lark.svg' },
+  { name: '钉钉', logo: 'https://www.svgrepo.com/show/515907/dingtalk.svg' },
+  { name: '企业微信', logo: 'https://www.svgrepo.com/show/303187/wechat-logo.svg' },
+  { name: 'QQ', logo: 'https://www.svgrepo.com/show/342289/tencent-qq.svg' },
+  { name: 'Telegram', logo: 'https://www.svgrepo.com/show/452115/telegram.svg' },
+  { name: 'Slack', logo: 'https://www.svgrepo.com/show/474329/slack.svg' },
+  { name: 'Notion', logo: 'https://www.svgrepo.com/show/361558/notion-logo.svg' },
+  { name: 'Gmail', logo: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg' },
+  { name: 'WhatsApp', logo: 'https://www.svgrepo.com/show/452133/whatsapp.svg' },
+  { name: 'Discord', logo: 'https://www.svgrepo.com/show/353655/discord-icon.svg' },
+  { name: 'GitHub', logo: 'https://www.svgrepo.com/show/512317/github-142.svg' },
+  { name: 'Calendar', logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg' },
 ];
 
 export default function IntegrationLogos() {
