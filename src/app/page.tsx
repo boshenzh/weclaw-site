@@ -46,9 +46,9 @@ const pricing = [
     recommended: false,
   },
   {
-    name: "企业服务（10人+）",
+    name: "企业服务（团队版）",
     price: "定制",
-    description: "为 10 人以上团队提供企业级部署与持续服务",
+    description: "为团队提供企业级部署与持续服务",
     features: [
       "面向 10 人以上团队的企业级交付",
       "更完善的权限与账号体系",
