@@ -18,25 +18,38 @@ const integrations = [
   { name: 'Calendar', logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg' },
 ];
 
+const firstRow = integrations.slice(0, 6);
+const secondRow = integrations.slice(6, 12);
+
 export default function IntegrationLogos() {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollRef1 = useRef<HTMLDivElement>(null);
+  const scrollRef2 = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
+    const scrollContainer1 = scrollRef1.current;
+    const scrollContainer2 = scrollRef2.current;
+    if (!scrollContainer1 || !scrollContainer2) return;
 
-    let scrollPosition = 0;
+    let scrollPosition1 = 0;
+    let scrollPosition2 = 0;
     const scrollSpeed = 1;
 
     const animate = () => {
-      scrollPosition += scrollSpeed;
-      const maxScroll = scrollContainer.scrollWidth / 2;
+      scrollPosition1 += scrollSpeed;
+      scrollPosition2 += scrollSpeed;
 
-      if (scrollPosition >= maxScroll) {
-        scrollPosition = 0;
+      const maxScroll1 = scrollContainer1.scrollWidth / 2;
+      const maxScroll2 = scrollContainer2.scrollWidth / 2;
+
+      if (scrollPosition1 >= maxScroll1) {
+        scrollPosition1 = 0;
+      }
+      if (scrollPosition2 >= maxScroll2) {
+        scrollPosition2 = 0;
       }
 
-      scrollContainer.style.transform = `translateX(-${scrollPosition}px)`;
+      scrollContainer1.style.transform = `translateX(-${scrollPosition1}px)`;
+      scrollContainer2.style.transform = `translateX(-${scrollPosition2}px)`;
       requestAnimationFrame(animate);
     };
 
@@ -53,32 +66,63 @@ export default function IntegrationLogos() {
         <h2 className="text-center text-3xl font-bold text-gray-800 mb-10">
           支持的集成平台
         </h2>
-        <div className="overflow-hidden">
-          <div
-            ref={scrollRef}
-            className="flex gap-8 whitespace-nowrap"
-            style={{ width: 'fit-content' }}
-          >
-            {/* 重复三次以实现无缝滚动 */}
-            {[...integrations, ...integrations, ...integrations].map((integration, index) => (
-              <div
-                key={`${integration.name}-${index}`}
-                className="inline-flex flex-col items-center justify-center min-w-[140px] p-8 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
-              >
-                <div className="relative w-16 h-16 mb-4">
-                  <Image
-                    src={integration.logo}
-                    alt={integration.name}
-                    fill
-                    className="object-contain"
-                    unoptimized
-                  />
+        <div className="space-y-6">
+          {/* First Row */}
+          <div className="overflow-hidden">
+            <div
+              ref={scrollRef1}
+              className="flex gap-8 whitespace-nowrap"
+              style={{ width: 'fit-content' }}
+            >
+              {[...firstRow, ...firstRow, ...firstRow].map((integration, index) => (
+                <div
+                  key={`row1-${integration.name}-${index}`}
+                  className="inline-flex flex-col items-center justify-center min-w-[140px] p-8 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <div className="relative w-16 h-16 mb-4">
+                    <Image
+                      src={integration.logo}
+                      alt={integration.name}
+                      fill
+                      className="object-contain"
+                      unoptimized
+                    />
+                  </div>
+                  <span className="text-sm font-medium text-gray-700">
+                    {integration.name}
+                  </span>
                 </div>
-                <span className="text-sm font-medium text-gray-700">
-                  {integration.name}
-                </span>
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+
+          {/* Second Row */}
+          <div className="overflow-hidden">
+            <div
+              ref={scrollRef2}
+              className="flex gap-8 whitespace-nowrap"
+              style={{ width: 'fit-content' }}
+            >
+              {[...secondRow, ...secondRow, ...secondRow].map((integration, index) => (
+                <div
+                  key={`row2-${integration.name}-${index}`}
+                  className="inline-flex flex-col items-center justify-center min-w-[140px] p-8 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <div className="relative w-16 h-16 mb-4">
+                    <Image
+                      src={integration.logo}
+                      alt={integration.name}
+                      fill
+                      className="object-contain"
+                      unoptimized
+                    />
+                  </div>
+                  <span className="text-sm font-medium text-gray-700">
+                    {integration.name}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

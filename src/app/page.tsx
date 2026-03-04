@@ -194,7 +194,7 @@ export default function Home() {
             contactPoint: {
               "@type": "ContactPoint",
               contactType: "销售咨询",
-              email: "hello@weclaw.com",
+              email: "boshen233@gmail.com",
               availableLanguage: ["zh-CN", "en"],
             },
             sameAs: ["https://github.com/openclaw/openclaw"],
@@ -484,7 +484,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-8 md:grid-cols-2">
               {pricing.map((plan) => (
                 <div
                   key={plan.name}
@@ -501,17 +501,17 @@ export default function Home() {
                       </span>
                     </div>
                   )}
-                  <div className="mb-6">
-                    <div className="flex items-center justify-between gap-3">
-                      <h3 className="text-2xl font-bold text-zinc-950 mb-2">
-                        {plan.name}
-                      </h3>
-                      {plan.badge && (
-                        <span className="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 border border-emerald-200">
-                          {plan.badge}
-                        </span>
-                      )}
+                  {plan.badge && (
+                    <div className="absolute -top-4 right-8">
+                      <span className="inline-flex items-center rounded-full bg-red-500 px-4 py-1.5 text-sm font-bold text-white shadow-lg">
+                        {plan.badge}
+                      </span>
                     </div>
+                  )}
+                  <div className="mb-6">
+                    <h3 className="text-2xl font-bold text-zinc-950 mb-2">
+                      {plan.name}
+                    </h3>
 
                     <p className="text-sm text-zinc-600 mb-4">
                       {plan.description}
@@ -522,7 +522,7 @@ export default function Home() {
                         {plan.price}
                       </span>
                       {plan.originalPrice && (
-                        <span className="text-sm text-zinc-500 line-through">
+                        <span className="text-lg text-zinc-400 line-through">
                           {plan.originalPrice}
                         </span>
                       )}
@@ -549,18 +549,6 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
-                  <a
-                    href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`block w-full text-center rounded-lg px-6 py-3 text-sm font-semibold transition-colors ${
-                      plan.recommended
-                        ? "bg-blue-600 text-white hover:bg-blue-700"
-                        : "bg-zinc-100 text-zinc-950 hover:bg-zinc-200"
-                    }`}
-                  >
-                    预约咨询
-                  </a>
                 </div>
               ))}
             </div>
@@ -684,6 +672,7 @@ export default function Home() {
           </div>
         </section>
 
+
         {/* CTA Section */}
         <section className="bg-white py-20 lg:py-28">
           <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
@@ -756,10 +745,18 @@ export default function Home() {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href="/docs"
+                    href="/blog/what-is-openclaw"
                     className="text-sm text-zinc-600 hover:text-zinc-950"
                   >
-                    文档
+                    什么是 OpenClaw？
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/blog/openclaw-setup-cost"
+                    className="text-sm text-zinc-600 hover:text-zinc-950"
+                  >
+                    OpenClaw 部署成本详解
                   </Link>
                 </li>
                 <li>
@@ -791,7 +788,7 @@ export default function Home() {
                 </li>
                 <li>
                   <a
-                    href="mailto:hello@weclaw.com"
+                    href="mailto:boshen233@gmail.com"
                     className="text-sm text-zinc-600 hover:text-zinc-950"
                   >
                     邮件咨询
@@ -823,6 +820,67 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Limited Time Offer Banner */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg border-t border-blue-500">
+        <div className="mx-auto max-w-6xl px-4 py-2.5">
+          <div className="flex items-center justify-between gap-4 text-sm">
+            <div className="flex items-center gap-3">
+              <span className="inline-flex items-center gap-1.5 bg-white/20 rounded-full px-3 py-1 text-xs font-semibold">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                </span>
+                限时优惠
+              </span>
+              <span className="font-medium">首批客户享 5 折优惠，仅剩</span>
+              <span className="font-mono font-bold" id="countdown">加载中...</span>
+            </div>
+
+            <a
+              href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-md bg-white text-blue-600 px-4 py-1.5 text-xs font-semibold hover:bg-blue-50 transition-colors whitespace-nowrap"
+            >
+              立即预约
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <script dangerouslySetInnerHTML={{
+        __html: `
+          (function() {
+            const endDate = new Date();
+            endDate.setDate(endDate.getDate() + 3);
+
+            function updateCountdown() {
+              const now = new Date().getTime();
+              const distance = endDate.getTime() - now;
+
+              if (distance < 0) {
+                document.getElementById('countdown').innerHTML = '已结束';
+                return;
+              }
+
+              const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+              const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+              const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+              const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+              document.getElementById('countdown').innerHTML =
+                days + '天 ' + hours + '时 ' + minutes + '分 ' + seconds + '秒';
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+          })();
+        `
+      }} />
     </div>
   );
 }
