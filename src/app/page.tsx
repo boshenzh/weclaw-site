@@ -6,7 +6,9 @@ const pricing = [
   {
     name: "托管部署",
     price: "¥3,800",
-    description: "云端托管部署（一次性设置费）",
+    originalPrice: "¥7,600",
+    badge: "限时 5 折",
+    description: "云端托管部署（限时优惠）",
     features: [
       "云端 VPS 部署",
       "14 天超级护理支持",
