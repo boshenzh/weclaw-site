@@ -60,7 +60,6 @@ const pricing = [
       "工作流梳理与持续优化",
       "稳定性与安全基线配置",
       "专属对接与持续支持",
-      "100% 满意保证：如果你对配置不满意，我们将退款——不问理由。We’re here to help, not to nickel and dime.",
       "按需扩展与定制",
     ],
     recommended: false,
@@ -562,6 +561,28 @@ export default function Home() {
                   </a>
                 </div>
               ))}
+            </div>
+
+            {/* Satisfaction Guarantee */}
+            <div className="mt-12">
+              <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-8">
+                <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                  <div className="max-w-3xl">
+                    <h3 className="text-xl font-bold text-zinc-950">100% 满意保证</h3>
+                    <p className="mt-2 text-sm leading-6 text-zinc-700">
+                      如果你对配置不满意，我们将退款——不问理由。We’re here to help, not to nickel and dime.
+                    </p>
+                  </div>
+                  <a
+                    href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-lg bg-emerald-600 px-5 py-3 text-sm font-semibold text-white hover:bg-emerald-700"
+                  >
+                    预约咨询
+                  </a>
+                </div>
+              </div>
             </div>
 
             <div className="mt-12 text-center space-y-4">
