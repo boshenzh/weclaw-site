@@ -20,7 +20,9 @@ const pricing = [
   {
     name: "Mac Mini 远程",
     price: "¥7,900",
-    description: "Mac Mini 远程部署（折半后价格）",
+    originalPrice: "¥15,800",
+    badge: "限时 5 折",
+    description: "Mac Mini 远程部署（限时优惠）",
     features: [
       "Mac Mini 远程部署",
       "支持 iMessage",
@@ -34,7 +36,9 @@ const pricing = [
   {
     name: "Mac Mini 上门",
     price: "¥9,900",
-    description: "工程师上门部署（仅限深圳，折半后价格）",
+    originalPrice: "¥19,800",
+    badge: "限时 5 折",
+    description: "工程师上门部署（仅限深圳，限时优惠）",
     features: [
       "工程师上门部署",
       "支持 iMessage",
@@ -497,16 +501,30 @@ export default function Home() {
                     </div>
                   )}
                   <div className="mb-6">
-                    <h3 className="text-2xl font-bold text-zinc-950 mb-2">
-                      {plan.name}
-                    </h3>
+                    <div className="flex items-center justify-between gap-3">
+                      <h3 className="text-2xl font-bold text-zinc-950 mb-2">
+                        {plan.name}
+                      </h3>
+                      {plan.badge && (
+                        <span className="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 border border-emerald-200">
+                          {plan.badge}
+                        </span>
+                      )}
+                    </div>
+
                     <p className="text-sm text-zinc-600 mb-4">
                       {plan.description}
                     </p>
-                    <div className="flex items-baseline gap-2">
+
+                    <div className="flex items-baseline gap-3 flex-wrap">
                       <span className="text-4xl font-bold text-zinc-950">
                         {plan.price}
                       </span>
+                      {plan.originalPrice && (
+                        <span className="text-sm text-zinc-500 line-through">
+                          {plan.originalPrice}
+                        </span>
+                      )}
                       {plan.price !== "联系咨询" && (
                         <span className="text-zinc-500">一次性</span>
                       )}
