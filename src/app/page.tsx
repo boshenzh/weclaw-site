@@ -855,15 +855,49 @@ export default function Home() {
       <script dangerouslySetInnerHTML={{
         __html: `
           (function() {
-            const endDate = new Date();
-            endDate.setDate(endDate.getDate() + 3);
+            // Recurring deadline: every month on the 10th, 23:59:59 (Asia/Shanghai)
+            // If the current time is past this month's deadline, roll to next month.
+            const TZ = 'Asia/Shanghai';
+
+            function shanghaiNow() {
+              // Convert "now" into a Date object that represents Asia/Shanghai wall-clock time.
+              // (We use locale string round-trip to avoid bringing in a date library.)
+              return new Date(new Date().toLocaleString('en-US', { timeZone: TZ }));
+            }
+
+            function nextMonthlyDeadline() {
+              const now = shanghaiNow();
+              const year = now.getFullYear();
+              const month = now.getMonth(); // 0-11
+
+              // This month's deadline in Shanghai time.
+              let end = new Date(year, month, 10, 23, 59, 59);
+
+              // If already passed, use next month.
+              if (now.getTime() > end.getTime()) {
+                end = new Date(year, month + 1, 10, 23, 59, 59);
+              }
+              return end;
+            }
+
+            let endDate = nextMonthlyDeadline();
+
+            function pad2(n) { return String(n).padStart(2, '0'); }
 
             function updateCountdown() {
-              const now = new Date().getTime();
-              const distance = endDate.getTime() - now;
+              const el = document.getElementById('countdown');
+              if (!el) return;
 
-              if (distance < 0) {
-                document.getElementById('countdown').innerHTML = '已结束';
+              // Recompute endDate periodically in case the month rolls over while the tab stays open.
+              const nowShanghai = shanghaiNow();
+              if (nowShanghai.getTime() > endDate.getTime()) {
+                endDate = nextMonthlyDeadline();
+              }
+
+              const distance = endDate.getTime() - nowShanghai.getTime();
+
+              if (distance <= 0) {
+                el.innerHTML = '即将刷新…';
                 return;
               }
 
@@ -872,8 +906,7 @@ export default function Home() {
               const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
               const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-              document.getElementById('countdown').innerHTML =
-                days + '天 ' + hours + '时 ' + minutes + '分 ' + seconds + '秒';
+              el.innerHTML = days + '天 ' + pad2(hours) + '时 ' + pad2(minutes) + '分 ' + pad2(seconds) + '秒';
             }
 
             updateCountdown();
