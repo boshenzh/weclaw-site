@@ -5,7 +5,7 @@ import IntegrationLogos from "@/components/IntegrationLogos";
 const pricing = [
   {
     name: "托管部署",
-    price: "¥2,800",
+    price: "¥3,800",
     description: "云端托管部署（一次性设置费）",
     features: [
       "云端 VPS 部署",
