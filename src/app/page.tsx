@@ -5,8 +5,8 @@ import IntegrationLogos from "@/components/IntegrationLogos";
 const pricing = [
   {
     name: "托管部署",
-    price: "¥8,800",
-    description: "推荐方案 - 我们在云端部署和维护",
+    price: "¥2,800",
+    description: "云端托管部署（一次性设置费）",
     features: [
       "云端 VPS 部署",
       "14 天超级护理支持",
@@ -19,8 +19,8 @@ const pricing = [
   },
   {
     name: "Mac Mini 远程",
-    price: "¥15,800",
-    description: "包含 iMessage 集成",
+    price: "¥7,900",
+    description: "Mac Mini 远程部署（折半后价格）",
     features: [
       "Mac Mini 远程部署",
       "支持 iMessage",
@@ -33,8 +33,8 @@ const pricing = [
   },
   {
     name: "Mac Mini 上门",
-    price: "¥19,800",
-    description: "仅限深圳",
+    price: "¥9,900",
+    description: "工程师上门部署（仅限深圳，折半后价格）",
     features: [
       "工程师上门部署",
       "支持 iMessage",
@@ -46,16 +46,16 @@ const pricing = [
     recommended: false,
   },
   {
-    name: "额外智能体",
-    price: "¥4,800",
-    description: "为团队成员添加一个 AI 助手",
+    name: "企业服务（10人+）",
+    price: "¥20,000+",
+    description: "为 10 人以上团队提供企业级交付与持续服务",
     features: [
-      "独立的 AI 智能体",
-      "独立的邮箱和日历",
-      "独立的权限配置",
-      "同样的安全标准",
-      "统一管理后台",
-      "按需扩展",
+      "团队级部署与权限/账号体系设计",
+      "多工作流梳理与落地（跨部门）",
+      "持续运维支持与响应（可配 SLA）",
+      "安全与审计建议（按需对齐合规）",
+      "专属交付负责人 + 周期性复盘",
+      "可扩展：集成/定制开发/培训",
     ],
     recommended: false,
   },
