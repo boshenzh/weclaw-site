@@ -593,8 +593,8 @@ export default function Home() {
                       基础设施成本
                     </div>
                     <div className="text-zinc-600">
-                      • 云 VPS：¥35-70/月（您自行承担）
-                      <br />• Mac Mini 硬件：约 ¥4,200（一次性）
+                      • 云 VPS（您自行承担）
+                      <br />• Mac Mini 硬件（一次性，您自行承担）
                     </div>
                   </div>
                   <div className="bg-white rounded-lg p-4 border border-zinc-200">
