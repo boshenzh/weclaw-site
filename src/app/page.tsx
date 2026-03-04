@@ -833,7 +833,7 @@ export default function Home() {
                 </span>
                 限时优惠
               </span>
-              <span className="font-medium">首批客户享 5 折优惠，仅剩</span>
+              <span className="font-medium">5 折限时优惠，仅剩</span>
               <span className="font-mono font-bold" id="countdown">加载中...</span>
             </div>
 
