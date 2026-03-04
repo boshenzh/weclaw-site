@@ -11,7 +11,7 @@ const pricing = [
     description: "云端托管部署（限时优惠）",
     features: [
       "云端 VPS 部署",
-      "14 天超级护理支持",
+      "含 14 天上线护航（Hypercare）",
       "当天完成部署",
       "安全加固配置",
       "邮件和日历集成",
@@ -28,7 +28,7 @@ const pricing = [
     features: [
       "Mac Mini 远程部署",
       "支持 iMessage",
-      "14 天超级护理支持",
+      "含 14 天上线护航（Hypercare）",
       "当天完成部署",
       "安全加固配置",
       "最多 3 个工作流",
@@ -44,7 +44,7 @@ const pricing = [
     features: [
       "工程师上门部署",
       "支持 iMessage",
-      "14 天超级护理支持",
+      "含 14 天上线护航（Hypercare）",
       "当天完成部署",
       "现场培训指导",
       "最多 3 个工作流",
@@ -480,7 +480,7 @@ export default function Home() {
                 简单透明的价格
               </h2>
               <p className="text-xl text-zinc-600 max-w-2xl mx-auto">
-                一次性设置费用，包含部署和 14 天超级护理支持。
+                一次性设置费用，包含部署与 14 天上线护航（Hypercare）。托管部署本身不是 14 天：部署完成后可长期运行；14 天指我们密集陪跑与优化期。
               </p>
             </div>
 
@@ -589,7 +589,7 @@ export default function Home() {
 
             <div className="mt-12 text-center space-y-4">
               <p className="text-zinc-600">
-                所有价格为一次性设置费用，包含 14 天超级护理支持。
+                所有价格为一次性设置费用，包含部署与 14 天上线护航（Hypercare）。
               </p>
               <div className="bg-zinc-50 rounded-xl p-6 max-w-2xl mx-auto border border-zinc-200">
                 <h3 className="text-lg font-semibold text-zinc-950 mb-3">
