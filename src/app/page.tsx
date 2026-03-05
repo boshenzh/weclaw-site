@@ -815,6 +815,15 @@ export default function Home() {
                 </a>
               </div>
             </div>
+
+            <div className="mt-6 flex justify-center">
+              <a
+                href="/api/stripe/checkout?plan=test_10"
+                className="inline-flex items-center justify-center rounded-lg bg-zinc-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-zinc-800"
+              >
+                测试支付 ¥10
+              </a>
+            </div>
           </div>
         </div>
       </footer>

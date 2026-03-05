@@ -7,6 +7,7 @@ const stripe = new Stripe(serverEnv.STRIPE_SECRET_KEY);
 const PLAN_CONFIG: Record<string, { amountCny: number; name: string }> = {
   managed: { amountCny: 3800, name: "托管部署" },
   personal_pc: { amountCny: 1888, name: "个人部署（远程）" },
+  test_10: { amountCny: 10, name: "测试支付（¥10）" },
 };
 
 async function createCheckout(plan: string, promoCode?: string | null) {
