@@ -21,6 +21,21 @@ const pricing = [
     recommended: false,
   },
   {
+    name: "企业服务（团队版）",
+    price: "定制",
+    description: "为团队提供企业级部署与持续服务",
+    features: [
+      "适合 CEO、EA、销售、财务、律所等团队",
+      "企业级交付与上线保障",
+      "更完善的权限与账号体系",
+      "工作流梳理与持续优化",
+      "稳定性与安全基线配置",
+      "专属对接与持续支持",
+      "按需扩展与定制",
+    ],
+    recommended: false,
+  },
+  {
     name: "个人部署",
     checkoutPlan: "personal_pc",
     price: "¥1,888",
@@ -36,21 +51,6 @@ const pricing = [
       "14 天专属客服支持",
     ],
     recommended: true,
-  },
-  {
-    name: "企业服务（团队版）",
-    price: "定制",
-    description: "为团队提供企业级部署与持续服务",
-    features: [
-      "适合 CEO、EA、销售、财务、律所等团队",
-      "企业级交付与上线保障",
-      "更完善的权限与账号体系",
-      "工作流梳理与持续优化",
-      "稳定性与安全基线配置",
-      "专属对接与持续支持",
-      "按需扩展与定制",
-    ],
-    recommended: false,
   },
 ];
 
@@ -472,9 +472,12 @@ export default function Home() {
 
             <div className="grid gap-8 md:grid-cols-3">
               {pricing.map((plan) => (
-                <div
+                <a
                   key={plan.name}
-                  className={`relative bg-white rounded-2xl border-2 p-8 ${
+                  href={plan.checkoutPlan ? `/api/stripe/checkout?plan=${plan.checkoutPlan}` : "https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25"}
+                  target={plan.checkoutPlan ? undefined : "_blank"}
+                  rel={plan.checkoutPlan ? undefined : "noopener noreferrer"}
+                  className={`relative block bg-white rounded-2xl border-2 p-8 ${
                     plan.recommended
                       ? "border-blue-600 shadow-xl scale-105"
                       : "border-zinc-200 hover:border-zinc-300"
@@ -536,24 +539,7 @@ export default function Home() {
                     ))}
                   </ul>
 
-                  {plan.checkoutPlan ? (
-                    <a
-                      href={`/api/stripe/checkout?plan=${plan.checkoutPlan}`}
-                      className="inline-flex w-full items-center justify-center rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-700"
-                    >
-                      立即支付
-                    </a>
-                  ) : (
-                    <a
-                      href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex w-full items-center justify-center rounded-lg border border-zinc-300 px-4 py-2.5 text-sm font-semibold text-zinc-800 hover:bg-zinc-50"
-                    >
-                      联系咨询
-                    </a>
-                  )}
-                </div>
+                </a>
               ))}
             </div>
 
