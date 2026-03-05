@@ -538,7 +538,7 @@ export default function Home() {
 
                   {plan.checkoutPlan ? (
                     <Link
-                      href={`/checkout?plan=${plan.checkoutPlan}`}
+                      href={`/checkout?plan=${plan.checkoutPlan}&autostart=1`}
                       className="inline-flex w-full items-center justify-center rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-700"
                     >
                       立即支付

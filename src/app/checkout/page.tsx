@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 const plans = [
   { id: "managed", name: "托管部署" },
   { id: "personal_pc", name: "个人部署（远程）" },
-  { id: "care", name: "托管护理计划（订阅）" },
 ];
 
 export default function CheckoutPage() {
@@ -15,9 +14,16 @@ export default function CheckoutPage() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const q = new URLSearchParams(window.location.search).get("plan");
+    const qs = new URLSearchParams(window.location.search);
+    const q = qs.get("plan");
     if (q && plans.some((p) => p.id === q)) {
       setPlan(q);
+    }
+
+    if (qs.get("autostart") === "1") {
+      setTimeout(() => {
+        startCheckout();
+      }, 50);
     }
   }, []);
 

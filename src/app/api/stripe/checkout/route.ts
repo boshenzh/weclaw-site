@@ -5,10 +5,9 @@ import { verifySessionToken } from "@/lib/auth";
 
 const stripe = new Stripe(serverEnv.STRIPE_SECRET_KEY);
 
-const PLAN_TO_PRICE_ENV: Record<string, string> = {
-  managed: "STRIPE_PRICE_MANAGED",
-  personal_pc: "STRIPE_PRICE_PERSONAL_PC",
-  care: "STRIPE_PRICE_CARE",
+const PLAN_CONFIG: Record<string, { amountCny: number; name: string }> = {
+  managed: { amountCny: 3800, name: "托管部署" },
+  personal_pc: { amountCny: 1888, name: "个人部署（远程）" },
 };
 
 export async function POST(req: Request) {
@@ -27,20 +26,11 @@ export async function POST(req: Request) {
   const plan = body?.plan;
   const promoCode = body?.promoCode;
 
-  if (typeof plan !== "string" || !PLAN_TO_PRICE_ENV[plan]) {
+  if (typeof plan !== "string" || !PLAN_CONFIG[plan]) {
     return new NextResponse("Invalid plan", { status: 400 });
   }
 
-  const priceEnv = PLAN_TO_PRICE_ENV[plan];
-  const priceId = (process.env as Record<string, string | undefined>)[priceEnv];
-  if (!priceId) {
-    return new NextResponse(`Missing env ${priceEnv}`, { status: 500 });
-  }
-
-  // Determine mode by checking if the price is recurring (call Stripe to inspect)
-  const price = await stripe.prices.retrieve(priceId);
-  const mode: Stripe.Checkout.SessionCreateParams.Mode = price.type === "recurring" ? "subscription" : "payment";
-
+  const cfg = PLAN_CONFIG[plan];
   const successUrl = new URL("/success", serverEnv.NEXT_PUBLIC_SITE_URL);
   successUrl.searchParams.set("session_id", "{CHECKOUT_SESSION_ID}");
   const cancelUrl = new URL("/checkout", serverEnv.NEXT_PUBLIC_SITE_URL);
@@ -56,9 +46,18 @@ export async function POST(req: Request) {
   }
 
   const checkout = await stripe.checkout.sessions.create({
-    mode,
+    mode: "payment",
     customer_email: session.email,
-    line_items: [{ price: priceId, quantity: 1 }],
+    line_items: [
+      {
+        quantity: 1,
+        price_data: {
+          currency: "cny",
+          unit_amount: cfg.amountCny * 100,
+          product_data: { name: cfg.name },
+        },
+      },
+    ],
     discounts,
     success_url: successUrl.toString(),
     cancel_url: cancelUrl.toString(),
