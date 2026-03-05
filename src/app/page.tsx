@@ -470,7 +470,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-2">
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {pricing.map((plan) => (
                 <div
                   key={plan.name}
@@ -537,12 +537,12 @@ export default function Home() {
                   </ul>
 
                   {plan.checkoutPlan ? (
-                    <Link
-                      href={`/checkout?plan=${plan.checkoutPlan}&autostart=1`}
+                    <a
+                      href={`/api/stripe/checkout?plan=${plan.checkoutPlan}`}
                       className="inline-flex w-full items-center justify-center rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-700"
                     >
                       立即支付
-                    </Link>
+                    </a>
                   ) : (
                     <a
                       href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25"
