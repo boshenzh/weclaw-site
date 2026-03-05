@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 import { serverEnv } from "@/lib/env";
-import { verifySessionToken } from "@/lib/auth";
 
 const stripe = new Stripe(serverEnv.STRIPE_SECRET_KEY);
 
@@ -11,16 +10,6 @@ const PLAN_CONFIG: Record<string, { amountCny: number; name: string }> = {
 };
 
 export async function POST(req: Request) {
-  const cookie = req.headers.get("cookie") || "";
-  const m = cookie.match(/(?:^|; )weclawd_session=([^;]+)/);
-  if (!m) return new NextResponse("Unauthorized", { status: 401 });
-
-  let session;
-  try {
-    session = await verifySessionToken(decodeURIComponent(m[1]));
-  } catch {
-    return new NextResponse("Unauthorized", { status: 401 });
-  }
 
   const body = await req.json().catch(() => null);
   const plan = body?.plan;
@@ -47,7 +36,6 @@ export async function POST(req: Request) {
 
   const checkout = await stripe.checkout.sessions.create({
     mode: "payment",
-    customer_email: session.email,
     line_items: [
       {
         quantity: 1,
@@ -62,7 +50,6 @@ export async function POST(req: Request) {
     success_url: successUrl.toString(),
     cancel_url: cancelUrl.toString(),
     metadata: {
-      user_id: session.sub,
       plan,
     },
     // Also allow entering promo codes directly on Stripe checkout if you want
