@@ -18,7 +18,7 @@ const pricing = [
       "邮件和日历集成",
       "最多 3 个工作流",
     ],
-    recommended: true,
+    recommended: false,
   },
   {
     name: "个人部署",
@@ -35,7 +35,7 @@ const pricing = [
       "最多 2 个工作流",
       "14 天专属客服支持",
     ],
-    recommended: false,
+    recommended: true,
   },
   {
     name: "企业服务（团队版）",
@@ -470,7 +470,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-8 md:grid-cols-3">
               {pricing.map((plan) => (
                 <div
                   key={plan.name}
