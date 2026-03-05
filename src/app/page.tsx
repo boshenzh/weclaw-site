@@ -55,6 +55,23 @@ const pricing = [
     recommended: false,
   },
   {
+    name: "个人部署",
+    checkoutPlan: "personal_pc",
+    price: "¥1,888",
+    originalPrice: "¥4,720",
+    badge: "限时 4 折",
+    description: "部署在客户个人电脑（远程安装）",
+    features: [
+      "在客户笔记本/台式机上部署 OpenClaw",
+      "远程 1v1 安装与配置",
+      "邮件和日历集成",
+      "安全基础加固",
+      "最多 2 个工作流",
+      "14 天专属客服支持",
+    ],
+    recommended: false,
+  },
+  {
     name: "企业服务（团队版）",
     price: "定制",
     description: "为团队提供企业级部署与持续服务",

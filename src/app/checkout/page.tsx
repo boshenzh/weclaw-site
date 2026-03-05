@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 const plans = [
   { id: "managed", name: "托管部署" },
+  { id: "personal_pc", name: "个人部署（远程）" },
   { id: "mac_remote", name: "Mac Mini 远程" },
   { id: "mac_onsite", name: "Mac Mini 上门" },
   { id: "care", name: "托管护理计划（订阅）" },

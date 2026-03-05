@@ -7,6 +7,7 @@ const stripe = new Stripe(serverEnv.STRIPE_SECRET_KEY);
 
 const PLAN_TO_PRICE_ENV: Record<string, string> = {
   managed: "STRIPE_PRICE_MANAGED",
+  personal_pc: "STRIPE_PRICE_PERSONAL_PC",
   mac_remote: "STRIPE_PRICE_MAC_REMOTE",
   mac_onsite: "STRIPE_PRICE_MAC_ONSITE",
   care: "STRIPE_PRICE_CARE",
