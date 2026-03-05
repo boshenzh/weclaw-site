@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const plans = [
   { id: "managed", name: "托管部署" },
@@ -14,6 +14,13 @@ export default function CheckoutPage() {
   const [promoCode, setPromoCode] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search).get("plan");
+    if (q && plans.some((p) => p.id === q)) {
+      setPlan(q);
+    }
+  }, []);
 
   async function startCheckout() {
     setLoading(true);

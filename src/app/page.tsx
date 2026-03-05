@@ -5,6 +5,7 @@ import IntegrationLogos from "@/components/IntegrationLogos";
 const pricing = [
   {
     name: "托管部署",
+    checkoutPlan: "managed",
     price: "¥3,800",
     originalPrice: "¥7,600",
     badge: "限时 5 折",
@@ -21,6 +22,7 @@ const pricing = [
   },
   {
     name: "Mac Mini 远程",
+    checkoutPlan: "mac_remote",
     price: "¥7,900",
     originalPrice: "¥15,800",
     badge: "限时 5 折",
@@ -37,6 +39,7 @@ const pricing = [
   },
   {
     name: "Mac Mini 上门",
+    checkoutPlan: "mac_onsite",
     price: "¥9,900",
     originalPrice: "¥19,800",
     badge: "限时 5 折",
@@ -549,6 +552,24 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
+
+                  {plan.checkoutPlan ? (
+                    <Link
+                      href={`/checkout?plan=${plan.checkoutPlan}`}
+                      className="inline-flex w-full items-center justify-center rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-700"
+                    >
+                      立即支付
+                    </Link>
+                  ) : (
+                    <a
+                      href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex w-full items-center justify-center rounded-lg border border-zinc-300 px-4 py-2.5 text-sm font-semibold text-zinc-800 hover:bg-zinc-50"
+                    >
+                      联系咨询
+                    </a>
+                  )}
                 </div>
               ))}
             </div>
