@@ -4,6 +4,23 @@ import IntegrationLogos from "@/components/IntegrationLogos";
 
 const pricing = [
   {
+    name: "个人部署",
+    checkoutPlan: "personal_pc",
+    price: "¥1,888",
+    originalPrice: "¥4,720",
+    badge: "限时 4 折",
+    description: "部署在客户个人电脑（远程安装）",
+    features: [
+      "在客户笔记本/台式机上部署 OpenClaw",
+      "远程 1v1 安装与配置",
+      "邮件和日历集成",
+      "安全基础加固",
+      "最多 2 个工作流",
+      "14 天专属客服支持",
+    ],
+    recommended: true,
+  },
+  {
     name: "托管部署",
     checkoutPlan: "managed",
     price: "¥3,800",
@@ -34,23 +51,6 @@ const pricing = [
       "按需扩展与定制",
     ],
     recommended: false,
-  },
-  {
-    name: "个人部署",
-    checkoutPlan: "personal_pc",
-    price: "¥1,888",
-    originalPrice: "¥4,720",
-    badge: "限时 4 折",
-    description: "部署在客户个人电脑（远程安装）",
-    features: [
-      "在客户笔记本/台式机上部署 OpenClaw",
-      "远程 1v1 安装与配置",
-      "邮件和日历集成",
-      "安全基础加固",
-      "最多 2 个工作流",
-      "14 天专属客服支持",
-    ],
-    recommended: true,
   },
 ];
 
