@@ -30,7 +30,6 @@ async function createCheckout(plan: string, promoCode?: string | null) {
 
   const checkout = await stripe.checkout.sessions.create({
     mode: "payment",
-    payment_method_types: ["card", "alipay", "wechat_pay"],
     line_items: [
       {
         quantity: 1,
