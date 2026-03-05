@@ -760,6 +760,14 @@ export default function Home() {
                   </Link>
                 </li>
                 <li>
+                  <Link
+                    href="/blog/openclaw-mega-cheatsheet-zh"
+                    className="text-sm text-zinc-600 hover:text-zinc-950"
+                  >
+                    OpenClaw 超级速查表（中文）
+                  </Link>
+                </li>
+                <li>
                   <a
                     href="https://github.com/openclaw"
                     target="_blank"
