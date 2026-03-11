@@ -4,6 +4,20 @@ import IntegrationLogos from "@/components/IntegrationLogos";
 
 const pricing = [
   {
+    name: "飞书 + Gateway 快速连接包",
+    checkoutPlan: "feishu_gateway_install",
+    price: "¥489",
+    description: "2 小时远程安装：仅安装与连接，不含工作流整合",
+    features: [
+      "飞书连接与基础可用性验证",
+      "云端或本地 Gateway 二选一安装",
+      "2 小时远程安装支持",
+      "仅提供安装与连接（不含工作流整合）",
+      "不含个性化定制",
+    ],
+    recommended: false,
+  },
+  {
     name: "个人部署",
     checkoutPlan: "personal_pc",
     price: "¥1,888",
@@ -470,7 +484,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-3">
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
               {pricing.map((plan) => (
                 <a
                   key={plan.name}
@@ -854,9 +868,9 @@ export default function Home() {
       <script dangerouslySetInnerHTML={{
         __html: `
           (function() {
-            // Recurring deadline: every month on the 10th, 23:59:59 (Asia/Shanghai)
-            // If the current time is past this month's deadline, roll to next month.
+            // Limited-time discount countdown: 4 days from page load (Asia/Shanghai)
             const TZ = 'Asia/Shanghai';
+            const FOUR_DAYS_MS = 4 * 24 * 60 * 60 * 1000;
 
             function shanghaiNow() {
               // Convert "now" into a Date object that represents Asia/Shanghai wall-clock time.
@@ -864,22 +878,8 @@ export default function Home() {
               return new Date(new Date().toLocaleString('en-US', { timeZone: TZ }));
             }
 
-            function nextMonthlyDeadline() {
-              const now = shanghaiNow();
-              const year = now.getFullYear();
-              const month = now.getMonth(); // 0-11
-
-              // This month's deadline in Shanghai time.
-              let end = new Date(year, month, 10, 23, 59, 59);
-
-              // If already passed, use next month.
-              if (now.getTime() > end.getTime()) {
-                end = new Date(year, month + 1, 10, 23, 59, 59);
-              }
-              return end;
-            }
-
-            let endDate = nextMonthlyDeadline();
+            const startDate = shanghaiNow();
+            const endDate = new Date(startDate.getTime() + FOUR_DAYS_MS);
 
             function pad2(n) { return String(n).padStart(2, '0'); }
 
@@ -887,12 +887,7 @@ export default function Home() {
               const el = document.getElementById('countdown');
               if (!el) return;
 
-              // Recompute endDate periodically in case the month rolls over while the tab stays open.
               const nowShanghai = shanghaiNow();
-              if (nowShanghai.getTime() > endDate.getTime()) {
-                endDate = nextMonthlyDeadline();
-              }
-
               const distance = endDate.getTime() - nowShanghai.getTime();
 
               if (distance <= 0) {
