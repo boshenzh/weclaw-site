@@ -1,33 +1,25 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const plans = [
   { id: "managed", name: "托管部署" },
   { id: "personal_pc", name: "个人部署（远程）" },
 ];
 
+function getInitialPlan() {
+  if (typeof window === "undefined") return plans[0].id;
+  const q = new URLSearchParams(window.location.search).get("plan");
+  return q && plans.some((p) => p.id === q) ? q : plans[0].id;
+}
+
 export default function CheckoutPage() {
-  const [plan, setPlan] = useState(plans[0].id);
+  const [plan, setPlan] = useState(getInitialPlan);
   const [promoCode, setPromoCode] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const qs = new URLSearchParams(window.location.search);
-    const q = qs.get("plan");
-    if (q && plans.some((p) => p.id === q)) {
-      setPlan(q);
-    }
-
-    if (qs.get("autostart") === "1") {
-      setTimeout(() => {
-        startCheckout();
-      }, 50);
-    }
-  }, []);
-
-  async function startCheckout() {
+  const startCheckout = useCallback(async () => {
     setLoading(true);
     setError(null);
 
@@ -46,7 +38,17 @@ export default function CheckoutPage() {
 
     const data = (await res.json()) as { url: string };
     window.location.href = data.url;
-  }
+  }, [plan, promoCode]);
+
+  useEffect(() => {
+    const qs = new URLSearchParams(window.location.search);
+    if (qs.get("autostart") === "1") {
+      const timer = window.setTimeout(() => {
+        startCheckout();
+      }, 50);
+      return () => window.clearTimeout(timer);
+    }
+  }, [startCheckout]);
 
   return (
     <div className="mx-auto max-w-xl px-6 py-16">

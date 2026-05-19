@@ -1,11 +1,10 @@
-# robots.txt for weclaw.com
+# robots.txt for weclawd.com
 User-agent: *
 Allow: /
 
-# Sitemaps
-Sitemap: https://weclaw.com/sitemap.xml
+Sitemap: https://www.weclawd.com/sitemap.xml
+Host: https://www.weclawd.com
 
-# Crawl-delay for specific bots
 User-agent: Baiduspider
 Crawl-delay: 1
 

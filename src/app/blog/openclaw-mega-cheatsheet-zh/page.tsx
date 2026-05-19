@@ -18,11 +18,11 @@ export const metadata: Metadata = {
     title: "OpenClaw 超级速查表（中文）2026",
     description:
       "安装、模型、会话、记忆、技能、浏览器自动化、故障排查一页看懂。",
-    url: "https://weclaw.com/blog/openclaw-mega-cheatsheet-zh",
+    url: "https://www.weclawd.com/blog/openclaw-mega-cheatsheet-zh",
     type: "article",
   },
   alternates: {
-    canonical: "https://weclaw.com/blog/openclaw-mega-cheatsheet-zh",
+    canonical: "https://www.weclawd.com/blog/openclaw-mega-cheatsheet-zh",
   },
 };
 

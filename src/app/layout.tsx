@@ -3,13 +3,7 @@ import "./globals.css";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
 
-const siteUrl = (() => {
-  const explicit = process.env.NEXT_PUBLIC_SITE_URL;
-  if (explicit) return explicit;
-  const vercel = process.env.VERCEL_URL;
-  if (vercel) return `https://${vercel}`;
-  return "https://weclaw.com";
-})();
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.weclawd.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -33,6 +27,10 @@ export const metadata: Metadata = {
     "AI自动化",
     "企业协作",
     "智能客服",
+    "货代AI助手",
+    "国际物流AI",
+    "企业微信货代自动化",
+    "freight forwarder AI assistant",
     "AI部署",
     "喂龙虾",
   ],

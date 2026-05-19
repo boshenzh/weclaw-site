@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "什么是 OpenClaw？自托管 AI 执行助手完整指南",
     description: "深入了解 OpenClaw - 一个开源、自托管的 AI 执行助手。了解核心功能、技术架构、安全考量和适用人群。",
-    url: "https://weclaw.com/blog/what-is-openclaw",
+    url: "https://www.weclawd.com/blog/what-is-openclaw",
     type: "article",
     images: [
       {
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ["/logos/weclaw-logo.png"],
   },
   alternates: {
-    canonical: "https://weclaw.com/blog/what-is-openclaw",
+    canonical: "https://www.weclawd.com/blog/what-is-openclaw",
   },
 };
 

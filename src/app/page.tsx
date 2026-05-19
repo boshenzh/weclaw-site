@@ -184,8 +184,8 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "喂龙虾",
-            url: "https://weclaw.com",
-            logo: "https://weclaw.com/logos/weclaw-logo.png",
+            url: "https://www.weclawd.com",
+            logo: "https://www.weclawd.com/logos/weclaw-logo.png",
             description: "OpenClaw AI 助手专业部署和托管服务提供商",
             address: {
               "@type": "PostalAddress",
@@ -221,30 +221,30 @@ export default function Home() {
                   "@type": "Offer",
                   itemOffered: {
                     "@type": "Service",
+                    name: "飞书 + Gateway 快速连接包",
+                    description: "飞书连接与基础可用性验证",
+                  },
+                  price: "489",
+                  priceCurrency: "CNY",
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "个人部署",
+                    description: "在客户个人电脑上远程部署 OpenClaw",
+                  },
+                  price: "1888",
+                  priceCurrency: "CNY",
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
                     name: "托管部署",
                     description: "云端 VPS 部署和维护服务",
                   },
-                  price: "8800",
-                  priceCurrency: "CNY",
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "Mac Mini 远程部署",
-                    description: "包含 iMessage 集成的远程部署服务",
-                  },
-                  price: "15800",
-                  priceCurrency: "CNY",
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "Mac Mini 上门部署",
-                    description: "工程师上门部署服务（仅限深圳）",
-                  },
-                  price: "19800",
+                  price: "3800",
                   priceCurrency: "CNY",
                 },
               ],
@@ -739,6 +739,22 @@ export default function Home() {
                   >
                     FAQ
                   </a>
+                </li>
+                <li>
+                  <Link
+                    href="/huodai-ai-assistant"
+                    className="text-sm text-zinc-600 hover:text-zinc-950"
+                  >
+                    货代 AI 助手
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/freight-ai-assistant"
+                    className="text-sm text-zinc-600 hover:text-zinc-950"
+                  >
+                    Freight AI Assistant
+                  </Link>
                 </li>
               </ul>
             </div>

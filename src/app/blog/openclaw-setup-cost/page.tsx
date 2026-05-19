@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -20,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "OpenClaw 部署成本详解 - 喂龙虾",
     description: "详细分析 OpenClaw AI 助手的部署成本，包括一次性设置费用、月度运行成本，以及 DIY 与专业部署的对比。",
-    url: "https://weclaw.com/blog/openclaw-setup-cost",
+    url: "https://www.weclawd.com/blog/openclaw-setup-cost",
     type: "article",
     images: [
       {
@@ -38,7 +37,7 @@ export const metadata: Metadata = {
     images: ["/logos/weclaw-logo.png"],
   },
   alternates: {
-    canonical: "https://weclaw.com/blog/openclaw-setup-cost",
+    canonical: "https://www.weclawd.com/blog/openclaw-setup-cost",
   },
 };
 
