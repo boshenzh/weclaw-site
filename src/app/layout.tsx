@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
 
 const siteUrl = (() => {
@@ -93,6 +94,13 @@ export default function RootLayout({
       <body>
         {children}
         <Analytics />
+        <Script
+          defer
+          data-website-id="dfid_77Jlkrd1vIbFnBuTpU2a3"
+          data-domain="weclawd.com"
+          src="https://datafa.st/js/script.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
