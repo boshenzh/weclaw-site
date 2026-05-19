@@ -765,6 +765,46 @@ export default function Home() {
               <ul className="space-y-2">
                 <li>
                   <Link
+                    href="/solutions"
+                    className="text-sm text-zinc-600 hover:text-zinc-950"
+                  >
+                    AI 助手解决方案
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/industries"
+                    className="text-sm text-zinc-600 hover:text-zinc-950"
+                  >
+                    行业场景
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/integrations"
+                    className="text-sm text-zinc-600 hover:text-zinc-950"
+                  >
+                    集成平台
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/use-cases"
+                    className="text-sm text-zinc-600 hover:text-zinc-950"
+                  >
+                    Use Cases
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/compare"
+                    className="text-sm text-zinc-600 hover:text-zinc-950"
+                  >
+                    对比
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/blog/what-is-openclaw"
                     className="text-sm text-zinc-600 hover:text-zinc-950"
                   >
