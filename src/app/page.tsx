@@ -895,18 +895,24 @@ export default function Home() {
                 © {new Date().getFullYear()} 喂龙虾. 保留所有权利。
               </p>
               <div className="flex gap-6">
-                <a
-                  href="#"
+                <Link
+                  href="/about"
+                  className="text-sm text-zinc-600 hover:text-zinc-950"
+                >
+                  关于我们
+                </Link>
+                <Link
+                  href="/privacy"
                   className="text-sm text-zinc-600 hover:text-zinc-950"
                 >
                   隐私政策
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  href="/terms"
                   className="text-sm text-zinc-600 hover:text-zinc-950"
                 >
                   使用条款
-                </a>
+                </Link>
               </div>
             </div>
 

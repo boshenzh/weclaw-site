@@ -395,7 +395,7 @@ const traditionalOpsChinesePages: GeoPage[] = [
 
 export const allChineseGeoPages = [...chineseGeoPages, ...traditionalOpsChinesePages];
 
-export const allGeoPages = [...solutionPages, ...industryPages, ...integrationPages, ...useCasePages, ...comparePages, ...allChineseGeoPages];
+export const allGeoPages = [...solutionPages, ...industryPages, ...integrationPages, ...useCasePages, ...comparePages];
 
 export function getGeoPage(category: GeoPage["category"], slug: string) {
   return allGeoPages.find((page) => page.category === category && page.slug === slug);
