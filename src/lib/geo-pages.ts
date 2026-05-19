@@ -283,9 +283,119 @@ export const chineseGeoPages: GeoPage[] = [
   },
 ];
 
-export const allChineseGeoPages = chineseGeoPages;
 
-export const allGeoPages = [...solutionPages, ...industryPages, ...integrationPages, ...useCasePages, ...comparePages, ...chineseGeoPages];
+const opsFaq = [
+  { q: "OpenClaw 可以处理传统企业运营工作吗？", a: "可以。OpenClaw 更适合连接企业微信、飞书、邮箱、日历、表格和文档后，执行重复性的整理、提醒、草稿和审核流转工作。涉及对外承诺、付款、合同签署和法律判断的动作应保留人工确认。" },
+  { q: "WeClawd 和普通聊天机器人有什么区别？", a: "普通聊天机器人主要回答问题；WeClawd 部署的是工具连接型 AI 助手，可以围绕客服、法务、电商、销售、行政、人事、财务等真实业务流程长期运行。" },
+  { q: "企业数据安全吗？", a: "WeClawd 会按客户环境做权限、OAuth、沙箱、防火墙和审计等安全配置。但 AI 访问业务工具不是零风险，建议从低风险场景开始，逐步扩展授权范围。" },
+];
+
+const traditionalOpsChinesePages: GeoPage[] = [
+  {
+    category: "solutions",
+    slug: "qiyefuwu-ai-zhushou",
+    title: "企业客服 AI 助手｜企业微信客服自动化｜WeClawd 喂龙虾",
+    h1: "企业客服 AI 助手：整理客户问题、生成回复草稿、提醒人工跟进",
+    description: "WeClawd 为传统企业部署私有客服 AI 助手，连接企业微信、飞书、邮箱和表格，帮助客服团队整理问题、生成回复草稿和升级待办。",
+    audience: "客服团队、售后团队、客户成功团队、传统企业运营团队",
+    keywords: ["企业客服 AI 助手", "客服自动化", "企业微信客服 AI", "售后 AI 助手", "客户问题自动整理"],
+    bullets: ["自动整理客户咨询和售后问题", "生成客服回复草稿供人工确认", "识别需要升级给销售/技术/财务的问题", "汇总每日高频问题和投诉风险"],
+    workflows: ["客户咨询摘要", "FAQ 回复草稿", "售后工单分流", "投诉风险提醒", "每日客服简报"],
+    faqs: opsFaq,
+  },
+  {
+    category: "solutions",
+    slug: "falv-wendang-ai-zhushou",
+    title: "法律文档 AI 助手｜合同审阅与法务文件整理｜WeClawd",
+    h1: "法律文档 AI 助手：整理合同、提取风险点、生成审阅清单",
+    description: "面向企业法务、律所和管理团队的私有 AI 文档助手，帮助整理合同条款、提取关键信息、生成审阅清单和邮件草稿。",
+    audience: "企业法务、律师、律所助理、管理层",
+    keywords: ["法律文档 AI", "合同审阅 AI", "法务 AI 助手", "合同风险提取", "律所 AI 助手"],
+    bullets: ["提取合同主体、金额、期限和义务", "整理风险条款和待确认问题", "生成审阅清单和对外沟通草稿", "归档合同版本和会议纪要"],
+    workflows: ["合同要点摘要", "风险条款清单", "法务邮件草稿", "合同版本归档", "会议纪要整理"],
+    faqs: [
+      { q: "AI 可以替代律师审合同吗？", a: "不可以。AI 适合做信息提取、摘要和初步风险清单，最终法律判断和签署建议必须由专业人员确认。" },
+      { q: "适合企业法务还是律所？", a: "两者都适合。企业法务可用于合同流转和内部答疑，律所可用于材料整理、初稿和客户沟通准备。" },
+      { q: "能处理中文合同吗？", a: "可以围绕中文合同、英文合同或中英双语合同配置摘要、条款提取和审阅清单流程。" },
+    ],
+  },
+  {
+    category: "solutions",
+    slug: "dianshang-yunying-ai-zhushou",
+    title: "电商运营 AI 助手｜客服、商品、订单和内容自动化｜WeClawd",
+    h1: "电商运营 AI 助手：把客服、商品、订单和内容工作流串起来",
+    description: "WeClawd 帮电商团队部署私有 AI 助手，支持客服问题整理、商品文案、订单异常提醒、评价总结和运营日报。",
+    audience: "电商运营、跨境电商、品牌店铺、客服和内容团队",
+    keywords: ["电商运营 AI", "电商客服 AI", "商品文案 AI", "订单异常 AI", "跨境电商 AI 助手"],
+    bullets: ["整理售前售后问题", "生成商品标题、卖点和详情页草稿", "提醒订单异常和退款风险", "汇总评价、差评和客户反馈"],
+    workflows: ["电商客服摘要", "商品文案草稿", "订单异常提醒", "评价情绪总结", "运营日报"],
+    faqs: opsFaq,
+  },
+  {
+    category: "use-cases",
+    slug: "xiaoshou-genjin-ai-zhushou",
+    title: "销售跟进 AI 助手｜客户开发与跟进提醒｜WeClawd",
+    h1: "销售跟进 AI 助手：提醒客户回访、生成跟进话术、整理销售线索",
+    description: "面向传统企业销售团队的 AI 工作流，连接企业微信、邮箱、日历和表格，帮助整理客户线索、生成跟进草稿和销售晨报。",
+    audience: "B2B 销售、客户经理、商务拓展和销售管理者",
+    keywords: ["销售跟进 AI", "客户开发 AI", "销售线索 AI", "企业微信销售助手", "销售晨报 AI"],
+    bullets: ["识别长时间未跟进客户", "生成个性化跟进话术", "整理客户背景和沟通历史", "每天推送销售待办和重点机会"],
+    workflows: ["客户线索整理", "跟进提醒", "销售话术草稿", "会议前客户简报", "销售日报"],
+    faqs: opsFaq,
+  },
+  {
+    category: "use-cases",
+    slug: "xingzheng-renshi-ai-zhushou",
+    title: "行政人事 AI 助手｜日程、招聘、入职和制度问答｜WeClawd",
+    h1: "行政人事 AI 助手：处理日程、招聘材料、入职清单和内部问答",
+    description: "为行政、人事和办公室团队部署 OpenClaw AI 助手，帮助整理日程、会议、招聘简历、入职流程和员工制度问答。",
+    audience: "行政、人事、办公室主任、创业公司运营团队",
+    keywords: ["行政 AI 助手", "人事 AI 助手", "招聘简历 AI", "员工制度问答 AI", "入职流程自动化"],
+    bullets: ["整理会议和日程提醒", "总结简历和候选人信息", "生成入职清单和提醒", "回答内部制度常见问题"],
+    workflows: ["日程晨报", "招聘简历摘要", "入职待办清单", "员工制度问答", "会议纪要整理"],
+    faqs: opsFaq,
+  },
+  {
+    category: "use-cases",
+    slug: "caiwu-baoxiao-ai-zhushou",
+    title: "财务报销 AI 助手｜发票、报销和付款提醒｜WeClawd",
+    h1: "财务报销 AI 助手：整理发票、报销材料和付款提醒",
+    description: "面向财务和运营团队的 AI 助手工作流，帮助收集报销材料、检查缺失信息、生成付款提醒和月度汇总。",
+    audience: "财务、运营、行政和创业公司管理团队",
+    keywords: ["财务报销 AI", "发票整理 AI", "付款提醒 AI", "报销自动化", "财务 AI 助手"],
+    bullets: ["检查报销材料是否齐全", "整理发票、金额、项目和付款对象", "提醒待审批和待付款事项", "生成月度费用摘要"],
+    workflows: ["报销材料检查", "发票信息整理", "付款提醒", "费用月报", "审批待办汇总"],
+    faqs: opsFaq,
+  },
+  {
+    category: "use-cases",
+    slug: "huiyi-jiyao-ai-zhushou",
+    title: "会议纪要 AI 助手｜行动项、待办和跟进提醒｜WeClawd",
+    h1: "会议纪要 AI 助手：把会议内容变成行动项和跟进提醒",
+    description: "连接日历、文档和消息工具，帮助团队整理会议纪要、行动项、负责人、截止日期和后续提醒。",
+    audience: "管理层、项目经理、销售、运营和行政团队",
+    keywords: ["会议纪要 AI", "行动项自动整理", "会议待办 AI", "项目跟进 AI", "日程 AI 助手"],
+    bullets: ["整理会议讨论要点", "提取行动项、负责人和截止日期", "会后生成跟进消息草稿", "提醒未完成事项"],
+    workflows: ["会议纪要摘要", "行动项提取", "负责人和截止日期整理", "会后跟进提醒"],
+    faqs: opsFaq,
+  },
+  {
+    category: "solutions",
+    slug: "chuantong-qiye-yunying-ai",
+    title: "传统企业运营 AI 助手｜客服、销售、法务、财务、人事自动化｜WeClawd",
+    h1: "传统企业运营 AI 助手：把重复的客服、销售、法务、财务、人事工作交给 AI 整理",
+    description: "WeClawd 为传统企业部署私有 OpenClaw AI 助手，把企业微信、飞书、邮箱、日历、表格和文档串成可执行的运营工作流。",
+    audience: "传统企业老板、总经理、运营负责人、销售和职能部门负责人",
+    keywords: ["传统企业 AI 助手", "企业运营 AI", "企业微信自动化", "办公室 AI 助手", "OpenClaw 企业部署"],
+    bullets: ["客服问题整理和回复草稿", "销售线索和跟进提醒", "合同/法务文档摘要", "财务报销和行政人事待办"],
+    workflows: ["企业运营日报", "跨部门待办汇总", "客户问题分流", "合同和报销材料整理", "管理层晨报"],
+    faqs: opsFaq,
+  },
+];
+
+export const allChineseGeoPages = [...chineseGeoPages, ...traditionalOpsChinesePages];
+
+export const allGeoPages = [...solutionPages, ...industryPages, ...integrationPages, ...useCasePages, ...comparePages, ...allChineseGeoPages];
 
 export function getGeoPage(category: GeoPage["category"], slug: string) {
   return allGeoPages.find((page) => page.category === category && page.slug === slug);
