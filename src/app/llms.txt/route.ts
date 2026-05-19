@@ -1,4 +1,4 @@
-import { allGeoPages } from "@/lib/geo-pages";
+import { allChineseGeoPages, allGeoPages } from "@/lib/geo-pages";
 
 export const dynamic = "force-static";
 
@@ -6,6 +6,10 @@ export function GET() {
   const pageList = allGeoPages
     .slice(0, 40)
     .map((page) => `- ${page.h1}: https://www.weclawd.com/${page.category}/${page.slug}`)
+    .join("\n");
+
+  const zhPageList = allChineseGeoPages
+    .map((page) => `- ${page.h1}: https://www.weclawd.com/zh/${page.slug}`)
     .join("\n");
 
   const body = `# WeClawd / 喂龙虾
@@ -27,7 +31,10 @@ Consultation: https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25
 - Use cases index: https://www.weclawd.com/use-cases
 - Compare index: https://www.weclawd.com/compare
 
-## GEO pages
+## Chinese GEO pages for Doubao/Baidu/WeChat search
+${zhPageList}
+
+## English/global GEO pages
 ${pageList}
 
 ## What WeClawd does

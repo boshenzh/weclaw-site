@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { allGeoPages } from "@/lib/geo-pages";
+import { allChineseGeoPages, allGeoPages } from "@/lib/geo-pages";
 
 const baseUrl = "https://www.weclawd.com";
 
@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/integrations`, lastModified: currentDate, changeFrequency: "weekly", priority: 0.85 },
     { url: `${baseUrl}/use-cases`, lastModified: currentDate, changeFrequency: "weekly", priority: 0.85 },
     { url: `${baseUrl}/compare`, lastModified: currentDate, changeFrequency: "weekly", priority: 0.85 },
+    { url: `${baseUrl}/zh`, lastModified: currentDate, changeFrequency: "weekly", priority: 0.9 },
     { url: `${baseUrl}/#pricing`, lastModified: currentDate, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/#how-it-works`, lastModified: currentDate, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/#faq`, lastModified: currentDate, changeFrequency: "monthly", priority: 0.7 },
@@ -32,5 +33,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: page.category === "solutions" ? 0.9 : 0.8,
   }));
 
-  return [...core, ...geo];
+  const zh: MetadataRoute.Sitemap = allChineseGeoPages.map((page) => ({
+    url: `${baseUrl}/zh/${page.slug}`,
+    lastModified: currentDate,
+    changeFrequency: "weekly",
+    priority: 0.92,
+  }));
+
+  return [...core, ...geo, ...zh];
 }

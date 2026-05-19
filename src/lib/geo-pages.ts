@@ -184,7 +184,108 @@ export const comparePages: GeoPage[] = [
   faqs: freightFaq,
 }));
 
-export const allGeoPages = [...solutionPages, ...industryPages, ...integrationPages, ...useCasePages, ...comparePages];
+export const chineseGeoPages: GeoPage[] = [
+  {
+    category: "solutions",
+    slug: "huodai-ai-zhushou",
+    title: "货代 AI 助手｜企业微信国际物流自动化｜WeClawd 喂龙虾",
+    h1: "货代 AI 助手：帮国际物流团队整理询盘、运价和客户跟进",
+    description: "WeClawd 为货代、国际物流和跨境贸易团队部署私有 OpenClaw AI 助手，支持企业微信、飞书、邮箱、日历和表格工作流。",
+    audience: "货代、国际物流、跨境贸易、海运空运代理团队",
+    keywords: ["货代 AI 助手", "国际物流 AI 助手", "企业微信货代自动化", "海运运价 AI 整理", "货代客户开发 AI"],
+    bullets: ["整理企业微信和邮件里的客户询盘", "把每日运价表变成销售可用的简报", "基于公开资料生成客户画像和开发信草稿", "提醒销售跟进未回复客户和即将过期报价"],
+    workflows: ["企业微信询盘分拣", "每日海运/空运运价整理", "客户线索画像和开发信", "报价后跟进提醒", "销售晨报和待办汇总"],
+    faqs: [
+      { q: "货代 AI 助手能做什么？", a: "它可以在客户授权范围内连接企业微信、飞书、邮箱、日历和表格，帮助整理询盘、提取缺失信息、总结运价、起草跟进话术、生成客户画像和提醒销售待办。" },
+      { q: "AI 可以直接替货代销售报价吗？", a: "不建议。AI 更适合整理运价、生成报价草稿和提醒有效期；最终价格、附加费、舱位和商务承诺应由业务人员确认。" },
+      { q: "WeClawd 和直接用 ChatGPT 有什么区别？", a: "ChatGPT 通常需要人工复制粘贴；WeClawd 部署的是可长期运行、能连接业务工具的 OpenClaw 执行助手，可以围绕企业微信、飞书、邮箱和表格配置固定工作流。" },
+    ],
+  },
+  {
+    category: "solutions",
+    slug: "guoji-wuliu-ai-zhushou",
+    title: "国际物流 AI 助手｜跨境物流自动化｜WeClawd 喂龙虾",
+    h1: "国际物流 AI 助手：让销售、操作和管理层少做重复整理",
+    description: "面向国际物流公司的私有 AI 助手部署服务，覆盖客户沟通、运价整理、海外代理跟进、会议提醒和每日运营简报。",
+    audience: "国际物流公司、跨境物流团队、海外代理协作团队",
+    keywords: ["国际物流 AI", "跨境物流自动化", "物流销售 AI", "海外代理 AI 跟进"],
+    bullets: ["汇总客户沟通和待办", "整理海外代理邮件和报价信息", "生成中英文跟进草稿", "每天推送运营重点和风险提醒"],
+    workflows: ["海外代理邮件摘要", "中英文客户跟进草稿", "操作异常提醒", "管理层每日简报"],
+    faqs: [
+      { q: "国际物流公司适合先做哪个 AI 场景？", a: "通常建议先从企业微信/邮件询盘整理、每日运价简报或客户跟进提醒开始，因为这些场景重复度高、价值清晰、容易验收。" },
+      { q: "能接入企业微信和飞书吗？", a: "可以。具体能力取决于客户授权、账号权限和接口条件。WeClawd 会围绕实际工具栈配置工作流。" },
+      { q: "适合小团队吗？", a: "适合。4-50 人的货代或物流团队，如果每天有大量客户沟通、报价和跟进任务，就能从 AI 助手里获得明显节省。" },
+    ],
+  },
+  {
+    category: "integrations",
+    slug: "qiyeweixin-huodai-ai",
+    title: "企业微信货代 AI 助手｜WeCom 国际物流自动化｜WeClawd",
+    h1: "企业微信货代 AI 助手：把聊天记录变成询盘、待办和跟进提醒",
+    description: "WeClawd 帮货代团队在企业微信场景下部署私有 AI 助手，整理客户询盘、群聊信息、销售跟进和报价草稿。",
+    audience: "使用企业微信获客和服务客户的货代团队",
+    keywords: ["企业微信货代 AI", "企业微信国际物流自动化", "WeCom 货代助手", "企业微信客户跟进 AI"],
+    bullets: ["从聊天中提取起运港、目的港、货量和时效", "识别客户未回复和销售未跟进", "生成报价后跟进话术", "把群聊摘要变成销售待办"],
+    workflows: ["企业微信客户询盘摘要", "未回复客户提醒", "群聊要点整理", "报价草稿和跟进话术"],
+    faqs: [
+      { q: "企业微信里的聊天能自动整理吗？", a: "在客户授权和技术条件允许的范围内，可以把聊天内容整理成询盘摘要、缺失信息清单和待办提醒。" },
+      { q: "会自动发消息给客户吗？", a: "默认建议先生成草稿并由销售确认。涉及报价、承诺和外部发送的动作，应保留人工审核。" },
+      { q: "企业微信货代 AI 和普通客服机器人有什么区别？", a: "普通客服机器人偏固定问答；WeClawd 部署的 OpenClaw 助手更偏内部执行助手，可以结合聊天、邮件、日历和表格做连续工作流。" },
+    ],
+  },
+  {
+    category: "use-cases",
+    slug: "meiri-yunjia-zhengli-ai",
+    title: "每日运价整理 AI｜海运空运报价简报自动化｜WeClawd",
+    h1: "每日运价整理 AI：把运价表变成内部简报和客户推广草稿",
+    description: "帮助货代团队整理每日海运/空运运价，区分成本价与销售价，生成内部简报、客户推广文案和待确认事项。",
+    audience: "货代价格、航线、销售和运营团队",
+    keywords: ["每日运价整理 AI", "海运运价自动整理", "空运报价 AI", "货代运价简报"],
+    bullets: ["提取航线、价格、有效期和备注", "区分成本价、销售价和待确认费用", "生成内部运价简报", "生成客户推广文案草稿"],
+    workflows: ["运价表解析", "航线价格变化摘要", "报价有效期提醒", "客户推广文案草稿"],
+    faqs: [
+      { q: "AI 能看懂运价表吗？", a: "可以协助解析常见表格和文档中的航线、价格、有效期、附加费和备注，但关键价格仍建议人工复核。" },
+      { q: "能区分销售价和成本价吗？", a: "可以根据表格结构、字段名和规则进行区分，并把不确定项标记出来给业务确认。" },
+      { q: "能每天自动发简报吗？", a: "可以配置成每日工作流：读取来源、生成简报、送到待审核位置，再由负责人确认是否对外发送。" },
+    ],
+  },
+  {
+    category: "use-cases",
+    slug: "huodai-kehu-kaifa-ai",
+    title: "货代客户开发 AI｜客户画像与开发信草稿｜WeClawd",
+    h1: "货代客户开发 AI：基于公开资料生成客户画像和开发信草稿",
+    description: "为货代销售团队分析客户官网和公开资料，谨慎判断货类、出货场景和潜在物流需求，并生成个性化开发信草稿。",
+    audience: "货代销售、业务开发和客户开发团队",
+    keywords: ["货代客户开发 AI", "货代客户画像", "国际物流开发信", "货代拓客 AI"],
+    bullets: ["读取客户官网公开信息", "总结产品、市场和可能货类", "谨慎判断潜在航线需求", "生成个性化开发信和跟进话术"],
+    workflows: ["客户官网分析", "货类和航线需求推断", "开发信草稿", "跟进优先级建议"],
+    faqs: [
+      { q: "AI 会不会乱猜客户需求？", a: "WeClawd 的做法是证据优先：只基于公开资料做谨慎推断，并把不确定内容标出来，避免把猜测当事实。" },
+      { q: "能批量处理客户名单吗？", a: "可以围绕客户线索表配置批量分析流程，但需要控制节奏、保留来源证据，并把结果放入待审核位置。" },
+      { q: "开发信可以直接群发吗？", a: "不建议直接群发。更适合先生成个性化草稿，由销售确认后再发送。" },
+    ],
+  },
+  {
+    category: "compare",
+    slug: "weclawd-vs-chatgpt-zh",
+    title: "WeClawd 和 ChatGPT 区别｜货代 AI 助手怎么选",
+    h1: "WeClawd 和 ChatGPT 的区别：一个是聊天工具，一个是部署到业务里的 AI 助手",
+    description: "解释为什么货代和国际物流团队如果想做企业微信、邮箱、运价和客户跟进自动化，通常需要工具连接型 AI 助手，而不只是 ChatGPT 对话框。",
+    audience: "正在评估 ChatGPT、豆包或私有 AI 助手的中国企业客户",
+    keywords: ["WeClawd 和 ChatGPT 区别", "货代 AI 助手怎么选", "企业 AI 助手部署", "OpenClaw 和 ChatGPT"],
+    bullets: ["ChatGPT 适合临时问答和写作", "WeClawd 适合连接企业微信、邮箱、日历和表格", "WeClawd 可以按业务流程长期运行", "外部发送和报价仍保留人工审核"],
+    workflows: ["从 ChatGPT 试用过渡到业务工作流", "企业微信询盘自动整理", "每日运价简报", "销售跟进提醒"],
+    faqs: [
+      { q: "有 ChatGPT 还需要 WeClawd 吗？", a: "如果只是写文案和问答，ChatGPT 够用；如果要连接企业微信、邮箱、日历和表格，并长期执行固定工作流，就需要 WeClawd 这类部署服务。" },
+      { q: "WeClawd 是模型吗？", a: "不是。WeClawd 是 OpenClaw AI 助手的部署和托管服务，会根据客户业务配置工具连接、权限、安全和工作流。" },
+      { q: "可以用豆包或其他模型吗？", a: "具体模型取决于部署方式和可用接口。核心价值不是某个模型，而是把 AI 接到业务工具和流程里。" },
+    ],
+  },
+];
+
+export const allChineseGeoPages = chineseGeoPages;
+
+export const allGeoPages = [...solutionPages, ...industryPages, ...integrationPages, ...useCasePages, ...comparePages, ...chineseGeoPages];
 
 export function getGeoPage(category: GeoPage["category"], slug: string) {
   return allGeoPages.find((page) => page.category === category && page.slug === slug);

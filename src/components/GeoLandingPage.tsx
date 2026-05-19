@@ -3,8 +3,8 @@ import { allGeoPages, categoryTitle, type GeoPage } from "@/lib/geo-pages";
 
 const siteUrl = "https://www.weclawd.com";
 
-export default function GeoLandingPage({ page }: { page: GeoPage }) {
-  const url = `${siteUrl}/${page.category}/${page.slug}`;
+export default function GeoLandingPage({ page, basePath }: { page: GeoPage; basePath?: string }) {
+  const url = `${siteUrl}${basePath || `/${page.category}/${page.slug}`}`;
   const related = allGeoPages
     .filter((item) => item.slug !== page.slug)
     .filter((item) => item.category === page.category || item.keywords.some((kw) => page.keywords.join(" ").toLowerCase().includes(kw.toLowerCase().split(" ")[0] || "__")))
@@ -34,7 +34,7 @@ export default function GeoLandingPage({ page }: { page: GeoPage }) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-      { "@type": "ListItem", position: 2, name: categoryTitle(page.category), item: `${siteUrl}/${page.category}` },
+      { "@type": "ListItem", position: 2, name: basePath ? "中文页面" : categoryTitle(page.category), item: basePath ? `${siteUrl}/zh` : `${siteUrl}/${page.category}` },
       { "@type": "ListItem", position: 3, name: page.h1, item: url },
     ],
   };
@@ -50,7 +50,7 @@ export default function GeoLandingPage({ page }: { page: GeoPage }) {
           <div className="flex flex-wrap gap-3 text-sm">
             <Link href="/" className="font-medium text-blue-700 hover:text-blue-900">WeClawd</Link>
             <span className="text-zinc-400">/</span>
-            <Link href={`/${page.category}`} className="font-medium text-blue-700 hover:text-blue-900">{categoryTitle(page.category)}</Link>
+            <Link href={basePath ? "/zh" : `/${page.category}`} className="font-medium text-blue-700 hover:text-blue-900">{basePath ? "中文页面" : categoryTitle(page.category)}</Link>
           </div>
           <div className="mt-10 max-w-4xl">
             <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-blue-700">{page.audience}</p>
@@ -63,7 +63,7 @@ export default function GeoLandingPage({ page }: { page: GeoPage }) {
             </div>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <a href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25" target="_blank" rel="noopener noreferrer" className="rounded-lg bg-blue-600 px-6 py-3 text-center text-sm font-semibold text-white shadow-lg hover:bg-blue-700">
-                Book a consultation
+                预约咨询
               </a>
               <Link href="/huodai-ai-assistant" className="rounded-lg border border-zinc-300 px-6 py-3 text-center text-sm font-semibold text-zinc-900 hover:bg-zinc-50">
                 货代 AI 助手

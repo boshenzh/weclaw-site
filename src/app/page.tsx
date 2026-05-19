@@ -765,6 +765,30 @@ export default function Home() {
               <ul className="space-y-2">
                 <li>
                   <Link
+                    href="/zh"
+                    className="text-sm text-zinc-600 hover:text-zinc-950"
+                  >
+                    中文客户搜索入口
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/zh/huodai-ai-zhushou"
+                    className="text-sm text-zinc-600 hover:text-zinc-950"
+                  >
+                    货代 AI 助手
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/zh/qiyeweixin-huodai-ai"
+                    className="text-sm text-zinc-600 hover:text-zinc-950"
+                  >
+                    企业微信货代 AI
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/solutions"
                     className="text-sm text-zinc-600 hover:text-zinc-950"
                   >

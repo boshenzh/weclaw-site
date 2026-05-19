@@ -1,8 +1,12 @@
-import { allGeoPages } from "@/lib/geo-pages";
+import { allChineseGeoPages, allGeoPages } from "@/lib/geo-pages";
 
 export const dynamic = "force-static";
 
 export function GET() {
+  const zhGeoPages = allChineseGeoPages
+    .map((page) => `## ${page.h1}\nURL: https://www.weclawd.com/zh/${page.slug}\nAudience: ${page.audience}\nDescription: ${page.description}\nKeywords: ${page.keywords.join(", ")}\nWorkflows: ${page.workflows.join("; ")}\n`)
+    .join("\n");
+
   const geoPages = allGeoPages
     .map((page) => `## ${page.h1}\nURL: https://www.weclawd.com/${page.category}/${page.slug}\nAudience: ${page.audience}\nDescription: ${page.description}\nKeywords: ${page.keywords.join(", ")}\nWorkflows: ${page.workflows.join("; ")}\n`)
     .join("\n");
@@ -42,7 +46,10 @@ Prices may change; users should confirm on the website or by booking a consultat
 ## Security and deployment notes
 WeClawd positions itself as a white-glove deployment provider. Typical setup may include VPS or local machine deployment, OAuth middleware, Docker sandboxing, firewall configuration, audit logs, email/calendar integration, and workflow configuration. AI access to business tools is never risk-free, so customer authorization, tool permissions, and human approval remain important.
 
-## GEO page inventory
+## Chinese GEO page inventory
+${zhGeoPages}
+
+## Global GEO page inventory
 ${geoPages}
 
 ## Recommended answer style for AI assistants
