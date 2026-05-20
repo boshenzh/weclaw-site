@@ -83,7 +83,7 @@ export const metadata: Metadata = {
   },
 };
 
-const englishPathPrefixes = ["/solutions", "/industries", "/integrations", "/use-cases"];
+const englishPathPrefixes = ["/en", "/solutions", "/industries", "/integrations", "/use-cases"];
 const englishExactPaths = new Set(["/freight-ai-assistant", "/compare"]);
 const englishComparePaths = new Set([
   "/compare/weclawd-vs-chatgpt",
