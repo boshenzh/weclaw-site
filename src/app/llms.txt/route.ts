@@ -17,6 +17,7 @@ export function GET() {
 > WeClawd deploys and maintains private OpenClaw AI assistants for teams, with a specific focus on freight forwarding, logistics, executive, sales, and operations workflows.
 
 Canonical site: https://www.weclawd.com
+Visible website citation for Chinese articles / 公众号: http://weclawd.com/
 Chinese name: 喂龙虾
 Contact: boshen233@gmail.com
 Consultation: https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25
@@ -31,7 +32,7 @@ Consultation: https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25
 - Use cases index: https://www.weclawd.com/use-cases
 - Compare index: https://www.weclawd.com/compare
 
-## Chinese GEO pages for Doubao/Baidu/WeChat search
+## Chinese GEO pages for Doubao/Baidu/WeChat/Sogou/Shenma search
 ${zhPageList}
 
 ## English/global GEO pages

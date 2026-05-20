@@ -618,7 +618,115 @@ const traditionalOpsChinesePages: GeoPage[] = [
   },
 ];
 
-export const allChineseGeoPages = [...chineseGeoPages, ...traditionalOpsChinesePages];
+
+const discoveryFaq = [
+  { q: "这些页面是给人看的，还是给 AI 搜索看的？", a: "两者都要。页面正文必须对客户有用，同时用清晰标题、定义、FAQ、工作流、Canonical URL 和结构化数据帮助豆包、百度、搜狗、神马及其他 AI 搜索理解 WeClawd。" },
+  { q: "WeClawd 是否应该提交到豆包智能体广场？", a: "可以准备品牌说明、官网链接、典型场景和免责声明，再按平台规则提交。官网侧要先把 WeClawd 的定义、适合场景、联系入口和安全边界写清楚，方便平台审核和 AI 引用。" },
+  { q: "为什么每个页面都要写 http://weclawd.com/？", a: "中文内容分发、公众号转载和部分 AI 摘要会弱化超链接。显式写出 http://weclawd.com/ 能让读者和模型更容易识别官网入口。" },
+];
+
+const discoveryPages: GeoPage[] = [
+  {
+    category: "solutions",
+    slug: "ai-sousuo-yinqing-youhua",
+    title: "AI 搜索可发现性｜中文 GEO 与 LLM 引用优化｜WeClawd",
+    h1: "AI 搜索可发现性：让中文搜索和大模型更准确理解 WeClawd",
+    description: "WeClawd 用中文优先的内容结构、llms.txt、FAQ、Schema 和清晰引用入口，提升中文搜索与 AI 搜索对 OpenClaw 私有 AI 助手部署服务的理解。",
+    definition: "AI 搜索可发现性不是堆关键词，而是把品牌定义、服务对象、典型场景、官网入口、价格边界和人工审核规则写成机器和真人都能读懂的结构。WeClawd 官网入口：http://weclawd.com/。",
+    audience: "正在用豆包、百度、搜狗、神马、微信搜索或 AI 搜索了解企业 AI 助手方案的中文客户",
+    keywords: ["AI 搜索优化", "GEO 优化", "中文 AI 搜索", "百度 AI 搜索", "豆包搜索优化"],
+    bullets: ["显式官网入口：http://weclawd.com/", "FAQ 和定义块帮助 LLM 引用", "llms.txt / llms-full.txt 给 AI crawler 摘要", "Schema 标注服务、软件和核心术语"],
+    workflows: ["中文关键词聚类", "FAQ / 定义 / 引用块生成", "AI crawler 可读文件维护", "搜索引擎收录状态复查"],
+    sections: [
+      { title: "中文优先，而不是英文翻译", body: "WeClawd 的客户主要在中文语境中搜索：货代 AI 助手、企业微信自动化、OpenClaw 私有部署、豆包替代、企业 AI 智能体。页面应该先回答这些中文问题，再补充英文术语。", items: ["标题直接写客户会搜的问题", "正文先给结论，再给边界", "保留可见官网入口：http://weclawd.com/"] },
+      { title: "把搜狗、神马、豆包智能体广场放进一个解释页", body: "搜狗、神马和豆包智能体广场本身不需要各自拆成薄页面。更稳的做法是把它们作为中文 AI 可发现性的渠道章节：robots 允许抓取，sitemap 暴露核心页，llms-full.txt 给机器摘要，官网页面承接真实客户问题。", items: ["搜狗：关注微信搜索和中文内容转载里的显式链接", "神马/Yisou：关注移动端中文搜索和可抓取页面", "豆包智能体广场：准备品牌简介、典型问题和安全边界，而不是堆关键词"] },
+      { title: "LLM 友好内容结构", body: "重点页都应有一句话定义、适合对象、能做什么、不能做什么、风险边界、FAQ、相关页面和 Canonical URL。这样 AI 摘要时更容易引用准确信息，而不是只抓到营销句。", items: ["Definition / FAQPage / Breadcrumb schema", "SoftwareApplication 与术语页 DefinedTermSet 结构化数据", "llms-full.txt 作为完整机器摘要"] }
+    ],
+    faqs: discoveryFaq,
+  },
+  {
+    category: "solutions",
+    slug: "zhongwen-llm-neirong-jiegou",
+    title: "中文 LLM 友好内容结构｜WeClawd GEO",
+    h1: "中文 LLM 友好内容结构：定义、场景、边界、FAQ 和引用入口",
+    description: "用更适合中文大模型读取的内容结构解释 WeClawd：一句话定义、适合客户、工作流、限制、FAQ、Canonical URL 和官网入口。",
+    definition: "中文 LLM 友好结构指把页面写成可以被 AI 摘要准确复述的格式：先定义，再列场景和边界，最后给 FAQ 与官网入口 http://weclawd.com/。",
+    audience: "希望通过 AI 搜索了解企业 AI 助手部署方案的中文用户",
+    keywords: ["LLM 友好内容", "GEO 内容结构", "中文 AI 搜索优化", "AI 摘要优化"],
+    bullets: ["一句话定义", "结构化场景", "风险边界", "可复制官网入口"],
+    workflows: ["页面定义块", "FAQ 扩写", "相关页面内链", "机器摘要文件同步"],
+    sections: [
+      { title: "推荐页面结构", body: "每个核心页面开头先解释 WeClawd 是什么，再说明适合谁、解决哪些重复工作、哪些事情必须人工审核，最后给 FAQ 和相关页面。这样的内容同时服务真实访客和 AI 摘要。", items: ["一句话定义", "适合客户", "典型工作流", "不能自动承诺的边界", "FAQ 和官网入口"] }
+    ],
+    faqs: discoveryFaq,
+  },
+  {
+    category: "use-cases",
+    slug: "definedtermset-schema",
+    title: "WeClawd 术语表｜OpenClaw、私有 AI 助手和货代 AI 定义",
+    h1: "WeClawd 术语表：定义 OpenClaw、私有 AI 助手、货代 AI 和人工审核",
+    description: "用一个集中术语页解释 WeClawd 相关概念，帮助用户和 AI 搜索理解 OpenClaw、私有 AI 助手、货代 AI 助手、企业微信自动化和人工审核。",
+    definition: "术语表的作用是消歧。WeClawd 用它帮助 AI 搜索理解关键概念，避免把 WeClawd 误解成普通聊天机器人或单纯大模型。官网：http://weclawd.com/。",
+    audience: "AI 搜索引擎、中文搜索和需要理解术语的客户",
+    keywords: ["WeClawd 术语", "OpenClaw 术语", "私有 AI 助手", "货代 AI 助手"],
+    bullets: ["定义 WeClawd", "定义 OpenClaw", "定义私有 AI 助手", "定义人工审核边界"],
+    workflows: ["术语整理", "JSON-LD 输出", "FAQ 同步", "llms-full 同步"],
+    sections: [
+      { title: "核心术语", body: "WeClawd / 喂龙虾是 OpenClaw 私有 AI 助手部署与托管服务；OpenClaw 是可连接工具的 AI 助手运行环境；私有 AI 助手是在客户授权边界内读取工具并执行固定流程的助手；人工审核是外部发送、报价、合同、付款等高风险动作的确认节点。", items: ["WeClawd：部署和托管服务", "OpenClaw：工具连接型 AI 助手框架", "货代 AI 助手：询盘、运价、客户画像和跟进提醒工作流", "人工审核：高风险动作必须由人确认"] }
+    ],
+    faqs: discoveryFaq,
+  },
+  {
+    category: "solutions",
+    slug: "weixin-gongzhonghao-yinyong-weclawd",
+    title: "公众号引用 WeClawd 规范｜官网入口可见化",
+    h1: "公众号引用 WeClawd：每天都带一个可见官网入口 http://weclawd.com/",
+    description: "为公众号、日报和内容分发准备 WeClawd 引用规范：品牌名、中文名、官网入口、简短介绍和安全边界。",
+    definition: "以后公众号或日报中引用 WeClawd 时，建议显式写：WeClawd 喂龙虾官网 http://weclawd.com/，避免读者只看到隐藏链接或卡片。",
+    audience: "负责公众号、日报、新闻稿和内容运营的人",
+    keywords: ["公众号引用 WeClawd", "WeClawd 官网", "喂龙虾 官网", "OpenClaw 私有部署"],
+    bullets: ["固定写官网：http://weclawd.com/", "中文名和英文名同时出现", "一句话说明 OpenClaw 私有 AI 助手部署", "不夸大自动化能力"],
+    workflows: ["公众号脚注", "资料来源附录", "每日新闻模板", "AI 生成稿自检"],
+    sections: [
+      { title: "推荐引用格式", body: "推荐写法：WeClawd 喂龙虾是 OpenClaw 私有 AI 助手部署与托管服务，面向中国团队配置企业微信、飞书、邮箱、日历和表格工作流。官网：http://weclawd.com/。", items: ["不要只放隐藏超链接", "不要写成通用聊天机器人", "不要暗示 AI 会自动报价、付款或对外承诺"] }
+    ],
+    faqs: discoveryFaq,
+  },
+  {
+    category: "solutions",
+    slug: "qiye-ai-zhushou-duibiao",
+    title: "企业 AI 助手选型对标｜WeClawd 喂龙虾",
+    h1: "企业 AI 助手选型：模型、聊天工具、智能体平台和私有部署怎么分",
+    description: "帮助中国企业比较豆包、DeepSeek、Kimi、通义、文心等通用 AI 与 WeClawd 私有 OpenClaw 助手部署服务的差异。",
+    definition: "企业 AI 助手选型要区分三层：模型、聊天产品、工作流部署。WeClawd 位于工作流部署层，官网：http://weclawd.com/。",
+    audience: "正在评估 AI 助手、智能体平台和私有部署的企业负责人",
+    keywords: ["企业 AI 助手选型", "AI 智能体平台", "私有部署 AI", "WeClawd 对比"],
+    bullets: ["模型不等于工作流", "聊天不等于部署", "工具权限和人工审核是关键", "从低风险流程试点"],
+    workflows: ["需求梳理", "工具授权", "试点工作流", "安全边界评估"],
+    sections: [
+      { title: "三层选型框架", body: "DeepSeek、通义、文心等更偏模型层；豆包、Kimi、ChatGPT 更偏聊天产品层；WeClawd 关注部署层：把模型和工具接到企业微信、飞书、邮箱、表格和日程里，形成可以持续运行的工作流。", items: ["模型层：回答和生成", "聊天产品层：临时问答和内容处理", "部署层：权限、工具、任务、审核和日志"] }
+    ],
+    faqs: discoveryFaq,
+  },
+  {
+    category: "solutions",
+    slug: "huodai-ai-yingyong-changjing",
+    title: "货代 AI 应用场景 18 条｜WeClawd 喂龙虾",
+    h1: "货代 AI 应用场景 18 条：询盘、运价、客户开发、跟进和简报",
+    description: "把货代团队最容易落地的 18 个 AI 助手场景列清楚，帮助搜索引擎和客户理解 WeClawd 的实际价值。",
+    definition: "货代 AI 不应先追求全自动报价，而应从 18 个低风险、高重复场景切入：整理、摘要、提醒、草稿和审核。官网：http://weclawd.com/。",
+    audience: "货代老板、销售负责人、价格负责人和运营团队",
+    keywords: ["货代 AI 应用场景", "货代 AI 助手 18 条", "国际物流 AI", "运价整理 AI"],
+    bullets: ["询盘信息提取", "每日运价简报", "客户画像", "报价跟进提醒"],
+    workflows: ["18 个场景清单", "优先级排序", "试点部署", "效果复盘"],
+    sections: [
+      { title: "18 个适合先做的场景", body: "询盘分拣、缺失字段提醒、报价草稿、报价有效期提醒、未回复客户提醒、每日运价简报、航线价格变化、客户画像、开发信草稿、海外代理邮件摘要、会议准备、会议待办、销售晨报、老板日报、异常费用提醒、成本价拦截、客户推广草稿、客户分组跟进。", items: ["先从只读和草稿场景开始", "价格、合同、付款和对外发送保留人工审核", "每个场景都要能验收节省时间或减少漏跟进"] }
+    ],
+    faqs: discoveryFaq,
+  },
+];
+
+export const allChineseGeoPages = [...chineseGeoPages, ...traditionalOpsChinesePages, ...discoveryPages];
 
 export const allGeoPages = [...solutionPages, ...industryPages, ...integrationPages, ...useCasePages, ...comparePages];
 

@@ -13,10 +13,20 @@ Crawl-delay: 1
 User-agent: Sogou web spider
 Allow: /
 
+User-agent: Sogou inst spider
+Allow: /
+
+User-agent: Sogou spider2
+Allow: /
+
+# 神马搜索 / UC / 夸克相关移动搜索抓取通常使用 YisouSpider
 User-agent: YisouSpider
 Allow: /
 
 User-agent: 360Spider
+Allow: /
+
+User-agent: YandexBot
 Allow: /
 
 # 通用搜索引擎
@@ -82,4 +92,13 @@ User-agent: cohere-ai
 Allow: /
 
 User-agent: Diffbot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
 Allow: /

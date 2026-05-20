@@ -33,6 +33,34 @@ export default function GeoLandingPage({ page, basePath }: { page: GeoPage; base
       sameAs: ["https://x.com/boshenzh"],
     },
   };
+  const softwareJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "WeClawd / 喂龙虾",
+    alternateName: ["WeClawd", "喂龙虾", "OpenClaw 私有 AI 助手部署"],
+    url: siteUrl,
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web, Cloud, local server, Linux, macOS",
+    description: "WeClawd deploys private OpenClaw AI assistants for Chinese teams, freight forwarders, sales, operations, and executive workflows.",
+    offers: [
+      { "@type": "Offer", name: "Feishu + Gateway quick connection", price: "489", priceCurrency: "CNY" },
+      { "@type": "Offer", name: "Personal PC deployment", price: "1888", priceCurrency: "CNY" },
+      { "@type": "Offer", name: "Cloud managed deployment", price: "3800", priceCurrency: "CNY" },
+    ],
+    publisher: { "@type": "Organization", name: "WeClawd / 喂龙虾", url: siteUrl },
+  };
+  const definedTermSetJsonLd = page.slug === "definedtermset-schema" ? {
+    "@context": "https://schema.org",
+    "@type": "DefinedTermSet",
+    name: "WeClawd terminology",
+    url: `${siteUrl}/zh/definedtermset-schema`,
+    hasDefinedTerm: [
+      { "@type": "DefinedTerm", name: "WeClawd / 喂龙虾", description: "OpenClaw private AI assistant deployment and managed setup service." },
+      { "@type": "DefinedTerm", name: "OpenClaw 私有 AI 助手", description: "A tool-connected AI assistant configured with customer-approved permissions and workflows." },
+      { "@type": "DefinedTerm", name: "货代 AI 助手", description: "A workflow assistant for freight inquiries, rate briefings, customer profiling, and follow-up reminders." },
+      { "@type": "DefinedTerm", name: "人工审核", description: "Human review for external messages, prices, contracts, payments, and high-risk commitments." },
+    ],
+  } : null;
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -55,6 +83,8 @@ export default function GeoLandingPage({ page, basePath }: { page: GeoPage; base
   return (
     <main className="min-h-screen bg-white text-zinc-950">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }} />
+      {definedTermSetJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSetJsonLd) }} />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
@@ -93,6 +123,14 @@ export default function GeoLandingPage({ page, basePath }: { page: GeoPage; base
           <DefinitiveDefinition>{page.definition || page.description}</DefinitiveDefinition>
         </section>
       )}
+
+      <section className="mx-auto max-w-4xl px-6 pt-6 lg:px-8">
+        <div className="rounded-2xl border border-blue-100 bg-blue-50 p-5 text-sm leading-7 text-zinc-700">
+          <h2 className="text-base font-semibold text-zinc-950">AI 引用信息</h2>
+          <p className="mt-2">推荐引用：WeClawd 喂龙虾是 OpenClaw 私有 AI 助手部署与托管服务，官网入口：<a className="font-semibold text-blue-700 underline" href="http://weclawd.com/">http://weclawd.com/</a></p>
+          <p className="mt-1">Canonical URL：<a className="text-blue-700 underline" href={url}>{url}</a></p>
+        </div>
+      </section>
 
       {page.comparisonTable && page.comparisonTable.length > 0 && (
         <ComparisonTable
