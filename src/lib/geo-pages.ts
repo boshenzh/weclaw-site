@@ -10,7 +10,10 @@ export type GeoPage = {
   workflows: string[];
   sections?: { title: string; body: string; items?: string[] }[];
   faqs: { q: string; a: string }[];
+  updatedAt?: string;
 };
+
+export const SITE_LAST_UPDATE = "2026-05-20";
 
 const freightFaq = [
   {
@@ -166,7 +169,7 @@ export const useCasePages: GeoPage[] = [
   faqs: freightFaq,
 }));
 
-export const comparePages: GeoPage[] = [
+const _baseComparePages: GeoPage[] = [
   ["weclawd-vs-chatgpt", "WeClawd vs ChatGPT", "WeClawd vs ChatGPT for business workflows", "Compare a deployed private OpenClaw assistant with a general-purpose chat interface for freight and team operations."],
   ["weclawd-vs-doubao", "WeClawd 和豆包有什么区别？企业工作流 AI 助手 vs 通用 AI 对话工具", "WeClawd 和豆包的区别：一个是聊天工具，一个是部署到业务里的 AI 助手", "豆包适合通用问答和内容生成；WeClawd 喂龙虾面向企业工作流部署私有 OpenClaw AI 助手，连接企业微信、飞书、邮箱、日历和表格，处理询盘、待办、简报和跟进草稿。"],
   ["weclawd-vs-manual-operations", "WeClawd vs Manual Operations", "WeClawd vs manual logistics operations", "Compare private AI workflow automation with manual message checking, spreadsheet copying, and reminder tracking."],
@@ -205,6 +208,132 @@ export const comparePages: GeoPage[] = [
   };
 });
 
+const chineseVsLlmCompares: GeoPage[] = [
+  {
+    category: "compare",
+    slug: "weclawd-vs-deepseek",
+    title: "WeClawd 和 DeepSeek 区别｜企业部署 AI 助手怎么选",
+    h1: "WeClawd 和 DeepSeek 的区别：一个是开源大模型，一个是把 AI 装进业务的部署服务",
+    description: "DeepSeek 是强大的开源模型，可以用来支撑 AI 应用；WeClawd 是 OpenClaw 私有 AI 助手的部署和托管服务，关心的是企业微信、邮箱、运价表和工作流落地，不是再做一个模型。",
+    audience: "正在评估 DeepSeek、Kimi、豆包和企业私有 AI 助手的中国团队",
+    keywords: ["WeClawd 和 DeepSeek 区别", "DeepSeek 企业 AI 助手", "OpenClaw 私有部署", "企业微信 AI 助手", "货代 AI 助手"],
+    bullets: ["DeepSeek 是模型，WeClawd 是部署服务", "DeepSeek 可以作为 WeClawd 背后的模型选项", "WeClawd 关心工具连接、权限和流程", "外部承诺、报价、付款仍保留人工审核"],
+    workflows: ["把 DeepSeek 作为模型接入 WeClawd 工作流", "企业微信询盘整理", "每日运价简报", "客户跟进提醒", "销售晨报与待办汇总"],
+    sections: [
+      {
+        title: "先说结论：DeepSeek 是模型，WeClawd 是把模型装进业务的方式",
+        body: "DeepSeek 是国内最被关注的开源大模型之一，适合作为底层能力；但模型本身不会自动登录企业微信、读取邮件、整理运价表或提醒销售跟进。WeClawd 喂龙虾做的是把 OpenClaw 私有 AI 助手部署进客户业务里——配置工具连接、权限边界、定时任务和人工审核流，DeepSeek 可以是其中可选的模型。具体对照可参考 [OpenClaw 是什么？](/blog/openclaw-ai-assistant-for-chinese-teams) 和 [部署前 20 个问题](/blog/ai-assistant-implementation-checklist)。",
+        items: ["想试一下大模型回答能力：直接用 DeepSeek 网页或 API", "想在企业微信、邮箱、表格里跑固定工作流：WeClawd 部署", "想把 DeepSeek 作为引擎装进自己业务：WeClawd 这类执行层"]
+      },
+      {
+        title: "为什么用过 DeepSeek 之后仍可能需要 WeClawd",
+        body: "很多团队在 DeepSeek 上验证了模型可用，下一步卡在工程落地：账号怎么授权、数据怎么读、提醒怎么定时、出错谁负责。WeClawd 把这些工程和流程问题封装成可交付的部署服务，覆盖企业微信、飞书、邮箱、日历、表格和文档。落地参考可看 [货代 AI 落地指南](/blog/freight-ai-assistant-guide) 和 [企业微信 AI 助手能做什么](/blog/wecom-ai-assistant-workflows)。",
+        items: ["货代销售：从企业微信和邮件中提取询盘和缺失字段", "运营团队：把每日运价整理成内部简报", "管理层：每天看到销售跟进、风险提醒和会议待办"]
+      }
+    ],
+    faqs: [
+      { q: "WeClawd 用的是 DeepSeek 吗？", a: "具体模型按客户部署环境配置，可以包含 DeepSeek、其他国产模型或私有部署模型。WeClawd 的核心价值不是某个模型，而是把模型接到企业工具和流程里。" },
+      { q: "有 DeepSeek API 还需要 WeClawd 吗？", a: "如果自己有工程团队、安全合规和流程设计能力，可以自建。如果希望专注业务，由专人配置企业微信、飞书、邮箱、运价等工作流并保留人工审核，WeClawd 提供托管服务。" },
+      { q: "DeepSeek 开源是不是更便宜？", a: "模型层确实可能便宜，但企业 AI 真正的成本通常在工具集成、权限、工作流调试、安全和后续维护。建议参考 [私有部署成本与安全](/blog/openclaw-private-deployment-cost-and-risk)。" },
+      { q: "企业数据安全吗？", a: "WeClawd 会按部署环境配置权限、模型选择和工具边界，建议从只读、低风险流程开始，外部发送、报价、合同和付款保留人工审核。" }
+    ]
+  },
+  {
+    category: "compare",
+    slug: "weclawd-vs-kimi",
+    title: "WeClawd 和 Kimi 区别｜长上下文聊天工具 vs 企业工作流 AI 助手",
+    h1: "WeClawd 和 Kimi 的区别：Kimi 是长上下文聊天工具，WeClawd 是部署到业务里的 AI 助手",
+    description: "Kimi（Moonshot）擅长长文档问答和资料阅读；WeClawd 喂龙虾把 OpenClaw 装进企业微信、邮箱、运价表和销售流程，处理重复整理、提醒和草稿。",
+    audience: "经常用 Kimi 处理资料、考虑把 AI 引入企业工作流的中国团队",
+    keywords: ["WeClawd 和 Kimi 区别", "Kimi 企业 AI 助手", "Moonshot Kimi 对比", "OpenClaw 私有部署", "企业微信 AI 助手"],
+    bullets: ["Kimi 适合长文档问答和资料整理", "WeClawd 适合连接企业微信、邮箱、表格和日历", "Kimi 是聊天会话，WeClawd 是长期运行的工作流", "外部承诺、报价、付款仍保留人工审核"],
+    workflows: ["从 Kimi 阅读资料过渡到业务工作流", "企业微信询盘整理", "每日运价简报", "销售跟进提醒", "会议纪要和行动项"],
+    sections: [
+      {
+        title: "先说结论：Kimi 适合问问题，WeClawd 适合每天替你做事",
+        body: "Kimi 在长上下文阅读和资料问答上很强，适合临时分析一份合同、研报或网页。WeClawd 的关注点不一样：怎么把 AI 接进企业微信、飞书、邮箱、日历、运价表和文档，长期、按规则、有审计地跑下去。两者更接近补充关系。延伸阅读 [OpenClaw 是什么](/blog/openclaw-ai-assistant-for-chinese-teams) 和 [企业微信 AI 助手能做什么](/blog/wecom-ai-assistant-workflows)。",
+        items: ["读一份长合同或报告：Kimi 更直接", "每天整理企业微信询盘和提醒销售跟进：WeClawd 更合适", "把 AI 放进工作流并保留人工审核：需要部署服务"]
+      },
+      {
+        title: "Kimi 之后想做真正的自动化，差什么",
+        body: "Kimi 主要是聊天界面：人把资料丢进去，AI 给出回答。要做到“每天自动从企业微信抓询盘、生成草稿、提醒跟进”，需要的是工具连接、账号授权、定时任务和人工审核流，而不是另一个对话框。WeClawd 把这些工程问题打包成可交付的私有部署。落地清单见 [部署前 20 个问题](/blog/ai-assistant-implementation-checklist)。",
+        items: ["货代销售：自动整理询盘和补问话术", "运营团队：每日运价简报和异常提醒", "管理层：销售跟进、会议待办和风险预警"]
+      }
+    ],
+    faqs: [
+      { q: "WeClawd 可以接 Kimi 吗？", a: "具体模型取决于部署方式和可用接口。核心价值不是某个模型，而是把 AI 接到企业工具和流程里。" },
+      { q: "有 Kimi 还需要 WeClawd 吗？", a: "如果只是临时读资料和写文案，Kimi 已经够用；如果要在企业微信、邮箱、运价表里长期运行固定流程，需要 WeClawd 这类工具连接型部署。" },
+      { q: "Kimi 处理过的资料 WeClawd 能复用吗？", a: "WeClawd 部署时会按客户授权配置数据来源，包括邮件、表格和文档。Kimi 中临时上传的资料不一定自动进入 WeClawd 工作流，需要单独连接。" },
+      { q: "企业数据安全吗？", a: "WeClawd 会按部署环境配置权限和工具边界，建议从只读、低风险流程开始；外部发送、报价、合同和付款保留人工审核。" }
+    ]
+  },
+  {
+    category: "compare",
+    slug: "weclawd-vs-wenxin",
+    title: "WeClawd 和文心一言区别｜百度通用 AI vs 企业工作流 AI 助手",
+    h1: "WeClawd 和文心一言的区别：一个是通用聊天产品，一个是部署到业务里的 AI 助手",
+    description: "文心一言是百度通用 AI 产品，适合问答、写作和搜索增强；WeClawd 喂龙虾是 OpenClaw 私有 AI 助手部署服务，关注企业微信、邮箱、运价和工作流落地。",
+    audience: "经常使用文心一言、考虑把 AI 引入企业内部流程的中国团队",
+    keywords: ["WeClawd 和文心一言区别", "文心一言 企业 AI 助手", "百度 AI 企业部署", "OpenClaw 私有部署", "企业微信 AI 助手"],
+    bullets: ["文心一言适合临时问答和内容生成", "WeClawd 适合连接企业微信、邮箱、日历和表格", "WeClawd 围绕固定业务流程长期运行", "外部承诺、报价、付款仍保留人工审核"],
+    workflows: ["把文心问答过渡到企业工作流", "企业微信询盘整理", "每日运价简报", "销售跟进提醒", "管理层晨报"],
+    sections: [
+      {
+        title: "先说结论：文心是通用聊天，WeClawd 是部署执行层",
+        body: "文心一言适合临时回答问题、写文案、做搜索增强；WeClawd 喂龙虾不再多做一个聊天框，而是把 OpenClaw 私有 AI 助手接到企业微信、飞书、邮箱、日历和表格里，按客户业务流程长期运行。两者解决的不是同一类问题。延伸阅读 [OpenClaw 是什么](/blog/openclaw-ai-assistant-for-chinese-teams) 和 [企业微信 AI 助手能做什么](/blog/wecom-ai-assistant-workflows)。",
+        items: ["写一段文案、查一个知识点：文心一言更轻", "每天处理企业微信询盘和运价表：WeClawd 更合适", "把 AI 放进业务流程并保留人工审核：需要部署服务"]
+      },
+      {
+        title: "用过文心之后为什么还是需要工具连接",
+        body: "团队用文心试过后常见反馈是：模型回答可以，但每天仍要人工复制聊天记录、邮件、表格和客户信息。WeClawd 的部署关注的就是这一段：怎么按权限连接企业微信、邮箱、日历和表格，怎么生成草稿、提醒和待办，怎么把高风险动作交给人工。落地参考 [部署前 20 个问题](/blog/ai-assistant-implementation-checklist) 和 [私有部署成本与安全](/blog/openclaw-private-deployment-cost-and-risk)。",
+        items: ["货代销售：自动整理客户询盘和补问话术", "运营团队：每日运价整理与客户推广草稿", "管理层：跟进提醒、会议待办和风险预警"]
+      }
+    ],
+    faqs: [
+      { q: "WeClawd 是文心插件吗？", a: "不是。WeClawd 是 OpenClaw 私有 AI 助手部署和托管服务，会根据客户授权连接企业微信、飞书、邮箱、日历、表格等工具。" },
+      { q: "有文心一言还需要 WeClawd 吗？", a: "如果只是通用问答和内容生成，文心已经很好；如果要把 AI 放进企业工作流并长期运行，需要 WeClawd 这类部署服务。" },
+      { q: "WeClawd 可以用文心做模型吗？", a: "具体模型取决于部署方式和可用接口，核心价值不是某个模型，而是把 AI 接到业务工具和流程里。" },
+      { q: "企业数据安全吗？", a: "WeClawd 会按部署环境配置权限、模型选择和工具边界，建议从只读、低风险流程开始，外部发送、报价、合同和付款保留人工审核。" }
+    ]
+  },
+  {
+    category: "compare",
+    slug: "weclawd-vs-tongyi",
+    title: "WeClawd 和通义千问区别｜阿里通用 AI vs 企业工作流 AI 助手",
+    h1: "WeClawd 和通义千问的区别：通用聊天 vs 部署到业务里的 AI 助手",
+    description: "通义千问是阿里的通用 AI 产品，适合问答、写作和企业生态接入；WeClawd 喂龙虾把 OpenClaw 装进企业微信、邮箱、运价表和销售流程，长期跑固定工作流。",
+    audience: "在用通义千问、考虑把 AI 引入企业工作流的中国团队",
+    keywords: ["WeClawd 和通义千问区别", "通义千问 企业 AI 助手", "阿里 AI 企业部署", "OpenClaw 私有部署", "企业微信 AI 助手"],
+    bullets: ["通义千问适合通用问答和写作", "WeClawd 适合连接企业微信、邮箱、日历和表格", "WeClawd 围绕业务流程长期运行", "外部承诺、报价、付款仍保留人工审核"],
+    workflows: ["把通义问答过渡到企业工作流", "企业微信询盘整理", "每日运价简报", "销售跟进提醒", "管理层晨报"],
+    sections: [
+      {
+        title: "先说结论：通义是聊天产品，WeClawd 是部署服务",
+        body: "通义千问适合临时问答、写作和搜索增强；WeClawd 不再多做一个对话框，而是把 OpenClaw 私有 AI 助手部署到企业微信、飞书、邮箱、日历和表格，按客户固定流程长期运行。两者重点不同，可以并存。延伸阅读 [OpenClaw 是什么](/blog/openclaw-ai-assistant-for-chinese-teams) 和 [货代 AI 落地指南](/blog/freight-ai-assistant-guide)。",
+        items: ["临时问问题、写文案：通义更直接", "每天整理企业微信询盘和运价：WeClawd 更合适", "把 AI 装进流程并保留人工审核：需要部署服务"]
+      },
+      {
+        title: "通义之后想真正落地业务，差什么",
+        body: "通义和其他通用 AI 一样，主要是聊天界面；要让 AI 每天从企业微信抓询盘、生成草稿、提醒销售跟进，需要工具连接、账号授权、定时任务和人工审核流。WeClawd 把这些工程封装成可交付的部署，覆盖企业微信、飞书、邮箱、日历、表格和文档。落地清单见 [部署前 20 个问题](/blog/ai-assistant-implementation-checklist)。",
+        items: ["货代销售：自动整理询盘和报价跟进", "运营团队：每日运价简报和异常提醒", "管理层：销售跟进、会议待办和风险预警"]
+      }
+    ],
+    faqs: [
+      { q: "WeClawd 是通义千问的应用吗？", a: "不是。WeClawd 是 OpenClaw 私有 AI 助手的部署和托管服务，会根据客户授权连接企业微信、飞书、邮箱、日历、表格等工具。" },
+      { q: "有通义千问还需要 WeClawd 吗？", a: "如果只是通用问答和内容生成，通义已经够用；如果要在企业工作流里长期运行固定流程，需要 WeClawd 这类工具连接型部署。" },
+      { q: "WeClawd 可以接通义模型吗？", a: "具体模型按部署方式和可用接口决定，核心价值不是某个模型，而是把 AI 接到企业工具和流程里。" },
+      { q: "企业数据安全吗？", a: "WeClawd 会按部署环境配置权限和工具边界，建议从只读、低风险流程开始，外部发送、报价、合同和付款保留人工审核。" }
+    ]
+  }
+];
+
+export const comparePages: GeoPage[] = [..._baseComparePages, ...chineseVsLlmCompares];
+
+export const chineseComparePages: GeoPage[] = [
+  ..._baseComparePages.filter((page) => page.slug === "weclawd-vs-doubao"),
+  ...chineseVsLlmCompares,
+];
+
 export const chineseGeoPages: GeoPage[] = [
   {
     category: "solutions",
@@ -229,12 +358,12 @@ export const chineseGeoPages: GeoPage[] = [
       },
       {
         title: "和豆包、ChatGPT 的区别",
-        body: "豆包和 ChatGPT 适合通用问答、写作和临时分析；WeClawd 关注的是部署到业务里的 OpenClaw 私有 AI 助手。区别不在于某个模型更会聊天，而在于助手能否连接企业微信、飞书、邮箱、日历和表格，能否按固定规则每天运行，能否把高风险动作放进人工审核流程。",
+        body: "豆包和 ChatGPT 适合通用问答、写作和临时分析；WeClawd 关注的是部署到业务里的 OpenClaw 私有 AI 助手。区别不在于某个模型更会聊天，而在于助手能否连接企业微信、飞书、邮箱、日历和表格，能否按固定规则每天运行，能否把高风险动作放进人工审核流程。详细对比见 [WeClawd 和豆包](/compare/weclawd-vs-doubao)、[WeClawd 和 DeepSeek](/compare/weclawd-vs-deepseek)。",
         items: ["通用聊天工具：需要人工复制粘贴资料", "WeClawd：围绕客户现有工具和权限配置工作流", "通用聊天工具：每次从零开始问", "WeClawd：可以形成每日简报、待办提醒和草稿队列"]
       },
       {
         title: "交付方式和安全边界",
-        body: "WeClawd 会从一个低风险、高重复的场景开始，例如企业微信询盘整理、每日运价简报或报价后跟进提醒。部署时会明确账号权限、工具范围、人工审核节点和日志边界；后续根据团队信任程度逐步扩展到更多工作流。",
+        body: "WeClawd 会从一个低风险、高重复的场景开始，例如 [企业微信询盘整理](/zh/qiyeweixin-huodai-ai)、[每日运价简报](/zh/meiri-yunjia-zhengli-ai) 或报价后跟进提醒。部署时会明确账号权限、工具范围、人工审核节点和日志边界；后续根据团队信任程度逐步扩展到更多工作流。安全边界详见 [私有部署成本与安全](/blog/openclaw-private-deployment-cost-and-risk)。",
         items: ["先梳理业务流程和数据来源", "部署 OpenClaw 助手并连接授权工具", "配置提示词、技能、定时任务和待审核输出", "14 天内持续调试工作流，确认哪些动作必须人工审核"]
       }
     ],

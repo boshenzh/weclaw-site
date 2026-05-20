@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { chineseBlogPages, getChineseBlogPage } from "@/lib/chinese-blog-pages";
 import AuthorBio from "@/components/AuthorBio";
+import { renderInline } from "@/components/inline-link";
 
 const siteUrl = "https://www.weclawd.com";
 
@@ -107,11 +108,11 @@ export default async function ChineseBlogArticle({ params }: { params: Promise<{
             <section key={section.title}>
               <h2 className="text-3xl font-bold tracking-tight">{section.title}</h2>
               <div className="mt-5 space-y-4 text-base leading-8 text-zinc-700">
-                {section.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                {section.body.map((paragraph) => <p key={paragraph}>{renderInline(paragraph)}</p>)}
               </div>
               {section.bullets && section.bullets.length > 0 && (
                 <ul className="mt-6 space-y-3 rounded-2xl border border-zinc-200 bg-zinc-50 p-6 text-sm leading-6 text-zinc-700">
-                  {section.bullets.map((bullet) => <li key={bullet}>• {bullet}</li>)}
+                  {section.bullets.map((bullet) => <li key={bullet}>• {renderInline(bullet)}</li>)}
                 </ul>
               )}
             </section>

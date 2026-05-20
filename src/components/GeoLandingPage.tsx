@@ -1,11 +1,13 @@
 import Link from "next/link";
-import { allGeoPages, categoryTitle, type GeoPage } from "@/lib/geo-pages";
+import { allGeoPages, categoryTitle, SITE_LAST_UPDATE, type GeoPage } from "@/lib/geo-pages";
 import AuthorBio from "@/components/AuthorBio";
+import { renderInline } from "@/components/inline-link";
 
 const siteUrl = "https://www.weclawd.com";
 
 export default function GeoLandingPage({ page, basePath }: { page: GeoPage; basePath?: string }) {
   const url = `${siteUrl}${basePath || `/${page.category}/${page.slug}`}`;
+  const updatedAt = page.updatedAt || SITE_LAST_UPDATE;
   const related = allGeoPages
     .filter((item) => item.slug !== page.slug)
     .filter((item) => item.category === page.category || item.keywords.some((kw) => page.keywords.join(" ").toLowerCase().includes(kw.toLowerCase().split(" ")[0] || "__")))
@@ -20,6 +22,8 @@ export default function GeoLandingPage({ page, basePath }: { page: GeoPage; base
     provider: { "@type": "Organization", name: "WeClawd / 喂龙虾", url: siteUrl },
     audience: { "@type": "Audience", audienceType: page.audience },
     keywords: page.keywords.join(", "),
+    dateModified: updatedAt,
+    datePublished: updatedAt,
     editor: {
       "@type": "Person",
       name: "Boshen",
@@ -77,6 +81,7 @@ export default function GeoLandingPage({ page, basePath }: { page: GeoPage; base
               </Link>
             </div>
             <AuthorBio variant="compact" />
+            <p className="mt-3 text-sm text-zinc-500">更新日期：{updatedAt}</p>
           </div>
         </div>
       </section>
@@ -117,10 +122,10 @@ export default function GeoLandingPage({ page, basePath }: { page: GeoPage; base
             {page.sections.map((section) => (
               <article key={section.title} className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm">
                 <h2 className="text-2xl font-bold tracking-tight text-zinc-950">{section.title}</h2>
-                <p className="mt-4 text-sm leading-7 text-zinc-600">{section.body}</p>
+                <p className="mt-4 text-sm leading-7 text-zinc-600">{renderInline(section.body)}</p>
                 {section.items && section.items.length > 0 && (
                   <ul className="mt-5 space-y-2 text-sm leading-6 text-zinc-700">
-                    {section.items.map((item) => <li key={item}>• {item}</li>)}
+                    {section.items.map((item) => <li key={item}>• {renderInline(item)}</li>)}
                   </ul>
                 )}
               </article>

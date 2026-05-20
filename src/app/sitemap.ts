@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { chineseBlogPages } from "@/lib/chinese-blog-pages";
 import { enPages } from "@/lib/en-pages";
-import { allChineseGeoPages } from "@/lib/geo-pages";
+import { allChineseGeoPages, chineseComparePages } from "@/lib/geo-pages";
 
 const baseUrl = "https://www.weclawd.com";
 
@@ -44,5 +44,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.88,
   }));
 
-  return [...core, ...zh, ...blog, ...en];
+  const compare: MetadataRoute.Sitemap = chineseComparePages.map((page) => ({
+    url: `${baseUrl}/compare/${page.slug}`,
+    lastModified: currentDate,
+    changeFrequency: "monthly",
+    priority: 0.85,
+  }));
+
+  return [...core, ...zh, ...blog, ...compare, ...en];
 }
