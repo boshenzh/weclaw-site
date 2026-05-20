@@ -8,11 +8,11 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.weclawd.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "喂龙虾 - OpenClaw AI 助手专业部署托管服务",
+    default: "喂龙虾 WeClawd｜OpenClaw 私有 AI 助手部署与托管服务",
     template: "%s | 喂龙虾",
   },
   description:
-    "喂龙虾提供 OpenClaw AI 助手的白手套部署与托管服务。支持飞书、钉钉、企业微信、Slack、Discord 等集成。当天完成部署，含 14 天专属客服服务与问题响应。适合 CEO/高管与团队的企业级 AI 智能体解决方案。",
+    "喂龙虾 WeClawd 面向中国团队提供 OpenClaw 私有 AI 助手部署与托管服务，支持企业微信、飞书、钉钉、邮箱、日历和表格工作流，适合货代、销售、客服、行政、法务和运营团队。",
   keywords: [
     "OpenClaw",
     "AI助手",
@@ -57,9 +57,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "zh_CN",
     url: siteUrl,
-    title: "喂龙虾 - OpenClaw AI 助手专业部署托管服务",
+    title: "喂龙虾 WeClawd｜OpenClaw 私有 AI 助手部署与托管服务",
     description:
-      "专业的 OpenClaw AI 助手部署与托管服务。支持飞书、钉钉、企业微信等多平台集成，当天完成部署，含 14 天专属客服服务。",
+      "面向中国团队的 OpenClaw 私有 AI 助手部署与托管服务，支持企业微信、飞书、钉钉、邮箱、日历和表格工作流。",
     siteName: "喂龙虾",
     images: [
       {
@@ -72,9 +72,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "喂龙虾 - OpenClaw AI 助手专业部署托管服务",
+    title: "喂龙虾 WeClawd｜OpenClaw 私有 AI 助手部署与托管服务",
     description:
-      "专业的 OpenClaw AI 助手部署和托管服务。支持多平台集成，当天完成部署。",
+      "面向中国团队的 OpenClaw 私有 AI 助手部署和托管服务，支持企业微信、飞书、邮箱、日历和表格工作流。",
     images: ["/logos/weclaw-logo.png"],
   },
   alternates: {

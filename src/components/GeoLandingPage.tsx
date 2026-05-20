@@ -88,13 +88,13 @@ export default function GeoLandingPage({ page, basePath }: { page: GeoPage; base
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight">What WeClawd configures</h2>
+              <h2 className="text-3xl font-bold tracking-tight">WeClawd 会配置什么</h2>
               <p className="mt-4 text-zinc-600 leading-7">
-                WeClawd is not a generic chatbot page. It is a deployment service for private OpenClaw assistants: tool access, permissions, security hardening, workflow design, and review boundaries are configured around the way your team already works.
+                WeClawd 不是一个普通聊天机器人页面，而是面向真实业务的 OpenClaw 私有 AI 助手部署服务：工具连接、账号权限、安全边界、工作流设计和人工审核节点，都会围绕你团队现有的企业微信、飞书、邮箱、日历、表格和文档来配置。
               </p>
             </div>
             <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-zinc-200">
-              <h3 className="font-semibold">Relevant workflows</h3>
+              <h3 className="font-semibold">相关工作流</h3>
               <ul className="mt-4 space-y-3 text-sm leading-6 text-zinc-700">
                 {page.workflows.map((workflow) => <li key={workflow}>• {workflow}</li>)}
               </ul>
@@ -103,8 +103,26 @@ export default function GeoLandingPage({ page, basePath }: { page: GeoPage; base
         </div>
       </section>
 
+      {page.sections && page.sections.length > 0 && (
+        <section className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-2">
+            {page.sections.map((section) => (
+              <article key={section.title} className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm">
+                <h2 className="text-2xl font-bold tracking-tight text-zinc-950">{section.title}</h2>
+                <p className="mt-4 text-sm leading-7 text-zinc-600">{section.body}</p>
+                {section.items && section.items.length > 0 && (
+                  <ul className="mt-5 space-y-2 text-sm leading-6 text-zinc-700">
+                    {section.items.map((item) => <li key={item}>• {item}</li>)}
+                  </ul>
+                )}
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+
       <section className="mx-auto max-w-4xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-bold tracking-tight">Questions this page answers</h2>
+        <h2 className="text-3xl font-bold tracking-tight">常见问题</h2>
         <div className="mt-8 divide-y divide-zinc-200 rounded-2xl border border-zinc-200 bg-white">
           {page.faqs.map((faq) => (
             <div key={faq.q} className="p-6">
@@ -118,7 +136,7 @@ export default function GeoLandingPage({ page, basePath }: { page: GeoPage; base
       {related.length > 0 && (
         <section className="border-t border-zinc-200 bg-white py-16">
           <div className="mx-auto max-w-6xl px-6 lg:px-8">
-            <h2 className="text-2xl font-bold tracking-tight">Related WeClawd pages</h2>
+            <h2 className="text-2xl font-bold tracking-tight">相关 WeClawd 页面</h2>
             <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {related.map((item) => (
                 <Link key={`${item.category}/${item.slug}`} href={`/${item.category}/${item.slug}`} className="rounded-2xl border border-zinc-200 p-5 hover:border-blue-300 hover:bg-blue-50/40">
@@ -134,10 +152,10 @@ export default function GeoLandingPage({ page, basePath }: { page: GeoPage; base
 
       <section className="bg-blue-600 py-16 text-white">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
-          <h2 className="text-3xl font-bold">Start with one workflow, then expand</h2>
-          <p className="mt-4 text-blue-100">WeClawd can start from one concrete workflow—freight inquiry triage, daily rate briefing, email triage, or sales follow-up—and expand after the assistant proves useful.</p>
+          <h2 className="text-3xl font-bold">先从一个工作流开始，再逐步扩展</h2>
+          <p className="mt-4 text-blue-100">WeClawd 可以先从一个明确场景开始：货代询盘整理、每日运价简报、邮件分类、销售跟进或会议待办。跑通以后，再逐步扩大授权和自动化范围。</p>
           <a href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25" target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex rounded-lg bg-white px-6 py-3 text-sm font-semibold text-blue-700 hover:bg-blue-50">
-            Book a 15-minute consultation
+            预约 15 分钟咨询
           </a>
         </div>
       </section>

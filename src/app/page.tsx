@@ -342,9 +342,9 @@ export default function Home() {
               远程部署，全球服务，从第一天起就安全加固。
             </p>
 
-            <p className="text-lg text-zinc-500 mb-10 max-w-2xl mx-auto">
-              基于 OpenClaw 的白手套部署和托管服务。适合 4-50
-              人的团队，创始人和高管。
+            <p className="text-lg text-zinc-500 mb-10 max-w-3xl mx-auto">
+              喂龙虾 WeClawd 是面向中国团队的 OpenClaw 私有 AI
+              助手部署与托管服务，帮助企业把企业微信、飞书、邮箱、日历和表格里的重复工作交给可控的 AI 助手处理。
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">

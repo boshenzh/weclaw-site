@@ -8,6 +8,7 @@ export type GeoPage = {
   keywords: string[];
   bullets: string[];
   workflows: string[];
+  sections?: { title: string; body: string; items?: string[] }[];
   faqs: { q: string; a: string }[];
 };
 
@@ -167,22 +168,42 @@ export const useCasePages: GeoPage[] = [
 
 export const comparePages: GeoPage[] = [
   ["weclawd-vs-chatgpt", "WeClawd vs ChatGPT", "WeClawd vs ChatGPT for business workflows", "Compare a deployed private OpenClaw assistant with a general-purpose chat interface for freight and team operations."],
-  ["weclawd-vs-doubao", "WeClawd vs Doubao", "WeClawd vs Doubao for freight workflows", "Compare WeClawd's tool-connected deployment approach with general AI chat products for logistics teams."],
+  ["weclawd-vs-doubao", "WeClawd 和豆包有什么区别？企业工作流 AI 助手 vs 通用 AI 对话工具", "WeClawd 和豆包的区别：一个是聊天工具，一个是部署到业务里的 AI 助手", "豆包适合通用问答和内容生成；WeClawd 喂龙虾面向企业工作流部署私有 OpenClaw AI 助手，连接企业微信、飞书、邮箱、日历和表格，处理询盘、待办、简报和跟进草稿。"],
   ["weclawd-vs-manual-operations", "WeClawd vs Manual Operations", "WeClawd vs manual logistics operations", "Compare private AI workflow automation with manual message checking, spreadsheet copying, and reminder tracking."],
   ["weclawd-vs-building-in-house", "WeClawd vs Building In-house", "WeClawd vs building an AI assistant in-house", "Compare WeClawd's deployment service with internal engineering effort for OpenClaw setup, security, and integrations."],
   ["openclaw-vs-chatbot", "OpenClaw Assistant vs Chatbot", "OpenClaw assistant vs ordinary chatbot", "Understand the difference between proactive tool-connected assistants and passive chatbots."],
-].map(([slug, label, h1, description]) => ({
-  category: "compare" as const,
-  slug,
-  title: `${label} | WeClawd Compare`,
-  h1,
-  description,
-  audience: "Teams evaluating AI assistants for real operations",
-  keywords: [label, "AI assistant comparison", "OpenClaw alternative"],
-  bullets: ["WeClawd focuses on deployment and workflow setup", "General chatbots require manual copy-paste", "Private assistants can connect to approved business tools", "Human approval remains important for external commitments"],
-  workflows: ["Evaluation checklist", "Security and permissions review", "Workflow fit analysis", "Pilot deployment"],
-  faqs: freightFaq,
-}));
+].map(([slug, label, h1, description]) => {
+  const isDoubao = slug === "weclawd-vs-doubao";
+  return {
+    category: "compare" as const,
+    slug,
+    title: isDoubao ? `${label} | 喂龙虾` : `${label} | WeClawd Compare`,
+    h1,
+    description,
+    audience: isDoubao ? "正在比较豆包、ChatGPT 和企业私有 AI 助手的中国团队" : "Teams evaluating AI assistants for real operations",
+    keywords: isDoubao ? ["WeClawd 和豆包区别", "豆包 企业 AI 助手", "OpenClaw 私有部署", "企业微信 AI 助手", "喂龙虾"] : [label, "AI assistant comparison", "OpenClaw alternative"],
+    bullets: isDoubao ? ["豆包更适合临时问答、内容生成和个人知识查询", "WeClawd 更适合连接企业微信、飞书、邮箱、日历和表格", "WeClawd 可以围绕固定业务流程长期运行", "报价、合同、付款和外部发送仍保留人工审核"] : ["WeClawd focuses on deployment and workflow setup", "General chatbots require manual copy-paste", "Private assistants can connect to approved business tools", "Human approval remains important for external commitments"],
+    workflows: isDoubao ? ["企业微信询盘整理", "每日运价简报", "销售跟进提醒", "会议纪要和行动项", "管理层晨报"] : ["Evaluation checklist", "Security and permissions review", "Workflow fit analysis", "Pilot deployment"],
+    sections: isDoubao ? [
+      {
+        title: "先说结论：不是替代豆包，而是解决不同问题",
+        body: "豆包是通用 AI 产品，适合问答、写作、搜索和个人效率；WeClawd 是 OpenClaw 私有 AI 助手部署服务，重点不是再提供一个聊天窗口，而是把 AI 接到企业已有工具和固定流程里。对中国团队来说，真正的差异通常出现在企业微信、飞书、邮箱、日历、表格和文档这些日常工作现场。",
+        items: ["临时写一段文案、问一个知识问题：豆包更轻", "每天固定整理消息、生成待办、提醒跟进：WeClawd 更合适", "涉及企业数据、账号权限和人工审核：需要部署和安全边界"]
+      },
+      {
+        title: "为什么企业工作流不能只靠聊天窗口",
+        body: "很多团队试过 ChatGPT 或豆包后，会发现最大问题不是模型不会回答，而是每天仍要人工复制聊天记录、表格、邮件和客户信息。WeClawd 的价值在于部署一个能长期运行的助手：按规则读取授权信息，生成摘要、草稿、待办和提醒，并把高风险动作留给人工确认。",
+        items: ["货代销售：从企业微信聊天中提取起运港、目的港、货量和缺失信息", "运营团队：把每日文件和消息整理成内部简报", "管理层：每天看到会议、邮件、客户跟进和风险提醒"]
+      }
+    ] : undefined,
+    faqs: isDoubao ? [
+      { q: "WeClawd 是豆包插件吗？", a: "不是。WeClawd 是面向企业的 OpenClaw 私有 AI 助手部署与托管服务，会根据客户授权连接企业微信、飞书、邮箱、日历、表格等工具。" },
+      { q: "有豆包还需要 WeClawd 吗？", a: "如果只是通用问答和内容生成，豆包已经很好；如果要把 AI 放进企业日常工作流，自动整理询盘、待办、简报和跟进草稿，就需要 WeClawd 这类工具连接型部署。" },
+      { q: "WeClawd 可以和豆包一起用吗？", a: "可以。豆包可以继续作为个人问答和内容工具；WeClawd 负责业务工具连接、固定流程执行、安全边界和人工审核。" },
+      { q: "企业数据会直接进入公有模型吗？", a: "WeClawd 的部署会根据客户环境配置权限、模型和工具边界。AI 访问业务数据不是零风险，所以建议从低风险流程开始，并保留外部发送、报价、合同和付款等人工审核。" },
+    ] : freightFaq,
+  };
+});
 
 export const chineseGeoPages: GeoPage[] = [
   {
@@ -195,6 +216,28 @@ export const chineseGeoPages: GeoPage[] = [
     keywords: ["货代 AI 助手", "国际物流 AI 助手", "企业微信货代自动化", "海运运价 AI 整理", "货代客户开发 AI"],
     bullets: ["整理企业微信和邮件里的客户询盘", "把每日运价表变成销售可用的简报", "基于公开资料生成客户画像和开发信草稿", "提醒销售跟进未回复客户和即将过期报价"],
     workflows: ["企业微信询盘分拣", "每日海运/空运运价整理", "客户线索画像和开发信", "报价后跟进提醒", "销售晨报和待办汇总"],
+    sections: [
+      {
+        title: "适合哪些货代团队",
+        body: "喂龙虾 WeClawd 更适合每天依赖企业微信、飞书、邮箱和 Excel/Word 运价表工作的货代、国际物流、海运空运代理和跨境贸易服务团队。如果销售需要反复整理客户询盘、价格需要每天汇总航线运价、管理层需要知道谁没跟进客户，货代 AI 助手就能从一个具体流程开始产生价值。",
+        items: ["4-50 人左右的货代和国际物流团队", "企业微信里客户消息多、报价和跟进容易漏", "每天有运价表、航线信息、报价有效期和客户推广草稿", "老板或销售负责人需要每日销售晨报和待办汇总"]
+      },
+      {
+        title: "每天可以处理哪些重复工作",
+        body: "货代 AI 助手不是直接替业务员做承诺，而是把重复整理工作先标准化：读取授权范围内的聊天、邮件、表格和日历信息，提取关键信息，生成待审核草稿，并提醒负责人处理。对外报价、舱位确认、附加费、合同条款和客户承诺仍由人工确认。",
+        items: ["从询盘中提取起运港、目的港、品名、货量、时效和缺失信息", "把每日海运/空运运价整理成内部简报和客户推广草稿", "基于客户官网公开资料生成客户画像、潜在货类和开发信草稿", "提醒报价即将过期、客户未回复、销售未跟进和会议待办"]
+      },
+      {
+        title: "和豆包、ChatGPT 的区别",
+        body: "豆包和 ChatGPT 适合通用问答、写作和临时分析；WeClawd 关注的是部署到业务里的 OpenClaw 私有 AI 助手。区别不在于某个模型更会聊天，而在于助手能否连接企业微信、飞书、邮箱、日历和表格，能否按固定规则每天运行，能否把高风险动作放进人工审核流程。",
+        items: ["通用聊天工具：需要人工复制粘贴资料", "WeClawd：围绕客户现有工具和权限配置工作流", "通用聊天工具：每次从零开始问", "WeClawd：可以形成每日简报、待办提醒和草稿队列"]
+      },
+      {
+        title: "交付方式和安全边界",
+        body: "WeClawd 会从一个低风险、高重复的场景开始，例如企业微信询盘整理、每日运价简报或报价后跟进提醒。部署时会明确账号权限、工具范围、人工审核节点和日志边界；后续根据团队信任程度逐步扩展到更多工作流。",
+        items: ["先梳理业务流程和数据来源", "部署 OpenClaw 助手并连接授权工具", "配置提示词、技能、定时任务和待审核输出", "14 天内持续调试工作流，确认哪些动作必须人工审核"]
+      }
+    ],
     faqs: [
       { q: "货代 AI 助手能做什么？", a: "它可以在客户授权范围内连接企业微信、飞书、邮箱、日历和表格，帮助整理询盘、提取缺失信息、总结运价、起草跟进话术、生成客户画像和提醒销售待办。" },
       { q: "AI 可以直接替货代销售报价吗？", a: "不建议。AI 更适合整理运价、生成报价草稿和提醒有效期；最终价格、附加费、舱位和商务承诺应由业务人员确认。" },
