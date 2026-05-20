@@ -2,6 +2,8 @@ import Link from "next/link";
 import { allGeoPages, categoryTitle, SITE_LAST_UPDATE, type GeoPage } from "@/lib/geo-pages";
 import AuthorBio from "@/components/AuthorBio";
 import { renderInline } from "@/components/inline-link";
+import DefinitiveDefinition from "@/components/DefinitiveDefinition";
+import ComparisonTable from "@/components/ComparisonTable";
 
 const siteUrl = "https://www.weclawd.com";
 
@@ -85,6 +87,19 @@ export default function GeoLandingPage({ page, basePath }: { page: GeoPage; base
           </div>
         </div>
       </section>
+
+      {(page.definition || page.description) && (
+        <section className="mx-auto max-w-4xl px-6 pt-10 lg:px-8">
+          <DefinitiveDefinition>{page.definition || page.description}</DefinitiveDefinition>
+        </section>
+      )}
+
+      {page.comparisonTable && page.comparisonTable.length > 0 && (
+        <ComparisonTable
+          rows={page.comparisonTable}
+          themLabel={page.comparisonTable[0]?.themLabel}
+        />
+      )}
 
       <section className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">

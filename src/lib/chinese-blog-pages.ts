@@ -9,6 +9,8 @@ export type ChineseBlogPage = {
   sections: { title: string; body: string[]; bullets?: string[] }[];
   faqs: { q: string; a: string }[];
   related: { title: string; href: string }[];
+  tldr?: string[];
+  definition?: string;
 };
 
 export const chineseBlogPages: ChineseBlogPage[] = [
@@ -20,6 +22,12 @@ export const chineseBlogPages: ChineseBlogPage[] = [
     audience: "创始人、运营负责人、销售负责人、行政/助理团队",
     updatedAt: "2026-05-20",
     summary: "OpenClaw 不是另一个聊天窗口，而是一个可以连接工具、按规则运行、在人工审核边界内处理重复工作的 AI 执行助手。",
+    definition: "OpenClaw 是一个可自托管的 AI 执行助手框架，能在客户授权范围内连接企业微信、飞书、邮箱、日历、表格等工具，按固定规则整理信息、生成草稿、提醒待办并把高风险动作交给人工。",
+    tldr: [
+      "OpenClaw ≠ 聊天产品。它是连接工具、定时运行、保留审核流的执行助手框架。",
+      "和豆包、ChatGPT 的本质区别：通用聊天需要人复制粘贴；OpenClaw 直接进入企业微信、邮箱、表格。",
+      "中国团队优先从企业微信询盘整理、邮件摘要、每日运价简报、销售跟进提醒这些低风险高重复的场景开始。"
+    ],
     sections: [
       {
         title: "一句话理解 OpenClaw",
@@ -64,6 +72,12 @@ export const chineseBlogPages: ChineseBlogPage[] = [
     audience: "使用企业微信服务客户的销售、客服、运营和货代团队",
     updatedAt: "2026-05-20",
     summary: "企业微信 AI 助手最适合先做信息整理和提醒，而不是直接替人对外承诺。",
+    definition: "企业微信 AI 助手是接入企业微信账号权限的 AI 工作流，自动整理客户消息、生成待办、提醒未回复和起草跟进话术，所有对外发送默认走人工审核。",
+    tldr: [
+      "企业微信里真正的问题不是消息少，而是上下文散在一对一、群聊、表格、邮件里。",
+      "优先上线 5 个流程：客户询盘摘要、未回复提醒、群聊行动项、客服升级、销售晨报。",
+      "对外报价 / 合同 / 付款 / 投诉 / 敏感回复必须人工审核，AI 默认只出草稿。"
+    ],
     sections: [
       {
         title: "企业微信里的问题不是消息少，而是上下文散",
@@ -106,6 +120,12 @@ export const chineseBlogPages: ChineseBlogPage[] = [
     audience: "货代老板、销售负责人、航线/价格负责人、国际物流运营团队",
     updatedAt: "2026-05-20",
     summary: "货代 AI 最容易落地的不是“全自动报价”，而是先把询盘、运价、客户资料和跟进提醒整理清楚。",
+    definition: "货代 AI 助手是接入企业微信、邮箱和运价系统的 AI 工作流，自动整理客户询盘、汇总每日海运空运运价、生成客户画像和开发信草稿、提醒报价跟进，所有对外承诺保留人工审核。",
+    tldr: [
+      "四个最容易跑通的场景：企业微信询盘整理、每日运价整理、客户开发画像、报价后跟进提醒。",
+      "AI 不替业务员承诺：报价、舱位、附加费、商务条款都由人工确认。",
+      "建议从每日运价整理或询盘补全开始，重复度高、价值清晰、验收容易。"
+    ],
     sections: [
       {
         title: "场景一：询盘整理",
@@ -154,6 +174,12 @@ export const chineseBlogPages: ChineseBlogPage[] = [
     audience: "准备评估 OpenClaw 私有部署的老板、CTO、运营负责人和行政/助理团队",
     updatedAt: "2026-05-20",
     summary: "私有部署不是买一个软件，而是建立一套权限、工具、审核和运维机制。",
+    definition: "OpenClaw 私有部署不仅是装一台服务器，而是涉及基础设施、模型 API、集成与权限、安全加固、日志和工作流调试的一套机制。真实成本和风险集中在运维、流程、审核三个方面。",
+    tldr: [
+      "成本不只是云服务器。模型 API、集成配置、安全加固、调试和后续维护通常是更大头。",
+      "权限要从小开始：先只读摘要 / 草稿 / 提醒，再加写入和发送。一次性全开是常见踩坑。",
+      "永远不要让 AI 自动执行：合同、付款、报价、法律判断、客户投诉、人事决定。"
+    ],
     sections: [
       {
         title: "成本不只是一台服务器",
@@ -195,6 +221,12 @@ export const chineseBlogPages: ChineseBlogPage[] = [
     audience: "老板、运营负责人、销售负责人、行政/助理团队、数字化负责人",
     updatedAt: "2026-05-20",
     summary: "AI 助手落地失败，常常不是模型不够强，而是没有定义清楚场景、权限、验收和人工边界。",
+    definition: "企业部署 AI 助手前应回答 20 个具体问题，覆盖业务场景、数据来源、权限、安全、人工审核、验收指标和迭代节奏。AI 项目失败的常见原因不是模型不行，而是没回答这些问题。",
+    tldr: [
+      "先确认业务场景：哪件事每天最重复、最耗时、最容易漏？输入输出能否被验证？",
+      "再确认数据和权限：需要哪些工具？是否涉及客户隐私？谁有权扩展权限？",
+      "最后定义验收：每天节省多少分钟？漏跟进减少多少？团队是否愿意每天用？"
+    ],
     sections: [
       {
         title: "先确认业务场景",

@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { chineseBlogPages, getChineseBlogPage } from "@/lib/chinese-blog-pages";
 import AuthorBio from "@/components/AuthorBio";
 import { renderInline } from "@/components/inline-link";
+import DefinitiveDefinition from "@/components/DefinitiveDefinition";
+import TldrBox from "@/components/TldrBox";
 
 const siteUrl = "https://www.weclawd.com";
 
@@ -102,6 +104,12 @@ export default async function ChineseBlogArticle({ params }: { params: Promise<{
           <AuthorBio variant="compact" />
           <p className="mt-3 text-sm text-zinc-500">更新日期：{page.updatedAt}</p>
         </div>
+
+        {page.definition && (
+          <DefinitiveDefinition>{page.definition}</DefinitiveDefinition>
+        )}
+
+        {page.tldr && page.tldr.length > 0 && <TldrBox bullets={page.tldr} />}
 
         <div className="mt-12 space-y-12">
           {page.sections.map((section) => (
