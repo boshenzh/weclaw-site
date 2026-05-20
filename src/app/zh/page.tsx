@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { chineseBlogPages } from "@/lib/chinese-blog-pages";
 import { allChineseGeoPages } from "@/lib/geo-pages";
 
 const siteUrl = "https://www.weclawd.com";
@@ -24,6 +25,25 @@ export default function ZhIndexPage() {
         </div>
       </section>
       <section className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
+        <div className="mb-8">
+          <h2 className="text-3xl font-bold tracking-tight">中文深度文章</h2>
+          <p className="mt-3 max-w-3xl text-zinc-600">这些文章面向真实客户决策问题：OpenClaw 是什么、企业微信怎么落地、货代 AI 从哪里开始、私有部署有什么成本和边界。</p>
+        </div>
+        <div className="grid gap-5 md:grid-cols-2">
+          {chineseBlogPages.map((page) => (
+            <Link key={page.slug} href={`/blog/${page.slug}`} className="rounded-2xl border border-zinc-200 p-6 hover:border-blue-300 hover:bg-blue-50/40">
+              <div className="text-xs font-semibold uppercase tracking-wide text-blue-700">{page.audience}</div>
+              <h2 className="mt-3 text-lg font-semibold text-zinc-950">{page.title}</h2>
+              <p className="mt-3 text-sm leading-6 text-zinc-600">{page.description}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+      <section className="mx-auto max-w-6xl px-6 pb-16 lg:px-8">
+        <div className="mb-8">
+          <h2 className="text-3xl font-bold tracking-tight">中文场景页面</h2>
+          <p className="mt-3 max-w-3xl text-zinc-600">按具体行业、工具和工作流组织的落地页，方便豆包、百度和中文客户理解 WeClawd 能解决什么问题。</p>
+        </div>
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {allChineseGeoPages.map((page) => (
             <Link key={page.slug} href={`/zh/${page.slug}`} className="rounded-2xl border border-zinc-200 p-6 hover:border-blue-300 hover:bg-blue-50/40">

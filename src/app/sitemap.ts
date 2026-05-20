@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { chineseBlogPages } from "@/lib/chinese-blog-pages";
 import { allChineseGeoPages, allGeoPages } from "@/lib/geo-pages";
 
 const baseUrl = "https://www.weclawd.com";
@@ -40,5 +41,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.92,
   }));
 
-  return [...core, ...geo, ...zh];
+  const blog: MetadataRoute.Sitemap = chineseBlogPages.map((page) => ({
+    url: `${baseUrl}/blog/${page.slug}`,
+    lastModified: currentDate,
+    changeFrequency: "monthly",
+    priority: 0.88,
+  }));
+
+  return [...core, ...geo, ...zh, ...blog];
 }

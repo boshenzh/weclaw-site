@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import "./globals.css";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
@@ -82,13 +83,31 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+const englishPathPrefixes = ["/solutions", "/industries", "/integrations", "/use-cases"];
+const englishExactPaths = new Set(["/freight-ai-assistant", "/compare"]);
+const englishComparePaths = new Set([
+  "/compare/weclawd-vs-chatgpt",
+  "/compare/weclawd-vs-manual-operations",
+  "/compare/weclawd-vs-building-in-house",
+  "/compare/openclaw-vs-chatbot",
+]);
+
+function getDocumentLang(pathname: string) {
+  if (englishExactPaths.has(pathname) || englishComparePaths.has(pathname)) return "en";
+  if (englishPathPrefixes.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`))) return "en";
+  return "zh-CN";
+}
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = (await headers()).get("x-pathname") || "/";
+  const lang = getDocumentLang(pathname);
+
   return (
-    <html lang="zh-CN">
+    <html lang={lang}>
       <body>
         {children}
         <Analytics />
