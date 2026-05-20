@@ -766,12 +766,21 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-zinc-200 bg-white">
         <div className="mx-auto max-w-6xl px-6 lg:px-8 py-12">
-          <div className="grid gap-8 md:grid-cols-4">
-            <div>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
+            <div className="lg:col-span-1">
               <div className="text-lg font-semibold mb-4">喂龙虾</div>
               <p className="text-sm text-zinc-600">
                 基于 OpenClaw 的专业部署和托管服务
               </p>
+              <a
+                href="https://github.com/openclaw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-950"
+              >
+                GitHub
+                <span aria-hidden>↗</span>
+              </a>
             </div>
             <div>
               <div className="text-sm font-semibold text-zinc-950 mb-4">
@@ -799,7 +808,7 @@ export default function Home() {
                     href="#faq"
                     className="text-sm text-zinc-600 hover:text-zinc-950"
                   >
-                    FAQ
+                    常见问题
                   </a>
                 </li>
                 <li>
@@ -810,19 +819,11 @@ export default function Home() {
                     货代 AI 助手
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    href="/freight-ai-assistant"
-                    className="text-sm text-zinc-600 hover:text-zinc-950"
-                  >
-                    Freight AI Assistant
-                  </Link>
-                </li>
               </ul>
             </div>
             <div>
               <div className="text-sm font-semibold text-zinc-950 mb-4">
-                资源
+                场景
               </div>
               <ul className="space-y-2">
                 <li>
@@ -830,7 +831,7 @@ export default function Home() {
                     href="/zh"
                     className="text-sm text-zinc-600 hover:text-zinc-950"
                   >
-                    中文客户搜索入口
+                    中文资源中心
                   </Link>
                 </li>
                 <li>
@@ -851,50 +852,33 @@ export default function Home() {
                 </li>
                 <li>
                   <Link
-                    href="/solutions"
+                    href="/zh/meiri-yunjia-zhengli-ai"
                     className="text-sm text-zinc-600 hover:text-zinc-950"
                   >
-                    AI 助手解决方案
+                    每日运价整理 AI
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/industries"
+                    href="/zh/huodai-kehu-kaifa-ai"
                     className="text-sm text-zinc-600 hover:text-zinc-950"
                   >
-                    行业场景
+                    货代客户开发 AI
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    href="/integrations"
-                    className="text-sm text-zinc-600 hover:text-zinc-950"
-                  >
-                    集成平台
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/use-cases"
-                    className="text-sm text-zinc-600 hover:text-zinc-950"
-                  >
-                    Use Cases
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/compare"
-                    className="text-sm text-zinc-600 hover:text-zinc-950"
-                  >
-                    对比
-                  </Link>
-                </li>
+              </ul>
+            </div>
+            <div>
+              <div className="text-sm font-semibold text-zinc-950 mb-4">
+                指南
+              </div>
+              <ul className="space-y-2">
                 <li>
                   <Link
                     href="/blog/openclaw-ai-assistant-for-chinese-teams"
                     className="text-sm text-zinc-600 hover:text-zinc-950"
                   >
-                    OpenClaw 是什么？
+                    OpenClaw 是什么
                   </Link>
                 </li>
                 <li>
@@ -923,37 +907,11 @@ export default function Home() {
                 </li>
                 <li>
                   <Link
-                    href="/blog/what-is-openclaw"
+                    href="/blog/ai-assistant-implementation-checklist"
                     className="text-sm text-zinc-600 hover:text-zinc-950"
                   >
-                    什么是 OpenClaw？旧版指南
+                    部署前 20 个问题
                   </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/blog/openclaw-setup-cost"
-                    className="text-sm text-zinc-600 hover:text-zinc-950"
-                  >
-                    OpenClaw 部署成本详解
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/blog/openclaw-mega-cheatsheet-zh"
-                    className="text-sm text-zinc-600 hover:text-zinc-950"
-                  >
-                    OpenClaw 超级速查表（中文）
-                  </Link>
-                </li>
-                <li>
-                  <a
-                    href="https://github.com/openclaw"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-zinc-600 hover:text-zinc-950"
-                  >
-                    GitHub
-                  </a>
                 </li>
               </ul>
             </div>
