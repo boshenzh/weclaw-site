@@ -177,7 +177,7 @@ export const comparePages: GeoPage[] = [
   return {
     category: "compare" as const,
     slug,
-    title: isDoubao ? `${label} | 喂龙虾` : `${label} | WeClawd Compare`,
+    title: isDoubao ? label : `${label} | WeClawd Compare`,
     h1,
     description,
     audience: isDoubao ? "正在比较豆包、ChatGPT 和企业私有 AI 助手的中国团队" : "Teams evaluating AI assistants for real operations",
