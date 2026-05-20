@@ -50,6 +50,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@boshenzh",
+    creator: "@boshenzh",
     title: "货代 AI 助手｜WeClawd 喂龙虾",
     description: "企业微信、飞书、邮件和运价表工作流的 OpenClaw AI 助手部署。",
     images: ["/logos/weclaw-logo.png"],

@@ -18,6 +18,21 @@ const nextConfig: NextConfig = {
         destination: '/en/weclawd-vs-chatgpt',
         permanent: true,
       },
+      {
+        source: '/x',
+        destination: 'https://x.com/boshenzh',
+        permanent: true,
+      },
+      {
+        source: '/twitter',
+        destination: 'https://x.com/boshenzh',
+        permanent: true,
+      },
+      {
+        source: '/@boshenzh',
+        destination: 'https://x.com/boshenzh',
+        permanent: true,
+      },
     ];
   },
   images: {

@@ -32,6 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@boshenzh",
+    creator: "@boshenzh",
     title: "OpenClaw 部署成本详解",
     description: "详细分析 OpenClaw AI 助手的部署成本，包括一次性设置费用、月度运行成本。",
     images: ["/logos/weclaw-logo.png"],

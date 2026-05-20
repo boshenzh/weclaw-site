@@ -34,6 +34,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@boshenzh",
+    creator: "@boshenzh",
     title: "什么是 OpenClaw？自托管 AI 执行助手",
     description: "深入了解 OpenClaw - 开源、自托管的 AI 执行助手。邮件分类、日历管理、工作流自动化。",
     images: ["/logos/weclaw-logo.png"],

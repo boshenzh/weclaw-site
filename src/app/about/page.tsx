@@ -7,9 +7,33 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://www.weclawd.com/about" },
 };
 
+const siteUrl = "https://www.weclawd.com";
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Boshen",
+  url: `${siteUrl}/about`,
+  sameAs: ["https://x.com/boshenzh"],
+  jobTitle: "OpenClaw 维护者",
+  worksFor: { "@type": "Organization", name: "WeClawd / 喂龙虾", url: siteUrl },
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "WeClawd / 喂龙虾",
+  url: siteUrl,
+  logo: `${siteUrl}/logos/weclaw-logo.png`,
+  sameAs: ["https://x.com/boshenzh", "https://github.com/openclaw"],
+  founder: { "@type": "Person", name: "Boshen", sameAs: ["https://x.com/boshenzh"] },
+};
+
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-white text-zinc-950">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
       <section className="border-b border-zinc-200 bg-gradient-to-b from-blue-50 to-white">
         <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8 lg:py-24">
           <Link href="/" className="text-sm font-medium text-blue-700 hover:text-blue-900">← 返回首页</Link>
@@ -34,6 +58,15 @@ export default function AboutPage() {
             <li>• 以权限最小化、审计和透明配置为默认安全原则。</li>
             <li>• 让 AI 成为执行助手，而不是替代业务负责人。</li>
           </ul>
+        </div>
+        <div>
+          <h2 className="text-2xl font-bold">维护人</h2>
+          <p className="mt-4 leading-7 text-zinc-600">
+            喂龙虾 WeClawd 由 Boshen 维护，长期写企业 AI 助手、企业微信工作流、货代和国际物流的落地实践。常驻深圳。
+          </p>
+          <p className="mt-3 leading-7 text-zinc-600">
+            X / Twitter：<a className="text-blue-700 hover:text-blue-900" href="/x" target="_blank" rel="me noopener">@boshenzh</a>
+          </p>
         </div>
         <div>
           <h2 className="text-2xl font-bold">联系</h2>

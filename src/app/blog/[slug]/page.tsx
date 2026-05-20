@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { chineseBlogPages, getChineseBlogPage } from "@/lib/chinese-blog-pages";
+import AuthorBio from "@/components/AuthorBio";
 
 const siteUrl = "https://www.weclawd.com";
 
@@ -29,6 +30,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
     twitter: {
       card: "summary_large_image",
+      site: "@boshenzh",
+      creator: "@boshenzh",
       title: page.title,
       description: page.description,
       images: ["/logos/weclaw-logo.png"],
@@ -48,7 +51,12 @@ export default async function ChineseBlogArticle({ params }: { params: Promise<{
     description: page.description,
     dateModified: page.updatedAt,
     datePublished: page.updatedAt,
-    author: { "@type": "Organization", name: "WeClawd / 喂龙虾" },
+    author: {
+      "@type": "Person",
+      name: "Boshen",
+      url: `${siteUrl}/about`,
+      sameAs: ["https://x.com/boshenzh"],
+    },
     publisher: { "@type": "Organization", name: "WeClawd / 喂龙虾", logo: { "@type": "ImageObject", url: `${siteUrl}/logos/weclaw-logo.png` } },
     mainEntityOfPage: `${siteUrl}/blog/${page.slug}`,
     keywords: page.keywords.join(", "),
@@ -90,7 +98,8 @@ export default async function ChineseBlogArticle({ params }: { params: Promise<{
               <span key={keyword} className="rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-sm text-blue-700">{keyword}</span>
             ))}
           </div>
-          <p className="mt-6 text-sm text-zinc-500">更新日期：{page.updatedAt}</p>
+          <AuthorBio variant="compact" />
+          <p className="mt-3 text-sm text-zinc-500">更新日期：{page.updatedAt}</p>
         </div>
 
         <div className="mt-12 space-y-12">
@@ -129,6 +138,8 @@ export default async function ChineseBlogArticle({ params }: { params: Promise<{
             ))}
           </div>
         </section>
+
+        <AuthorBio />
       </article>
     </main>
   );

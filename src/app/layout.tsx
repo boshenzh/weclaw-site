@@ -73,6 +73,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@boshenzh",
+    creator: "@boshenzh",
     title: "喂龙虾 WeClawd｜OpenClaw 私有 AI 助手部署与托管服务",
     description:
       "面向中国团队的 OpenClaw 私有 AI 助手部署和托管服务，支持企业微信、飞书、邮箱、日历和表格工作流。",

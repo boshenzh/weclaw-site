@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { allGeoPages, categoryTitle, type GeoPage } from "@/lib/geo-pages";
+import AuthorBio from "@/components/AuthorBio";
 
 const siteUrl = "https://www.weclawd.com";
 
@@ -19,6 +20,12 @@ export default function GeoLandingPage({ page, basePath }: { page: GeoPage; base
     provider: { "@type": "Organization", name: "WeClawd / 喂龙虾", url: siteUrl },
     audience: { "@type": "Audience", audienceType: page.audience },
     keywords: page.keywords.join(", "),
+    editor: {
+      "@type": "Person",
+      name: "Boshen",
+      url: `${siteUrl}/about`,
+      sameAs: ["https://x.com/boshenzh"],
+    },
   };
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -69,6 +76,7 @@ export default function GeoLandingPage({ page, basePath }: { page: GeoPage; base
                 货代 AI 助手
               </Link>
             </div>
+            <AuthorBio variant="compact" />
           </div>
         </div>
       </section>
@@ -149,6 +157,10 @@ export default function GeoLandingPage({ page, basePath }: { page: GeoPage; base
           </div>
         </section>
       )}
+
+      <section className="mx-auto max-w-4xl px-6 pb-4 lg:px-8">
+        <AuthorBio />
+      </section>
 
       <section className="bg-blue-600 py-16 text-white">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">

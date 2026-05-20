@@ -70,6 +70,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@boshenzh",
+    creator: "@boshenzh",
     title: "Freight Forwarder AI Assistant | WeClawd",
     description: "OpenClaw AI assistant deployment for freight forwarding and logistics teams.",
     images: ["/logos/weclaw-logo.png"],
