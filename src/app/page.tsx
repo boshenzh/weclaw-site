@@ -150,6 +150,34 @@ const whyUs = [
   },
 ];
 
+const featuredChineseResources = [
+  {
+    title: "OpenClaw 是什么？中国团队什么时候需要私有 AI 助手",
+    desc: "给老板和运营负责人的入门解释：OpenClaw 与豆包/ChatGPT 的区别、适合场景和安全边界。",
+    href: "/blog/openclaw-ai-assistant-for-chinese-teams",
+  },
+  {
+    title: "企业微信 AI 助手能做什么？",
+    desc: "从客户消息、群聊摘要、未回复提醒到人工审核，解释企业微信场景的真实落地方式。",
+    href: "/blog/wecom-ai-assistant-workflows",
+  },
+  {
+    title: "货代 AI 助手怎么落地？",
+    desc: "围绕询盘、每日运价、客户开发和销售跟进四个场景，写给货代和国际物流团队。",
+    href: "/blog/freight-ai-assistant-guide",
+  },
+  {
+    title: "OpenClaw 私有部署的成本、权限和安全边界",
+    desc: "部署前要想清楚基础设施、模型费用、账号权限、人工审核和运维责任。",
+    href: "/blog/openclaw-private-deployment-cost-and-risk",
+  },
+  {
+    title: "企业部署 AI 助手前的 20 个问题",
+    desc: "一份给老板和运营负责人的检查清单，帮助判断场景是否值得做、怎么验收。",
+    href: "/blog/ai-assistant-implementation-checklist",
+  },
+];
+
 const afterPurchase = [
   {
     step: "01",
@@ -676,6 +704,40 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Chinese Resources Section */}
+        <section className="bg-zinc-50 py-20 lg:py-28">
+          <div className="mx-auto max-w-6xl px-6 lg:px-8">
+            <div className="mb-12 max-w-3xl">
+              <h2 className="text-4xl lg:text-5xl font-bold text-zinc-950 mb-4">
+                中文深度文章
+              </h2>
+              <p className="text-xl text-zinc-600 leading-relaxed">
+                不写空泛的 AI 概念。这里整理的是中国团队真正会问的问题：OpenClaw 是什么、企业微信怎么接、货代场景怎么落地、权限和安全边界怎么控制。
+              </p>
+            </div>
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {featuredChineseResources.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm hover:border-blue-300 hover:bg-blue-50/40"
+                >
+                  <h3 className="text-lg font-semibold leading-7 text-zinc-950">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-zinc-600">
+                    {item.desc}
+                  </p>
+                </Link>
+              ))}
+            </div>
+            <div className="mt-8">
+              <Link href="/zh" className="text-sm font-semibold text-blue-700 hover:text-blue-900">
+                查看全部中文场景与文章 →
+              </Link>
+            </div>
+          </div>
+        </section>
 
         {/* CTA Section */}
         <section className="bg-white py-20 lg:py-28">
@@ -829,10 +891,42 @@ export default function Home() {
                 </li>
                 <li>
                   <Link
+                    href="/blog/openclaw-ai-assistant-for-chinese-teams"
+                    className="text-sm text-zinc-600 hover:text-zinc-950"
+                  >
+                    OpenClaw 是什么？
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/blog/wecom-ai-assistant-workflows"
+                    className="text-sm text-zinc-600 hover:text-zinc-950"
+                  >
+                    企业微信 AI 助手
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/blog/freight-ai-assistant-guide"
+                    className="text-sm text-zinc-600 hover:text-zinc-950"
+                  >
+                    货代 AI 落地指南
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/blog/openclaw-private-deployment-cost-and-risk"
+                    className="text-sm text-zinc-600 hover:text-zinc-950"
+                  >
+                    私有部署成本与安全
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/blog/what-is-openclaw"
                     className="text-sm text-zinc-600 hover:text-zinc-950"
                   >
-                    什么是 OpenClaw？
+                    什么是 OpenClaw？旧版指南
                   </Link>
                 </li>
                 <li>
