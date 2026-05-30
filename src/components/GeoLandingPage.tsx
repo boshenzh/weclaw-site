@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BOOKING_URL } from "@/lib/contact";
 import { allGeoPages, categoryTitle, SITE_LAST_UPDATE, type GeoPage } from "@/lib/geo-pages";
 import AuthorBio from "@/components/AuthorBio";
 import { renderInline } from "@/components/inline-link";
@@ -105,7 +106,7 @@ export default function GeoLandingPage({ page, basePath }: { page: GeoPage; base
               ))}
             </div>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <a href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25" target="_blank" rel="noopener noreferrer" className="rounded-lg bg-blue-600 px-6 py-3 text-center text-sm font-semibold text-white shadow-lg hover:bg-blue-700">
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-blue-600 px-6 py-3 text-center text-sm font-semibold text-white shadow-lg hover:bg-blue-700">
                 预约咨询
               </a>
               <Link href="/huodai-ai-assistant" className="rounded-lg border border-zinc-300 px-6 py-3 text-center text-sm font-semibold text-zinc-900 hover:bg-zinc-50">
@@ -224,7 +225,7 @@ export default function GeoLandingPage({ page, basePath }: { page: GeoPage; base
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
           <h2 className="text-3xl font-bold">先从一个工作流开始，再逐步扩展</h2>
           <p className="mt-4 text-blue-100">WeClawd 可以先从一个明确场景开始：货代询盘整理、每日运价简报、邮件分类、销售跟进或会议待办。跑通以后，再逐步扩大授权和自动化范围。</p>
-          <a href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25" target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex rounded-lg bg-white px-6 py-3 text-sm font-semibold text-blue-700 hover:bg-blue-50">
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex rounded-lg bg-white px-6 py-3 text-sm font-semibold text-blue-700 hover:bg-blue-50">
             预约 15 分钟咨询
           </a>
         </div>

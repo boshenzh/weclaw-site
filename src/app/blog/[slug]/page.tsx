@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BOOKING_URL } from "@/lib/contact";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { chineseBlogPages, getChineseBlogPage } from "@/lib/chinese-blog-pages";
@@ -85,7 +86,7 @@ export default async function ChineseBlogArticle({ params }: { params: Promise<{
           <Link href="/" className="text-2xl font-semibold tracking-tight">喂龙虾</Link>
           <div className="flex items-center gap-6">
             <Link href="/zh" className="text-sm font-medium text-zinc-600 hover:text-zinc-950">中文场景</Link>
-            <a href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25" target="_blank" rel="noopener noreferrer" className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">预约咨询</a>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">预约咨询</a>
           </div>
         </div>
       </nav>

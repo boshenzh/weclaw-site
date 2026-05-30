@@ -1,4 +1,5 @@
 import { allChineseGeoPages, allGeoPages } from "@/lib/geo-pages";
+import { BOOKING_URL } from "@/lib/contact";
 
 export const dynamic = "force-static";
 
@@ -20,7 +21,7 @@ Canonical site: https://www.weclawd.com
 Visible website citation for Chinese articles / 公众号: http://weclawd.com/
 Chinese name: 喂龙虾
 Contact: boshen233@gmail.com
-Consultation: https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25
+Consultation: ${BOOKING_URL}
 
 ## Important pages
 - Home: https://www.weclawd.com/

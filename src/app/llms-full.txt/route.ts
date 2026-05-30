@@ -1,4 +1,5 @@
 import { allChineseGeoPages, allGeoPages } from "@/lib/geo-pages";
+import { BOOKING_URL } from "@/lib/contact";
 
 export const dynamic = "force-static";
 
@@ -19,7 +20,7 @@ Brand: WeClawd / 喂龙虾
 Service category: OpenClaw AI assistant deployment, managed setup, workflow integration, security hardening, and optional ongoing maintenance.
 Primary language: Chinese first, English secondary.
 Contact email: boshen233@gmail.com
-Booking link: https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25
+Booking link: ${BOOKING_URL}
 
 ## One-sentence description
 WeClawd helps teams deploy private OpenClaw AI assistants that connect to business tools such as WeCom/企业微信, Feishu, DingTalk, email, calendars, Slack, Telegram, Notion, GitHub, and other workflow systems.

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BOOKING_URL } from "@/lib/contact";
 import Link from "next/link";
 
 const siteUrl = "https://www.weclawd.com";
@@ -132,7 +133,7 @@ export default function FreightAiAssistantPage() {
               WeClawd deploys OpenClaw-based AI assistants that help freight teams organize customer inquiries, daily rates, lead research, quote drafts, and follow-up reminders across WeCom, Feishu, email, calendars, and spreadsheets.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <a href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25" target="_blank" rel="noopener noreferrer" className="rounded-lg bg-blue-600 px-6 py-3 text-center text-sm font-semibold text-white shadow-lg hover:bg-blue-700">
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-blue-600 px-6 py-3 text-center text-sm font-semibold text-white shadow-lg hover:bg-blue-700">
                 Book a 15-minute consultation
               </a>
               <Link href="/huodai-ai-assistant" className="rounded-lg border border-zinc-300 px-6 py-3 text-center text-sm font-semibold text-zinc-900 hover:bg-zinc-50">
@@ -193,7 +194,7 @@ export default function FreightAiAssistantPage() {
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
           <h2 className="text-3xl font-bold">Deploy a freight AI workflow without starting from scratch</h2>
           <p className="mt-4 text-blue-100">WeClawd handles OpenClaw deployment, security hardening, integrations, and the first workflows for your team.</p>
-          <a href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25" target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex rounded-lg bg-white px-6 py-3 text-sm font-semibold text-blue-700 hover:bg-blue-50">
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex rounded-lg bg-white px-6 py-3 text-sm font-semibold text-blue-700 hover:bg-blue-50">
             Book a consultation
           </a>
         </div>

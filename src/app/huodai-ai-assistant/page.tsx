@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BOOKING_URL } from "@/lib/contact";
 import Link from "next/link";
 
 const siteUrl = "https://www.weclawd.com";
@@ -91,7 +92,7 @@ export default function HuodaiAiAssistantPage() {
               WeClawd（喂龙虾）基于 OpenClaw，为货代和国际物流团队部署私有 AI 助手，连接企业微信、飞书、邮箱、日历和表格，帮助整理询盘、运价、客户画像和销售跟进。
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <a href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25" target="_blank" rel="noopener noreferrer" className="rounded-lg bg-blue-600 px-6 py-3 text-center text-sm font-semibold text-white shadow-lg hover:bg-blue-700">预约 15 分钟咨询</a>
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-blue-600 px-6 py-3 text-center text-sm font-semibold text-white shadow-lg hover:bg-blue-700">预约 15 分钟咨询</a>
               <Link href="/freight-ai-assistant" className="rounded-lg border border-zinc-300 px-6 py-3 text-center text-sm font-semibold text-zinc-900 hover:bg-zinc-50">English page</Link>
             </div>
           </div>
@@ -146,7 +147,7 @@ export default function HuodaiAiAssistantPage() {
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
           <h2 className="text-3xl font-bold">先从一个真实货代工作流开始</h2>
           <p className="mt-4 text-blue-100">我们可以从企业微信询盘、每日运价整理或客户开发信开始，部署后再逐步扩展。</p>
-          <a href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25" target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex rounded-lg bg-white px-6 py-3 text-sm font-semibold text-blue-700 hover:bg-blue-50">预约咨询</a>
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex rounded-lg bg-white px-6 py-3 text-sm font-semibold text-blue-700 hover:bg-blue-50">预约咨询</a>
         </div>
       </section>
     </main>

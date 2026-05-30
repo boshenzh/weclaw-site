@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BOOKING_URL } from "@/lib/contact";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -69,7 +70,7 @@ export default function OpenClawSetupCostPage() {
                 FAQ
               </Link>
               <a
-                href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25"
+                href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 transition-colors"
@@ -375,7 +376,7 @@ export default function OpenClawSetupCostPage() {
             预约免费 15 分钟咨询，我们聊聊你的需求，看看 OpenClaw 是否适合你。
           </p>
           <a
-            href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25"
+            href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-8 py-4 text-base font-semibold text-white hover:bg-blue-700 transition-all hover:scale-105 shadow-lg"

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BOOKING_URL } from "@/lib/contact";
 
 type Variant = "article" | "compact";
 
@@ -62,7 +63,7 @@ export default function AuthorBio({ variant = "article" }: { variant?: Variant }
               关于喂龙虾
             </Link>
             <a
-              href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25"
+              href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-blue-700 hover:text-blue-900"

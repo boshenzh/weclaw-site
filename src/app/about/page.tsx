@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BOOKING_URL } from "@/lib/contact";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -71,7 +72,7 @@ export default function AboutPage() {
         <div>
           <h2 className="text-2xl font-bold">联系</h2>
           <p className="mt-4 leading-7 text-zinc-600">邮箱：<a className="text-blue-700" href="mailto:boshen233@gmail.com">boshen233@gmail.com</a></p>
-          <a className="mt-6 inline-flex rounded-lg bg-blue-600 px-5 py-3 text-sm font-semibold text-white hover:bg-blue-700" href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25" target="_blank" rel="noopener noreferrer">预约 15 分钟咨询</a>
+          <a className="mt-6 inline-flex rounded-lg bg-blue-600 px-5 py-3 text-sm font-semibold text-white hover:bg-blue-700" href={BOOKING_URL} target="_blank" rel="noopener noreferrer">预约 15 分钟咨询</a>
         </div>
       </section>
     </main>

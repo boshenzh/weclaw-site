@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BOOKING_URL } from "@/lib/contact";
 import Image from "next/image";
 import IntegrationLogos from "@/components/IntegrationLogos";
 
@@ -327,7 +328,7 @@ export default function Home() {
                 FAQ
               </a>
               <a
-                href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25"
+                href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 transition-colors"
@@ -377,7 +378,7 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <a
-                href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25"
+                href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-8 py-4 text-base font-semibold text-white hover:bg-blue-700 transition-all hover:scale-105 shadow-lg"
@@ -516,7 +517,7 @@ export default function Home() {
               {pricing.map((plan) => (
                 <a
                   key={plan.name}
-                  href={plan.checkoutPlan ? `/api/stripe/checkout?plan=${plan.checkoutPlan}` : "https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25"}
+                  href={plan.checkoutPlan ? `/api/stripe/checkout?plan=${plan.checkoutPlan}` : BOOKING_URL}
                   target={plan.checkoutPlan ? undefined : "_blank"}
                   rel={plan.checkoutPlan ? undefined : "noopener noreferrer"}
                   className={`relative block bg-white rounded-2xl border-2 p-8 ${
@@ -596,7 +597,7 @@ export default function Home() {
                     </p>
                   </div>
                   <a
-                    href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25"
+                    href={BOOKING_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center rounded-lg bg-emerald-600 px-5 py-3 text-sm font-semibold text-white hover:bg-emerald-700"
@@ -749,7 +750,7 @@ export default function Home() {
               预约免费 15 分钟咨询，我们聊聊你的需求，看看 OpenClaw 是否适合你。
             </p>
             <a
-              href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25"
+              href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-8 py-4 text-base font-semibold text-white hover:bg-blue-700 transition-all hover:scale-105 shadow-lg"
@@ -922,7 +923,7 @@ export default function Home() {
               <ul className="space-y-2">
                 <li>
                   <a
-                    href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25"
+                    href={BOOKING_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-zinc-600 hover:text-zinc-950"
@@ -989,7 +990,7 @@ export default function Home() {
             </div>
 
             <a
-              href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25"
+              href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-md bg-white text-blue-600 px-4 py-1.5 text-xs font-semibold hover:bg-blue-50 transition-colors whitespace-nowrap"

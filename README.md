@@ -164,12 +164,13 @@ const pricing = [
 ```
 
 ### 修改飞书会议链接
-当前使用的真实飞书预约链接：
+**唯一来源（single source of truth）：`src/lib/contact.ts` 里的 `BOOKING_URL` 常量。**
+
 ```
-https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25
+https://iiwlyqqrb5e.feishu.cn/scheduler/a1a62db44ecf8796
 ```
 
-如需更换，搜索并替换所有该链接为你的新预约链接。
+要换链接：只改 `src/lib/contact.ts` 一处，所有页面、`/llms.txt`、`/llms-full.txt`、`AuthorBio`、CTA 按钮全部自动更新。不要再去各页搜索替换。
 
 ### 修改 FAQ
 编辑 `faqs` 数组，添加或修改问题和答案。

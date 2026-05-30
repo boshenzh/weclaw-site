@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BOOKING_URL } from "@/lib/contact";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -71,7 +72,7 @@ export default function WhatIsOpenClawPage() {
                 FAQ
               </Link>
               <a
-                href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25"
+                href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 transition-colors"
@@ -450,7 +451,7 @@ export default function WhatIsOpenClawPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25"
+              href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-8 py-4 text-base font-semibold text-blue-600 hover:bg-blue-50 transition-all hover:scale-105 shadow-lg"

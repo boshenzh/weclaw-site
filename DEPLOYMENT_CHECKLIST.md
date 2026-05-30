@@ -25,7 +25,8 @@
 
 ### 配置
 - [x] 飞书会议链接已更新为真实链接
-  - `https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25`
+  - 来源：`src/lib/contact.ts` → `BOOKING_URL`
+  - 当前值：`https://iiwlyqqrb5e.feishu.cn/scheduler/a1a62db44ecf8796`
 - [x] 元数据已更新
 - [x] 文档已完善
 
@@ -147,7 +148,7 @@ git push origin main
 ## 📞 支持联系
 
 如有问题，请联系：
-- 飞书会议：https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25
+- 飞书会议：https://iiwlyqqrb5e.feishu.cn/scheduler/a1a62db44ecf8796
 - GitHub Issues：[项目仓库]
 
 ## 🎉 准备就绪！

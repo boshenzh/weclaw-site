@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BOOKING_URL } from "@/lib/contact";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -366,7 +367,7 @@ export default function SetupPage() {
           </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
             <a
-              href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25"
+              href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-md bg-white px-6 py-2.5 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-100 focus:outline-none focus:ring-2 focus:ring-white"
@@ -374,7 +375,7 @@ export default function SetupPage() {
               预约 15 分钟咨询
             </a>
             <a
-              href="https://h91srrlmnb.feishu.cn/scheduler/4280da450911da25"
+              href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-md border border-zinc-700 px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-white"
