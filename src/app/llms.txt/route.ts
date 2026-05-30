@@ -25,6 +25,7 @@ Consultation: ${BOOKING_URL}
 
 ## Important pages
 - Home: https://www.weclawd.com/
+- 企业陪跑计划 (Enterprise on-site AI bootcamp, 3 days): https://www.weclawd.com/enterprise
 - Freight forwarder AI assistant: https://www.weclawd.com/freight-ai-assistant
 - 货代 AI 助手: https://www.weclawd.com/huodai-ai-assistant
 - Solutions index: https://www.weclawd.com/solutions

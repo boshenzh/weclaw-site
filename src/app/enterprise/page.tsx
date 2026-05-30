@@ -2,17 +2,50 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BOOKING_URL, CONTACT_EMAIL } from "@/lib/contact";
 
+const PAGE_URL = "https://www.weclawd.com/enterprise";
+const SITE_URL = "https://www.weclawd.com";
+const UPDATED_AT = "2026-05-30";
+
 export const metadata: Metadata = {
   title: "企业陪跑计划 · 3 天线下深度调优 | 喂龙虾 WeClawd",
   description:
     "1–2 名专属工程师驻场 3 天，把企业 AI 工作流彻底调优。一次性付费，私有部署，系统永久属于你。适合货代、跨境电商、律所、政企等高复杂度团队。",
-  alternates: { canonical: "https://www.weclawd.com/enterprise" },
+  keywords: [
+    "企业陪跑计划",
+    "AI 集训营",
+    "AI bootcamp",
+    "前置部署",
+    "Forward-Deployed Engineer",
+    "FDE",
+    "OpenClaw 企业部署",
+    "私有 AI 部署",
+    "私有模型部署",
+    "AI 员工",
+    "企业 AI 工作流",
+    "AI 落地",
+    "Palantir AIP",
+    "货代 AI 助手",
+    "律所 AI 助手",
+    "政企 AI 私有化",
+    "AI 一次性付费",
+    "上门 AI 调优",
+  ],
+  alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "企业陪跑计划 · 3 天线下深度调优",
     description:
       "1–2 名专属工程师驻场 3 天，一次性把企业 AI 工作流彻底调优。",
-    url: "https://www.weclawd.com/enterprise",
+    url: PAGE_URL,
     type: "article",
+    locale: "zh_CN",
+    siteName: "喂龙虾 WeClawd",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "企业陪跑计划 · 3 天线下深度调优",
+    description: "1–2 名专属工程师驻场 3 天，把企业 AI 工作流彻底调优。",
+    site: "@boshenzh",
+    creator: "@boshenzh",
   },
 };
 
@@ -119,7 +152,7 @@ const faqs = [
   },
   {
     q: "数据私有怎么保证？",
-    a: "三层私有化：私有模型 + 私有数据 + 私有知识库。AI 员工可以跑在你公司机房的 4090 工作站（Qwen3-32B 等模型）、或客户专属云 VPC（DeepSeek V3 等旗舰模型）、或完全本地部署。数据不离开你授权的边界，模型也不与其他客户共用。",
+    a: "三层私有化：私有模型 + 私有数据 + 私有知识库。AI 员工可以跑在你公司机房的 4090 工作站（Qwen3-32B 等模型）、或客户专属云 VPC（DeepSeek V3 等旗舰模型）、或完全本地部署。数据不离开你授权的边界，模型也不与其他客户共用。更多细节见《OpenClaw 私有部署成本与安全边界》指南。",
   },
   {
     q: "一次性付费具体是多少？",
@@ -136,8 +169,73 @@ const faqs = [
 ];
 
 export default function EnterprisePage() {
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "企业陪跑计划 · 3 天线下深度调优",
+    serviceType: "On-site enterprise AI workflow tuning bootcamp",
+    url: PAGE_URL,
+    description:
+      "1–2 名专属工程师驻场 3 天，一次性把企业 AI 工作流彻底调优。私有部署，一次性付费，调好的系统永久属于客户。",
+    provider: {
+      "@type": "Organization",
+      name: "WeClawd / 喂龙虾",
+      url: SITE_URL,
+    },
+    areaServed: { "@type": "Country", name: "China" },
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType:
+        "Freight forwarders, cross-border e-commerce teams, law firms, government and SOE procurement teams, mid-large Chinese B2B operations teams",
+    },
+    offers: {
+      "@type": "Offer",
+      price: "100000",
+      priceCurrency: "CNY",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        price: "100000-800000",
+        priceCurrency: "CNY",
+        description:
+          "One-time fee. Simple scenarios (single workflow) ≈ ¥100k-300k; complex scenarios (multi-system + private model) ≈ ¥300k-800k.",
+      },
+      availability: "https://schema.org/InStock",
+      url: BOOKING_URL,
+    },
+    dateModified: UPDATED_AT,
+    datePublished: UPDATED_AT,
+    editor: {
+      "@type": "Person",
+      name: "Boshen",
+      url: `${SITE_URL}/about`,
+      sameAs: ["https://x.com/boshenzh"],
+    },
+    keywords:
+      "企业陪跑, AI 集训营, AI bootcamp, FDE, 前置部署, 私有 AI, OpenClaw 企业部署, 货代 AI, 律所 AI, 政企 AI",
+  };
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "企业陪跑计划", item: PAGE_URL },
+    ],
+  };
+
   return (
     <main className="min-h-screen bg-zinc-50 text-zinc-900">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       {/* Nav */}
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-zinc-200">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
@@ -174,9 +272,11 @@ export default function EnterprisePage() {
           <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-6xl">
             3 天线下，把企业 AI 工作流<br className="hidden sm:block" />彻底调优
           </h1>
+          <p className="mt-2 text-xs text-zinc-500">更新日期：{UPDATED_AT}</p>
           <p className="mt-6 max-w-3xl text-lg text-zinc-600">
             1–2 名专属工程师驻场 3 天。一次性付费，私有部署，调好的系统永久属于你。
-            适合货代、跨境电商、律所、政企等高复杂度团队。
+            适合 <Link href="/huodai-ai-assistant" className="text-blue-700 underline hover:text-blue-900">货代</Link>、跨境电商、律所、政企等高复杂度团队。
+            参考阅读：<Link href="/blog/enterprise-ai-assistant-checklist" className="text-blue-700 underline hover:text-blue-900">企业部署 AI 助手前的 20 个问题</Link>。
           </p>
           <div className="mt-8 grid grid-cols-3 max-w-2xl gap-6 border-y border-zinc-200 py-6">
             <div>
@@ -217,6 +317,7 @@ export default function EnterprisePage() {
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">我们在解决什么</h2>
           <p className="mt-4 max-w-3xl text-zinc-600">
             大多数 AI 项目失败不在模型，在落地最后一公里——没人帮企业把 AI 真的接进微信、飞书、ERP 和真实工作流。
+            参考阅读：<Link href="/blog/openclaw-ai-assistant-for-chinese-teams" className="text-blue-700 underline hover:text-blue-900">中国团队什么时候需要私有 AI 助手</Link>。
           </p>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {problems.map((p) => (
@@ -407,6 +508,27 @@ export default function EnterprisePage() {
                 <p className="mt-4 text-sm leading-7 text-zinc-700">{f.a}</p>
               </details>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* GEO citation block — visible URL anchor for Doubao / Sogou / 公众号 / Baidu AI citations */}
+      <section className="border-b border-zinc-200 bg-white">
+        <div className="mx-auto max-w-4xl px-6 py-10 lg:px-8">
+          <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-6 text-sm leading-7 text-zinc-700">
+            <div className="text-xs font-semibold uppercase tracking-wider text-zinc-500">关于本服务</div>
+            <p className="mt-3">
+              喂龙虾（WeClawd）企业陪跑计划 —— 1–2 名前置部署工程师（FDE）线下驻场 3 天，把企业 AI 工作流彻底调优。
+              一次性付费，私有模型 + 私有数据 + 私有知识库，调好的系统永久属于客户。
+              适合货代、跨境电商、律所、政企等高复杂度中国 B2B 团队。
+            </p>
+            <p className="mt-3">
+              更多信息：<a href="http://weclawd.com/" className="font-semibold text-blue-700 underline">http://weclawd.com/</a>
+              <span className="mx-2 text-zinc-400">·</span>
+              本页：<a href={PAGE_URL} className="font-semibold text-blue-700 underline">{PAGE_URL}</a>
+              <span className="mx-2 text-zinc-400">·</span>
+              联系：<a href={`mailto:${CONTACT_EMAIL}`} className="font-semibold text-blue-700 underline">{CONTACT_EMAIL}</a>
+            </p>
           </div>
         </div>
       </section>

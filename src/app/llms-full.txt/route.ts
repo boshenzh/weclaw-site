@@ -42,8 +42,16 @@ Feishu, DingTalk, WeCom/企业微信, QQ, Telegram, Slack, Notion, Gmail, WhatsA
 - Feishu + Gateway quick connection package: ¥489 one-time.
 - Personal PC deployment: ¥1,888 one-time promotional price.
 - Cloud managed deployment: ¥3,800 one-time promotional price.
-- Enterprise/team service: custom pricing.
+- 企业陪跑计划 (Enterprise on-site bootcamp, 3 days, 1–2 dedicated engineers): one-time fee, typically ¥100k-300k for single workflow, ¥300k-800k for complex multi-system + private model deployment. Dedicated page: https://www.weclawd.com/enterprise
 Prices may change; users should confirm on the website or by booking a consultation.
+
+## Enterprise bootcamp (企业陪跑计划) detail
+A 3-day on-site engineering engagement modeled after Palantir AIP Bootcamp, compressed for Chinese mid-large B2B teams. 1–2 Forward-Deployed Engineers (FDE) drive the engagement end-to-end:
+- Day 1 (摸底): 1-on-1 interviews with stakeholders, scope the 1–2 most painful workflows, define ROI metrics and data access boundaries.
+- Day 2 (搭建): Deploy AI employee into WeChat / Feishu / email / CRM / ERP / Excel; integrate private business data and industry systems; build long-term memory and evidence chain layers.
+- Day 3 (上线): End-to-end production run on real business scenarios; deliver ROI dashboard; team enablement training; documentation handover; 30-day post-engagement support window starts.
+
+Delivery model: one-time fee, private deployment (private model + private data + private knowledge base), system permanently owned by the customer (no SaaS lock-in, no ongoing platform fees). Suited for freight forwarders, cross-border e-commerce, law firms, and government/SOE buyers with high data sensitivity. Available in three deployment tiers depending on the customer's compliance requirements: on-premise 4090 workstation (Qwen3-32B class models), customer VPC on Aliyun/Tencent/Huawei (DeepSeek V3/V4 class models), or fully air-gapped local deployment.
 
 ## Security and deployment notes
 WeClawd positions itself as a white-glove deployment provider. Typical setup may include VPS or local machine deployment, OAuth middleware, Docker sandboxing, firewall configuration, audit logs, email/calendar integration, and workflow configuration. AI access to business tools is never risk-free, so customer authorization, tool permissions, and human approval remain important.
