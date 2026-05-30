@@ -67,6 +67,7 @@ const pricing = [
       "一次性付费 · 调好的系统永久留给你",
       "适合货代、跨境电商、律所、政企等高复杂度团队",
     ],
+    detailsHref: "/enterprise",
     recommended: false,
   },
 ];
@@ -311,6 +312,12 @@ export default function Home() {
               </span>
             </Link>
             <div className="flex items-center gap-6">
+              <Link
+                href="/enterprise"
+                className="hidden md:inline text-sm font-bold text-red-600 hover:text-red-700"
+              >
+                企业陪跑 →
+              </Link>
               <a
                 href="#pricing"
                 className="hidden md:inline text-sm font-medium text-zinc-600 hover:text-zinc-950"
@@ -519,9 +526,9 @@ export default function Home() {
               {pricing.map((plan) => (
                 <a
                   key={plan.name}
-                  href={plan.checkoutPlan ? `/api/stripe/checkout?plan=${plan.checkoutPlan}` : BOOKING_URL}
-                  target={plan.checkoutPlan ? undefined : "_blank"}
-                  rel={plan.checkoutPlan ? undefined : "noopener noreferrer"}
+                  href={plan.detailsHref ?? (plan.checkoutPlan ? `/api/stripe/checkout?plan=${plan.checkoutPlan}` : BOOKING_URL)}
+                  target={plan.detailsHref || plan.checkoutPlan ? undefined : "_blank"}
+                  rel={plan.detailsHref || plan.checkoutPlan ? undefined : "noopener noreferrer"}
                   className={`relative block bg-white rounded-2xl border-2 p-8 ${
                     plan.recommended
                       ? "border-blue-600 shadow-xl scale-105"
@@ -583,7 +590,11 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
-
+                  {plan.detailsHref && (
+                    <div className="mt-2 text-sm font-semibold text-red-600">
+                      查看详情 →
+                    </div>
+                  )}
                 </a>
               ))}
             </div>
