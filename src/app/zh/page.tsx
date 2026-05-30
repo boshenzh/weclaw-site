@@ -26,6 +26,18 @@ export default function ZhIndexPage() {
       </section>
       <section className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
         <div className="mb-8">
+          <h2 className="text-3xl font-bold tracking-tight">客户案例</h2>
+          <p className="mt-3 max-w-3xl text-zinc-600">真实付费客户的脱敏案例：具体行业、上线前后数据、3 天集训营怎么交付、做到的和做不到的。</p>
+        </div>
+        <div className="mb-16">
+          <Link href="/case/huodai-baojia-speed-to-lead" className="block rounded-2xl border-2 border-red-200 bg-gradient-to-br from-red-50 to-white p-6 hover:border-red-300">
+            <div className="text-xs font-semibold uppercase tracking-wider text-red-600">海运货代 · 已付费 · 运行 6 个月+</div>
+            <h3 className="mt-3 text-xl font-bold text-zinc-950">报价响应从 90 小时压到 15 分钟</h3>
+            <p className="mt-3 text-sm leading-6 text-zinc-600">深圳某中型货代用 LATRACE / OpenClaw AI 员工 + 3 天集训营。GoFreight 公开数据：行业平均报价 90 小时，赢家 30 分钟内回应。本案例公开真实数据、做到的、做不到的、定价区间。</p>
+            <span className="mt-4 inline-block text-sm font-semibold text-red-600">查看完整案例 →</span>
+          </Link>
+        </div>
+        <div className="mb-8">
           <h2 className="text-3xl font-bold tracking-tight">中文深度文章</h2>
           <p className="mt-3 max-w-3xl text-zinc-600">这些文章面向真实客户决策问题：OpenClaw 是什么、企业微信怎么落地、货代 AI 从哪里开始、私有部署有什么成本和边界。</p>
         </div>

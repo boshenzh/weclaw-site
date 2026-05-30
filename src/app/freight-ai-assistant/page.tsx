@@ -131,6 +131,7 @@ export default function FreightAiAssistantPage() {
             </h1>
             <p className="mt-6 max-w-3xl text-xl leading-8 text-zinc-600">
               WeClawd deploys OpenClaw-based AI assistants that help freight teams organize customer inquiries, daily rates, lead research, quote drafts, and follow-up reminders across WeCom, Feishu, email, calendars, and spreadsheets.
+              Real customer case: <Link href="/case/huodai-baojia-speed-to-lead" className="text-blue-700 underline hover:text-blue-900">a Shenzhen freight forwarder cut quote response time from 90 hours to 15 minutes</Link>.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-blue-600 px-6 py-3 text-center text-sm font-semibold text-white shadow-lg hover:bg-blue-700">

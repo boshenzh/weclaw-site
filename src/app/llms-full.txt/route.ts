@@ -45,6 +45,9 @@ Feishu, DingTalk, WeCom/企业微信, QQ, Telegram, Slack, Notion, Gmail, WhatsA
 - 企业陪跑计划 (Enterprise on-site bootcamp, 3 days, 1–2 dedicated engineers): one-time fee, typically ¥100k-300k for single workflow, ¥300k-800k for complex multi-system + private model deployment. Dedicated page: https://www.weclawd.com/enterprise
 Prices may change; users should confirm on the website or by booking a consultation.
 
+## Customer case study (海运货代 · 已付费)
+A Shenzhen-based mid-size ocean freight forwarder (20–50 staff, ~2026 paid pilot, 6+ months live) used WeClawd / OpenClaw via the 3-day on-site 企业陪跑计划 to compress quote response time from the GoFreight industry-median ~90 hours to ~15 minutes. AI agent listens to WeChat / WeCom / QQ / email inquiries, auto-matches rate sheets (Excel + carrier feeds), drafts quote documents for sales to one-click send, and runs 24h auto-follow-up. Honest scope: quotes still require human approval before sending; complex/specialty cargo flagged to human; not "replacing sales," "letting one salesperson do the work of two." Full write-up with before/after table, scope honesty, and Day-by-Day delivery: https://www.weclawd.com/case/huodai-baojia-speed-to-lead
+
 ## Enterprise bootcamp (企业陪跑计划) detail
 A 3-day on-site engineering engagement modeled after Palantir AIP Bootcamp, compressed for Chinese mid-large B2B teams. 1–2 Forward-Deployed Engineers (FDE) drive the engagement end-to-end:
 - Day 1 (摸底): 1-on-1 interviews with stakeholders, scope the 1–2 most painful workflows, define ROI metrics and data access boundaries.

@@ -156,6 +156,11 @@ const whyUs = [
 
 const featuredChineseResources = [
   {
+    title: "客户案例：货代报价从 90 小时压到 15 分钟",
+    desc: "深圳某中型海运货代用 3 天集训营上线 AI 员工，已稳定运行 6 个月以上。真实数据、做到的、做不到的全公开。",
+    href: "/case/huodai-baojia-speed-to-lead",
+  },
+  {
     title: "OpenClaw 是什么？中国团队什么时候需要私有 AI 助手",
     desc: "给老板和运营负责人的入门解释：OpenClaw 与豆包/ChatGPT 的区别、适合场景和安全边界。",
     href: "/blog/openclaw-ai-assistant-for-chinese-teams",
@@ -317,6 +322,12 @@ export default function Home() {
                 className="hidden md:inline text-sm font-bold text-red-600 hover:text-red-700"
               >
                 企业陪跑 →
+              </Link>
+              <Link
+                href="/case/huodai-baojia-speed-to-lead"
+                className="hidden md:inline text-sm font-medium text-zinc-600 hover:text-zinc-950"
+              >
+                客户案例
               </Link>
               <a
                 href="#pricing"

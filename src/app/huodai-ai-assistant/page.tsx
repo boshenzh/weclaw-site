@@ -90,6 +90,7 @@ export default function HuodaiAiAssistantPage() {
             <h1 className="text-4xl font-bold tracking-tight text-zinc-950 lg:text-6xl">给货代团队部署能工作的 AI 助手</h1>
             <p className="mt-6 max-w-3xl text-xl leading-8 text-zinc-600">
               WeClawd（喂龙虾）基于 OpenClaw，为货代和国际物流团队部署私有 AI 助手，连接企业微信、飞书、邮箱、日历和表格，帮助整理询盘、运价、客户画像和销售跟进。
+              真实案例：<Link href="/case/huodai-baojia-speed-to-lead" className="text-blue-700 underline hover:text-blue-900">深圳某中型货代用 AI 员工把报价响应从 90 小时压到 15 分钟</Link>。
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-blue-600 px-6 py-3 text-center text-sm font-semibold text-white shadow-lg hover:bg-blue-700">预约 15 分钟咨询</a>
