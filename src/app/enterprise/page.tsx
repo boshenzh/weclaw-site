@@ -472,29 +472,7 @@ export default function EnterprisePage() {
         </div>
       </section>
 
-      {/* 7 · 谁来驻场 */}
-      <section className="border-b border-zinc-200 bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">谁来驻场</h2>
-          <div className="mt-8 rounded-2xl border border-zinc-200 bg-zinc-50 p-8">
-            <div className="text-lg font-bold text-zinc-900">Boshen 张博深 + 工程师团队</div>
-            <p className="mt-3 text-sm leading-6 text-zinc-700">
-              OpenClaw 核心团队成员，Forward-Deployed Engineer 背景。过往交付涵盖海运货代付费试点、跨境电商运营自动化、律所合同审查、政企私有部署。
-              熟悉 WeCom / 飞书 / 钉钉 / Email / Telegram 等中国 B2B 真实沟通通道；熟悉 Qwen3 / DeepSeek / GLM 等开源中文模型的私有化部署。
-            </p>
-            <p className="mt-3 text-sm leading-6 text-zinc-700">
-              我们不是来开会的——是来写代码、接系统、把 AI 员工焊进你工作流的。
-            </p>
-            <div className="mt-5">
-              <Link href="/about" className="text-sm font-semibold text-blue-600 hover:text-blue-700">
-                关于团队 →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 8 · FAQ */}
+      {/* 7 · FAQ */}
       <section className="border-b border-zinc-200">
         <div className="mx-auto max-w-3xl px-6 py-20 lg:px-8">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">常见问题</h2>
