@@ -33,7 +33,7 @@ export default function ZhIndexPage() {
           <Link href="/case/huodai-baojia-speed-to-lead" className="block rounded-2xl border-2 border-red-200 bg-gradient-to-br from-red-50 to-white p-6 hover:border-red-300">
             <div className="text-xs font-semibold uppercase tracking-wider text-red-600">海运货代 · 已付费 · 运行 6 个月+</div>
             <h3 className="mt-3 text-xl font-bold text-zinc-950">报价响应从 90 小时压到 15 分钟</h3>
-            <p className="mt-3 text-sm leading-6 text-zinc-600">深圳某中型货代通过喂龙虾部署 OpenClaw 私有 AI 助手 + 3 天集训营。GoFreight 公开数据：行业平均报价 90 小时，赢家 30 分钟内回应。本案例公开真实数据、做到的、做不到的、定价区间。</p>
+            <p className="mt-3 text-sm leading-6 text-zinc-600">深圳某中型货代用 OpenClaw 私有 AI 员工 + 3 天集训营。GoFreight 公开数据：行业平均报价 90 小时，赢家 30 分钟内回应。本案例公开真实数据、做到的、做不到的、定价区间。</p>
             <span className="mt-4 inline-block text-sm font-semibold text-red-600">查看完整案例 →</span>
           </Link>
         </div>
