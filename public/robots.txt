@@ -3,6 +3,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.weclawd.com/sitemap.xml
+Sitemap: https://www.weclawd.com/video-sitemap.xml
 Host: https://www.weclawd.com
 
 # 中文搜索引擎
