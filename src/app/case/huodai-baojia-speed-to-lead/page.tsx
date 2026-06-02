@@ -7,13 +7,13 @@ const SITE_URL = "https://www.weclawd.com";
 const UPDATED_AT = "2026-05-30";
 
 export const metadata: Metadata = {
-  title: "客户案例 · 货代 AI 员工把报价响应从 90 小时压到 15 分钟 | 喂龙虾 WeClawd",
+  title: "客户案例 · OpenClaw 货代 AI 助手把报价响应从 90 小时压到 15 分钟 | 喂龙虾 WeClawd",
   description:
-    "深圳某中型海运货代用 LATRACE / OpenClaw AI 员工，把报价响应从行业均值 90 小时压到 15 分钟。3 天线下集训营交付，已稳定运行 6 个月以上。本文公开真实数据、做到的、做不到的、定价区间。",
+    "深圳某中型海运货代通过喂龙虾部署 OpenClaw 私有 AI 助手，把报价响应从行业均值 90 小时压到 15 分钟。3 天线下集训营交付，已稳定运行 6 个月以上。本文公开真实数据、做到的、做不到的、定价区间。",
   keywords: [
     "货代 AI 案例",
     "货代 AI 助手案例",
-    "海运货代 AI 员工",
+    "海运货代 AI 助手",
     "国际物流 AI 自动化",
     "AI 报价系统",
     "speed-to-lead",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "客户案例：货代报价从 90 小时压到 15 分钟",
     description:
-      "深圳某中型海运货代用 AI 员工压缩报价响应时长。真实数据、做到的、做不到的、定价区间全公开。",
+      "深圳某中型海运货代通过 OpenClaw 私有 AI 助手压缩报价响应时长。真实数据、做到的、做不到的、定价区间全公开。",
     url: PAGE_URL,
     type: "article",
     locale: "zh_CN",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "客户案例：货代报价从 90 小时 → 15 分钟",
-    description: "深圳某中型海运货代用 AI 员工压缩报价响应时长。",
+    description: "深圳某中型海运货代通过 OpenClaw 私有 AI 助手压缩报价响应时长。",
     site: "@boshenzh",
     creator: "@boshenzh",
   },
@@ -44,18 +44,18 @@ export const metadata: Metadata = {
 const beforeAfter = [
   { metric: "报价响应中位数", before: "约 90 小时", after: "约 15 分钟", note: "上线 6 个月观察值" },
   { metric: "销售人均每日省时", before: "—", after: "约 2–3 小时", note: "整理运价 + 写报价 + 跟进" },
-  { metric: "老板每周盯报价时间", before: "约 5 小时", after: "约 30 分钟", note: "改为只看仪表盘" },
-  { metric: "老客户主动跟进覆盖率", before: "约 40%", after: "≥ 95%", note: "AI 员工按规则定期回访" },
+  { metric: "管理层每周盯报价时间", before: "约 5 小时", after: "约 30 分钟", note: "改为只看仪表盘" },
+  { metric: "老客户主动跟进覆盖率", before: "约 40%", after: "≥ 95%", note: "OpenClaw 助手按规则定期提醒" },
 ];
 
 const whatWeBuilt = [
   {
     title: "1 · 监听询价",
-    body: "AI 员工 7×24 监听客户的微信群、企业微信、QQ 群、收件箱。识别「询价」意图后立即触发处理，不必销售先看到。",
+    body: "OpenClaw 助手 7×24 监听客户授权接入的微信群、企业微信、QQ 群、收件箱。识别「询价」意图后立即触发整理流程。",
   },
   {
     title: "2 · 自动整理运价",
-    body: "接入客户已有的运价 Excel + 部分船公司在线运价。AI 员工按航线、船公司、舱位类型、有效期匹配，生成结构化运价数据。",
+    body: "接入客户已有的运价 Excel + 部分船公司在线运价。OpenClaw 助手按航线、船公司、舱位类型、有效期匹配，生成结构化运价数据。",
   },
   {
     title: "3 · 生成报价单初稿",
@@ -63,11 +63,11 @@ const whatWeBuilt = [
   },
   {
     title: "4 · 自动按客户分类跟进",
-    body: "新询价 6 小时未回 / 报价后 24 小时未确认 / 老客户 30 天没询价：AI 员工按客户的偏好风格起草跟进消息。",
+    body: "新询价 6 小时未回 / 报价后 24 小时未确认 / 老客户 30 天没询价：OpenClaw 助手按客户的偏好风格起草跟进消息，销售确认后再发送。",
   },
   {
     title: "5 · ROI 仪表盘",
-    body: "老板和销售总监能直接看到：今日询价数、平均响应时长、报价转化率、客户活跃度、最近 7 天对比。",
+    body: "管理层和销售总监能直接看到：今日询价数、平均响应时长、报价转化率、客户活跃度、最近 7 天对比。",
   },
 ];
 
@@ -75,12 +75,12 @@ const honest = [
   "AI 报价单仍需销售人工审核后发出 — 我们没承诺「全自动报价」，因为价格本身有商业敏感性",
   "复杂多段、危险品、特种箱等场景，AI 标记后转人工",
   "AI 偶尔会把同名航线、同名港口（如 Port Klang 北港/南港）弄混，靠业务规则 + 人工 review 兜底",
-  "我们不是「替代销售」，是「销售助理」——卖给老板的话术是「让你的销售一个人干以前 2 个人的活」",
+  "OpenClaw 助手负责处理询价识别、运价整理、报价单初稿和跟进提醒等重复工作；关键报价、对外发送和业务判断仍由销售确认",
 ];
 
 const dayPlan = [
-  { day: "Day 1", title: "进场 · 摸底", body: "现场对接老板、销售总监、2 位一线销售。盘清楚询价从哪些群进来、客户结构、运价数据源、过往掉单原因。" },
-  { day: "Day 2", title: "接入 · 部署", body: "AI 员工接入微信 / 企业微信 / QQ / 邮件；接入运价 Excel；搭好长期记忆层（客户档案 + 询价历史 + 报价历史）；起跑测试。" },
+  { day: "Day 1", title: "进场 · 摸底", body: "现场对接管理层、销售总监、2 位一线销售。盘清楚询价从哪些群进来、客户结构、运价数据源、过往掉单原因。" },
+  { day: "Day 2", title: "接入 · 部署", body: "OpenClaw 助手接入微信 / 企业微信 / QQ / 邮件；接入运价 Excel；搭好长期记忆层（客户档案 + 询价历史 + 报价历史）；起跑测试。" },
   { day: "Day 3", title: "上线 · 培训", body: "端到端跑通 5–10 条真实询价；销售上手培训；ROI 仪表盘配置；交接文档 + 后续 30 天答疑期开启。" },
 ];
 
@@ -88,9 +88,9 @@ export default function CaseHuodaiPage() {
   const caseStudyJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "货代 AI 员工把报价响应从 90 小时压到 15 分钟",
+    headline: "OpenClaw 货代 AI 助手把报价响应从 90 小时压到 15 分钟",
     description:
-      "深圳某中型海运货代使用 LATRACE / OpenClaw AI 员工，把报价响应中位数从行业均值 90 小时压缩到约 15 分钟。3 天线下集训营交付，已稳定运行 6 个月以上。",
+      "深圳某中型海运货代通过喂龙虾部署 OpenClaw 私有 AI 助手，把报价响应中位数从行业均值 90 小时压缩到约 15 分钟。3 天线下集训营交付，已稳定运行 6 个月以上。",
     url: PAGE_URL,
     datePublished: UPDATED_AT,
     dateModified: UPDATED_AT,
@@ -105,7 +105,7 @@ export default function CaseHuodaiPage() {
       name: "WeClawd / 喂龙虾",
       url: SITE_URL,
     },
-    about: { "@type": "Thing", name: "海运货代 AI 员工 / Speed-to-Lead 优化" },
+    about: { "@type": "Thing", name: "海运货代 OpenClaw AI 助手 / Speed-to-Lead 优化" },
     keywords: "货代 AI 案例, AI 报价系统, OpenClaw 货代, 企业陪跑案例, speed-to-lead",
   };
   const breadcrumbJsonLd = {
@@ -161,14 +161,14 @@ export default function CaseHuodaiPage() {
             客户案例 · 海运货代 · 已付费
           </span>
           <h1 className="mt-4 text-3xl font-bold tracking-tight sm:text-5xl">
-            AI 员工把报价响应从<br className="hidden sm:block" />
+            OpenClaw 助手把报价响应从<br className="hidden sm:block" />
             <span className="text-red-600">90 小时</span> 压到 <span className="text-green-600">15 分钟</span>
           </h1>
           <p className="mt-2 text-xs text-zinc-500">深圳某中型海运货代 · 2026 年付费上线 · 已稳定运行 6 个月以上 · 更新日期：{UPDATED_AT}</p>
           <p className="mt-6 max-w-3xl text-lg text-zinc-600">
             按 <Link href="https://gofreight.com/blog/education/quote-faster-win-more-speed-to-lead" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline hover:text-blue-900">GoFreight 公开数据</Link>，
             货代行业平均报价响应约 90 小时，赢家在 30 分钟内回应，78% 的 B2B 买家选择最先回应的供应商。
-            这家深圳货代用 LATRACE / OpenClaw 把这条 speed-to-lead 曲线翻了过来。
+            这家深圳货代通过喂龙虾部署 OpenClaw 私有 AI 助手，把这条 speed-to-lead 曲线翻了过来。
           </p>
         </div>
       </section>
@@ -224,7 +224,7 @@ export default function CaseHuodaiPage() {
                 <li>• 询价散在 8+ 个微信群 + QQ + 邮件，容易漏</li>
                 <li>• 销售要先翻运价表、查仓位，再写报价，平均 90h</li>
                 <li>• 老客户复购被忘记，没系统跟</li>
-                <li>• 老板每天花 3-4 小时盯进度，被运营事务卡死</li>
+                <li>• 管理层每天花 3-4 小时盯进度，被运营事务卡住</li>
               </ul>
             </div>
           </div>
@@ -280,7 +280,7 @@ export default function CaseHuodaiPage() {
         <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">我们不夸的部分</h2>
           <p className="mt-4 max-w-3xl text-zinc-600">
-            诚实告诉你 AI 员工现在做不到 / 偶尔会错的地方。我们不卖「AI 替代销售」的故事——卖的是「让你的销售一个人干以前 2 个人的活」。
+            诚实说明 OpenClaw 助手现在做不到、或偶尔会错的地方。它适合先处理重复、可审核、可留痕的工作；报价、对外承诺和异常场景仍保留人工确认。
           </p>
           <ul className="mt-8 space-y-3">
             {honest.map((h) => (
@@ -327,7 +327,7 @@ export default function CaseHuodaiPage() {
             </Link>
             <Link href="/huodai-ai-assistant" className="rounded-2xl border border-zinc-200 bg-white p-5 hover:border-blue-300">
               <div className="font-semibold text-zinc-900">货代 AI 助手 · 场景页</div>
-              <div className="mt-1 text-sm text-zinc-600">为货代团队设计的 AI 员工方案</div>
+              <div className="mt-1 text-sm text-zinc-600">为货代团队设计的 OpenClaw AI 助手方案</div>
             </Link>
             <Link href="/blog/freight-ai-assistant-guide" className="rounded-2xl border border-zinc-200 bg-white p-5 hover:border-blue-300">
               <div className="font-semibold text-zinc-900">货代 AI 助手怎么落地</div>
@@ -354,7 +354,7 @@ export default function CaseHuodaiPage() {
         <div className="mx-auto max-w-4xl px-6 py-20 lg:px-8 text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">想为你公司做类似项目？</h2>
           <p className="mt-6 text-lg text-zinc-300">
-            如果你是货代 / 物流 / 跨境电商 / 律所 / 政企老板，3 天线下集训营是最快验证 AI 能不能在你工作流里跑起来的方式。
+            如果你是货代 / 物流 / 跨境电商 / 律所 / 政企负责人，3 天线下集训营是最快验证 AI 能不能在你工作流里跑起来的方式。
             先来一场 30 分钟需求摸底，免费、不绑、聊完不合适也直说。
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
