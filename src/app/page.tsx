@@ -2,6 +2,7 @@ import Link from "next/link";
 import { BOOKING_URL } from "@/lib/contact";
 import Image from "next/image";
 import IntegrationLogos from "@/components/IntegrationLogos";
+import HomeBottomVideoFloat from "@/components/HomeBottomVideoFloat";
 
 const pricing = [
   {
@@ -1076,6 +1077,7 @@ export default function Home() {
           })();
         `
       }} />
+      <HomeBottomVideoFloat />
     </div>
   );
 }
