@@ -321,6 +321,10 @@ export default function CaseHuodaiPage() {
               <div className="font-semibold text-zinc-900">企业陪跑计划</div>
               <div className="mt-1 text-sm text-zinc-600">3 天线下深度调优 · 一次性付费</div>
             </Link>
+            <Link href="/case/freight-auto-outreach" className="rounded-2xl border border-zinc-200 bg-white p-5 hover:border-blue-300">
+              <div className="font-semibold text-zinc-900">场景演示：自动开发信（视频）</div>
+              <div className="mt-1 text-sm text-zinc-600">公司名 → 画像 → 中文开发信 → SMTP 发送</div>
+            </Link>
             <Link href="/huodai-ai-assistant" className="rounded-2xl border border-zinc-200 bg-white p-5 hover:border-blue-300">
               <div className="font-semibold text-zinc-900">货代 AI 助手 · 场景页</div>
               <div className="mt-1 text-sm text-zinc-600">为货代团队设计的 AI 员工方案</div>

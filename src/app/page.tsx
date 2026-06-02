@@ -161,6 +161,11 @@ const featuredChineseResources = [
     href: "/case/huodai-baojia-speed-to-lead",
   },
   {
+    title: "场景演示：一行公司名 → 客户画像 + 自动开发信（视频）",
+    desc: "把一行公司名丢给 AI 员工，它自动调研公司、对照运价表算匹配度、起草个性化中文开发信、走 SMTP 发送。约 2 分 45 秒视频演示。",
+    href: "/case/freight-auto-outreach",
+  },
+  {
     title: "OpenClaw 是什么？中国团队什么时候需要私有 AI 助手",
     desc: "给老板和运营负责人的入门解释：OpenClaw 与豆包/ChatGPT 的区别、适合场景和安全边界。",
     href: "/blog/openclaw-ai-assistant-for-chinese-teams",

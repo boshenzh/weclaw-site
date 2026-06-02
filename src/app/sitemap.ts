@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: baseUrl, lastModified: currentDate, changeFrequency: "weekly", priority: 1.0 },
     { url: `${baseUrl}/enterprise`, lastModified: currentDate, changeFrequency: "weekly", priority: 0.95 },
     { url: `${baseUrl}/case/huodai-baojia-speed-to-lead`, lastModified: currentDate, changeFrequency: "monthly", priority: 0.95 },
+    { url: `${baseUrl}/case/freight-auto-outreach`, lastModified: currentDate, changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/huodai-ai-assistant`, lastModified: currentDate, changeFrequency: "weekly", priority: 0.95 },
     { url: `${baseUrl}/zh`, lastModified: currentDate, changeFrequency: "weekly", priority: 0.95 },
     { url: `${baseUrl}/en`, lastModified: currentDate, changeFrequency: "monthly", priority: 0.45 },
