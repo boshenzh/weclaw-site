@@ -35,6 +35,18 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: '/robots.txt',
+        destination: '/robots',
+      },
+      {
+        source: '/video-sitemap.xml',
+        destination: '/video-sitemap',
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {
