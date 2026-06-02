@@ -5,14 +5,18 @@ import { BOOKING_URL, CONTACT_EMAIL } from "@/lib/contact";
 const PAGE_URL = "https://www.weclawd.com/case/freight-auto-outreach";
 const SITE_URL = "https://www.weclawd.com";
 const UPDATED_AT = "2026-06-01";
+const VIDEO_UPLOAD_DATE = "2026-06-01T10:00:00+08:00";
 
 const VIDEO_SRC = "/videos/freight-auto-outreach.mp4";
 const VIDEO_POSTER = "/videos/freight-auto-outreach-poster.jpg";
+const VIDEO_TITLE = "一行公司名 → 客户画像 + 自动开发信";
+const VIDEO_DESCRIPTION =
+  "喂龙虾 WeClawd / OpenClaw 货代拓客场景演示：输入一行公司名，OpenClaw 助手自动调研公司、对照运价表判断匹配度、起草个性化中文开发信，并通过 SMTP 发送。";
 
 export const metadata: Metadata = {
   title: "场景演示 · 一行公司名 → 客户画像 + 自动开发信 | 喂龙虾 WeClawd",
   description:
-    "演示视频：把一行公司名丢给 AI 员工，它自动调研公司主营、客户结构、出口流向，匹配我司航线与货类，生成个性化中文开发信草稿并发送。货代/外贸/跨境团队拓客提速场景。",
+    "演示视频：把一行公司名交给 OpenClaw 助手，它自动调研公司主营、客户结构、出口流向，匹配我司航线与货类，生成个性化中文开发信草稿并发送。货代/外贸/跨境团队拓客提速场景。",
   keywords: [
     "AI 拓客",
     "AI 开发信",
@@ -23,23 +27,23 @@ export const metadata: Metadata = {
     "speed-to-prospect",
     "OpenClaw 货代",
     "WeClawd 案例",
-    "海运货代 AI 员工",
+    "海运货代 AI 助手",
   ],
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: "一行公司名 → 客户画像 + 自动开发信（视频演示）",
-    description:
-      "把公司名丢给 AI 员工，它自动调研、画像、起草个性化开发信。货代拓客提速演示。",
+    title: `${VIDEO_TITLE}（视频演示）`,
+    description: VIDEO_DESCRIPTION,
     url: PAGE_URL,
     type: "article",
     locale: "zh_CN",
     siteName: "喂龙虾 WeClawd",
     images: [{ url: `${SITE_URL}${VIDEO_POSTER}`, width: 1280, height: 720 }],
+    videos: [{ url: `${SITE_URL}${VIDEO_SRC}`, secureUrl: `${SITE_URL}${VIDEO_SRC}`, type: "video/mp4", width: 1280, height: 720 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "一行公司名 → 客户画像 + 自动开发信",
-    description: "货代/外贸拓客 AI 员工演示视频。",
+    title: VIDEO_TITLE,
+    description: "货代/外贸拓客 OpenClaw 助手演示视频。",
     site: "@boshenzh",
     creator: "@boshenzh",
     images: [`${SITE_URL}${VIDEO_POSTER}`],
@@ -49,7 +53,7 @@ export const metadata: Metadata = {
 const whatYouSee = [
   {
     title: "1 · 输入只是一行公司名",
-    body: "演示里给的是马来西亚 Klang 一家做精密注塑模具的工厂。除了公司名，AI 员工没有任何其他先验信息。",
+    body: "演示里给的是马来西亚 Klang 一家做精密注塑模具的工厂。除了公司名，OpenClaw 助手没有任何其他先验信息。",
   },
   {
     title: "2 · 自动调研公司公开信息",
@@ -72,9 +76,37 @@ const whatYouSee = [
 const honest = [
   "演示里使用的公司是真实存在的马来西亚企业，但没有真实成交。这是能力演示，不是付费客户案例",
   "AI 不会编造对方采购联系人或电话；如果公开渠道找不到，会标「待确认」而不是猜",
-  "起草版本仍建议销售或老板人工 review 后再发，特别是首封冷邮件",
+  "起草版本仍建议销售或负责人 review 后再发，特别是首封冷邮件",
   "匹配度判断依赖我司当前运价表。航线没覆盖的，AI 会如实标「业务不匹配」并建议归档，不会硬卖",
   "目前演示走 SMTP 邮件；微信好友 / 企业微信外联 / LinkedIn 等通道需另接",
+];
+
+const transcript = [
+  {
+    time: "00:00–00:20",
+    title: "输入目标公司",
+    body: "销售只输入一行公司名。OpenClaw 助手开始围绕公司公开信息、主营业务和潜在物流需求建立线索画像。",
+  },
+  {
+    time: "00:20–00:55",
+    title: "检索官网与公开资料",
+    body: "系统读取目标公司的公开网站和商业信息，提取产品类型、客户行业、所在城市、距离港口等对货代销售有用的字段。",
+  },
+  {
+    time: "00:55–01:25",
+    title: "匹配货类、航线和运价表",
+    body: "OpenClaw 助手把客户可能的出口方向和货类，与我司运价表中的起运港、目的港、船公司和价格有效期进行匹配，判断是否值得开发。",
+  },
+  {
+    time: "01:25–02:05",
+    title: "生成客户画像与开发角度",
+    body: "系统总结公司主营、可能的物流需求、匹配原因和风险边界，给销售一个清晰的开发切入点，而不是泛泛生成模板邮件。",
+  },
+  {
+    time: "02:05–02:45",
+    title: "起草并发送开发信",
+    body: "OpenClaw 助手生成 90–140 字的中文开发信草稿，保留人工 review，确认后通过 SMTP 发送。发件身份、签名和抄送规则按客户配置。",
+  },
 ];
 
 const fitFor = [
@@ -87,13 +119,16 @@ export default function CaseFreightAutoOutreachPage() {
   const caseStudyJsonLd = {
     "@context": "https://schema.org",
     "@type": "VideoObject",
-    name: "一行公司名 → 客户画像 + 自动开发信",
-    description:
-      "WeClawd / OpenClaw 货代拓客场景演示：输入一行公司名，AI 员工自动调研公司、对照我司运价表判断匹配度、起草个性化中文开发信、走 SMTP 发送。",
+    name: VIDEO_TITLE,
+    description: VIDEO_DESCRIPTION,
     thumbnailUrl: [`${SITE_URL}${VIDEO_POSTER}`],
-    uploadDate: UPDATED_AT,
+    uploadDate: VIDEO_UPLOAD_DATE,
     contentUrl: `${SITE_URL}${VIDEO_SRC}`,
+    embedUrl: PAGE_URL,
     duration: "PT2M45S",
+    inLanguage: "zh-CN",
+    isFamilyFriendly: true,
+    transcript: transcript.map((item) => `${item.time} ${item.title}：${item.body}`).join("\n"),
     publisher: {
       "@type": "Organization",
       name: "WeClawd / 喂龙虾",
@@ -158,7 +193,7 @@ export default function CaseFreightAutoOutreachPage() {
           </h1>
           <p className="mt-2 text-xs text-zinc-500">货代 / 外贸 / 跨境团队拓客场景 · 演示视频 · 更新日期：{UPDATED_AT}</p>
           <p className="mt-6 max-w-3xl text-lg text-zinc-600">
-            销售把一行公司名丢给 AI 员工，它就自己去查公司官网、判断主营和出口流向、对照你司运价表算匹配度，最后起草一份个性化中文开发信、走 SMTP 发出。整个流程默认带人工 review，不替你乱发。
+            销售把一行公司名交给 OpenClaw 助手，它就自己去查公司官网、判断主营和出口流向、对照你司运价表算匹配度，最后起草一份个性化中文开发信、走 SMTP 发出。整个流程默认带人工 review，不替你乱发。
           </p>
         </div>
       </section>
@@ -189,7 +224,7 @@ export default function CaseFreightAutoOutreachPage() {
         <div className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">视频里发生了什么</h2>
           <p className="mt-4 max-w-3xl text-zinc-600">
-            从用户输入到邮件送达，整个流程的 5 个关键步骤。除了第一步输入公司名，其他都是 AI 员工自动完成的。
+            从用户输入到邮件送达，整个流程的 5 个关键步骤。除了第一步输入公司名，其他都是 OpenClaw 助手自动完成的。
           </p>
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {whatYouSee.map((item) => (
@@ -197,6 +232,25 @@ export default function CaseFreightAutoOutreachPage() {
                 <h3 className="text-lg font-bold text-zinc-900">{item.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-zinc-700">{item.body}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 视频文字版流程 */}
+      <section className="border-b border-zinc-200 bg-white">
+        <div className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">视频文字版流程</h2>
+          <p className="mt-4 max-w-3xl text-zinc-600">
+            下面是视频内容的文字版，方便搜索引擎、AI 搜索和无法播放视频的访客理解这条货代拓客流程。
+          </p>
+          <div className="mt-10 space-y-4">
+            {transcript.map((item) => (
+              <article key={item.time} className="rounded-2xl border border-zinc-200 bg-zinc-50 p-5">
+                <div className="text-xs font-semibold uppercase tracking-wider text-blue-700">{item.time}</div>
+                <h3 className="mt-2 text-lg font-bold text-zinc-900">{item.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-zinc-700">{item.body}</p>
+              </article>
             ))}
           </div>
         </div>
@@ -241,7 +295,7 @@ export default function CaseFreightAutoOutreachPage() {
           <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-6 text-sm leading-7 text-zinc-700">
             <div className="text-xs font-semibold uppercase tracking-wider text-zinc-500">关于本案例</div>
             <p className="mt-3">
-              本页是喂龙虾（WeClawd）/ OpenClaw 货代拓客 AI 员工的能力演示：输入一行公司名，AI 自动完成公司调研、客户画像、运价匹配、个性化中文开发信起草与 SMTP 发送。演示中的目标公司为公开真实企业（马来西亚精密注塑模具厂），但未实际成交，仅作能力展示。
+              本页是喂龙虾（WeClawd）/ OpenClaw 货代拓客助手的能力演示：输入一行公司名，OpenClaw 助手自动完成公司调研、客户画像、运价匹配、个性化中文开发信起草与 SMTP 发送。演示中的目标公司为公开真实企业（马来西亚精密注塑模具厂），但未实际成交，仅作能力展示。
             </p>
             <p className="mt-3">
               更多信息：<a href="http://weclawd.com/" className="font-semibold text-blue-700 underline">http://weclawd.com/</a>
@@ -265,7 +319,7 @@ export default function CaseFreightAutoOutreachPage() {
             </Link>
             <Link href="/huodai-ai-assistant" className="rounded-2xl border border-zinc-200 bg-white p-5 hover:border-blue-300">
               <div className="font-semibold text-zinc-900">货代 AI 助手 · 场景页</div>
-              <div className="mt-1 text-sm text-zinc-600">为货代团队设计的 AI 员工方案</div>
+              <div className="mt-1 text-sm text-zinc-600">为货代团队设计的 OpenClaw AI 助手方案</div>
             </Link>
             <Link href="/enterprise" className="rounded-2xl border border-zinc-200 bg-white p-5 hover:border-blue-300">
               <div className="font-semibold text-zinc-900">企业陪跑计划</div>
@@ -288,7 +342,7 @@ export default function CaseFreightAutoOutreachPage() {
         <div className="mx-auto max-w-4xl px-6 py-20 lg:px-8 text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">想为你公司接入这条拓客流程？</h2>
           <p className="mt-6 text-lg text-zinc-300">
-            如果你是货代 / 外贸 / 跨境电商 / B2B 销售负责人，先来一场 30 分钟需求摸底，看看 AI 员工能不能跑进你现有的销售流程。免费、不绑、聊完不合适也直说。
+            如果你是货代 / 外贸 / 跨境电商 / B2B 销售负责人，先来一场 30 分钟需求摸底，看看 OpenClaw 助手能不能跑进你现有的销售流程。免费、不绑、聊完不合适也直说。
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
             <a
