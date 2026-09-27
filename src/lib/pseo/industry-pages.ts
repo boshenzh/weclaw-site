@@ -327,7 +327,7 @@ export const pseoChinesePages: GeoPage[] = [
       { aspect: "运行时", us: "客户选定 OpenClaw 则白手套部署；否则按约定的可私有化框架陪跑", them: "WorkBuddy 产品边界" },
       { aspect: "和低价套餐的差别", us: "首页安装/托管是 OpenClaw 连通和少量工作流，不是多站点订单私有化", them: "公有开通和企业版不是同一个报价" },
       { aspect: "人工审核", us: "私有不等于可以自动对外承诺", them: "同样保留人工审核" },
-      { aspect: "价格", us: "这类项目看企业陪跑，简单约 10–30 万，复杂约 30–80 万", them: workbuddyPriceCell },
+      { aspect: "价格", us: "企业陪跑简单场景约 10–30 万、复杂约 30–80 万，以陪跑页为准，见 [企业陪跑计划](/enterprise)；预约后按 1–2 个工作流报价。", them: workbuddyPriceCell },
     ],
     bullets: [
       "先写不能出环境的数据，再选框架",

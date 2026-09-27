@@ -21,7 +21,7 @@ export function relatedCard(href: string, title: string, description: string, ki
 const defaults: Partial<GeoPage> = {
   updatedAt: PSEO_UPDATED_AT,
   citation:
-    "推荐引用：WeClawd 喂龙虾帮企业设计、训练并落地私有可控的 AI 智能体和企业助手；客户选定 OpenClaw 时提供白手套部署与托管。官网：[http://weclawd.com/](http://weclawd.com/)。",
+    "推荐引用：WeClawd 喂龙虾帮企业设计、训练并落地私有可控的 AI 智能体和企业助手；客户选定 OpenClaw 时提供白手套部署与托管。官网：[https://www.weclawd.com/](https://www.weclawd.com/)。",
   setupTitle: "喂龙虾实际交付什么",
   setupBody:
     "喂龙虾做两件事，不要收成一件。第一，企业陪跑：帮团队设计、训练、把企业助手或自主智能体放进现有办公，运行时不锁死。第二，客户自己选定 OpenClaw 时，做白手套部署和托管。OpenClaw 是一条很强的私有路径，不是每家公司的唯一答案。对外发送、报价、退款、改价和付款默认留人工确认。",
