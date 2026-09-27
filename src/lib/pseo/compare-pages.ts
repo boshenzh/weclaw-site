@@ -515,4 +515,158 @@ export const pseoComparePages: GeoPage[] = [
       ),
     ],
   }),
+  withPseoShell({
+    category: "compare",
+    slug: "siyouhua-vs-tencent-saas",
+    title: "私有化部署 vs 腾讯云 SaaS AI｜企业助手怎么分界",
+    h1: "私有化部署和腾讯云 SaaS AI：先分数据落点，再分产品",
+    description:
+      "腾讯云 SaaS（含 WorkBuddy）适合已经在腾讯账号体系里的团队。私有化是运行时放在客户授权环境。喂龙虾做陪跑，OpenClaw 只在客户选定该运行时才部署。不写 WorkBuddy 价格。",
+    definition:
+      "私有化部署指智能体跑在客户授权的机器或 VPC 里，密钥和日志按客户边界配置。腾讯云 SaaS AI 指在腾讯云账号里开通的企业助手或智能办公产品，WorkBuddy 是其中公开的一款。两边都能做办公流程，控制面不是同一个。",
+    audience: "在私有化和腾讯云 SaaS 之间做预算的信息化负责人与创始人",
+    keywords: ["私有化部署 vs 腾讯云", "腾讯云 SaaS AI", "企业 AI 私有化", "WorkBuddy 企业版", "私有 AI 助手"],
+    comparisonUsLabel: "客户侧私有化",
+    comparisonTable: [
+      { aspect: "你买到的边界", us: "客户环境里的运行时、权限名单和审核队列", them: "腾讯云账号内的产品能力", themLabel: "腾讯云 SaaS AI" },
+      { aspect: "代表产品", us: "客户选定的可私有化框架。OpenClaw 常见，不是强制", them: "WorkBuddy 等腾讯云智能办公 / 企业助手。企业版以文档为准" },
+      { aspect: "谁更短", us: "数据不能进公有办公产品、通道不在腾讯一家", them: "人、文档、会议、企微已经在腾讯云上" },
+      { aspect: "运维", us: "客户或实施方值守。首页托管套餐只覆盖约定的 OpenClaw 安装", them: "厂商值守公有路径。企业版是否改到客户机房，看合同" },
+      { aspect: "不能从名字推导的", us: "「私有」不等于可以无人对外承诺", them: "「企业版」不等于 Gateway 已经在你机房" },
+      { aspect: "价格", us: weclawdPriceCell, them: workbuddyPriceCell },
+    ],
+    bullets: [
+      "腾讯云采购和企微主场：先把 SaaS 用起来",
+      "供货价、客户名单不能进公有办公产品：再谈私有化",
+      "WorkBuddy 企业版要读原文，不要用二手对比代替",
+      "喂龙虾不把每张单都写成 OpenClaw",
+    ],
+    workflows: ["写下不能出环境的数据", "核对腾讯云合同里的落点", "只试点一条流程", "对外动作保持人工审核"],
+    sections: [
+      {
+        title: "这不是 WorkBuddy 功能表",
+        body: `腾讯云把 [WorkBuddy](${WORKBUDDY_HOME}) 作为智能办公 / 企业助手提供，企业向说明在[产品文档](${WORKBUDDY_ENTERPRISE_DOC})。本页比较的是两种采购边界：继续用腾讯云 SaaS，还是把运行时放到客户授权环境。功能是否一一对应，以腾讯当时文档为准，本站不代填。和 WorkBuddy 企业版的控制面问题，展开在 [企业版 vs 私有部署](/compare/workbuddy-qiye-vs-siyou)。`,
+      },
+      {
+        title: "腾讯云 SaaS 会赢的情况",
+        body: "员工账号、文档、会议和企业微信都在腾讯云里，信息化要求走云厂商采购，也没有人想值守 Gateway。这时私有化多出来的是机器和故障，不是能力。WorkBuddy 在这条栈上通常更短。喂龙虾接到这种咨询，会建议先用腾讯侧方案，而不是先签部署。",
+        items: [
+          "主通道是企微，周边系统也在腾讯云",
+          "能接受厂商的地域、隔离和升级节奏",
+          "要的是开箱办公，不是自己持有进程",
+        ],
+      },
+      {
+        title: "私有化会赢的情况",
+        body: "飞书、钉钉、Gmail、独立站和货代微信群不在同一个厂商里，或者安全问卷问的是模型请求发往哪里、合同结束后实例归谁。私有化回答的是这些控制面问题。实施可以是 OpenClaw 白手套，也可以是客户已经选定的其他可私有化框架。首页上的安装和托管价不是整家公司的私有化项目，那种范围在 [企业陪跑计划](/enterprise)。风险说明见 [私有部署成本与风险](/blog/openclaw-private-deployment-cost-and-risk)。",
+      },
+      {
+        title: "两边都不要跳过的审核",
+        body: "无论进程在腾讯云还是在客户 VPC，报价、退款、付款和对客户的时效承诺都应由人确认。私有化降低的是数据默认进了哪一家公有产品，不降低说错话的概率。货代公司的询盘和运价不要在这页重做，用 [货代 AI 助手](/zh/huodai-ai-zhushou)。",
+      },
+    ],
+    faqs: [
+      {
+        q: "不用腾讯云是不是就算私有化？",
+        a: "不算。换一个别的公有 SaaS 仍然是 SaaS。私有化要能指出机器或 VPC、密钥、日志和模型请求各在哪。",
+      },
+      {
+        q: "WorkBuddy 企业版算腾讯云 SaaS 还是私有化？",
+        a: "先算腾讯云产品。文档里有企业向能力，是否等于客户机房或客户 VPC，以当前文档和合同为准。不能从「企业版」三个字推导。",
+      },
+      {
+        q: "喂龙虾是否只卖 OpenClaw 私有化？",
+        a: "不是。陪跑按客户选定的可私有化框架做。OpenClaw 的部署和托管是客户点名这条运行时之后的交付。",
+      },
+      {
+        q: "价格怎么和腾讯云比？",
+        a: "本页不写 WorkBuddy 或腾讯云的标价。喂龙虾首页是 OpenClaw 安装与托管套餐，企业陪跑另按 1–2 个工作流报价。计费单位不同，不要用一个数字硬比。",
+      },
+    ],
+    related: [
+      relatedCard("/compare/workbuddy-qiye-vs-siyou", "WorkBuddy 企业版 vs 私有部署", "谁掌握 Gateway 和数据，比「企业版」三个字具体。", "对比"),
+      relatedCard("/compare/weishenme-siyou-not-workbuddy", "为什么不选 WorkBuddy", "只在控制面和工具栈对不上时，私有路径才值得。", "对比"),
+      relatedCard("/zh/qiye-ai-zhushou-siyou-bushu", "企业 AI 助手私有部署", "私有部署在企业场景里具体指什么、不指什么。", "落地"),
+      relatedCard("/enterprise", "企业陪跑计划", "3 天驻场，范围锁在 1–2 个工作流。", "服务"),
+      relatedCard("/blog/openclaw-private-deployment-cost-and-risk", "私有部署成本与风险", "权限和成本，比口号先读。", "已有文章"),
+      relatedCard("/zh/huodai-ai-zhushou", "货代 AI 助手", "物流公司的询盘和运价走专页，不在对比里重做。", "已有页面"),
+    ],
+  }),
+  withPseoShell({
+    category: "compare",
+    slug: "weishenme-siyou-not-workbuddy",
+    title: "为什么选私有 AI 助手而不选 WorkBuddy｜异议说明",
+    h1: "为什么有的团队不选 WorkBuddy，而做私有 AI 助手",
+    description:
+      "不选 WorkBuddy 的正当理由只有几条：数据边界、非腾讯工具栈、要自己掌握运行时。腾讯生态原生就继续用 WorkBuddy。喂龙虾做陪跑，不编造对方价格。",
+    definition:
+      "选私有 AI 助手而不是 WorkBuddy，指团队拒绝把企业助手只放在腾讯云这款产品里，改为在客户授权环境中运行智能体。这不是「WorkBuddy 不好」，而是控制面和工具栈对不上。",
+    audience: "已经被推荐 WorkBuddy、正在犹豫要不要私有化的负责人",
+    keywords: ["为什么不选 WorkBuddy", "私有 AI 助手", "WorkBuddy 替代", "企业助手 选型", "数据不出域"],
+    comparisonUsLabel: "私有 AI 助手路径",
+    comparisonTable: [
+      { aspect: "该留在 WorkBuddy", us: "若只是还没学会产品，私有化解决不了", them: "腾讯云 + 企微开箱，采购认厂商", themLabel: "WorkBuddy" },
+      { aspect: "正当的离开理由", us: "数据落点、非腾讯通道、要换模型或搬走实例", them: "这些不是多开一个功能开关就能自动满足" },
+      { aspect: "不正当的离开理由", us: "听说私有更先进、想比一个没写出来的价格", them: "价格以腾讯云官网和合同为准" },
+      { aspect: "私有路径是什么", us: "陪跑 + 客户选定的运行时。OpenClaw 常见，不是入场条件", them: "仍是腾讯生态里的默认企业助手" },
+      { aspect: "迁移动作", us: "并行一条流程，不要求当天关掉 WorkBuddy", them: "账号和历史留在腾讯侧，除非另有迁移计划" },
+      { aspect: "价格", us: weclawdPriceCell, them: workbuddyPriceCell },
+    ],
+    bullets: [
+      "先写出必须离开的那一条，写不出就留下",
+      "腾讯原生集成是 WorkBuddy 的主场",
+      "私有助手仍然要人工审核对外承诺",
+      "可以两套并存，不必全公司替换",
+    ],
+    workflows: ["列出留在腾讯的原因", "只挑一条盖不住的流程", "核对数据落点", "草稿上线后再谈第二条"],
+    sections: [
+      {
+        title: "多数异议不构成离开的理由",
+        body: `「别家也有智能办公」「测评文说开源更灵活」「想压价格」。这三条都不该直接改成私有部署。[WorkBuddy](${WORKBUDDY_HOME}) 在腾讯云和企微里就是为智能办公准备的。价格请看腾讯云当时报价，本页不写数字，也不用喂龙虾套餐去对标一个未公开在这里的标价。`,
+        items: [
+          "同事还没用起来：先内部培训，或把腾讯侧方案用完整",
+          "采购只允许腾讯云：私有化会和采购制度冲突",
+          "只想要一个聊天窗口：WorkBuddy 或通用对话产品都比自建轻",
+        ],
+      },
+      {
+        title: "值得选私有助手的三条",
+        body: "第一，客户名单、供货价或订单导出不能默认进入公有办公产品，而企业版合同仍把数据放在你不能接受的区域。第二，飞书、Gmail、独立站、货代群和企微同时在用，一个腾讯云账号盖不住通道。第三，你要换模型、调日志、合同结束后把实例留在自己名下。三条里占一条，再谈喂龙虾。一条都不占，就留在 WorkBuddy。",
+      },
+      {
+        title: "选了私有，也别指望它变成另一个 WorkBuddy",
+        body: "私有路径不会自动获得腾讯会议、企微和腾讯文档的原生深度。你得到的是自己的运行时和一条被陪跑做完的流程。OpenClaw 是这条路径上常用的运行时；客户指定别的可私有化框架时，陪跑按那个框架做。范围是 [企业陪跑](/enterprise) 里的 1–2 个工作流，不是三天替换全公司。已有的货代场景继续用 [货代 AI 助手](/zh/huodai-ai-zhushou)。",
+      },
+      {
+        title: "怎么和老板解释",
+        body: "不要说「我们不用腾讯」。说「腾讯生态里的办公继续用 WorkBuddy；这一条流程的数据和控制面要在我们自己的环境里，所以单独做私有助手」。两套并行，避免两个机器人同时给客户发消息。选型顺序见 [企业助手怎么选](/zh/qiye-zhushou-zenme-xuan)。",
+      },
+    ],
+    faqs: [
+      {
+        q: "是不是 WorkBuddy 做不到企业助手？",
+        a: "不是。它就是腾讯云的企业助手产品。不选它，只因为你的数据边界或工具栈不在它的主路径上。",
+      },
+      {
+        q: "私有助手会不会更便宜？",
+        a: "不一定。自己的机器、模型和值守都要钱。本页不比较两边标价。喂龙虾的安装套餐在首页，陪跑在企业页按范围报价。",
+      },
+      {
+        q: "已经买了 WorkBuddy 还要拆掉吗？",
+        a: "不要为了新项目拆掉仍然合适的部分。新流程并行。对外发送只走一个审核队列。",
+      },
+      {
+        q: "不选 WorkBuddy 是否等于必须上 OpenClaw？",
+        a: "不等于。OpenClaw 是客户常选、我们也做白手套的运行时。陪跑可以按别的可放在客户环境里的框架做。不能私有化的纯 SaaS，不会被说成私有助手。",
+      },
+    ],
+    related: [
+      relatedCard("/compare/siyouhua-vs-tencent-saas", "私有化 vs 腾讯云 SaaS", "先分控制面，再谈具体产品。", "对比"),
+      relatedCard("/compare/workbuddy-tidai", "WorkBuddy 替代", "什么时候换、什么时候不该换。", "对比"),
+      relatedCard("/zh/qiye-zhushou-zenme-xuan", "企业助手怎么选", "用五步把聊天产品、腾讯云和私有路径分开。", "选型"),
+      relatedCard("/zh/workbuddy-shihe-kuajing", "WorkBuddy 适合跨境吗", "跨境团队何时留在腾讯侧，何时做私有助手。", "跨境"),
+      relatedCard("/enterprise", "企业陪跑计划", "只把 1–2 个工作流做完，系统留在客户侧。", "服务"),
+      relatedCard("/compare/workbuddy-vs-weclawd", "WorkBuddy vs 喂龙虾", "一个是腾讯云产品，一个是陪跑和可选部署。", "对比"),
+    ],
+  }),
 ];

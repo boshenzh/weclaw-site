@@ -1,17 +1,29 @@
 /**
  * Programmatic SEO content modules.
  *
- * Next batch: append a GeoPage to `pseoComparePages` or `pseoChinesePages`.
- * Do not add a new page.tsx. These arrays are spread into `src/lib/geo-pages.ts`,
- * which already feeds:
- * - `/compare/[slug]` and `/zh/[slug]`
- * - `/compare` and `/zh` index cards
- * - `sitemap.ts`
- * - `/llms.txt` and `/llms-full.txt`
+ * Add a page by appending a GeoPage wrapped in `withPseoShell`:
+ * - `/compare/[slug]` → `compare-pages.ts` (`pseoComparePages`)
+ * - `/zh/[slug]` cross-border → `industry-pages.ts`
+ * - `/zh/[slug]` category and selection → `howto-pages.ts`
+ * - `/zh/[slug]` WeCom / Feishu / DingTalk → `platform-pages.ts`
+ * - `/zh/[slug]` Shenzhen on-site or remote → `location-pages.ts`
  *
- * Compare slugs in this batch use `/compare/...`.
- * Cross-border slugs use `/zh/...`.
- * Shared tone and citation live in `shell.ts` (`withPseoShell`).
+ * Do not add a new page.tsx. `pseoChinesePages` and `pseoComparePages` are
+ * spread into `src/lib/geo-pages.ts`, which feeds the dynamic routes,
+ * `/compare` and `/zh` indexes, `sitemap.ts`, and both llms files.
+ *
+ * Shared tone and citation live in `shell.ts`.
  */
+import { pseoChinesePages as industryPages } from "@/lib/pseo/industry-pages";
+import { pseoHowtoPages } from "@/lib/pseo/howto-pages";
+import { pseoLocationPages } from "@/lib/pseo/location-pages";
+import { pseoPlatformPages } from "@/lib/pseo/platform-pages";
+
 export { pseoComparePages } from "@/lib/pseo/compare-pages";
-export { pseoChinesePages } from "@/lib/pseo/industry-pages";
+
+export const pseoChinesePages = [
+  ...industryPages,
+  ...pseoHowtoPages,
+  ...pseoPlatformPages,
+  ...pseoLocationPages,
+];
