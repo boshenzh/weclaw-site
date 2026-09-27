@@ -1,4 +1,5 @@
 import type { GeoPage } from "@/lib/geo-pages";
+import { batch3PlatformPages } from "@/lib/pseo/batch3-pages";
 import { relatedCard, withPseoShell } from "@/lib/pseo/shell";
 
 const human = "对外发送、报价、退款和付款默认生成草稿，由人确认。";
@@ -254,4 +255,5 @@ export const pseoPlatformPages: GeoPage[] = [
       relatedCard("/zh/zhineng-bangong-ai", "智能办公 AI 助手", "审批提醒属于对内办公。", "品类"),
     ],
   }),
+  ...batch3PlatformPages,
 ];

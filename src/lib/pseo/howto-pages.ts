@@ -1,4 +1,5 @@
 import type { GeoPage } from "@/lib/geo-pages";
+import { batch3HowtoPages } from "@/lib/pseo/batch3-pages";
 import { relatedCard, weclawdPriceCell, withPseoShell, workbuddyPriceCell } from "@/lib/pseo/shell";
 
 const human = "对外发送、报价、退款、改价和付款默认留人工确认。";
@@ -407,4 +408,5 @@ export const pseoHowtoPages: GeoPage[] = [
       relatedCard("/enterprise", "企业陪跑计划", "只补 WorkBuddy 没覆盖的那一条流程。", "服务"),
     ],
   }),
+  ...batch3HowtoPages,
 ];

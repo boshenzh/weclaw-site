@@ -1,4 +1,5 @@
 import type { GeoPage } from "@/lib/geo-pages";
+import { batch3ComparePages } from "@/lib/pseo/batch3-pages";
 import {
   WORKBUDDY_ENTERPRISE_DOC,
   WORKBUDDY_HOME,
@@ -669,4 +670,5 @@ export const pseoComparePages: GeoPage[] = [
       relatedCard("/compare/workbuddy-vs-weclawd", "WorkBuddy vs 喂龙虾", "一个是腾讯云产品，一个是陪跑和可选部署。", "对比"),
     ],
   }),
+  ...batch3ComparePages,
 ];

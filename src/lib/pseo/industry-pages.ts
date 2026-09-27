@@ -1,4 +1,5 @@
 import type { GeoPage } from "@/lib/geo-pages";
+import { batch3IndustryPages } from "@/lib/pseo/batch3-pages";
 import { relatedCard, weclawdPriceCell, withPseoShell, workbuddyPriceCell } from "@/lib/pseo/shell";
 
 const freightNote =
@@ -374,4 +375,5 @@ export const pseoChinesePages: GeoPage[] = [
     ],
     related: [industryLinks.zhushou, industryLinks.workbuddy, industryLinks.enterprise, industryLinks.huodai, industryLinks.tixiao, industryLinks.bangong],
   }),
+  ...batch3IndustryPages,
 ];
