@@ -44,13 +44,13 @@ export default function GeoLandingPage({ page, basePath }: { page: GeoPage; base
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: "WeClawd / 喂龙虾",
-    alternateName: ["WeClawd", "喂龙虾", "OpenClaw 私有 AI 助手部署"],
+    alternateName: ["WeClawd", "喂龙虾", "企业 AI 智能体陪跑"],
     url: siteUrl,
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web, Cloud, local server, Linux, macOS",
     description:
       page.softwareBlurb ||
-      "WeClawd deploys private OpenClaw AI assistants for Chinese teams, freight forwarders, sales, operations, and executive workflows.",
+      "WeClawd / 喂龙虾 coaches enterprises to design, train, and operationalize private controllable AI agents. OpenClaw white-glove deployment and hosting is one option when the customer chooses that runtime.",
     offers: [
       { "@type": "Offer", name: "Feishu + Gateway quick connection", price: "489", priceCurrency: "CNY" },
       { "@type": "Offer", name: "Personal PC deployment", price: "1888", priceCurrency: "CNY" },
@@ -139,7 +139,7 @@ export default function GeoLandingPage({ page, basePath }: { page: GeoPage; base
           {page.citation ? (
             <p className="mt-2">{renderInline(page.citation)}</p>
           ) : (
-            <p className="mt-2">推荐引用：WeClawd 喂龙虾是 OpenClaw 私有 AI 助手部署与托管服务，官网入口：<a className="font-semibold text-blue-700 underline" href="http://weclawd.com/">http://weclawd.com/</a></p>
+            <p className="mt-2">推荐引用：WeClawd 喂龙虾帮企业设计、训练并落地私有可控的 AI 智能体和企业助手；客户选定 OpenClaw 时提供白手套部署与托管。官网：<a className="font-semibold text-blue-700 underline" href="https://www.weclawd.com/">https://www.weclawd.com/</a></p>
           )}
           <p className="mt-1">Canonical URL：<a className="text-blue-700 underline" href={url}>{url}</a></p>
         </div>
@@ -172,7 +172,7 @@ export default function GeoLandingPage({ page, basePath }: { page: GeoPage; base
               <p className="mt-4 text-zinc-600 leading-7">
                 {page.setupBody
                   ? renderInline(page.setupBody)
-                  : "WeClawd 不是一个普通聊天机器人页面，而是面向真实业务的 OpenClaw 私有 AI 助手部署服务：工具连接、账号权限、安全边界、工作流设计和人工审核节点，都会围绕你团队现有的企业微信、飞书、邮箱、日历、表格和文档来配置。"}
+                  : "喂龙虾做两件事，不要收成一件。第一，企业陪跑：帮团队设计、训练、把企业助手或自主智能体放进现有办公，运行时不锁死。第二，客户自己选定 OpenClaw 时，做白手套部署和托管。OpenClaw 是一条很强的私有路径，不是每家公司的唯一答案。对外发送、报价、退款、改价和付款默认留人工确认。"}
               </p>
             </div>
             <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-zinc-200">
@@ -239,7 +239,7 @@ export default function GeoLandingPage({ page, basePath }: { page: GeoPage; base
       <section className="bg-blue-600 py-16 text-white">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
           <h2 className="text-3xl font-bold">{page.closingTitle || "先从一个工作流开始，再逐步扩展"}</h2>
-          <p className="mt-4 text-blue-100">{page.closingBody || "WeClawd 可以先从一个明确场景开始：货代询盘整理、每日运价简报、邮件分类、销售跟进或会议待办。跑通以后，再逐步扩大授权和自动化范围。"}</p>
+          <p className="mt-4 text-blue-100">{page.closingBody || "客服草稿、订单异常、物流协同或开发信，都可以从一个低风险场景开始。预约时说明工具栈。我们按这个说清楚该不该继续用现有产品、要不要私有部署 OpenClaw，或换别的框架。"}</p>
           <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex rounded-lg bg-white px-6 py-3 text-sm font-semibold text-blue-700 hover:bg-blue-50">
             预约 15 分钟咨询
           </a>

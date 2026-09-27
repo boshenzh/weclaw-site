@@ -56,7 +56,7 @@ export default function AuthorBio({ variant = "article" }: { variant?: Variant }
           </div>
           <p className="mt-2 text-sm leading-6 text-zinc-600">
             OpenClaw 维护者，长期写企业 AI 助手、企业微信工作流、货代和国际物流的落地实践。喂龙虾
-            WeClawd 是面向中国团队的 OpenClaw 部署和托管服务。
+            WeClawd 帮企业落地私有可控的 AI 智能体；客户选定 OpenClaw 时另做部署和托管。
           </p>
           <div className="mt-3 flex flex-wrap gap-3 text-sm">
             <Link href="/about" className="font-medium text-blue-700 hover:text-blue-900">
