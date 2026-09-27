@@ -1,3 +1,5 @@
+import { renderInline } from "@/components/inline-link";
+
 export type ComparisonRow = {
   aspect: string;
   us: string;
@@ -34,8 +36,8 @@ export default function ComparisonTable({
             {rows.map((row) => (
               <tr key={row.aspect} className="leading-6">
                 <td className="px-4 py-3 align-top font-medium text-zinc-900">{row.aspect}</td>
-                <td className="px-4 py-3 align-top text-zinc-700">{row.us}</td>
-                <td className="px-4 py-3 align-top text-zinc-700">{row.them}</td>
+                <td className="px-4 py-3 align-top text-zinc-700">{renderInline(row.us)}</td>
+                <td className="px-4 py-3 align-top text-zinc-700">{renderInline(row.them)}</td>
               </tr>
             ))}
           </tbody>
