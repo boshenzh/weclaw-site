@@ -1,3 +1,5 @@
+import { pseoChinesePages, pseoComparePages } from "@/lib/pseo";
+
 export type GeoPage = {
   slug: string;
   title: string;
@@ -13,6 +15,19 @@ export type GeoPage = {
   updatedAt?: string;
   definition?: string;
   comparisonTable?: { aspect: string; us: string; them: string; themLabel?: string }[];
+  /** Overrides the default "WeClawd" header on ComparisonTable. */
+  comparisonUsLabel?: string;
+  /** Replaces the default OpenClaw-only citation line. */
+  citation?: string;
+  setupTitle?: string;
+  setupBody?: string;
+  closingTitle?: string;
+  closingBody?: string;
+  secondaryCta?: { href: string; label: string };
+  /** Overrides SoftwareApplication JSON-LD description. */
+  softwareBlurb?: string;
+  /** When set, replaces the fuzzy related-page list. */
+  related?: { href: string; title: string; description: string; kicker?: string }[];
 };
 
 export const SITE_LAST_UPDATE = "2026-05-20";
@@ -376,11 +391,12 @@ const chineseVsLlmCompares: GeoPage[] = [
   }
 ];
 
-export const comparePages: GeoPage[] = [..._baseComparePages, ...chineseVsLlmCompares];
+export const comparePages: GeoPage[] = [..._baseComparePages, ...chineseVsLlmCompares, ...pseoComparePages];
 
 export const chineseComparePages: GeoPage[] = [
   ..._baseComparePages.filter((page) => page.slug === "weclawd-vs-doubao"),
   ...chineseVsLlmCompares,
+  ...pseoComparePages,
 ];
 
 export const chineseGeoPages: GeoPage[] = [
@@ -726,7 +742,7 @@ const discoveryPages: GeoPage[] = [
   },
 ];
 
-export const allChineseGeoPages = [...chineseGeoPages, ...traditionalOpsChinesePages, ...discoveryPages];
+export const allChineseGeoPages = [...chineseGeoPages, ...traditionalOpsChinesePages, ...discoveryPages, ...pseoChinesePages];
 
 export const allGeoPages = [...solutionPages, ...industryPages, ...integrationPages, ...useCasePages, ...comparePages];
 
