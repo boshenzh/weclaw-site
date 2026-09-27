@@ -9,15 +9,18 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.weclawd.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "喂龙虾 WeClawd｜OpenClaw 私有 AI 助手部署与托管服务",
+    default: "喂龙虾 WeClawd｜私有可控 AI 智能体与企业助手陪跑",
     template: "%s | 喂龙虾",
   },
   description:
-    "喂龙虾 WeClawd 面向中国团队提供 OpenClaw 私有 AI 助手部署与托管服务，支持企业微信、飞书、钉钉、邮箱、日历和表格工作流，适合货代、销售、客服、行政、法务和运营团队。",
+    "喂龙虾 WeClawd 帮企业设计、训练并落地私有可控的 AI 智能体和企业助手，框架不锁死。客户选定 OpenClaw 时，另做白手套部署与托管。适合货代、跨境、销售、客服和运营团队。",
   keywords: [
     "OpenClaw",
     "AI助手",
     "AI智能体",
+    "自主智能体",
+    "企业陪跑",
+    "私有可控",
     "企业AI部署",
     "AI托管服务",
     "飞书集成",
@@ -58,16 +61,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "zh_CN",
     url: siteUrl,
-    title: "喂龙虾 WeClawd｜OpenClaw 私有 AI 助手部署与托管服务",
+    title: "喂龙虾 WeClawd｜私有可控 AI 智能体与企业助手陪跑",
     description:
-      "面向中国团队的 OpenClaw 私有 AI 助手部署与托管服务，支持企业微信、飞书、钉钉、邮箱、日历和表格工作流。",
+      "帮企业落地私有可控的 AI 智能体，框架不锁死。客户选定 OpenClaw 时，另做白手套部署与托管。",
     siteName: "喂龙虾",
     images: [
       {
         url: "/logos/weclaw-logo.png",
         width: 1200,
         height: 630,
-        alt: "喂龙虾 - OpenClaw AI 助手部署托管服务",
+        alt: "喂龙虾 - 私有可控 AI 智能体陪跑",
       },
     ],
   },
@@ -75,9 +78,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@boshenzh",
     creator: "@boshenzh",
-    title: "喂龙虾 WeClawd｜OpenClaw 私有 AI 助手部署与托管服务",
+    title: "喂龙虾 WeClawd｜私有可控 AI 智能体与企业助手陪跑",
     description:
-      "面向中国团队的 OpenClaw 私有 AI 助手部署和托管服务，支持企业微信、飞书、邮箱、日历和表格工作流。",
+      "帮企业落地私有可控的 AI 智能体，框架不锁死。客户选定 OpenClaw 时，另做白手套部署与托管。",
     images: ["/logos/weclaw-logo.png"],
   },
   alternates: {

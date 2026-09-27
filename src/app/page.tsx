@@ -63,7 +63,7 @@ const pricing = [
       "1–2 名专属工程师全程驻场",
       "高度定制：针对你公司真实业务一对一调优",
       "Day 1：盘清楚最痛的 1–2 个工作流和 ROI 指标",
-      "Day 2：OpenClaw 助手接入微信 / 飞书 / 邮件 / CRM / ERP 等真实通道",
+      "Day 2：把助手接入微信 / 飞书 / 邮件 / CRM / ERP；选定 OpenClaw 时按该运行时部署",
       "Day 3：跑通端到端流程，交付完整可用系统",
       "一次性付费 · 调好的系统永久留给你",
       "适合货代、跨境电商、律所、政企等高复杂度团队",
@@ -103,8 +103,12 @@ const comparison = [
 
 const faqs = [
   {
+    q: "喂龙虾是不是只做 OpenClaw 部署？",
+    a: "不是。主业是企业陪跑：帮团队设计、训练，把私有可控的 AI 智能体或企业助手放进现有办公，框架不锁死。客户自己选定 OpenClaw 时，我们再做白手套部署和托管。",
+  },
+  {
     q: "为什么不自己部署？",
-    a: "你当然可以。OpenClaw 是开源的。但在安全加固、持续维护、故障排查上，你会花费大量时间。我们的客户通常是创始人和高管，他们的时间更值钱。",
+    a: "选定 OpenClaw 时，你当然可以自己部署，它是开源的。安全加固、持续维护和故障排查会花掉很多时间。我们的客户通常是创始人和高管，他们的时间更值钱。如果还没选定运行时，先做陪跑，不必先买托管。",
   },
   {
     q: "数据安全吗？",
@@ -132,26 +136,26 @@ const faqs = [
   },
   {
     q: "购买后会得到什么？",
-    a: "VPS 或 Mac Mini 配置、安全加固（Docker 沙箱、防火墙、执行白名单）、Composio OAuth 中间件、邮件和日历集成、最多 3 个工作流配置、完整文档、以及 14 天专属支持。",
+    a: "如果买的是 OpenClaw 托管部署：VPS 或 Mac Mini 配置、安全加固（Docker 沙箱、防火墙、执行白名单）、Composio OAuth 中间件、邮件和日历集成、最多 3 个工作流配置、完整文档，以及 14 天专属支持。企业陪跑是另一张订单，范围和报价以陪跑页为准。",
   },
 ];
 
 const whyUs = [
   {
-    title: "当天上线",
-    desc: "不是几周，不是几天。付款后当天完成部署，立即开始使用。",
+    title: "企业陪跑",
+    desc: "先定 1–2 个真实工作流：谁输入、谁审核、怎么验收。运行时按你的工具和数据边界选，不先锁死框架。",
   },
   {
-    title: "安全加固",
-    desc: "OAuth 中间件、Docker 沙箱、防火墙配置、审计日志。从第一天起就是企业级安全。",
+    title: "OpenClaw 可选",
+    desc: "客户选定 OpenClaw 时，做白手套部署和托管。没选定，就按你已经在用、且能放进授权环境的框架陪跑。",
   },
   {
-    title: "14 天超级护理",
-    desc: "专属微信群直接支持，包括工作流调优、权限扩展、边界情况修复。",
+    title: "人工确认",
+    desc: "对外发送、报价、退款、改价和付款默认留人确认。私有可控指权限和边界在你这边，不是无人自动承诺。",
   },
   {
-    title: "持续维护可选",
-    desc: "14 天后可选择付费托管护理计划，获得持续监控、更新和支持。",
+    title: "部署套餐另计",
+    desc: "¥489 / ¥1,888 / ¥3,800 只覆盖选定 OpenClaw 后的安装与托管，以本页标价为准。企业陪跑另报价，以陪跑页为准。",
   },
 ];
 
@@ -229,7 +233,7 @@ export default function Home() {
             name: "喂龙虾",
             url: "https://www.weclawd.com",
             logo: "https://www.weclawd.com/logos/weclaw-logo.png",
-            description: "OpenClaw AI 助手专业部署和托管服务提供商",
+            description: "帮企业设计、训练并落地私有可控的 AI 智能体；客户选定 OpenClaw 时提供白手套部署与托管",
             address: {
               "@type": "PostalAddress",
               addressCountry: "CN",
@@ -250,7 +254,7 @@ export default function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
-            serviceType: "AI 助手部署和托管服务",
+            serviceType: "企业 AI 智能体陪跑；客户选定 OpenClaw 时的部署与托管",
             provider: {
               "@type": "Organization",
               name: "喂龙虾",
@@ -258,7 +262,7 @@ export default function Home() {
             areaServed: "CN",
             hasOfferCatalog: {
               "@type": "OfferCatalog",
-              name: "OpenClaw 部署服务",
+              name: "OpenClaw 安装与托管套餐（客户选定该运行时）",
               itemListElement: [
                 {
                   "@type": "Offer",
@@ -387,22 +391,21 @@ export default function Home() {
                 className="w-auto h-32 mb-6"
               />
               <h1 className="text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-                我们喂你部署和维护
+                帮企业落地私有可控的
                 <br />
-                团队的 AI 助手
+                AI 智能体
               </h1>
             </div>
 
             <p className="text-xl text-zinc-600 leading-relaxed mb-4 max-w-2xl mx-auto">
-              远程部署，全球服务，从第一天起就安全加固。
+              设计、训练、放进现有办公。运行时不锁死。
             </p>
 
             <p className="text-lg text-zinc-500 mb-10 max-w-3xl mx-auto">
-              喂龙虾 WeClawd 是面向中国团队的 OpenClaw 私有 AI
-              助手部署与托管服务，帮助企业把企业微信、飞书、邮箱、日历和表格里的重复工作交给可控的 AI 助手处理。
+              喂龙虾 WeClawd 做企业陪跑，也在客户选定 OpenClaw 时做白手套部署与托管。OpenClaw 是一条很强的私有路径，不是每家公司的唯一答案。企业微信、飞书、邮箱、日历和表格里的重复工作，可以交给带审核边界的助手。
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
               <a
                 href={BOOKING_URL}
                 target="_blank"
@@ -411,15 +414,23 @@ export default function Home() {
               >
                 预约免费 15 分钟咨询
               </a>
-              <a
-                href="#pricing"
+              <Link
+                href="/enterprise"
                 className="inline-flex items-center justify-center rounded-lg border-2 border-zinc-300 px-8 py-4 text-base font-semibold text-zinc-950 hover:border-zinc-400 hover:bg-zinc-50 transition-all"
               >
-                查看价格
+                企业陪跑计划
+              </Link>
+            </div>
+            <div className="mb-12">
+              <a
+                href="#pricing"
+                className="text-sm font-semibold text-zinc-600 hover:text-zinc-950"
+              >
+                查看 OpenClaw 安装与托管价格 →
               </a>
             </div>
 
-            <div className="flex items-center justify-center gap-8 text-sm text-zinc-500">
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-zinc-500">
               <div className="flex items-center gap-2">
                 <svg
                   className="h-5 w-5 text-emerald-500"
@@ -432,7 +443,7 @@ export default function Home() {
                     clipRule="evenodd"
                   />
                 </svg>
-                当天部署
+                框架不锁死
               </div>
               <div className="flex items-center gap-2">
                 <svg
@@ -446,7 +457,7 @@ export default function Home() {
                     clipRule="evenodd"
                   />
                 </svg>
-                14 天专属支持
+                OpenClaw 部署可选
               </div>
               <div className="flex items-center gap-2">
                 <svg
@@ -460,7 +471,7 @@ export default function Home() {
                     clipRule="evenodd"
                   />
                 </svg>
-                100% 满意保证
+                对外动作人工确认
               </div>
             </div>
           </div>
@@ -477,7 +488,7 @@ export default function Home() {
                 为什么选择喂龙虾？
               </h2>
               <p className="text-xl text-zinc-600 max-w-2xl mx-auto">
-                你可以自己部署 OpenClaw。但你应该吗？
+                先定一个工作流，再选运行时。OpenClaw 是可选路径，不是唯一答案。
               </p>
             </div>
 
@@ -501,11 +512,16 @@ export default function Home() {
             <div className="bg-white rounded-2xl border border-zinc-200 overflow-hidden">
               <div className="px-8 py-6 border-b border-zinc-200">
                 <h3 className="text-2xl font-bold text-zinc-950">
-                  自己部署 vs 喂龙虾
+                  自己部署 OpenClaw vs 选定后托管
                 </h3>
                 <p className="text-zinc-600 mt-2">
-                  时间就是金钱。让我们帮你节省两者。
+                  下表只比较这条运行时。还没选定框架的，走企业陪跑，不在这张表里。
                 </p>
+              </div>
+              <div className="grid grid-cols-3 gap-4 bg-zinc-50 px-8 py-3 text-xs font-semibold leading-5 text-zinc-500 sm:text-sm">
+                <div>比较项</div>
+                <div>自己部署 OpenClaw</div>
+                <div className="text-emerald-700">选定后由我们托管</div>
               </div>
               <div className="divide-y divide-zinc-200">
                 {comparison.map((item) => (
@@ -534,8 +550,10 @@ export default function Home() {
               <h2 className="text-4xl lg:text-5xl font-bold text-zinc-950 mb-4">
                 简单透明的价格
               </h2>
-              <p className="text-xl text-zinc-600 max-w-2xl mx-auto">
-                一次性设置费用，包含部署与 14 天专属客服服务。托管部署本身不是 14 天：部署完成后可长期运行；14 天指我们密集陪跑与问题响应期。
+              <p className="text-xl text-zinc-600 max-w-3xl mx-auto">
+                ¥489、¥1,888、¥3,800 是客户选定 OpenClaw 时的安装与托管套餐，以本页标价为准。一次性设置含部署与 14 天专属客服；托管本身不是 14 天，14 天是密集响应期。企业陪跑不在这三档里，按工作流另报价，区间以
+                <Link href="/enterprise" className="font-semibold text-zinc-950 underline">陪跑页</Link>
+                为准。
               </p>
             </div>
 
@@ -640,7 +658,9 @@ export default function Home() {
 
             <div className="mt-12 text-center space-y-4">
               <p className="text-zinc-600">
-                所有价格为一次性设置费用，包含部署与 14 天专属客服服务。
+                上面三档是 OpenClaw 安装与托管的一次性设置费，含部署与 14 天专属客服，以本页标价为准。企业陪跑另报价，以
+                <Link href="/enterprise" className="font-semibold text-zinc-950 underline">陪跑页</Link>
+                为准。
               </p>
               <div className="bg-zinc-50 rounded-xl p-6 max-w-2xl mx-auto border border-zinc-200">
                 <h3 className="text-lg font-semibold text-zinc-950 mb-3">
@@ -712,7 +732,9 @@ export default function Home() {
                 购买后的流程
               </h2>
               <p className="text-xl text-zinc-600 max-w-2xl mx-auto">
-                从付款到上线，我们全程陪伴。
+                这条是选定 OpenClaw 并购买安装或托管之后的节奏。企业陪跑是另一条路径，见
+                <Link href="/enterprise" className="font-semibold text-zinc-950 underline">陪跑页</Link>
+                。
               </p>
             </div>
 
@@ -743,7 +765,7 @@ export default function Home() {
                 中文深度文章
               </h2>
               <p className="text-xl text-zinc-600 leading-relaxed">
-                不写空泛的 AI 概念。这里整理的是中国团队真正会问的问题：OpenClaw 是什么、企业微信怎么接、货代场景怎么落地、权限和安全边界怎么控制。
+                不写空泛的 AI 概念。这里整理中国团队真正会问的问题：企业助手怎么落地、什么时候选 OpenClaw、企业微信怎么接、权限和安全边界怎么控制。
               </p>
             </div>
             <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -777,7 +799,7 @@ export default function Home() {
               准备好开始了吗？
             </h2>
             <p className="text-xl text-zinc-600 mb-10 max-w-2xl mx-auto">
-              预约免费 15 分钟咨询，我们聊聊你的需求，看看 OpenClaw 是否适合你。
+              预约免费 15 分钟咨询。先说工具栈和最痛的一条流程，我们判断该不该继续现有产品、要不要私有部署 OpenClaw，或换别的框架。
             </p>
             <a
               href={BOOKING_URL}
@@ -788,7 +810,7 @@ export default function Home() {
               预约飞书会议
             </a>
             <p className="mt-6 text-sm text-zinc-500">
-              100% 满意保证 · 当天部署 · 14 天专属支持
+              企业陪跑 · OpenClaw 部署可选 · 对外动作人工确认
             </p>
           </div>
         </section>
@@ -801,7 +823,7 @@ export default function Home() {
             <div className="lg:col-span-1">
               <div className="text-lg font-semibold mb-4">喂龙虾</div>
               <p className="text-sm text-zinc-600">
-                基于 OpenClaw 的专业部署和托管服务
+                企业私有可控 AI 智能体陪跑。选定 OpenClaw 时，另做部署与托管。
               </p>
               <a
                 href="https://github.com/openclaw"
