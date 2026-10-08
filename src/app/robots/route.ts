@@ -1,3 +1,7 @@
+/**
+ * Only robots policy for weclawd.com.
+ * next.config.ts rewrites /robots.txt here. Do not add public/robots.txt.
+ */
 const SITE_URL = "https://www.weclawd.com";
 
 export async function GET() {

@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { BOOKING_URL } from "@/lib/contact";
-import { allGeoPages, categoryTitle, SITE_LAST_UPDATE, type GeoPage } from "@/lib/geo-pages";
+import { categoryTitle, SITE_LAST_UPDATE, type GeoPage } from "@/lib/geo-pages";
+import { fallbackRelated } from "@/lib/related-geo";
+import { languageCounterpart } from "@/lib/seo";
 import AuthorBio from "@/components/AuthorBio";
 import { renderInline } from "@/components/inline-link";
 import DefinitiveDefinition from "@/components/DefinitiveDefinition";
@@ -8,19 +10,32 @@ import ComparisonTable from "@/components/ComparisonTable";
 
 const siteUrl = "https://www.weclawd.com";
 
+const zhCategoryName: Record<GeoPage["category"], string> = {
+  solutions: "方案",
+  industries: "行业",
+  integrations: "集成",
+  "use-cases": "使用场景",
+  compare: "对比",
+};
+
 export default function GeoLandingPage({ page, basePath }: { page: GeoPage; basePath?: string }) {
-  const url = `${siteUrl}${basePath || `/${page.category}/${page.slug}`}`;
+  const path = basePath || `/${page.category}/${page.slug}`;
+  const url = `${siteUrl}${path}`;
   const updatedAt = page.updatedAt || SITE_LAST_UPDATE;
-  const related = page.related ?? allGeoPages
-    .filter((item) => item.slug !== page.slug)
-    .filter((item) => item.category === page.category || item.keywords.some((kw) => page.keywords.join(" ").toLowerCase().includes(kw.toLowerCase().split(" ")[0] || "__")))
-    .slice(0, 6)
-    .map((item) => ({
-      href: `/${item.category}/${item.slug}`,
-      title: item.h1,
-      description: item.description,
-      kicker: categoryTitle(item.category),
-    }));
+  const chinese = Boolean(basePath?.startsWith("/zh")) || /[\u4e00-\u9fff]/.test(page.h1);
+  const parentHref = basePath ? "/zh" : `/${page.category}`;
+  const parentName = basePath ? "中文场景" : chinese ? zhCategoryName[page.category] : categoryTitle(page.category);
+  const counterpart = languageCounterpart(path);
+  const related = [...(page.related ?? fallbackRelated(page, path))];
+  if (counterpart && !related.some((item) => item.href === counterpart.href)) {
+    related.unshift({
+      href: counterpart.href,
+      title: counterpart.title,
+      description: counterpart.description,
+      kicker: counterpart.kicker,
+    });
+  }
+  related.length = Math.min(related.length, 6);
 
   const serviceJsonLd = {
     "@context": "https://schema.org",
@@ -83,8 +98,8 @@ export default function GeoLandingPage({ page, basePath }: { page: GeoPage; base
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-      { "@type": "ListItem", position: 2, name: basePath ? "中文页面" : categoryTitle(page.category), item: basePath ? `${siteUrl}/zh` : `${siteUrl}/${page.category}` },
+      { "@type": "ListItem", position: 1, name: chinese ? "首页" : "Home", item: siteUrl },
+      { "@type": "ListItem", position: 2, name: parentName, item: `${siteUrl}${parentHref}` },
       { "@type": "ListItem", position: 3, name: page.h1, item: url },
     ],
   };
@@ -99,11 +114,13 @@ export default function GeoLandingPage({ page, basePath }: { page: GeoPage; base
 
       <section className="border-b border-zinc-200 bg-gradient-to-b from-blue-50 to-white">
         <div className="mx-auto max-w-6xl px-6 py-16 lg:px-8 lg:py-24">
-          <div className="flex flex-wrap gap-3 text-sm">
-            <Link href="/" className="font-medium text-blue-700 hover:text-blue-900">WeClawd</Link>
+          <nav className="flex flex-wrap items-center gap-3 text-sm" aria-label="Breadcrumb">
+            <Link href="/" className="font-medium text-blue-700 hover:text-blue-900">{chinese ? "首页" : "WeClawd"}</Link>
             <span className="text-zinc-400">/</span>
-            <Link href={basePath ? "/zh" : `/${page.category}`} className="font-medium text-blue-700 hover:text-blue-900">{basePath ? "中文页面" : categoryTitle(page.category)}</Link>
-          </div>
+            <Link href={parentHref} className="font-medium text-blue-700 hover:text-blue-900">{parentName}</Link>
+            <span className="text-zinc-400">/</span>
+            <span className="max-w-xl truncate text-zinc-500">{page.h1}</span>
+          </nav>
           <div className="mt-10 max-w-4xl">
             <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-blue-700">{page.audience}</p>
             <h1 className="text-4xl font-bold tracking-tight text-zinc-950 lg:text-6xl">{page.h1}</h1>

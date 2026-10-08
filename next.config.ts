@@ -37,6 +37,8 @@ const nextConfig: NextConfig = {
   },
   async rewrites() {
     return [
+      // Sole robots source is src/app/robots/route.ts. public/robots.txt would be
+      // served first and hide this rewrite, including the video sitemap line.
       {
         source: '/robots.txt',
         destination: '/robots',

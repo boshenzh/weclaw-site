@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import SeoHubLinks from "@/components/SeoHubLinks";
 import { chineseBlogPages } from "@/lib/chinese-blog-pages";
-import { allChineseGeoPages } from "@/lib/geo-pages";
+import { allChineseGeoPages, chineseComparePages } from "@/lib/geo-pages";
 
 const siteUrl = "https://www.weclawd.com";
 
@@ -22,6 +23,7 @@ export default function ZhIndexPage() {
           <p className="mt-6 max-w-3xl text-xl leading-8 text-zinc-600">
             这里按客户真实问题组织内容：先理解 OpenClaw 和私有 AI 助手，再看企业微信、货代、销售、客服、行政、财务等具体工作流如何落地。
           </p>
+          <SeoHubLinks current="/zh" locale="zh" />
         </div>
       </section>
       <section className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
@@ -61,6 +63,21 @@ export default function ZhIndexPage() {
             <Link key={page.slug} href={`/zh/${page.slug}`} className="rounded-2xl border border-zinc-200 p-6 hover:border-blue-300 hover:bg-blue-50/40">
               <div className="text-xs font-semibold uppercase tracking-wide text-blue-700">{page.audience}</div>
               <h2 className="mt-3 text-lg font-semibold text-zinc-950">{page.h1}</h2>
+              <p className="mt-3 text-sm leading-6 text-zinc-600">{page.description}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+      <section className="mx-auto max-w-6xl px-6 pb-16 lg:px-8">
+        <div className="mb-8">
+          <h2 className="text-3xl font-bold tracking-tight">对比</h2>
+          <p className="mt-3 max-w-3xl text-zinc-600">WorkBuddy、聊天产品和私有部署怎么分。每篇只回答一个选择，不把价格写成对方的标价。</p>
+        </div>
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {chineseComparePages.map((page) => (
+            <Link key={page.slug} href={`/compare/${page.slug}`} className="rounded-2xl border border-zinc-200 p-6 hover:border-blue-300 hover:bg-blue-50/40">
+              <div className="text-xs font-semibold uppercase tracking-wide text-blue-700">{page.audience}</div>
+              <h3 className="mt-3 text-lg font-semibold text-zinc-950">{page.h1}</h3>
               <p className="mt-3 text-sm leading-6 text-zinc-600">{page.description}</p>
             </Link>
           ))}

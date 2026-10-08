@@ -24,14 +24,6 @@ export const metadata: Metadata = {
     description: "深入了解 OpenClaw - 一个开源、自托管的 AI 执行助手。了解核心功能、技术架构、安全考量和适用人群。",
     url: "https://www.weclawd.com/blog/what-is-openclaw",
     type: "article",
-    images: [
-      {
-        url: "/logos/weclaw-logo.png",
-        width: 1200,
-        height: 630,
-        alt: "什么是 OpenClaw？",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -39,7 +31,6 @@ export const metadata: Metadata = {
     creator: "@boshenzh",
     title: "什么是 OpenClaw？自托管 AI 执行助手",
     description: "深入了解 OpenClaw - 开源、自托管的 AI 执行助手。邮件分类、日历管理、工作流自动化。",
-    images: ["/logos/weclaw-logo.png"],
   },
   alternates: {
     canonical: "https://www.weclawd.com/blog/what-is-openclaw",

@@ -42,7 +42,9 @@ export const enPages: EnPage[] = [
     ],
     related: [
       { title: "Freight forwarder AI assistant", href: "/en/freight-forwarder-ai-assistant" },
-      { title: "WeClawd vs ChatGPT", href: "/en/weclawd-vs-chatgpt" }
+      { title: "WeClawd vs ChatGPT", href: "/en/weclawd-vs-chatgpt" },
+      { title: "What is OpenClaw (Chinese)", href: "/blog/what-is-openclaw" },
+      { title: "Self-host vs managed OpenClaw", href: "/compare/openclaw-diy-vs-tuoguan" }
     ]
   },
   {
@@ -100,6 +102,7 @@ export const enPages: EnPage[] = [
       { q: "What actions need human approval?", a: "External commitments, pricing, contracts, payments, legal judgments, and sensitive messages should remain under human approval." }
     ],
     related: [
+      { title: "中文：WeClawd 和 ChatGPT", href: "/zh/weclawd-vs-chatgpt-zh" },
       { title: "Chinese Doubao comparison", href: "/compare/weclawd-vs-doubao" },
       { title: "OpenClaw deployment", href: "/en/openclaw-deployment" }
     ]
@@ -134,6 +137,7 @@ export const enPages: EnPage[] = [
     ],
     related: [
       { title: "Chinese cost and risk article", href: "/blog/openclaw-private-deployment-cost-and-risk" },
+      { title: "OpenClaw 部署成本（中文）", href: "/blog/openclaw-setup-cost" },
       { title: "OpenClaw deployment", href: "/en/openclaw-deployment" }
     ]
   }

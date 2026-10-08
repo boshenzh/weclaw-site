@@ -22,14 +22,6 @@ export const metadata: Metadata = {
     description: "详细分析 OpenClaw AI 助手的部署成本，包括一次性设置费用、月度运行成本，以及 DIY 与专业部署的对比。",
     url: "https://www.weclawd.com/blog/openclaw-setup-cost",
     type: "article",
-    images: [
-      {
-        url: "/logos/weclaw-logo.png",
-        width: 1200,
-        height: 630,
-        alt: "OpenClaw 部署成本详解",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -37,7 +29,6 @@ export const metadata: Metadata = {
     creator: "@boshenzh",
     title: "OpenClaw 部署成本详解",
     description: "详细分析 OpenClaw AI 助手的部署成本，包括一次性设置费用、月度运行成本。",
-    images: ["/logos/weclaw-logo.png"],
   },
   alternates: {
     canonical: "https://www.weclawd.com/blog/openclaw-setup-cost",

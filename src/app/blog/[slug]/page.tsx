@@ -23,14 +23,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: page.title,
     description: page.description,
     keywords: page.keywords,
-    alternates: { canonical: url, languages: { "zh-CN": url } },
+    alternates: { canonical: url },
     openGraph: {
       type: "article",
       locale: "zh_CN",
       url,
       title: page.title,
       description: page.description,
-      images: [{ url: "/logos/weclaw-logo.png", width: 1200, height: 630, alt: page.title }],
     },
     twitter: {
       card: "summary_large_image",
@@ -38,7 +37,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       creator: "@boshenzh",
       title: page.title,
       description: page.description,
-      images: ["/logos/weclaw-logo.png"],
     },
   };
 }
@@ -92,7 +90,13 @@ export default async function ChineseBlogArticle({ params }: { params: Promise<{
       </nav>
 
       <article className="mx-auto max-w-4xl px-6 py-16 lg:px-8">
-        <Link href="/" className="text-sm font-medium text-blue-700 hover:text-blue-900">← 返回喂龙虾首页</Link>
+        <nav className="flex flex-wrap items-center gap-2 text-sm" aria-label="Breadcrumb">
+          <Link href="/" className="font-medium text-blue-700 hover:text-blue-900">首页</Link>
+          <span className="text-zinc-400">/</span>
+          <Link href="/zh" className="font-medium text-blue-700 hover:text-blue-900">中文场景</Link>
+          <span className="text-zinc-400">/</span>
+          <span className="max-w-xl truncate text-zinc-500">{page.title}</span>
+        </nav>
         <div className="mt-8 border-b border-zinc-200 pb-10">
           <p className="text-sm font-semibold text-blue-700">{page.audience}</p>
           <h1 className="mt-4 text-4xl font-bold tracking-tight lg:text-5xl">{page.title}</h1>

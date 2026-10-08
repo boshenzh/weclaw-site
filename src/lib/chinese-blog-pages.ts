@@ -61,7 +61,9 @@ export const chineseBlogPages: ChineseBlogPage[] = [
     ],
     related: [
       { title: "WeClawd 和豆包有什么区别？", href: "/compare/weclawd-vs-doubao" },
-      { title: "货代 AI 助手", href: "/zh/huodai-ai-zhushou" }
+      { title: "货代 AI 助手", href: "/zh/huodai-ai-zhushou" },
+      { title: "企业助手是什么", href: "/zh/qiye-zhushou" },
+      { title: "WorkBuddy vs OpenClaw", href: "/compare/workbuddy-vs-openclaw" }
     ]
   },
   {
@@ -109,7 +111,9 @@ export const chineseBlogPages: ChineseBlogPage[] = [
     ],
     related: [
       { title: "企业微信货代 AI 助手", href: "/zh/qiyeweixin-huodai-ai" },
-      { title: "销售跟进 AI 助手", href: "/zh/xiaoshou-genjin-ai-zhushou" }
+      { title: "销售跟进 AI 助手", href: "/zh/xiaoshou-genjin-ai-zhushou" },
+      { title: "企业微信企业助手", href: "/zh/qiyeweixin-qiye-zhushou" },
+      { title: "企业微信 OpenClaw", href: "/zh/qiyeweixin-openclaw" }
     ]
   },
   {
@@ -163,7 +167,9 @@ export const chineseBlogPages: ChineseBlogPage[] = [
     ],
     related: [
       { title: "货代 AI 助手页面", href: "/zh/huodai-ai-zhushou" },
-      { title: "每日运价整理 AI", href: "/zh/meiri-yunjia-zhengli-ai" }
+      { title: "每日运价整理 AI", href: "/zh/meiri-yunjia-zhengli-ai" },
+      { title: "货代报价案例", href: "/case/huodai-baojia-speed-to-lead" },
+      { title: "货代 AI 应用场景", href: "/zh/huodai-ai-yingyong-changjing" }
     ]
   },
   {
@@ -210,7 +216,9 @@ export const chineseBlogPages: ChineseBlogPage[] = [
     ],
     related: [
       { title: "OpenClaw 部署成本详解", href: "/blog/openclaw-setup-cost" },
-      { title: "关于喂龙虾", href: "/about" }
+      { title: "关于喂龙虾", href: "/about" },
+      { title: "自己部署 vs 托管", href: "/compare/openclaw-diy-vs-tuoguan" },
+      { title: "私有 AI 助手托管", href: "/zh/siyou-ai-zhushou-tuoguan" }
     ]
   },
   {
@@ -257,7 +265,9 @@ export const chineseBlogPages: ChineseBlogPage[] = [
     ],
     related: [
       { title: "传统企业运营 AI 助手", href: "/zh/chuantong-qiye-yunying-ai" },
-      { title: "企业微信 AI 助手能做什么？", href: "/blog/wecom-ai-assistant-workflows" }
+      { title: "企业微信 AI 助手能做什么？", href: "/blog/wecom-ai-assistant-workflows" },
+      { title: "企业助手怎么选", href: "/zh/qiye-zhushou-zenme-xuan" },
+      { title: "企业陪跑计划", href: "/enterprise" }
     ]
   }
 ];
