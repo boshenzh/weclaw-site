@@ -273,7 +273,7 @@ export const pseoChinesePages: GeoPage[] = [
     sections: [
       {
         title: "跨境办公比国内多出来的部分",
-        body: "同一件事会落在加州的邮箱、深圳的企微和货代的微信群里。助手的价值是合成一份当班能看的简报：谁在等回复、哪封邮件只是通知、哪个会还没记待办。它不负责替海外销售答应交期。通用会议纪要见 [会议纪要 AI 助手](/zh/huiyi-jiyao-ai-zhushou)。",
+        body: "同一件事会落在加州的邮箱、深圳的企微和货代的微信群里。助手的价值是合成一份当班能看的简报：谁在等回复、哪封邮件只是通知、哪个会还没记待办。它不负责替海外销售答应交期。周报素材怎么收、为什么不报 GMV，写在 [跨境周报](/zh/kuajing-zhoubao-zidonghua)。时差部署和全国安装不是同一篇，见 [跨境团队远程部署](/zh/kuajing-yuancheng-ai-bushu)。通用会议纪要见 [会议纪要 AI 助手](/zh/huiyi-jiyao-ai-zhushou)。",
         items: [
           humanLine,
           freightNote,

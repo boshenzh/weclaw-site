@@ -99,7 +99,7 @@ export default async function ChineseBlogArticle({ params }: { params: Promise<{
         </nav>
         <div className="mt-8 border-b border-zinc-200 pb-10">
           <p className="text-sm font-semibold text-blue-700">{page.audience}</p>
-          <h1 className="mt-4 text-4xl font-bold tracking-tight lg:text-5xl">{page.title}</h1>
+          <h1 className="mt-4 text-4xl font-bold tracking-tight lg:text-5xl">{page.h1 || page.title}</h1>
           <p className="mt-6 text-xl leading-8 text-zinc-600">{page.summary}</p>
           <div className="mt-6 flex flex-wrap gap-2">
             {page.keywords.map((keyword) => (
