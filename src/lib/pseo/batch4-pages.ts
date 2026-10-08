@@ -6,7 +6,7 @@ const UPDATED = "2026-10-08";
 
 const human = "对外发送、报价、退款、改价和付款默认留人工确认。";
 const remoteOnly =
-  "上门目前只在深圳。这一页是远程实施：不能约上门，也不把上门写成这个城市的服务。";
+  "上门目前只在深圳。这里是远程实施，不能约上门，这个城市也不提供驻场。";
 
 function page(entry: GeoPage): GeoPage {
   return withPseoShell({ ...entry, updatedAt: UPDATED });
@@ -19,7 +19,7 @@ export const batch4PlatformPages: GeoPage[] = [
     title: "邮箱和日历上的智能办公｜先做晨报和待办，不自动发信",
     h1: "邮箱日历智能办公：把收件箱和日程收成待办，发出去之前要人看",
     description:
-      "智能办公接到邮箱和日历时，先做晨报、未回复和会前待办。发出去的信和改过的日程仍由人确认。品类定义不在本页重写。",
+      "智能办公接到邮箱和日历时，先做晨报、未回复和会前待办。发出去的信和改过的日程仍由人确认。智能办公指什么，见品类页。",
     definition:
       "邮箱日历智能办公是把收件箱和日程收成当班能看的待办：未回复、即将开始的会、需要人处理的请求。它不是自动代发邮件，也不是把智能办公整页改成邮箱教程。",
     audience: "每天靠邮箱和日历交接的运营、行政和跨境值班的人",
@@ -29,7 +29,7 @@ export const batch4PlatformPages: GeoPage[] = [
     sections: [
       {
         title: "和智能办公品类页的分工",
-        body: "品类定义在 [智能办公 AI 助手](/zh/zhineng-bangong-ai)：邮件、日程、交接算不算智能办公。本页只写邮箱和日历这一条怎么验收。落地清单在 [智能办公落地](/zh/zhineng-bangong-luodi)。不要把两页收成同一张功能表。",
+        body: "品类定义在 [智能办公 AI 助手](/zh/zhineng-bangong-ai)：邮件、日程、交接算不算智能办公。邮箱和日历这一条怎么验收，看这里。落地清单在 [智能办公落地](/zh/zhineng-bangong-luodi)。定义、验收和落地清单分三页看。",
       },
       {
         title: "先做哪三件",
@@ -38,28 +38,28 @@ export const batch4PlatformPages: GeoPage[] = [
       },
       {
         title: "跨境班次不要在这里重做",
-        body: "时差和双语交接在 [跨境智能办公](/zh/kuajing-zhineng-bangong)。本页不报 GMV，也不把货代运价塞进晨报。货代询盘仍用 [货代 AI 助手](/zh/huodai-ai-zhushou)。英文入口是 [Gmail](/integrations/gmail) 和 [Calendar](/integrations/calendar)。",
+        body: "时差和双语交接在 [跨境智能办公](/zh/kuajing-zhineng-bangong)。晨报不写未经确认的 GMV，也不把货代运价塞进去。货代询盘仍用 [货代 AI 助手](/zh/huodai-ai-zhushou)。英文入口是 [Gmail](/integrations/gmail) 和 [Calendar](/integrations/calendar)。",
       },
     ],
     faqs: [
       { q: "会自动发邮件吗？", a: "默认不会。助手把草稿放进待发位置，由当班的人发出。自动群发不在这一页的范围内。" },
       { q: "会改我的日历吗？", a: "默认只读日程并生成待办。新建、改期和取消仍由人在日历里操作。" },
       { q: "必须用 OpenClaw 吗？", a: "不必须。腾讯办公栈里开箱能做的晨报，可以先用 WorkBuddy。只有邮箱和日历不在那条栈上，或数据要留在客户侧时，才谈别的运行时。" },
-      { q: "和智能办公页是不是重复？", a: "不是。那页回答「智能办公是什么」。本页只回答邮箱和日历上先验收哪一条。" },
+      { q: "和智能办公页是不是重复？", a: "不是。那页回答「智能办公是什么」。邮箱和日历上先验收哪一条，看这里。" },
     ],
     related: [
-      relatedCard("/zh/zhineng-bangong-ai", "智能办公 AI 助手", "品类定义。本页不改成邮箱教程。", "品类"),
+      relatedCard("/zh/zhineng-bangong-ai", "智能办公 AI 助手", "先看智能办公指什么，再看邮箱和日历怎么做。", "品类"),
       relatedCard("/zh/zhineng-bangong-luodi", "智能办公落地", "谁用、哪条流程、怎样算做完。", "怎么做"),
       relatedCard("/integrations/gmail", "Gmail", "英文集成页。", "集成"),
       relatedCard("/integrations/calendar", "Calendar", "英文日历集成页。", "集成"),
-      relatedCard("/zh/kuajing-zhineng-bangong", "跨境智能办公", "时差和双语交接不在本页重写。", "跨境"),
+      relatedCard("/zh/kuajing-zhineng-bangong", "跨境智能办公", "时差和双语交接见跨境智能办公。", "跨境"),
       relatedCard("/enterprise", "企业陪跑计划", "一条晨报可以是约定的那一个流程。", "服务"),
     ],
   }),
   page({
     category: "integrations",
     slug: "slack-qiye-zhushou",
-    title: "Slack 企业助手部署｜出海团队的通道，不是又一个聊天室",
+    title: "Slack 企业助手｜出海团队的频道摘要",
     h1: "Slack 上的企业助手：摘要和提醒，对外发送仍要人确认",
     description:
       "出海团队把 Slack 当主通道时，助手做频道摘要、未回复和待办。它不替代聊天室，也不自动对客户发言。",
@@ -86,7 +86,7 @@ export const batch4PlatformPages: GeoPage[] = [
     faqs: [
       { q: "会在频道里自动回复客户吗？", a: "默认不会。产出是内部摘要和草稿。对外发送由人确认。" },
       { q: "需要把整个工作区交给模型吗？", a: "不需要。先指定频道和只读范围。扩大权限要另一次确认。" },
-      { q: "和英文 Slack 页有什么区别？", a: "英文页是集成入口。本页回答商业问题：出海团队要不要把这一条流程做成企业助手。" },
+      { q: "和英文 Slack 页有什么区别？", a: "英文页是集成入口。出海团队要不要把这一条流程做成企业助手，看这里。" },
       { q: "能保证回复更快吗？", a: "能验收的是未回复被列出来。回复速度仍取决于当班的人。" },
     ],
     related: [
@@ -118,7 +118,7 @@ export const batch4PlatformPages: GeoPage[] = [
       },
       {
         title: "货代和卖家不要混在一个机器人里",
-        body: "代理群里的港口和货量，用 [货代 AI 助手](/zh/huodai-ai-zhushou)。卖家的买家消息用 [跨境客服企业助手](/zh/kuajing-kefu-qiye-zhushou)。本页只回答：Telegram 能不能当入口。能，但不能跳过审核。",
+        body: "代理群里的港口和货量，用 [货代 AI 助手](/zh/huodai-ai-zhushou)。卖家的买家消息用 [跨境客服企业助手](/zh/kuajing-kefu-qiye-zhushou)。这里要回答的是：Telegram 能不能当入口。能，但不能跳过审核。",
       },
       {
         title: "和 Slack 的分工",
@@ -135,7 +135,7 @@ export const batch4PlatformPages: GeoPage[] = [
       relatedCard("/integrations/telegram", "Telegram", "英文集成页。", "集成"),
       relatedCard("/zh/rengong-shenhe", "人工审核", "入口不能代替审核。", "术语"),
       relatedCard("/zh/slack-qiye-zhushou", "Slack 企业助手", "内部频道不要和 Telegram 抢对外发送。", "平台"),
-      relatedCard("/zh/huodai-ai-zhushou", "货代 AI 助手", "询盘和运价不在本页重做。", "货代"),
+      relatedCard("/zh/huodai-ai-zhushou", "货代 AI 助手", "询盘和运价见货代助手。", "货代"),
       relatedCard("/zh/kuajing-kefu-qiye-zhushou", "跨境客服企业助手", "买家消息的升级规则。", "跨境"),
       relatedCard("/enterprise", "企业陪跑计划", "一条未回复清单可以先做。", "服务"),
     ],
@@ -143,35 +143,35 @@ export const batch4PlatformPages: GeoPage[] = [
   page({
     category: "integrations",
     slug: "huodai-feishu-ai",
-    title: "飞书上的货代 AI 助手｜询盘和运价，不重复企微货代页",
+    title: "飞书上的货代 AI 助手｜询盘和运价",
     h1: "货代团队用飞书时，助手接文档、群和日历",
     description:
-      "货代主场在飞书时，助手整理文档、群消息和日历里的询盘与运价待办。企业微信货代流程不在本页重做。上门不在本页承诺。",
+      "货代主场在飞书时，助手整理文档、群消息和日历里的询盘与运价待办。企业微信上的货代流程见货代专页。上门目前只在深圳。",
     definition:
       "飞书货代 AI 助手是接在飞书文档、群和日历上的货代工作流：提取询盘字段、提醒运价待确认、生成内部待办。对外报价仍由人确认。企微上的货代流程另有专页。",
     audience: "用飞书管文档和内部群的货代、国际物流团队",
     keywords: ["飞书 货代 AI 助手", "飞书 国际物流", "货代 飞书 文档", "飞书 运价"],
-    bullets: ["不重复企微货代页", "文档和群先于自动报价", "对外报价留人", "数字只链到已发布案例，不在本页重报"],
+    bullets: ["不重复企微货代页", "文档和群先于自动报价", "对外报价留人", "数字只链到已发布案例，不在城市页重报"],
     workflows: ["飞书群询盘摘要", "运价文档待确认项", "日历跟进", "内部晨报"],
     sections: [
       {
         title: "和企微货代页的分工",
-        body: "客户消息主要在企业微信时，用 [企业微信货代 AI](/zh/qiyeweixin-huodai-ai) 和 [货代 AI 助手](/zh/huodai-ai-zhushou)。本页只写主场在飞书的团队：多维表、文档、群和日历。两套不要对同一客户各发一版运价。",
+        body: "客户消息主要在企业微信时，用 [企业微信货代 AI](/zh/qiyeweixin-huodai-ai) 和 [货代 AI 助手](/zh/huodai-ai-zhushou)。这里写主场在飞书的团队：多维表、文档、群和日历。两套不要对同一客户各发一版运价。",
       },
       {
         title: "飞书上先做只读和草稿",
-        body: `${human} 适合先做的是从授权文档和群里抽出起运港、目的港、货量、缺失字段。不适合许诺的是无人确认舱位。已发布的报价流程在 [货代报价案例](/case/huodai-baojia-speed-to-lead)，那个结果只属于那一个流程，不写进本页当成绩。`,
+        body: `${human} 适合先做的是从授权文档和群里抽出起运港、目的港、货量、缺失字段。不适合许诺的是无人确认舱位。已发布的报价流程在 [货代报价案例](/case/huodai-baojia-speed-to-lead)，那个结果只属于那一个流程，不写成飞书页的成绩。`,
       },
       {
         title: "飞书企业助手和这一页",
-        body: "不限行业的飞书办公在 [飞书企业助手](/zh/feishu-qiye-zhushou)。本页多出来的是货代字段：港口、货量、运价有效期。英文集成页是 [Feishu](/integrations/feishu)。",
+        body: "不限行业的飞书办公在 [飞书企业助手](/zh/feishu-qiye-zhushou)。多出来的是货代字段：港口、货量、运价有效期。英文集成页是 [Feishu](/integrations/feishu)。",
       },
     ],
     faqs: [
       { q: "已经有企微货代页，还要看这篇吗？", a: "只有内部协作主场在飞书时才看。主场在企微，继续用企微货代页。" },
       { q: "能自动给客户发运价吗？", a: "不能作为交付。助手整理待确认项和草稿。价格、附加费和舱位由业务确认。" },
       { q: "案例里的时效能写到飞书项目上吗？", a: "不能。案例只说明已经发布的那一个报价流程。新项目用自己的验收，不借用那个数字。" },
-      { q: "上门安装飞书吗？", a: "不在本页承诺。上门只在深圳。飞书连通通常走远程。" },
+      { q: "上门安装飞书吗？", a: "上门只在深圳。飞书连通通常走远程。" },
     ],
     related: [
       relatedCard("/zh/qiyeweixin-huodai-ai", "企业微信货代 AI", "主场在企微时用这篇，不在飞书页重做。", "货代"),
@@ -185,7 +185,7 @@ export const batch4PlatformPages: GeoPage[] = [
   page({
     category: "integrations",
     slug: "amazon-qiyeweixin-kefu",
-    title: "亚马逊卖家的企业微信客服草稿｜不自动退款，不碰平台规则",
+    title: "亚马逊企微客服｜退款仍由人确认",
     h1: "亚马逊买家消息进企微之后，助手只出草稿",
     description:
       "亚马逊卖家把买家消息同步到企业微信后，助手列出未回复并起草回复。不自动退款，不改平台规则，也不承诺排名。",
@@ -198,25 +198,25 @@ export const batch4PlatformPages: GeoPage[] = [
     sections: [
       {
         title: "和亚马逊卖家总页的分工",
-        body: "卖家先看 [亚马逊卖家 AI 助手](/zh/amazon-maijia-ai)：先处理买家消息和异常单，不承诺排名。本页只多写一件事：这些消息如果进了企业微信，草稿怎么停在人确认之前。平台规则和账号安全不在助手里自动执行。",
+        body: "卖家先看 [亚马逊卖家 AI 助手](/zh/amazon-maijia-ai)：先处理买家消息和异常单，不承诺排名。这里多写一件事：这些消息如果进了企业微信，草稿怎么停在人确认之前。平台规则和账号安全不在助手里自动执行。",
       },
       {
         title: "哪些句子不能自动发出",
         body: `${human} 另外，补发、退款、评价回复和任何可能违反平台规则的操作，都不进自动发送。跨境客服的升级规则在 [跨境客服企业助手](/zh/kuajing-kefu-qiye-zhushou)。`,
       },
       {
-        title: "不要把货代案例搬过来",
-        body: "货代报价案例是物流公司的一个流程，不是亚马逊店铺的成绩。本页不引用那个时效。企微通道的一般说明在 [企业微信企业助手](/zh/qiyeweixin-qiye-zhushou)。",
+        title: "货代案例不是店铺成绩",
+        body: "货代报价案例是物流公司的一个流程，不是亚马逊店铺的成绩。那个时效只属于那家物流公司。企微通道的一般说明在 [企业微信企业助手](/zh/qiyeweixin-qiye-zhushou)。",
       },
     ],
     faqs: [
       { q: "能自动在亚马逊后台退款吗？", a: "不能。助手最多标出需要人处理的退款。操作在卖家后台由有权限的人完成。" },
       { q: "会帮店铺做排名或评价吗？", a: "不会。不写刷单、刷评、伪造物流或规避平台规则的做法。" },
-      { q: "和亚马逊卖家页是不是同一篇？", a: "不是。总页写卖家先做哪类消息。本页只写这些消息进企微之后的草稿边界。" },
+      { q: "和亚马逊卖家页是不是同一篇？", a: "不是。总页写卖家先做哪类消息。这些消息进企微之后的草稿边界，看这里。" },
       { q: "必须上 OpenClaw 吗？", a: "不必须。先把未回复清单和草稿队列跑通。运行时看消息能不能在你授权的环境里读到。" },
     ],
     related: [
-      relatedCard("/zh/amazon-maijia-ai", "亚马逊卖家 AI 助手", "卖家总页。本页不重写排名边界。", "跨境"),
+      relatedCard("/zh/amazon-maijia-ai", "亚马逊卖家 AI 助手", "卖家先看总页里的排名和账号边界。", "跨境"),
       relatedCard("/zh/kuajing-kefu-qiye-zhushou", "跨境客服企业助手", "多站点升级规则。", "跨境"),
       relatedCard("/zh/qiyeweixin-qiye-zhushou", "企业微信企业助手", "不限亚马逊的企微草稿。", "平台"),
       relatedCard("/zh/rengong-shenhe", "人工审核", "退款和对外回复的默认边界。", "术语"),
@@ -240,25 +240,25 @@ export const batch4PlatformPages: GeoPage[] = [
     sections: [
       {
         title: "和独立站运营页的分工",
-        body: "店铺、内容和订单异常的总页是 [独立站运营 AI 助手](/zh/dulizhan-yunying-ai)。本页只写客服走邮箱的那一条：收件箱怎么分成待办。邮箱和日历的对内晨报在 [邮箱日历智能办公](/zh/youxiang-rili-zhineng-bangong)，那是办公，不是对客回复。",
+        body: "店铺、内容和订单异常的总页是 [独立站运营 AI 助手](/zh/dulizhan-yunying-ai)。这里只写客服走邮箱的那一条：收件箱怎么分成待办。邮箱和日历的对内晨报在 [邮箱日历智能办公](/zh/youxiang-rili-zhineng-bangong)，那是办公，不是对客回复。",
       },
       {
         title: "分拣规则先写死",
         body: `${human} 建议先分三类：只要回复的售前、要查物流的在途、要人决定的退款和改价。第三类不进自动发送。`,
       },
       {
-        title: "不要写成全渠道客服",
-        body: "企微上的一般客服在 [企业客服 AI 助手](/zh/qiyefuwu-ai-zhushou)。亚马逊消息进企微在 [亚马逊企微客服](/zh/amazon-qiyeweixin-kefu)。本页的输入是独立站相关邮件。",
+        title: "只处理独立站邮件",
+        body: "企微上的一般客服在 [企业客服 AI 助手](/zh/qiyefuwu-ai-zhushou)。亚马逊消息进企微在 [亚马逊企微客服](/zh/amazon-qiyeweixin-kefu)。这里的输入是独立站相关邮件。",
       },
     ],
     faqs: [
       { q: "会自动回复独立站客户吗？", a: "默认不会。先分拣，再把草稿交给客服。" },
       { q: "能改订单价格吗？", a: "不能自动改。改价和退款由有权限的人确认。" },
-      { q: "和运营页重复吗？", a: "不重复。运营页写店铺这一侧要做哪些流程。本页只写邮箱客服这一条怎么验收。" },
+      { q: "和运营页重复吗？", a: "不重复。运营页写店铺这一侧要做哪些流程。邮箱客服这一条怎么验收，看这里。" },
       { q: "要引用货代案例的时效吗？", a: "不要。那是物流公司一个报价流程的结果，不是独立站客服的成绩。" },
     ],
     related: [
-      relatedCard("/zh/dulizhan-yunying-ai", "独立站运营 AI 助手", "运营总页。本页只写邮箱客服。", "跨境"),
+      relatedCard("/zh/dulizhan-yunying-ai", "独立站运营 AI 助手", "先看店铺运营，这里只写邮箱客服。", "跨境"),
       relatedCard("/zh/youxiang-rili-zhineng-bangong", "邮箱日历智能办公", "对内晨报，不是对客回复。", "办公"),
       relatedCard("/zh/qiyefuwu-ai-zhushou", "企业客服 AI 助手", "不限独立站的客服分流。", "客服"),
       relatedCard("/zh/amazon-qiyeweixin-kefu", "亚马逊企微客服", "平台消息进企微，不在邮箱页重做。", "跨境"),
@@ -275,7 +275,7 @@ export const batch4LocationPages: GeoPage[] = [
     title: "跨境团队远程 AI 部署｜时差和双语交接，不上门",
     h1: "跨境团队的远程部署：全国可做，上门仍然只有深圳",
     description:
-      "跨境团队的远程部署写时差和双语交接，不上门。全国远程安装仍是另一页，不要收成同一篇。",
+      "跨境团队的远程部署处理时差和双语交接，不上门。全国远程安装见远程部署页。上门目前只在深圳。",
     definition:
       "跨境团队远程 AI 部署指人不到现场，把一条跨境交接做成远程可验收的流程：谁在哪个时区值班、双语草稿停在哪、什么必须升级。它不是全国安装说明书，上门仍只在深圳。",
     audience: "人和同事不在同一个时区的跨境负责人",
@@ -285,7 +285,7 @@ export const batch4LocationPages: GeoPage[] = [
     sections: [
       {
         title: "和全国远程页分开",
-        body: `全国能不能远程安装，写在 [远程部署企业助手](/zh/yuancheng-qiye-zhushou)。本页不重复安装步骤。${remoteOnly} 跨境办公的总页是 [跨境智能办公](/zh/kuajing-zhineng-bangong)。`,
+        body: `全国能不能远程安装，写在 [远程部署企业助手](/zh/yuancheng-qiye-zhushou)。安装步骤见全国远程部署页。${remoteOnly} 跨境办公的总页是 [跨境智能办公](/zh/kuajing-zhineng-bangong)。`,
       },
       {
         title: "远程验收看交接，不看人到没到",
@@ -293,17 +293,17 @@ export const batch4LocationPages: GeoPage[] = [
       },
       {
         title: "不把货代或店铺成绩写进来",
-        body: "本页不引用货代案例里的时效，也不写 GMV。货代流程用 [货代 AI 助手](/zh/huodai-ai-zhushou)。卖家总流程用 [跨境电商企业助手](/zh/kuajing-qiye-zhushou)。",
+        body: "货代案例的时效只属于那家物流公司，这里也不写 GMV。货代流程用 [货代 AI 助手](/zh/huodai-ai-zhushou)。卖家总流程用 [跨境电商企业助手](/zh/kuajing-qiye-zhushou)。",
       },
     ],
     faqs: [
       { q: "跨境远程包含上门吗？", a: "不包含。上门只在深圳。跨境这一页明确不上门。" },
-      { q: "和远程部署企业助手是同一篇吗？", a: "不是。那篇是全国安装和陪跑远程的主路径。本页只写时差和双语交接。" },
+      { q: "和远程部署企业助手是同一篇吗？", a: "不是。那篇是全国安装和陪跑远程的主路径。时差和双语交接看这里。" },
       { q: "能承诺营收吗？", a: "不能。能验收的是交接有没有漏。营收由商品、广告和供应链决定。" },
       { q: "海外同事可以一起远程吗？", a: "可以，只要账号权限能在远程共享，并且班次写清楚。这仍然不是上门。" },
     ],
     related: [
-      relatedCard("/zh/yuancheng-qiye-zhushou", "远程部署企业助手", "全国安装主路径，不在本页重写。", "服务"),
+      relatedCard("/zh/yuancheng-qiye-zhushou", "远程部署企业助手", "全国远程安装看这一页。", "服务"),
       relatedCard("/zh/kuajing-zhineng-bangong", "跨境智能办公", "时差和双语的品类页。", "跨境"),
       relatedCard("/zh/shenzhen-qiye-zhushou-bushu", "深圳上门部署", "只有深圳进场才走这篇。", "服务"),
       relatedCard("/zh/kuajing-qiye-zhushou", "跨境电商企业助手", "卖家总流程。", "跨境"),
@@ -333,11 +333,11 @@ export const batch4LocationPages: GeoPage[] = [
       },
       {
         title: "不写城市成绩",
-        body: "本页没有广州客户的案例数字，也不借用货代案例的时效。能说的只有范围：远程、一条流程、人确认对外句子。",
+        body: "这里没有广州客户的案例数字，也不借用货代案例的时效。能说的只有范围：远程、一条流程、人确认对外句子。",
       },
     ],
     faqs: [
-      { q: "可以到广州办公室做吗？", a: "不在本页范围内。上门只在深圳。广州实施走远程。" },
+      { q: "可以到广州办公室做吗？", a: "上门只在深圳。广州实施走远程。" },
       { q: "能同时做客服和跟进吗？", a: "不要在同一次约定里做两件。先验收一条。" },
       { q: "和深圳上门有什么差别？", a: "深圳那页可以进场。广州这一页明确远程。" },
       { q: "会承诺店铺增长吗？", a: "不会。验收是那一条流程有没有人在用。" },
@@ -356,7 +356,7 @@ export const batch4LocationPages: GeoPage[] = [
     slug: "shanghai-zhineng-bangong",
     title: "上海智能办公 AI 部署｜远程，不是上门",
     h1: "上海团队的智能办公部署：人可以在上海，实施走远程",
-    description: "人可以在上海。智能办公的实施走远程，不是上门。上门仍只在深圳。",
+    description: "人可以在上海。智能办公走远程：先做一条对内流程，发出去的内容由人确认。上门服务目前只在深圳。",
     definition: "上海智能办公 AI 部署指给在上海的团队远程落地一条内部办公流程，例如晨报或交接。它不是上海上门服务。",
     audience: "人在上海、想把邮件或交接做成一条流程的负责人",
     keywords: ["上海 智能办公 AI 部署", "上海 远程 部署", "上海 企业助手", "上海 不上门"],
@@ -380,7 +380,7 @@ export const batch4LocationPages: GeoPage[] = [
       { q: "能到上海上门吗？", a: "不能。上门只在深圳。上海这一页是远程。" },
       { q: "是跨境页吗？", a: "不是。这是智能办公。跨境时差看跨境远程部署和跨境智能办公。" },
       { q: "会自动发邮件吗？", a: "默认不会。晨报和草稿留给当班的人。" },
-      { q: "有上海客户的数字吗？", a: "本页不写。没有核实过的城市成绩不会写进来。" },
+      { q: "有上海客户的数字吗？", a: "没有核实过的城市成绩不会写进来。" },
     ],
     related: [
       relatedCard("/zh/zhineng-bangong-ai", "智能办公 AI 助手", "品类定义。", "品类"),
@@ -396,7 +396,7 @@ export const batch4LocationPages: GeoPage[] = [
     slug: "ningbo-huodai-ai",
     title: "宁波货代 AI 助手｜远程实施，不上门",
     h1: "宁波货代团队的助手：远程做询盘或运价里的一条",
-    description: "宁波货代可以远程做询盘或运价里的一条。不上门。数字不从案例页搬到这座城市。",
+    description: "宁波货代可以远程做询盘或运价里的一条。不上门。已发布案例的数字只属于那一家公司，不写成宁波的成绩。",
     definition: "宁波货代 AI 助手指给在宁波的货代团队远程落地一条询盘整理或运价待办。它不是宁波上门，也不等于全国货代都有同一组成绩。",
     audience: "人在宁波的货代销售或运价负责人",
     keywords: ["宁波 货代 AI 助手", "宁波 货代 远程", "宁波 国际物流 AI", "宁波 不上门"],
@@ -413,14 +413,14 @@ export const batch4LocationPages: GeoPage[] = [
       },
       {
         title: "港口城市不是上门城市",
-        body: "青岛也是远程，见 [青岛货代](/zh/qingdao-huodai-ai)。两座城市都不要写成可以飞过去做。",
+        body: "青岛也是远程，见 [青岛货代](/zh/qingdao-huodai-ai)。两座城市都不能约上门。",
       },
     ],
     faqs: [
       { q: "能到宁波港附近上门吗？", a: "不能。上门只在深圳。" },
       { q: "能把案例的时效写成宁波项目吗？", a: "不能。案例只说明已经发布的那一个流程。" },
       { q: "询盘和运价能一起做吗？", a: "不要在同一次约定里一起做。先验收一条。" },
-      { q: "和货代总页重复吗？", a: "总页写货代场景。本页只多写宁波是远程、不上门。" },
+      { q: "和货代总页重复吗？", a: "总页写货代场景。宁波的实施是远程，不上门。" },
     ],
     related: [
       relatedCard("/zh/huodai-ai-zhushou", "货代 AI 助手", "询盘和运价的总页。", "货代"),
@@ -440,27 +440,27 @@ export const batch4LocationPages: GeoPage[] = [
     definition: "青岛货代 AI 助手指给在青岛的货代团队远程整理询盘或跟进草稿。港口城市不因此变成上门城市。",
     audience: "人在青岛的货代团队负责人",
     keywords: ["青岛 货代 AI 助手", "青岛 货代 远程", "青岛 不上门", "青岛 国际物流"],
-    bullets: ["远程整理询盘", "不能约上门", "上门仍只在深圳", "不搬运案例数字"],
+    bullets: ["远程整理询盘", "不能约上门", "上门仍只在深圳", "案例数字不属于青岛"],
     workflows: ["询盘缺失字段", "未回复提醒", "报价草稿留人", "内部晨报"],
     sections: [
       {
         title: "青岛不能约上门",
-        body: `${remoteOnly} 这句话是本页的范围，不是销售附注。深圳进场只在 [深圳企业助手部署](/zh/shenzhen-qiye-zhushou-bushu)。`,
+        body: `${remoteOnly} 上门目前只在深圳。深圳进场只在 [深圳企业助手部署](/zh/shenzhen-qiye-zhushou-bushu)。`,
       },
       {
         title: "询盘仍用货代总页的边界",
-        body: "字段、人工报价和不能无人承诺舱位，都以 [货代 AI 助手](/zh/huodai-ai-zhushou) 为准。本页不新造一套货代能力。宁波的远程页是 [宁波货代](/zh/ningbo-huodai-ai)。",
+        body: "字段、人工报价和不能无人承诺舱位，都以 [货代 AI 助手](/zh/huodai-ai-zhushou) 为准。港口、货量和人工报价以货代助手页为准。宁波的远程页是 [宁波货代](/zh/ningbo-huodai-ai)。",
       },
       {
         title: "案例数字留在案例页",
-        body: "若需要已发布的报价流程说明，打开 [货代报价案例](/case/huodai-baojia-speed-to-lead)。不要把那里的时效抄到青岛项目介绍里。",
+        body: "若需要已发布的报价流程说明，打开 [货代报价案例](/case/huodai-baojia-speed-to-lead)。那个时效只属于那一家物流公司，不能当成青岛项目的成绩。",
       },
     ],
     faqs: [
       { q: "青岛可以上门吗？", a: "不可以。上门只在深圳。" },
       { q: "能无人报价吗？", a: "不能。助手整理询盘和草稿。价格和舱位由人确认。" },
       { q: "和宁波页有什么差别？", a: "都是远程、都不上门。宁波那页在询盘和运价里二选一；青岛这一页先写询盘整理。" },
-      { q: "有青岛客户名单吗？", a: "本页不写客户名，也没有未经发布的评价。" },
+      { q: "有青岛客户名单吗？", a: "这里不公布客户名，也没有未发布的评价。" },
     ],
     related: [
       relatedCard("/zh/huodai-ai-zhushou", "货代 AI 助手", "能力边界以总页为准。", "货代"),
@@ -474,33 +474,33 @@ export const batch4LocationPages: GeoPage[] = [
   page({
     category: "solutions",
     slug: "yiwu-kuajing-ai",
-    title: "义乌跨境电商 AI 助手｜远程，不把上门写成义乌服务",
+    title: "义乌跨境电商 AI 助手｜远程实施",
     h1: "义乌跨境团队先做一条客服或跟进，实施走远程",
-    description: "义乌跨境团队先做一条客服或跟进。实施走远程。不要把上门写成义乌服务。",
+    description: "义乌跨境团队可以远程把一条客服或跟进做完。发出去的回复由人确认。上门目前只在深圳，义乌不提供上门。",
     definition: "义乌跨境电商 AI 助手指给在义乌的跨境团队远程落地一条客服或跟进。它不是义乌上门，也不是小商品市场的驻场服务。",
     audience: "人在义乌的跨境卖家负责人",
     keywords: ["义乌 跨境电商 AI 助手", "义乌 跨境 远程", "义乌 不上门", "义乌 企业助手"],
-    bullets: ["远程", "不把上门写成义乌服务", "客服或跟进只做一条", "不写市场成交数字"],
+    bullets: ["远程实施", "义乌不上门、不驻场", "客服或跟进只做一条", "没有未发布的市场成交数字"],
     workflows: ["选定客服或跟进", "未回复或开发信草稿", "升级给人", "次日复核"],
     sections: [
       {
         title: "义乌没有上门档期",
-        body: `${remoteOnly} 不要在合同或介绍里把义乌写成可以驻场。进场只看 [深圳企业助手部署](/zh/shenzhen-qiye-zhushou-bushu)。`,
+        body: `${remoteOnly} 义乌不能约驻场，也不能上门。进场只看 [深圳企业助手部署](/zh/shenzhen-qiye-zhushou-bushu)。`,
       },
       {
         title: "先做一条，不写市场大盘",
-        body: "客服看 [跨境客服企业助手](/zh/kuajing-kefu-qiye-zhushou)，跟进看 [跨境销售跟进](/zh/kuajing-xiaoshou-genjin)。本页不写义乌市场的成交额，也没有客户评价。",
+        body: "客服看 [跨境客服企业助手](/zh/kuajing-kefu-qiye-zhushou)，跟进看 [跨境销售跟进](/zh/kuajing-xiaoshou-genjin)。这里不写义乌市场的成交额，也没有客户评价。",
       },
       {
         title: "和广州、杭州的差别",
-        body: "三座城市都是远程。[广州](/zh/guangzhou-kuajing-ai) 和 [杭州](/zh/hangzhou-kuajing-ai) 同样不上门。义乌这一页强调：不要把市场驻场误写成我们的服务。",
+        body: "三座城市都是远程。[广州](/zh/guangzhou-kuajing-ai) 和 [杭州](/zh/hangzhou-kuajing-ai) 同样不上门。义乌也不能约市场驻场。",
       },
     ],
     faqs: [
-      { q: "能在义乌市场驻场吗？", a: "不能。本页不是驻场，也不是上门。实施走远程。" },
-      { q: "有义乌卖家的成绩吗？", a: "本页不写未发布的客户名、评价或成交数字。" },
+      { q: "能在义乌市场驻场吗？", a: "不能。义乌不做驻场，也不上门。实施走远程。" },
+      { q: "有义乌卖家的成绩吗？", a: "未发布的客户名、评价和成交数字不会写在这里。" },
       { q: "客服和跟进能一起上吗？", a: "不要。先做一条。" },
-      { q: "和跨境总页重复吗？", a: "总页写卖家流程。本页只加上义乌是远程、不上门。" },
+      { q: "和跨境总页重复吗？", a: "总页写卖家流程。义乌的实施是远程，不上门。" },
     ],
     related: [
       relatedCard("/zh/kuajing-qiye-zhushou", "跨境电商企业助手", "卖家总流程。", "跨境"),
@@ -516,7 +516,7 @@ export const batch4LocationPages: GeoPage[] = [
     slug: "hangzhou-kuajing-ai",
     title: "杭州跨境电商 AI 助手｜远程部署",
     h1: "杭州跨境团队的企业助手，远程落地一条流程",
-    description: "杭州跨境团队远程落地一条流程。不是上门。上门仍只在深圳。",
+    description: "杭州跨境团队可以远程把一条客服、跟进或交接做完。对外发送由人确认。上门服务目前只在深圳。",
     definition: "杭州跨境电商 AI 助手指给在杭州的跨境团队远程做完一条已说清的流程。它不是杭州上门部署。",
     audience: "人在杭州的跨境电商负责人",
     keywords: ["杭州 跨境电商 AI 助手", "杭州 跨境 远程", "杭州 企业助手 远程", "杭州 不上门"],
@@ -529,17 +529,17 @@ export const batch4LocationPages: GeoPage[] = [
       },
       {
         title: "一条流程指什么",
-        body: "可以是未回复的客服草稿，或一条跟进，或一封独立站邮件的分拣。对应页面是 [跨境客服](/zh/kuajing-kefu-qiye-zhushou)、[跨境销售跟进](/zh/kuajing-xiaoshou-genjin) 或 [独立站邮件客服](/zh/dulizhan-youxiang-kefu)。不要在杭州页把三件打包。",
+        body: "可以是未回复的客服草稿，或一条跟进，或一封独立站邮件的分拣。对应页面是 [跨境客服](/zh/kuajing-kefu-qiye-zhushou)、[跨境销售跟进](/zh/kuajing-xiaoshou-genjin) 或 [独立站邮件客服](/zh/dulizhan-youxiang-kefu)。杭州先做其中一条。",
       },
       {
         title: "没有杭州专属数字",
-        body: "本页不编造成交、人效或客户评价。货代案例的时效也不引用到杭州卖家身上。",
+        body: "这里不写未发布的成交、人效或客户评价。货代案例的时效也不引用到杭州卖家身上。",
       },
     ],
     faqs: [
       { q: "杭州能上门吗？", a: "不能。上门只在深圳。杭州是远程部署。" },
       { q: "可以一次做完整店吗？", a: "不能作为这一页的承诺。先做一条流程。" },
-      { q: "和义乌页有何不同？", a: "都是远程跨境。义乌那页额外写明不要把市场驻场当成服务。杭州这一页只写远程落地一条流程。" },
+      { q: "和义乌页有何不同？", a: "都是远程跨境。义乌额外说明不能市场驻场。杭州只约定远程落地一条流程。" },
       { q: "OpenClaw 是必须的吗？", a: "不是。客户选定之后才部署。腾讯栈里已经够用的，不必为了城市页改运行时。" },
     ],
     related: [
@@ -568,7 +568,7 @@ export const batch4HowtoPages: GeoPage[] = [
     sections: [
       {
         title: "和跨境智能办公分开",
-        body: "办公总页是 [跨境智能办公](/zh/kuajing-zhineng-bangong)：时差和双语交接。本页只写周报这一件。不要两页都变成功能清单。",
+        body: "办公总页是 [跨境智能办公](/zh/kuajing-zhineng-bangong)：时差和双语交接。这里只写周报这一件。不要两页都变成功能清单。",
       },
       {
         title: "助手可以收什么，不可以写什么",
@@ -582,11 +582,11 @@ export const batch4HowtoPages: GeoPage[] = [
     faqs: [
       { q: "周报会自动带上销售额吗？", a: "不会。销售额由人确认后自己写入。助手只留出空位。" },
       { q: "能对全员自动发送周报吗？", a: "默认不自动群发。草稿交给写周报的人。" },
-      { q: "和智能办公落地页重复吗？", a: "落地页是验收清单，不限跨境。本页只写跨境周报不报 GMV。" },
+      { q: "和智能办公落地页重复吗？", a: "落地页是验收清单，不限跨境。跨境周报不写未经确认的 GMV。" },
       { q: "没有数据时助手可以估算吗？", a: "不要。缺数就标成缺数，不估算营收。" },
     ],
     related: [
-      relatedCard("/zh/kuajing-zhineng-bangong", "跨境智能办公", "办公总页。本页只写周报。", "跨境"),
+      relatedCard("/zh/kuajing-zhineng-bangong", "跨境智能办公", "先看跨境办公，这里只写周报。", "跨境"),
       relatedCard("/zh/kuajing-qiye-zhushou", "跨境电商企业助手", "卖家总流程。", "跨境"),
       relatedCard("/zh/zhineng-bangong-luodi", "智能办公落地", "怎样算一条流程做完。", "怎么做"),
       relatedCard("/zh/kuajing-ai-tixiao-changjing", "跨境提效场景", "场景目录，不是周报模板。", "跨境"),
@@ -597,10 +597,10 @@ export const batch4HowtoPages: GeoPage[] = [
   page({
     category: "solutions",
     slug: "zhineng-bangong-luodi",
-    title: "智能办公 AI 落地指南｜从一条流程验收，不从采购口号开始",
+    title: "智能办公落地｜先验收一条流程",
     h1: "智能办公落地：先写清谁用、哪条流程、怎样算做完",
-    description: "智能办公落地是一张验收清单：谁用、哪条流程、怎样算做完。它不重复品类定义，也不从采购口号写起。",
-    definition: "智能办公 AI 落地指南是实施前的验收说明。品类定义在智能办公页。本页只要求三件事写在纸上：使用的人、这一条流程、做完的判断。",
+    description: "智能办公落地是一张验收清单：谁用、哪条流程、怎样算做完。品类说明见智能办公页，这里只写验收。",
+    definition: "智能办公 AI 落地指南是实施前的验收说明。品类定义在智能办公页。落地前先把三件事写在纸上：使用的人、这一条流程、做完的判断。",
     audience: "准备把智能办公从口号做成一条流程的负责人",
     keywords: ["智能办公 AI 落地指南", "智能办公 验收", "智能办公 谁用", "办公 流程 做完"],
     bullets: ["先写谁用", "只定一条流程", "写清怎样算做完", "不从采购口号开始"],
@@ -608,7 +608,7 @@ export const batch4HowtoPages: GeoPage[] = [
     sections: [
       {
         title: "品类页已经解释过是什么",
-        body: "定义在 [智能办公 AI 助手](/zh/zhineng-bangong-ai)。本页不重复邮件、日程、交接的名词解释。邮箱和日历的具体边界在 [邮箱日历智能办公](/zh/youxiang-rili-zhineng-bangong)。",
+        body: "定义在 [智能办公 AI 助手](/zh/zhineng-bangong-ai)。邮件、日程和交接的定义见智能办公页。邮箱和日历的具体边界在 [邮箱日历智能办公](/zh/youxiang-rili-zhineng-bangong)。",
       },
       {
         title: "怎样算做完",
@@ -617,17 +617,17 @@ export const batch4HowtoPages: GeoPage[] = [
       },
       {
         title: "腾讯栈和私有路径都用这张清单",
-        body: "继续用 WorkBuddy，或客户选定 OpenClaw，验收问题相同。选型在 [企业助手怎么选](/zh/qiye-zhushou-zenme-xuan)。本页不比较两边的价格。",
+        body: "继续用 WorkBuddy，或客户选定 OpenClaw，验收问题相同。选型在 [企业助手怎么选](/zh/qiye-zhushou-zenme-xuan)。WorkBuddy 和 OpenClaw 的价格不要放在同一张表里硬比。",
       },
     ],
     faqs: [
       { q: "落地是不是要先采购？", a: "不是。先写清谁用和怎样算做完。采购对象取决于工具栈，不从口号开始。" },
       { q: "全员培训算落地吗？", a: "不算这一页说的做完。做完是一条流程被当班的人用过。" },
-      { q: "和智能办公页有何不同？", a: "那页定义品类。本页是验收清单。" },
+      { q: "和智能办公页有何不同？", a: "那页定义品类。这里是验收清单。" },
       { q: "跨境周报算这条吗？", a: "周报是其中一种流程，细节在跨境周报页，并且不由助手填营收。" },
     ],
     related: [
-      relatedCard("/zh/zhineng-bangong-ai", "智能办公 AI 助手", "品类定义，不在本页重写。", "品类"),
+      relatedCard("/zh/zhineng-bangong-ai", "智能办公 AI 助手", "先看智能办公指什么。", "品类"),
       relatedCard("/zh/youxiang-rili-zhineng-bangong", "邮箱日历智能办公", "若那一条是收件箱和日程。", "平台"),
       relatedCard("/zh/kuajing-zhoubao-zidonghua", "跨境周报", "若那一条是周报，且不报 GMV。", "跨境"),
       relatedCard("/zh/qiye-zhushou-zenme-xuan", "企业助手怎么选", "验收之前的选型。", "选型"),
@@ -641,7 +641,7 @@ export const batch4HowtoPages: GeoPage[] = [
     title: "OpenClaw Skill 和 WorkBuddy｜公开说法与运行时差别",
     h1: "Skill 能对上，不代表托管和数据边界相同",
     description:
-      "公开材料提到 WorkBuddy 与 OpenClaw Skills 的兼容。技能层能对上，不说明托管、Gateway 和数据边界相同。本页不编兼容表，不写对方价格。",
+      "公开材料提到 WorkBuddy 与 OpenClaw Skills 的兼容。技能能对上，不说明托管、Gateway 和数据边界相同。兼容范围和价格以腾讯云文档与合同为准。",
     definition:
       "OpenClaw Skill 与 WorkBuddy 的公开说法只覆盖技能层可能复用。它不证明企微消息已经跑在客户自己的 Gateway 上，也不证明两边的托管和合同边界相同。",
     audience: "看到 Skills 兼容说法、准备据此选型的负责人",
@@ -650,8 +650,8 @@ export const batch4HowtoPages: GeoPage[] = [
     workflows: ["核对腾讯云当时文档", "分开技能和控制面", "不把兼容写成必须迁移", "数据落点另问"],
     sections: [
       {
-        title: "本页只写已经公开的那句",
-        body: `站内已有说明：公开材料提到 [WorkBuddy](${WORKBUDDY_HOME}) 与 OpenClaw Skills 的兼容。企业向材料见[腾讯云文档](${WORKBUDDY_ENTERPRISE_DOC})。那说明技能层可能复用，不说明企微消息已经跑在你自己的 Gateway 上。兼容范围以腾讯云当时文档为准。本页不另做一张功能对照表，也不写 WorkBuddy 的标价。`,
+        title: "已经公开的说法",
+        body: `站内已有说明：公开材料提到 [WorkBuddy](${WORKBUDDY_HOME}) 与 OpenClaw Skills 的兼容。企业向材料见[腾讯云文档](${WORKBUDDY_ENTERPRISE_DOC})。那说明技能层可能复用，不说明企微消息已经跑在你自己的 Gateway 上。兼容范围以腾讯云当时文档为准。功能对照以腾讯云当时文档为准，WorkBuddy 的标价以官网和合同为准。`,
       },
       {
         title: "技能和控制面",
@@ -663,16 +663,16 @@ export const batch4HowtoPages: GeoPage[] = [
       },
     ],
     faqs: [
-      { q: "是不是所有 Skill 都通用？", a: "不能从本站推出这张表。以腾讯云当时文档为准。本页不编兼容清单。" },
+      { q: "是不是所有 Skill 都通用？", a: "不能从本站推出这张表。兼容清单以腾讯云当时文档为准。" },
       { q: "兼容是否等于数据在自己机房？", a: "不等于。技能层和 Gateway、数据落点是两件事。" },
-      { q: "WorkBuddy 多少钱？", a: "本页不写。腾讯云按自己的计费，以官网和合同为准。" },
+      { q: "WorkBuddy 多少钱？", a: "腾讯云按自己的计费，以官网和合同为准。" },
       { q: "看到兼容就要换 OpenClaw 吗？", a: "不要。主场在腾讯云且没有控制面要求时，继续用 WorkBuddy。" },
     ],
     related: [
       relatedCard("/compare/workbuddy-vs-openclaw", "WorkBuddy vs OpenClaw", "产品和运行时，不是同一采购对象。", "对比"),
       relatedCard("/compare/workbuddy-qiye-vs-siyou", "企业版 vs 私有部署", "控制面四问。", "对比"),
       relatedCard("/zh/openclaw-gateway", "OpenClaw Gateway", "控制面这个词指什么。", "术语"),
-      relatedCard("/zh/workbuddy-shi-shenme", "WorkBuddy 是什么", "腾讯云企业助手，不在本页重定义。", "说明"),
+      relatedCard("/zh/workbuddy-shi-shenme", "WorkBuddy 是什么", "先看 WorkBuddy 是什么。", "说明"),
       relatedCard("/zh/qiyeweixin-openclaw", "企业微信 OpenClaw", "已经选定运行时之后的商业页。", "平台"),
       relatedCard("/enterprise", "企业陪跑计划", "要落地的是一条流程，不是一张兼容表。", "服务"),
     ],
@@ -682,7 +682,7 @@ export const batch4HowtoPages: GeoPage[] = [
     slug: "rengong-shenhe",
     title: "人工审核是什么｜对外发送、报价和付款的默认边界",
     h1: "人工审核：助手出草稿，人决定能不能发出去",
-    description: "人工审核指助手可以出草稿和提醒，对外发送、报价、退款、改价和付款由人决定。本页是这个词的定义。",
+    description: "人工审核指助手可以出草稿和提醒，对外发送、报价、退款、改价和付款由人决定。这是喂龙虾交付时的默认边界。",
     definition: "人工审核是高风险动作前的确认：对外发送、报价、退款、改价和付款默认不由助手直接执行。人决定能不能发出去。",
     audience: "需要向同事解释为什么助手不能直接发消息的负责人",
     keywords: ["AI 助手 人工审核", "人工审核", "草稿 人确认", "对外发送 边界"],
@@ -705,7 +705,7 @@ export const batch4HowtoPages: GeoPage[] = [
     faqs: [
       { q: "内部摘要也要审核吗？", a: "低风险的内部待办可以先给当班的人直接看。一旦要对外发送或写入报价、付款，就回到人确认。" },
       { q: "审核会不会让助手没价值？", a: "不会。价值是少做整理。发出去的决定仍然是人的。" },
-      { q: "能不能设置白名单自动发？", a: "本站不把自动对外发送写成默认交付。若客户以后单独特批某类内部通知，那是另一次书面范围，不在本页。" },
+      { q: "能不能设置白名单自动发？", a: "本站不把自动对外发送写成默认交付。若客户以后单独特批某类内部通知，那是另一次书面范围。" },
       { q: "货代报价呢？", a: "同样留人。案例页只说明一个已经发布的流程，不表示报价可以无人确认。" },
     ],
     related: [
@@ -723,7 +723,7 @@ export const batch4HowtoPages: GeoPage[] = [
     title: "OpenClaw Gateway 是什么｜谁管通道，谁管数据",
     h1: "Gateway 是运行时的控制面，不是一个聊天产品的名字",
     description:
-      "Gateway 在本站指运行时的控制面：谁管通道、密钥、模型和日志。它不是聊天产品的名字。本页只复述已有对比里写过的差别。",
+      "Gateway 在这里指运行时的控制面：谁管通道、密钥、模型和日志。它不是聊天产品的名字。差别沿用站内已经公开的对比，不补充未公开参数。",
     definition:
       "OpenClaw Gateway 是运行时的控制面，不是聊天窗口的产品名。站内对比用它区分：通道、数据和模型落在客户授权环境，还是落在云厂商账号里。",
     audience: "在对比页里看到 Gateway、需要一个定义的负责人",
@@ -736,8 +736,8 @@ export const batch4HowtoPages: GeoPage[] = [
         body: "对比页写过：免部署产品和自有运行时差在谁管 Gateway、数据和模型。有企业版，不等于 Gateway 已经在你自己手里。腾讯生态里没有人愿意值守 Gateway 时，第三列可以留空，不必为了成交改成必须私有化。这些句子的展开在 [企业版 vs 私有部署](/compare/workbuddy-qiye-vs-siyou) 和 [私有化 vs 腾讯云 SaaS](/compare/siyouhua-vs-tencent-saas)。",
       },
       {
-        title: "本页不新增参数",
-        body: "不写未在站内出现的端口、配置项或默认策略。首页把「飞书 + Gateway 快速连接」写成安装和连通，不含工作流整合，标价以首页为准，本页不另写数字。工作流仍是 [企业陪跑计划](/enterprise) 的范围。",
+        title: "不补充未公开参数",
+        body: "不写未在站内出现的端口、配置项或默认策略。首页把「飞书 + Gateway 快速连接」写成安装和连通，不含工作流整合，安装价格以首页为准。工作流仍是 [企业陪跑计划](/enterprise) 的范围。",
       },
       {
         title: "和 Skill 兼容不是一回事",
@@ -747,7 +747,7 @@ export const batch4HowtoPages: GeoPage[] = [
     faqs: [
       { q: "Gateway 是聊天机器人吗？", a: "不是。本站用它指运行时的控制面：谁管通道和数据。" },
       { q: "企业版是不是已经包含客户自己的 Gateway？", a: "不能从名字推导。企业版承诺到哪一层，以腾讯云文档和合同为准。" },
-      { q: "这里有配置参数吗？", a: "没有。未在站内对比页写过的参数，本页不补充。" },
+      { q: "这里有配置参数吗？", a: "没有。未在站内对比页写过的参数，这里不补充。" },
       { q: "装了 Gateway 就能无人值守吗？", a: "不能。对外发送、报价和付款仍然要人确认。" },
     ],
     related: [
@@ -765,10 +765,10 @@ export const batch4ComparePages: GeoPage[] = [
   page({
     category: "compare",
     slug: "shuzi-yuangong-vs-liaotian",
-    title: "数字员工和聊天机器人的区别｜一个跑流程，一个等你提问",
+    title: "数字员工和聊天机器人的区别",
     h1: "数字员工不是把聊天窗口换个名字",
     description:
-      "数字员工按岗位跑一条固定流程。聊天机器人等你打开窗口提问。两边都不是无人公司。英文有相近主题，但还不是同一篇文章。",
+      "数字员工按岗位跑一条固定流程。聊天机器人等你打开窗口提问。两边都不是无人公司。英文站另有一篇相近说明。",
     definition:
       "数字员工在本站指替一个说得清的岗位做一条重复动作，并留下草稿或待办。聊天机器人等用户提问后给一段回答。换名字不改变这个差别。",
     audience: "把数字员工和聊天机器人当成同一个采购对象的负责人",
@@ -785,11 +785,11 @@ export const batch4ComparePages: GeoPage[] = [
     sections: [
       {
         title: "先把岗位说出来",
-        body: "数字员工必须能说清替哪个岗位做哪一个动作。说不清，就还是聊天。这个要求已经写在 [数字员工私有部署](/zh/shuzi-yuangong-siyou)。本页只对比它和聊天机器人，不重写私有部署。",
+        body: "数字员工必须能说清替哪个岗位做哪一个动作。说不清，就还是聊天。这个要求已经写在 [数字员工私有部署](/zh/shuzi-yuangong-siyou)。这里只对比它和聊天机器人，不重写私有部署。",
       },
       {
-        title: "英文页还不是译文",
-        body: "英文有 [OpenClaw assistant vs chatbot](/compare/openclaw-vs-chatbot)，讲的是工具连接和被动聊天。它和本页主题相近，但不是同一篇文章，所以不做 hreflang。中文买家从这一页进入。",
+        title: "英文站的相近说明",
+        body: "英文有 [OpenClaw assistant vs chatbot](/compare/openclaw-vs-chatbot)，讲的是工具连接和被动聊天。中文采购里更常说数字员工和聊天机器人，看这里的区别即可。",
       },
       {
         title: "两边都不自动对外承诺",
@@ -799,12 +799,12 @@ export const batch4ComparePages: GeoPage[] = [
     faqs: [
       { q: "聊天窗口加上定时提醒就是数字员工吗？", a: "只有它替一个明确岗位做一条固定动作，并且输出进到待办或草稿，才接近本站说的数字员工。否则仍是聊天。" },
       { q: "数字员工能无人值守吗？", a: "不能。对外发送、报价和付款由人确认。" },
-      { q: "为什么不和英文页互指语言？", a: "两篇还不是译文。英文页对比的是 OpenClaw 助手和普通聊天机器人，本页用的是中文采购词。" },
-      { q: "有价格对比吗？", a: "没有。本页不写聊天产品或数字员工的标价。" },
+      { q: "英文站有没有类似说明？", a: "有一篇英文对比，讲 OpenClaw 助手和普通聊天机器人。中文采购里更常说数字员工，看这一页即可。" },
+      { q: "有价格对比吗？", a: "没有。聊天产品和数字员工的标价不在这里比较。" },
     ],
     related: [
       relatedCard("/zh/shuzi-yuangong-siyou", "数字员工私有部署", "岗位说不清就还是聊天。", "说明"),
-      relatedCard("/compare/openclaw-vs-chatbot", "OpenClaw vs chatbot", "英文相近主题，不是译文。", "英文"),
+      relatedCard("/compare/openclaw-vs-chatbot", "OpenClaw vs chatbot", "英文有一篇相近的对比。", "英文"),
       relatedCard("/zh/qiye-zhushou", "企业助手", "执行助手的中文品类。", "品类"),
       relatedCard("/zh/rengong-shenhe", "人工审核", "两边都要留人。", "术语"),
       relatedCard("/zh/qiye-zhushou-zenme-xuan", "企业助手怎么选", "先分聊天、产品和部署。", "选型"),

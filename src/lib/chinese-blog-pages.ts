@@ -70,7 +70,7 @@ export const chineseBlogPages: ChineseBlogPage[] = [
   },
   {
     slug: "wecom-ai-assistant-workflows",
-    title: "企业微信 AI 助手能做什么？从客户消息到待办和跟进提醒",
+    title: "企业微信 AI 助手：从消息到待办",
     description: "解释企业微信 AI 助手的真实业务场景：客户询盘整理、群聊摘要、未回复提醒、销售跟进、客服升级和人工审核边界。",
     keywords: ["企业微信 AI 助手", "企业微信自动化", "WeCom AI", "客户跟进 AI", "企业微信销售助手"],
     audience: "使用企业微信服务客户的销售、客服、运营和货代团队",
@@ -120,7 +120,7 @@ export const chineseBlogPages: ChineseBlogPage[] = [
   },
   {
     slug: "freight-ai-assistant-guide",
-    title: "货代 AI 助手怎么落地？询盘、运价、客户开发和销售跟进四个场景",
+    title: "货代 AI 怎么落地：询盘、运价和跟进",
     description: "面向货代和国际物流团队的 AI 助手落地指南，覆盖企业微信询盘、每日运价整理、客户画像、开发信和报价跟进。",
     keywords: ["货代 AI 助手", "国际物流 AI", "每日运价整理 AI", "货代客户开发 AI", "企业微信货代自动化"],
     audience: "货代老板、销售负责人、航线/价格负责人、国际物流运营团队",
@@ -225,7 +225,7 @@ export const chineseBlogPages: ChineseBlogPage[] = [
   },
   {
     slug: "ai-assistant-implementation-checklist",
-    title: "企业部署 AI 助手前的 20 个问题：一份给老板和运营负责人的检查清单",
+    title: "部署 AI 助手前的 20 个问题",
     description: "企业部署 AI 助手前应确认的 20 个问题，覆盖业务场景、数据来源、权限、安全、人工审核、验收指标和迭代节奏。",
     keywords: ["企业 AI 助手部署", "AI 助手检查清单", "企业 AI 落地", "AI 工作流自动化", "OpenClaw 部署"],
     audience: "老板、运营负责人、销售负责人、行政/助理团队、数字化负责人",
@@ -269,19 +269,20 @@ export const chineseBlogPages: ChineseBlogPage[] = [
       { title: "传统企业运营 AI 助手", href: "/zh/chuantong-qiye-yunying-ai" },
       { title: "企业微信 AI 助手能做什么？", href: "/blog/wecom-ai-assistant-workflows" },
       { title: "企业助手怎么选", href: "/zh/qiye-zhushou-zenme-xuan" },
-      { title: "企业陪跑计划", href: "/enterprise" }
+      { title: "企业陪跑计划", href: "/enterprise" },
+      { title: "OpenClaw 速查表", href: "/blog/openclaw-mega-cheatsheet-zh" }
     ]
   },
   {
     slug: "openclaw-qiyeweixin-jieru",
-    title: "OpenClaw 企业微信接入要先确认的权限｜不是第二篇销售页",
+    title: "OpenClaw 企业微信接入要先确认的权限",
     h1: "把 OpenClaw 接到企业微信之前，要核对的权限和审核",
-    description: "已经决定用 OpenClaw 接企业微信时，先核对谁授权、能读哪些会话、默认不外发，以及谁审核。这不是第二篇销售页。",
+    description: "已经决定用 OpenClaw 接企业微信时，先核对谁授权、能读哪些会话、默认不外发，以及谁来审核。",
     keywords: ["OpenClaw 企业微信接入教程", "企业微信 权限", "OpenClaw 企微 审核", "企微 不自动发送"],
     audience: "已经选定 OpenClaw、准备接到企业微信的人",
     updatedAt: "2026-10-08",
-    summary: "接入前先核对权限和审核。还没选定运行时的，不要从这篇开始。",
-    definition: "OpenClaw 企业微信接入教程只核对权限和审核：管理员是否授权、可读范围、默认不对外发送、谁确认草稿、日志和权限如何回收。它不重复「要不要接」的销售说明。",
+    summary: "接入前先核对权限和审核。还没选定运行时的，先看企业微信企业助手，不要从这篇开始。",
+    definition: "OpenClaw 企业微信接入教程只核对权限和审核：管理员是否授权、可读范围、默认不对外发送、谁确认草稿、日志和权限如何回收。要不要接，看企业微信企业助手页。这里只核对权限和审核。",
     tldr: [
       "还没选定 OpenClaw，去企业微信企业助手和 WorkBuddy 对比，不要从这篇开始。",
       "没有管理员授权，就只能人工抄送，不能称为已经接入。",
@@ -289,7 +290,7 @@ export const chineseBlogPages: ChineseBlogPage[] = [
     ],
     sections: [
       {
-        title: "这篇不负责让你改用 OpenClaw",
+        title: "先确认你已经选定 OpenClaw",
         body: [
           "要不要把运行时放在 OpenClaw，写在 [企业微信 OpenClaw](/zh/qiyeweixin-openclaw) 和 [企业微信企业助手](/zh/qiyeweixin-qiye-zhushou)。企微里助手能做哪些事，写在 [企业微信 AI 助手能做什么](/blog/wecom-ai-assistant-workflows)。这里只列接入前要核对的权限。"
         ]
@@ -310,17 +311,17 @@ export const chineseBlogPages: ChineseBlogPage[] = [
         ]
       },
       {
-        title: "不要写成第二套货代或客服方案",
+        title: "货代和客服流程看各自的专页",
         body: [
-          "货代询盘仍用 [货代 AI 助手](/zh/huodai-ai-zhushou) 和 [企业微信货代 AI](/zh/qiyeweixin-huodai-ai)。本篇不新增字段，也不引用案例里的时效。人工审核的定义在 [人工审核](/zh/rengong-shenhe)。"
+          "货代询盘仍用 [货代 AI 助手](/zh/huodai-ai-zhushou) 和 [企业微信货代 AI](/zh/qiyeweixin-huodai-ai)。这里不新增货代字段，也不引用案例里的时效。人工审核的定义在 [人工审核](/zh/rengong-shenhe)。"
         ]
       }
     ],
     faqs: [
       { q: "没有管理员权限能接吗？", a: "不能称为接入。最多是人把消息抄给助手。那不叫企业微信接入完成。" },
       { q: "可以默认自动回复客户吗？", a: "不可以。默认只出草稿。对外发送由人确认。" },
-      { q: "这篇和销售页有什么区别？", a: "销售页回答要不要选定 OpenClaw。这篇假设已经选定，只核对权限和审核。" },
-      { q: "要配置哪些未公开参数？", a: "本篇不写站内没有公开过的接口参数。权限问题先问企业微信管理员和你们自己的安全要求。" }
+      { q: "这篇和销售页有什么区别？", a: "销售页回答要不要选定 OpenClaw。要不要选定 OpenClaw，看企业微信企业助手。这里假设已经选定，只核对权限和审核。" },
+      { q: "要配置哪些未公开参数？", a: "站内没有公开过的接口参数不会写在这里。权限问题先问企业微信管理员和你们自己的安全要求。" }
     ],
     related: [
       { title: "企业微信 OpenClaw", href: "/zh/qiyeweixin-openclaw" },

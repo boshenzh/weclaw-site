@@ -17,7 +17,7 @@ export function GET() {
 > WeClawd（喂龙虾）帮企业设计、训练并运营私有可控的 AI 智能体 / 企业助手。框架不锁死。客户选定 OpenClaw 时，另做白手套部署与托管。常见场景包括货代、跨境电商运营、销售和办公协同。
 
 Canonical site: https://www.weclawd.com
-Visible website citation for Chinese articles / 公众号: http://weclawd.com/
+Visible website citation for Chinese articles / 公众号: https://www.weclawd.com/
 Chinese name: 喂龙虾
 Contact: boshen233@gmail.com
 Consultation: ${BOOKING_URL}
