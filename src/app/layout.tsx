@@ -65,14 +65,6 @@ export const metadata: Metadata = {
     description:
       "帮企业落地私有可控的 AI 智能体，框架不锁死。客户选定 OpenClaw 时，另做白手套部署与托管。",
     siteName: "喂龙虾",
-    images: [
-      {
-        url: "/logos/weclaw-logo.png",
-        width: 1200,
-        height: 630,
-        alt: "喂龙虾 - 私有可控 AI 智能体陪跑",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -81,7 +73,6 @@ export const metadata: Metadata = {
     title: "喂龙虾 WeClawd｜私有可控 AI 智能体与企业助手陪跑",
     description:
       "帮企业落地私有可控的 AI 智能体，框架不锁死。客户选定 OpenClaw 时，另做白手套部署与托管。",
-    images: ["/logos/weclaw-logo.png"],
   },
   alternates: {
     canonical: siteUrl,

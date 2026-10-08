@@ -40,14 +40,13 @@ export const metadata: Metadata = {
   description:
     "WeClawd 为货代和国际物流团队部署私有 AI 助手，支持企业微信/飞书/邮件工作流、询盘整理、运价简报、客户画像、销售跟进和开发信草稿。",
   keywords: ["货代 AI 助手", "国际物流 AI", "企业微信货代自动化", "海运报价自动化", "货代客户开发 AI", "OpenClaw 部署"],
-  alternates: { canonical: pageUrl, languages: { en: `${siteUrl}/freight-ai-assistant`, "zh-CN": pageUrl } },
+  alternates: { canonical: pageUrl },
   openGraph: {
     type: "website",
     locale: "zh_CN",
     url: pageUrl,
     title: "货代 AI 助手｜WeClawd 喂龙虾",
     description: "面向货代、国际物流和跨境贸易团队的私有 AI 助手部署服务。",
-    images: [{ url: "/logos/weclaw-logo.png", width: 1200, height: 630, alt: "货代 AI 助手 WeClawd" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -55,7 +54,6 @@ export const metadata: Metadata = {
     creator: "@boshenzh",
     title: "货代 AI 助手｜WeClawd 喂龙虾",
     description: "企业微信、飞书、邮件和运价表工作流的 OpenClaw AI 助手部署。",
-    images: ["/logos/weclaw-logo.png"],
   },
 };
 
@@ -94,7 +92,8 @@ export default function HuodaiAiAssistantPage() {
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-blue-600 px-6 py-3 text-center text-sm font-semibold text-white shadow-lg hover:bg-blue-700">预约 15 分钟咨询</a>
-              <Link href="/freight-ai-assistant" className="rounded-lg border border-zinc-300 px-6 py-3 text-center text-sm font-semibold text-zinc-900 hover:bg-zinc-50">English page</Link>
+              <Link href="/zh/huodai-ai-zhushou" className="rounded-lg border border-zinc-300 px-6 py-3 text-center text-sm font-semibold text-zinc-900 hover:bg-zinc-50">货代场景详解</Link>
+              <Link href="/en/freight-forwarder-ai-assistant" className="rounded-lg border border-zinc-300 px-6 py-3 text-center text-sm font-semibold text-zinc-900 hover:bg-zinc-50">English page</Link>
             </div>
           </div>
         </div>

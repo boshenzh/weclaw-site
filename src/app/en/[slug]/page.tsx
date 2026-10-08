@@ -2,8 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { enPages, getEnPage } from "@/lib/en-pages";
-
-const siteUrl = "https://www.weclawd.com";
+import { alternatesFor, absoluteUrl, SITE_URL as siteUrl } from "@/lib/seo";
 
 export function generateStaticParams() {
   return enPages.map((page) => ({ slug: page.slug }));
@@ -13,19 +12,19 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const page = getEnPage(slug);
   if (!page) return {};
-  const url = `${siteUrl}/en/${page.slug}`;
+  const path = `/en/${page.slug}`;
+  const url = absoluteUrl(path);
   return {
     title: page.title,
     description: page.description,
     keywords: page.keywords,
-    alternates: { canonical: url, languages: { en: url, "zh-CN": siteUrl } },
+    alternates: alternatesFor(path),
     openGraph: {
       type: "article",
       locale: "en_US",
       url,
       title: page.title,
       description: page.description,
-      images: [{ url: "/logos/weclaw-logo.png", width: 1200, height: 630, alt: page.title }],
     },
     twitter: {
       card: "summary_large_image",
@@ -33,7 +32,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       creator: "@boshenzh",
       title: page.title,
       description: page.description,
-      images: ["/logos/weclaw-logo.png"],
     },
   };
 }
@@ -64,7 +62,11 @@ export default async function EnArticlePage({ params }: { params: Promise<{ slug
         </div>
       </nav>
       <article className="mx-auto max-w-4xl px-6 py-16 lg:px-8">
-        <Link href="/en" className="text-sm font-medium text-blue-700 hover:text-blue-900">← English overview</Link>
+        <nav className="flex flex-wrap items-center gap-2 text-sm" aria-label="Breadcrumb">
+          <Link href="/en" className="font-medium text-blue-700 hover:text-blue-900">English overview</Link>
+          <span className="text-zinc-400">/</span>
+          <span className="max-w-xl truncate text-zinc-500">{page.title}</span>
+        </nav>
         <div className="mt-8 border-b border-zinc-200 pb-10">
           <p className="text-sm font-semibold text-blue-700">{page.audience}</p>
           <h1 className="mt-4 text-4xl font-bold tracking-tight lg:text-5xl">{page.title}</h1>

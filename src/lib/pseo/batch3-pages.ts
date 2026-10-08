@@ -565,6 +565,7 @@ export const batch3PlatformPages: GeoPage[] = [
       relatedCard("/blog/wecom-ai-assistant-workflows", "企微能做什么", "已有文章。", "已有文章"),
       relatedCard("/zh/qiyeweixin-huodai-ai", "企微货代", "物流询盘专页。", "已有页面"),
       relatedCard("/compare/workbuddy-vs-openclaw", "WorkBuddy vs OpenClaw", "原生企微产品对比自建。", "对比"),
+      relatedCard("/enterprise", "企业陪跑计划", "连通之后的那条办公流程。", "服务"),
     ],
   }),
 ];

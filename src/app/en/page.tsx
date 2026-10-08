@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import SeoHubLinks from "@/components/SeoHubLinks";
 import { enPages } from "@/lib/en-pages";
 
 const siteUrl = "https://www.weclawd.com";
@@ -9,7 +10,6 @@ export const metadata: Metadata = {
   description: "English overview of WeClawd: private OpenClaw assistant deployment for teams, freight workflows, setup cost, and business workflow comparisons.",
   alternates: {
     canonical: `${siteUrl}/en`,
-    languages: { en: `${siteUrl}/en`, "zh-CN": siteUrl },
   },
   openGraph: {
     type: "website",
@@ -30,6 +30,7 @@ export default function EnIndexPage() {
           <p className="mt-6 max-w-3xl text-xl leading-8 text-zinc-600">
             WeClawd is primarily a Chinese-first service. This English section is intentionally small: it exists for OpenClaw ecosystem references, international readers, and teams evaluating private OpenClaw deployment.
           </p>
+          <SeoHubLinks current="/en" />
         </div>
       </section>
       <section className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
