@@ -18,7 +18,6 @@ const CONTENT_DATES = {
   whatIsOpenclaw: "2026-05-30",
   setupCostBlog: "2026-05-30",
   cheatsheet: "2026-05-19",
-  llms: "2026-09-27",
   enPages: "2026-05-20",
   englishGeo: SITE_LAST_UPDATE,
 } as const;
@@ -59,8 +58,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/blog/what-is-openclaw`, lastModified: at(CONTENT_DATES.whatIsOpenclaw), changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/blog/openclaw-setup-cost`, lastModified: at(CONTENT_DATES.setupCostBlog), changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/blog/openclaw-mega-cheatsheet-zh`, lastModified: at(CONTENT_DATES.cheatsheet), changeFrequency: "monthly", priority: 0.85 },
-    { url: `${baseUrl}/llms.txt`, lastModified: at(CONTENT_DATES.llms), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${baseUrl}/llms-full.txt`, lastModified: at(CONTENT_DATES.llms), changeFrequency: "monthly", priority: 0.5 },
+    { url: `${baseUrl}/blog`, lastModified: at(CONTENT_DATES.whatIsOpenclaw), changeFrequency: "weekly", priority: 0.7 },
   ];
 
   const zh: MetadataRoute.Sitemap = allChineseGeoPages.map((page) => ({

@@ -24,14 +24,14 @@ export const pseoPlatformPages: GeoPage[] = [
     bullets: [
       "未回复和缺失字段比自动回复优先",
       "WorkBuddy 在企微上是原生路径，先评估它",
-      "货代询盘不在本页重做",
+      "货代询盘见货代专页",
       "通道能接，不代表可以无人值守",
     ],
     workflows: ["未回复提醒", "群聊摘要", "回复草稿", "内部升级", "每日交接"],
     sections: [
       {
         title: "企微上的企业助手做什么",
-        body: `在客户授权和技术条件允许时，把聊天整理成摘要、缺失信息清单和待办。${human} 更细的场景说明已在 [企业微信 AI 助手能做什么](/blog/wecom-ai-assistant-workflows)。英文集成页在 [WeCom](/integrations/wecom)。本页只回答商业选型：继续用腾讯云产品，还是把运行时放在自己这边。`,
+        body: `在客户授权和技术条件允许时，把聊天整理成摘要、缺失信息清单和待办。${human} 更细的场景说明已在 [企业微信 AI 助手能做什么](/blog/wecom-ai-assistant-workflows)。英文集成页在 [WeCom](/integrations/wecom)。这里回答商业选型：继续用腾讯云产品，还是把运行时放在自己这边。`,
       },
       {
         title: "WorkBuddy 往往是更短的企微路径",
@@ -44,7 +44,7 @@ export const pseoPlatformPages: GeoPage[] = [
       },
       {
         title: "不要和货代专页抢同一件事",
-        body: "货代团队从企微询盘里提取港口、货量和报价跟进，用 [企业微信货代 AI](/zh/qiyeweixin-huodai-ai) 和 [货代 AI 助手](/zh/huodai-ai-zhushou)。本页给非货代团队：客服草稿、销售未回复、内部交接。实施仍是 [企业陪跑](/enterprise) 里的 1–2 个流程，不是把整个企微历史交给模型。",
+        body: "货代团队从企微询盘里提取港口、货量和报价跟进，用 [企业微信货代 AI](/zh/qiyeweixin-huodai-ai) 和 [货代 AI 助手](/zh/huodai-ai-zhushou)。非货代团队看这里：客服草稿、销售未回复、内部交接。实施仍是 [企业陪跑](/enterprise) 里的 1–2 个流程，不是把整个企微历史交给模型。",
       },
     ],
     faqs: [
@@ -80,7 +80,7 @@ export const pseoPlatformPages: GeoPage[] = [
     title: "飞书企业助手｜文档、日历和消息进同一条待办",
     h1: "飞书企业助手：从文档和日历开始，而不是先买一个聊天框",
     description:
-      "飞书团队的企业助手应接在文档、日历和消息上。首页的飞书连接套餐只做安装，不含流程。喂龙虾陪跑这一条；OpenClaw 在客户选定后部署。腾讯栈团队不必为了飞书页离开 WorkBuddy。",
+      "飞书上的企业助手接在文档、日历和消息上。首页的飞书连接套餐只做安装，不含流程。OpenClaw 在客户选定后部署。",
     definition:
       "飞书企业助手是把飞书消息、文档和日历收成草稿与提醒的工作流。[首页](/)飞书连接包（当前公示 ¥489，以首页为准）只保证安装与连通，不是这套工作流本身。",
     audience: "以飞书为主要办公套件的团队负责人和行政",
@@ -153,8 +153,8 @@ export const pseoPlatformPages: GeoPage[] = [
     workflows: ["权限清单", "只读摘要", "草稿队列", "失败告警", "人工审核"],
     sections: [
       {
-        title: "这篇不负责说服你用 OpenClaw",
-        body: "若你还在腾讯云和 OpenClaw 之间，去 [WorkBuddy vs OpenClaw](/compare/workbuddy-vs-openclaw) 和 [企业微信企业助手](/zh/qiyeweixin-qiye-zhushou)。这里假设运行时已经选定为 OpenClaw。喂龙虾的交付是白手套部署、基础加固、以及约定支持期内的值守。业务规则仍要单独写：哪些群要看、哪些句子不能自动发。接入前要核对的权限在 [OpenClaw 企业微信接入](/blog/openclaw-qiyeweixin-jieru)，那篇不是第二篇销售页。",
+        title: "已经选定 OpenClaw 之后",
+        body: "若你还在腾讯云和 OpenClaw 之间，去 [WorkBuddy vs OpenClaw](/compare/workbuddy-vs-openclaw) 和 [企业微信企业助手](/zh/qiyeweixin-qiye-zhushou)。这里假设运行时已经选定为 OpenClaw。喂龙虾的交付是白手套部署、基础加固、以及约定支持期内的值守。业务规则仍要单独写：哪些群要看、哪些句子不能自动发。接入前要核对的权限在 [OpenClaw 企业微信接入](/blog/openclaw-qiyeweixin-jieru)。",
       },
       {
         title: "接入时真正卡住的地方",

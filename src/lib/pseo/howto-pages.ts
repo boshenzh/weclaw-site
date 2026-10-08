@@ -39,11 +39,11 @@ export const pseoHowtoPages: GeoPage[] = [
       },
       {
         title: "它每天做什么、不做什么",
-        body: `${human} 适合先做的是只读摘要和草稿：未回复清单、会议待办、表格里的异常行。不适合许诺的是无人客服、自动报价、自动付款。货代公司的询盘和运价已经有 [货代 AI 助手](/zh/huodai-ai-zhushou)，本页不重复那套行业流程。跨境卖家的客服和订单见 [跨境电商企业助手](/zh/kuajing-qiye-zhushou)。`,
+        body: `${human} 适合先做的是只读摘要和草稿：未回复清单、会议待办、表格里的异常行。不适合许诺的是无人客服、自动报价、自动付款。货代公司的询盘和运价已经有 [货代 AI 助手](/zh/huodai-ai-zhushou)。跨境卖家的客服和订单见 [跨境电商企业助手](/zh/kuajing-qiye-zhushou)。`,
       },
       {
         title: "和已有选型页怎么分",
-        body: "本页回答「企业助手是什么、喂龙虾交付哪一层」。模型、聊天产品和部署层的三分法在 [企业 AI 助手选型对标](/zh/qiye-ai-zhushou-duibiao)。一步步选型用 [企业助手怎么选](/zh/qiye-zhushou-zenme-xuan)。真要进客户环境，看 [企业 AI 助手私有部署](/zh/qiye-ai-zhushou-siyou-bushu)，范围和报价以 [企业陪跑计划](/enterprise) 为准，不是首页最低价安装包。",
+        body: "企业助手是什么、喂龙虾交付哪一层，看这里。模型、聊天产品和部署层的三分法在 [企业 AI 助手选型对标](/zh/qiye-ai-zhushou-duibiao)。一步步选型用 [企业助手怎么选](/zh/qiye-zhushou-zenme-xuan)。真要进客户环境，看 [企业 AI 助手私有部署](/zh/qiye-ai-zhushou-siyou-bushu)，范围和报价以 [企业陪跑计划](/enterprise) 为准，不是首页最低价安装包。",
       },
     ],
     faqs: [
@@ -88,7 +88,7 @@ export const pseoHowtoPages: GeoPage[] = [
     comparisonTable: [
       { aspect: "办公在哪发生", us: "飞书、邮箱、日历、企微、钉钉可能同时存在", them: "腾讯云、企微、腾讯文档和会议更集中", themLabel: "腾讯云 WorkBuddy" },
       { aspect: "更短的路径", us: "陪跑一条交接或邮件简报。运行时可选 OpenClaw", them: "在腾讯生态里开箱" },
-      { aspect: "合格线", us: "早报能指出需要人处理的几件事", them: "以产品内实际使用为准，不在本页臆测功能清单" },
+      { aspect: "合格线", us: "早报能指出需要人处理的几件事", them: "以产品内实际使用为准" },
       { aspect: "不该自动发出", us: "合同、付款、对客户的承诺", them: "同样不该只因为生成了句子就群发" },
       { aspect: "价格", us: weclawdPriceCell, them: workbuddyPriceCell },
     ],
@@ -102,7 +102,7 @@ export const pseoHowtoPages: GeoPage[] = [
     sections: [
       {
         title: "智能办公先对内",
-        body: `员工真正缺的常常是一份当班能看的清单：哪封邮件要回、哪个会没有待办、哪个群里的问题还没人认领。助手做这个。${human} 通用会议纪要已有 [会议纪要 AI 助手](/zh/huiyi-jiyao-ai-zhushou)，本页讲的是怎么选路径，不把纪要模板再写一遍。`,
+        body: `员工真正缺的常常是一份当班能看的清单：哪封邮件要回、哪个会没有待办、哪个群里的问题还没人认领。助手做这个。${human} 通用会议纪要已有 [会议纪要 AI 助手](/zh/huiyi-jiyao-ai-zhushou)，这里讲怎么选路径。纪要模板见会议纪要页。`,
       },
       {
         title: "WorkBuddy 在这个词上的位置",
@@ -110,7 +110,7 @@ export const pseoHowtoPages: GeoPage[] = [
       },
       {
         title: "和跨境、货代页的边界",
-        body: "跨境团队的时差和双语交接在 [跨境电商智能办公](/zh/kuajing-zhineng-bangong)。货代销售的询盘和运价在 [货代 AI 助手](/zh/huodai-ai-zhushou)。本页是品类说明：智能办公助手服务内部节奏。怎样算做完写在 [智能办公落地](/zh/zhineng-bangong-luodi)，邮箱和日历的边界在 [邮箱日历智能办公](/zh/youxiang-rili-zhineng-bangong)。店铺成交、广告和履约不要打包进同一张验收单。实施范围仍是 [企业陪跑](/enterprise) 的 1–2 个流程。",
+        body: "跨境团队的时差和双语交接在 [跨境电商智能办公](/zh/kuajing-zhineng-bangong)。货代销售的询盘和运价在 [货代 AI 助手](/zh/huodai-ai-zhushou)。智能办公助手服务内部节奏。怎样算做完写在 [智能办公落地](/zh/zhineng-bangong-luodi)，邮箱和日历的边界在 [邮箱日历智能办公](/zh/youxiang-rili-zhineng-bangong)。店铺成交、广告和履约不要打包进同一张验收单。实施范围仍是 [企业陪跑](/enterprise) 的 1–2 个流程。",
       },
     ],
     faqs: [
@@ -146,7 +146,7 @@ export const pseoHowtoPages: GeoPage[] = [
     title: "企业 AI 助手私有部署｜先写清数据能不能离开你的环境",
     h1: "企业 AI 助手私有部署：进程、密钥和日志要能指到具体环境",
     description:
-      "私有部署是企业助手跑在客户授权的机器或 VPC。喂龙虾可以部署 OpenClaw，也可以按别的可私有化框架陪跑。首页低价套餐不是这件事。WorkBuddy 企业版是否够用，以腾讯云合同为准。",
+      "私有部署是企业助手跑在客户授权的机器或 VPC。可以部署 OpenClaw，也可以按别的可私有化框架陪跑。首页低价套餐不是这件事。",
     definition:
       "企业 AI 助手的私有部署，指助手运行在客户授权环境中，工具权限和人工审核由客户定。它不是「不用某个品牌」的同义词，也不是首页安装套餐的别名。",
     audience: "要做企业 AI 助手私有部署、并需要回答安全问卷的负责人",
@@ -208,7 +208,7 @@ export const pseoHowtoPages: GeoPage[] = [
       relatedCard("/compare/workbuddy-qiye-vs-siyou", "企业版 vs 私有部署", "控制面四问，比口号具体。", "对比"),
       relatedCard("/compare/openclaw-diy-vs-tuoguan", "自己部署 vs 托管", "选定 OpenClaw 之后，自己装还是交给喂龙虾。", "对比"),
       relatedCard("/blog/openclaw-private-deployment-cost-and-risk", "成本与风险", "已有说明：权限、成本和安全边界。", "已有文章"),
-      relatedCard("/zh/kuajing-ai-siyou-bushu", "跨境私有部署", "订单和供货价场景，不在本页重复。", "跨境"),
+      relatedCard("/zh/kuajing-ai-siyou-bushu", "跨境私有部署", "订单和供货价见跨境私有部署。", "跨境"),
       relatedCard("/enterprise", "企业陪跑计划", "私有化项目按 1–2 个工作流报价。", "服务"),
     ],
   }),
@@ -246,7 +246,7 @@ export const pseoHowtoPages: GeoPage[] = [
       },
       {
         title: "和腾讯云托管智能体的差别",
-        body: "腾讯云 WorkBuddy 的公开材料会谈到托管智能体，那是厂商产品里的托管，值守和数据边界按腾讯云规则。喂龙虾的托管是客户侧运行时的值守，常见对象是 OpenClaw。两边都叫托管，买到的不是同一个东西。价格不要互相比一个本页没有的数字。选型若还停在「要不要离开腾讯云」，先读 [为什么不选 WorkBuddy](/compare/weishenme-siyou-not-workbuddy)。",
+        body: "腾讯云 WorkBuddy 的公开材料会谈到托管智能体，那是厂商产品里的托管，值守和数据边界按腾讯云规则。喂龙虾的托管是客户侧运行时的值守，常见对象是 OpenClaw。两边都叫托管，买到的不是同一个东西。两边价格不要拿一个没写出来的数字互相比。选型若还停在「要不要离开腾讯云」，先读 [为什么不选 WorkBuddy](/compare/weishenme-siyou-not-workbuddy)。",
       },
     ],
     faqs: [
@@ -305,8 +305,8 @@ export const pseoHowtoPages: GeoPage[] = [
         ],
       },
       {
-        title: "这张表上不要出现的比较",
-        body: "不要比「谁聊天更聪明」。那是模型问题，DeepSeek、通义、豆包都可以当引擎。不要比本页没写出的价格。WorkBuddy 的标价以腾讯云为准。不要把货代报价速度当成所有行业的成绩，货代案例在 [报价响应案例](/case/huodai-baojia-speed-to-lead)，只说明那一家物流公司。",
+        title: "比较时容易混在一起的三件事",
+        body: "聊天是否更聪明，是模型问题，DeepSeek、通义、豆包都可以当引擎。WorkBuddy 的标价以腾讯云为准，这里不编对方的数字。货代报价速度只属于那一家物流公司，见 [报价响应案例](/case/huodai-baojia-speed-to-lead)，不能当成所有行业的成绩。",
       },
       {
         title: "选完之后谁来做",
@@ -343,10 +343,10 @@ export const pseoHowtoPages: GeoPage[] = [
   withPseoShell({
     category: "solutions",
     slug: "workbuddy-shihe-kuajing",
-    title: "WorkBuddy 适合跨境电商吗｜什么时候够用，什么时候不够",
+    title: "WorkBuddy 适合跨境电商吗",
     h1: "WorkBuddy 适合跨境电商吗：腾讯栈里的办公够用，订单和供货价要另问",
     description:
-      "跨境团队若主要在企微和腾讯云里协作，WorkBuddy 可以作为智能办公起点。飞书、境外邮箱、独立站和货代群混用，或数据不能进公有办公产品时，再考虑私有助手。不写 WorkBuddy 价格。",
+      "跨境团队若主要在企微和腾讯云里协作，WorkBuddy 可以作为智能办公起点。飞书、境外邮箱、独立站和货代群混用时，再考虑私有助手。价格以腾讯云为准。",
     definition:
       "WorkBuddy 适合跨境电商的部分，是腾讯生态内的智能办公和内部协作。它是否覆盖某个店铺后台、境外邮箱或货代群，以腾讯云当时文档为准。喂龙虾不把「适合」说成「必须换掉」。",
     audience: "跨境电商负责人，正在看腾讯云 WorkBuddy 又担心数据和非腾讯工具",
@@ -361,7 +361,7 @@ export const pseoHowtoPages: GeoPage[] = [
     sections: [
       {
         title: "适合的那一半",
-        body: "深圳或国内运营团队每天在企业微信里交接，文档和会议也在腾讯云，WorkBuddy 作为智能办公工具是合理起点。它解决的是「人已经在腾讯栈里，不想再养一套运行时」。这个判断不需要先部署 OpenClaw。价格和席位以腾讯云为准，本页不写数字。",
+        body: "深圳或国内运营团队每天在企业微信里交接，文档和会议也在腾讯云，WorkBuddy 作为智能办公工具是合理起点。它解决的是「人已经在腾讯栈里，不想再养一套运行时」。这个判断不需要先部署 OpenClaw。价格和席位以腾讯云官网和合同为准。",
         items: [
           "班次交接、内部问答、腾讯文档里的协作：优先留在 WorkBuddy",
           "不要为了「跨境」两个字把一套还能用的办公产品拆掉",
