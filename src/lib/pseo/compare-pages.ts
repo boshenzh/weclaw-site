@@ -1,5 +1,6 @@
 import type { GeoPage } from "@/lib/geo-pages";
 import { batch3ComparePages } from "@/lib/pseo/batch3-pages";
+import { batch4ComparePages } from "@/lib/pseo/batch4-pages";
 import {
   WORKBUDDY_ENTERPRISE_DOC,
   WORKBUDDY_HOME,
@@ -671,4 +672,5 @@ export const pseoComparePages: GeoPage[] = [
     ],
   }),
   ...batch3ComparePages,
+  ...batch4ComparePages,
 ];

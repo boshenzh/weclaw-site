@@ -1,4 +1,5 @@
 import type { GeoPage } from "@/lib/geo-pages";
+import { batch4LocationPages } from "@/lib/pseo/batch4-pages";
 import { relatedCard, withPseoShell } from "@/lib/pseo/shell";
 
 /**
@@ -105,7 +106,7 @@ export const pseoLocationPages: GeoPage[] = [
       },
       {
         title: "远程也不改变选型",
-        body: "远程只说明人不到现场。该不该离开腾讯云、要不要 OpenClaw，仍看工具栈和数据落点。腾讯生态里开箱办公，继续用 WorkBuddy，不必为了「远程部署」这个词再装一套。选型步骤在 [企业助手怎么选](/zh/qiye-zhushou-zenme-xuan)。货代流程不要在远程安装里临时加进去，用 [货代 AI 助手](/zh/huodai-ai-zhushou)。",
+        body: "远程只说明人不到现场。该不该离开腾讯云、要不要 OpenClaw，仍看工具栈和数据落点。腾讯生态里开箱办公，继续用 WorkBuddy，不必为了「远程部署」这个词再装一套。选型步骤在 [企业助手怎么选](/zh/qiye-zhushou-zenme-xuan)。货代流程不要在远程安装里临时加进去，用 [货代 AI 助手](/zh/huodai-ai-zhushou)。跨境团队的时差和双语交接另写在 [跨境团队远程部署](/zh/kuajing-yuancheng-ai-bushu)，不要和本页收成一篇。",
       },
     ],
     faqs: [
@@ -135,4 +136,5 @@ export const pseoLocationPages: GeoPage[] = [
       relatedCard("/zh/huodai-ai-zhushou", "货代 AI 助手", "物流流程用专页，不塞进远程安装。", "已有页面"),
     ],
   }),
+  ...batch4LocationPages,
 ];

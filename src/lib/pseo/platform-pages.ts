@@ -1,5 +1,6 @@
 import type { GeoPage } from "@/lib/geo-pages";
 import { batch3PlatformPages } from "@/lib/pseo/batch3-pages";
+import { batch4PlatformPages } from "@/lib/pseo/batch4-pages";
 import { relatedCard, withPseoShell } from "@/lib/pseo/shell";
 
 const human = "对外发送、报价、退款和付款默认生成草稿，由人确认。";
@@ -153,7 +154,7 @@ export const pseoPlatformPages: GeoPage[] = [
     sections: [
       {
         title: "这篇不负责说服你用 OpenClaw",
-        body: "若你还在腾讯云和 OpenClaw 之间，去 [WorkBuddy vs OpenClaw](/compare/workbuddy-vs-openclaw) 和 [企业微信企业助手](/zh/qiyeweixin-qiye-zhushou)。这里假设运行时已经选定为 OpenClaw。喂龙虾的交付是白手套部署、基础加固、以及约定支持期内的值守。业务规则仍要单独写：哪些群要看、哪些句子不能自动发。",
+        body: "若你还在腾讯云和 OpenClaw 之间，去 [WorkBuddy vs OpenClaw](/compare/workbuddy-vs-openclaw) 和 [企业微信企业助手](/zh/qiyeweixin-qiye-zhushou)。这里假设运行时已经选定为 OpenClaw。喂龙虾的交付是白手套部署、基础加固、以及约定支持期内的值守。业务规则仍要单独写：哪些群要看、哪些句子不能自动发。接入前要核对的权限在 [OpenClaw 企业微信接入](/blog/openclaw-qiyeweixin-jieru)，那篇不是第二篇销售页。",
       },
       {
         title: "接入时真正卡住的地方",
@@ -256,4 +257,5 @@ export const pseoPlatformPages: GeoPage[] = [
     ],
   }),
   ...batch3PlatformPages,
+  ...batch4PlatformPages,
 ];

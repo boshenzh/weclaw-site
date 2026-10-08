@@ -29,7 +29,7 @@ export const batch3IndustryPages: GeoPage[] = [
     sections: [
       {
         title: "卖家后台不是默认接口",
-        body: `没有稳定授权时，从卖家中心导出、邮件和企微交接开始，不编造 SP-API 已接通。${human} ${noCheat} 总览场景在 [跨境电商企业助手](/zh/kuajing-qiye-zhushou)，国内店铺写法在 [电商运营 AI 助手](/zh/dianshang-yunying-ai-zhushou)。`,
+        body: `没有稳定授权时，从卖家中心导出、邮件和企微交接开始，不编造 SP-API 已接通。${human} ${noCheat} 总览场景在 [跨境电商企业助手](/zh/kuajing-qiye-zhushou)，国内店铺写法在 [电商运营 AI 助手](/zh/dianshang-yunying-ai-zhushou)。消息若进了企业微信，草稿边界在 [亚马逊企微客服](/zh/amazon-qiyeweixin-kefu)。`,
       },
       {
         title: "什么不要交给助手",
@@ -71,7 +71,7 @@ export const batch3IndustryPages: GeoPage[] = [
     sections: [
       {
         title: "和建站工具分开",
-        body: `喂龙虾不提供商店主题，也不承诺某个建站 AI 的按钮。我们把你已经有的商品事实、邮件和订单表收成草稿。${human} ${noCheat} 国内电商品类页是 [电商运营 AI 助手](/zh/dianshang-yunying-ai-zhushou)。`,
+        body: `喂龙虾不提供商店主题，也不承诺某个建站 AI 的按钮。我们把你已经有的商品事实、邮件和订单表收成草稿。${human} ${noCheat} 国内电商品类页是 [电商运营 AI 助手](/zh/dianshang-yunying-ai-zhushou)。收件箱分拣和回复草稿单独写在 [独立站邮件客服](/zh/dulizhan-youxiang-kefu)。`,
       },
       {
         title: "什么时候不必找我们",

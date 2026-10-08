@@ -1,5 +1,6 @@
 import type { GeoPage } from "@/lib/geo-pages";
 import { batch3HowtoPages } from "@/lib/pseo/batch3-pages";
+import { batch4HowtoPages } from "@/lib/pseo/batch4-pages";
 import { relatedCard, weclawdPriceCell, withPseoShell, workbuddyPriceCell } from "@/lib/pseo/shell";
 
 const human = "对外发送、报价、退款、改价和付款默认留人工确认。";
@@ -109,7 +110,7 @@ export const pseoHowtoPages: GeoPage[] = [
       },
       {
         title: "和跨境、货代页的边界",
-        body: "跨境团队的时差和双语交接在 [跨境电商智能办公](/zh/kuajing-zhineng-bangong)。货代销售的询盘和运价在 [货代 AI 助手](/zh/huodai-ai-zhushou)。本页是品类说明：智能办公助手服务内部节奏。店铺成交、广告和履约不要打包进同一张验收单。实施范围仍是 [企业陪跑](/enterprise) 的 1–2 个流程。",
+        body: "跨境团队的时差和双语交接在 [跨境电商智能办公](/zh/kuajing-zhineng-bangong)。货代销售的询盘和运价在 [货代 AI 助手](/zh/huodai-ai-zhushou)。本页是品类说明：智能办公助手服务内部节奏。怎样算做完写在 [智能办公落地](/zh/zhineng-bangong-luodi)，邮箱和日历的边界在 [邮箱日历智能办公](/zh/youxiang-rili-zhineng-bangong)。店铺成交、广告和履约不要打包进同一张验收单。实施范围仍是 [企业陪跑](/enterprise) 的 1–2 个流程。",
       },
     ],
     faqs: [
@@ -409,4 +410,5 @@ export const pseoHowtoPages: GeoPage[] = [
     ],
   }),
   ...batch3HowtoPages,
+  ...batch4HowtoPages,
 ];

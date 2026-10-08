@@ -7,7 +7,7 @@
  * - `/zh/[slug]` category and selection → `howto-pages.ts`
  * - `/zh/[slug]` WeCom / Feishu / DingTalk → `platform-pages.ts`
  * - `/zh/[slug]` Shenzhen on-site or remote → `location-pages.ts`
- * - later batches are spread from `batch3-pages.ts` into those arrays
+ * - later batches are spread from `batch3-pages.ts` and `batch4-pages.ts` into those arrays
  *
  * Do not add a new page.tsx. `pseoChinesePages` and `pseoComparePages` are
  * spread into `src/lib/geo-pages.ts`, which feeds the dynamic routes,

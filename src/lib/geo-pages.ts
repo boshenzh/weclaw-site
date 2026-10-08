@@ -429,7 +429,7 @@ export const chineseGeoPages: GeoPage[] = [
       },
       {
         title: "交付方式和安全边界",
-        body: "WeClawd 会从一个低风险、高重复的场景开始，例如 [企业微信询盘整理](/zh/qiyeweixin-huodai-ai)、[每日运价简报](/zh/meiri-yunjia-zhengli-ai) 或报价后跟进提醒。部署时会明确账号权限、工具范围、人工审核节点和日志边界；后续根据团队信任程度逐步扩展到更多工作流。安全边界详见 [私有部署成本与安全](/blog/openclaw-private-deployment-cost-and-risk)。",
+        body: "WeClawd 会从一个低风险、高重复的场景开始，例如 [企业微信询盘整理](/zh/qiyeweixin-huodai-ai)、[每日运价简报](/zh/meiri-yunjia-zhengli-ai) 或报价后跟进提醒。主场在飞书文档和群时，看 [飞书货代](/zh/huodai-feishu-ai)，不要把企微流程再写一遍。部署时会明确账号权限、工具范围、人工审核节点和日志边界；后续根据团队信任程度逐步扩展到更多工作流。安全边界详见 [私有部署成本与安全](/blog/openclaw-private-deployment-cost-and-risk)。",
         items: ["先梳理业务流程和数据来源", "部署 OpenClaw 助手并连接授权工具", "配置提示词、技能、定时任务和待审核输出", "14 天内持续调试工作流，确认哪些动作必须人工审核"]
       }
     ],
