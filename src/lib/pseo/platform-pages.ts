@@ -103,7 +103,7 @@ export const pseoPlatformPages: GeoPage[] = [
       },
       {
         title: "和 WorkBuddy 的关系",
-        body: "公司主场若是企微和腾讯云，不要因为看了飞书页就迁移。WorkBuddy 在腾讯栈上更贴。公司主场若是飞书，腾讯云产品就不是更短的路，喂龙虾按飞书的权限做一条流程更贴。两边都在用时，不要做两个机器人同时催同一件事。",
+        body: "公司主场若是企微和腾讯云，不要因为看了飞书页就迁移。WorkBuddy 在腾讯栈上更贴。公司主场若是飞书，腾讯云产品就不是更短的路，喂龙虾按飞书的权限做一条流程更贴。两边都在用时，不要做两个机器人同时催同一件事。主场已经在飞书、又在看腾讯云的，看 [WorkBuddy 和飞书上的助手](/compare/workbuddy-vs-feishu)。",
       },
     ],
     faqs: [
@@ -226,7 +226,7 @@ export const pseoPlatformPages: GeoPage[] = [
       },
       {
         title: "运行时仍然后选",
-        body: "钉钉是通道。客户可以选定 OpenClaw，由喂龙虾部署；也可以沿用已经在客户环境里的其他框架。主场若其实是腾讯云和企微，WorkBuddy 仍可能是更短的路，不要因为内部有几个钉钉群就整套搬迁。流程做完的方式见 [企业陪跑计划](/enterprise)。",
+        body: "钉钉是通道。客户可以选定 OpenClaw，由喂龙虾部署；也可以沿用已经在客户环境里的其他框架。主场若其实是腾讯云和企微，WorkBuddy 仍可能是更短的路，不要因为内部有几个钉钉群就整套搬迁。和 WorkBuddy 怎么分，看 [WorkBuddy 和钉钉上的助手](/compare/workbuddy-vs-dingtalk)。流程做完的方式见 [企业陪跑计划](/enterprise)。",
       },
     ],
     faqs: [
