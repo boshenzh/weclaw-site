@@ -1,21 +1,17 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
+import { checkoutPlansForEnv } from "@/lib/checkout-plans";
 import { serverEnv } from "@/lib/env";
 
 const stripe = new Stripe(serverEnv.STRIPE_SECRET_KEY);
 
-const PLAN_CONFIG: Record<string, { amountCny: number; name: string }> = {
-  managed: { amountCny: 3800, name: "托管部署" },
-  personal_pc: { amountCny: 1888, name: "个人部署（远程）" },
-  test_10: { amountCny: 10, name: "测试支付（¥10）" },
-};
-
 async function createCheckout(plan: string, promoCode?: string | null) {
-  if (!PLAN_CONFIG[plan]) {
+  const plans = checkoutPlansForEnv({ ALLOW_TEST_CHECKOUT: process.env.ALLOW_TEST_CHECKOUT });
+  if (!plans[plan]) {
     return { error: new NextResponse("Invalid plan", { status: 400 }) } as const;
   }
 
-  const cfg = PLAN_CONFIG[plan];
+  const cfg = plans[plan];
   const successUrl = new URL("/success", serverEnv.NEXT_PUBLIC_SITE_URL);
   successUrl.searchParams.set("session_id", "{CHECKOUT_SESSION_ID}");
   const cancelUrl = new URL("/#pricing", serverEnv.NEXT_PUBLIC_SITE_URL);

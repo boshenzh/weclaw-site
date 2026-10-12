@@ -1,7 +1,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import ContactBlock from "@/components/ContactBlock";
 import SeoHubLinks from "@/components/SeoHubLinks";
 import { enPages } from "@/lib/en-pages";
+import { untitled } from "@/lib/page-title";
 
 const siteUrl = "https://www.weclawd.com";
 
@@ -38,11 +40,14 @@ export default function EnIndexPage() {
           {enPages.map((page) => (
             <Link key={page.slug} href={`/en/${page.slug}`} className="rounded-2xl border border-zinc-200 p-6 hover:border-blue-300 hover:bg-blue-50/40">
               <div className="text-xs font-semibold uppercase tracking-wide text-blue-700">{page.audience}</div>
-              <h2 className="mt-3 text-lg font-semibold text-zinc-950">{page.title}</h2>
+              <h2 className="mt-3 text-lg font-semibold text-zinc-950">{untitled(page.title)}</h2>
               <p className="mt-3 text-sm leading-6 text-zinc-600">{page.description}</p>
             </Link>
           ))}
         </div>
+      </section>
+      <section className="mx-auto max-w-4xl px-6 pb-24 lg:px-8">
+        <ContactBlock locale="en" />
       </section>
     </main>
   );

@@ -1,77 +1,10 @@
 import Link from "next/link";
 import { BOOKING_URL } from "@/lib/contact";
 import Image from "next/image";
+import ContactBlock from "@/components/ContactBlock";
 import IntegrationLogos from "@/components/IntegrationLogos";
 import HomeBottomVideoFloat from "@/components/HomeBottomVideoFloat";
-
-const pricing = [
-  {
-    name: "飞书 + Gateway 快速连接包",
-    checkoutPlan: "feishu_gateway_install",
-    price: "¥489",
-    description: "2 小时远程安装：仅安装与连接，不含工作流整合",
-    features: [
-      "飞书连接与基础可用性验证",
-      "云端或本地 Gateway 二选一安装",
-      "2 小时远程安装支持",
-      "仅提供安装与连接（不含工作流整合）",
-      "不含个性化定制",
-    ],
-    recommended: false,
-  },
-  {
-    name: "个人部署",
-    checkoutPlan: "personal_pc",
-    price: "¥1,888",
-    originalPrice: "¥4,720",
-    badge: "限时 4 折",
-    description: "部署在客户个人电脑（远程安装）",
-    features: [
-      "在客户笔记本/台式机上部署 OpenClaw",
-      "远程 1v1 安装与配置",
-      "邮件和日历集成",
-      "安全基础加固",
-      "基于个人需求个性化打造专属 AI 工作助手与技能体系",
-      "持续优化与迭代支持", 
-    ],
-    recommended: true,
-  },
-  {
-    name: "托管部署",
-    checkoutPlan: "managed",
-    price: "¥3,800",
-    originalPrice: "¥7,600",
-    badge: "限时 5 折",
-    description: "云端托管部署（限时优惠）",
-    features: [
-      "云端 VPS 部署",
-      "含 14 天专属客服服务",
-      "当天完成部署",
-      "安全加固配置",
-      "邮件和日历集成",
-      "最多 3 个工作流",
-    ],
-    recommended: false,
-  },
-  {
-    name: "企业陪跑计划",
-    price: "定制",
-    badge: "3 天线下",
-    description: "1–2 名专属工程师驻场 3 天，一次性把企业 AI 工作流彻底调优",
-    features: [
-      "3 天线下集训营，节奏紧凑",
-      "1–2 名专属工程师全程驻场",
-      "高度定制：针对你公司真实业务一对一调优",
-      "Day 1：盘清楚最痛的 1–2 个工作流和 ROI 指标",
-      "Day 2：把助手接入微信 / 飞书 / 邮件 / CRM / ERP；选定 OpenClaw 时按该运行时部署",
-      "Day 3：跑通端到端流程，交付完整可用系统",
-      "一次性付费 · 调好的系统永久留给你",
-      "适合货代、跨境电商、律所、政企等高复杂度团队",
-    ],
-    detailsHref: "/enterprise",
-    recommended: false,
-  },
-];
+import PricingSection from "@/components/PricingSection";
 
 const comparison = [
   {
@@ -339,12 +272,12 @@ export default function Home() {
               >
                 客户案例
               </Link>
-              <a
-                href="#pricing"
+              <Link
+                href="/pricing"
                 className="hidden md:inline text-sm font-medium text-zinc-600 hover:text-zinc-950"
               >
                 价格
-              </a>
+              </Link>
               <a
                 href="#how-it-works"
                 className="hidden md:inline text-sm font-medium text-zinc-600 hover:text-zinc-950"
@@ -384,10 +317,12 @@ export default function Home() {
 
             <div className="flex flex-col items-center justify-center mb-6">
               <Image
-                src="/logos/weclaw-logo.png"
+                src="/logos/weclaw-logo.webp"
                 alt="喂龙虾"
-                width={2816}
-                height={1536}
+                width={960}
+                height={524}
+                priority
+                sizes="240px"
                 className="w-auto h-32 mb-6"
               />
               <h1 className="text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
@@ -543,158 +478,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Pricing Section */}
-        <section id="pricing" className="bg-white py-20 lg:py-28">
-          <div className="mx-auto max-w-6xl px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold text-zinc-950 mb-4">
-                简单透明的价格
-              </h2>
-              <p className="text-xl text-zinc-600 max-w-3xl mx-auto">
-                ¥489、¥1,888、¥3,800 是客户选定 OpenClaw 时的安装与托管套餐，以本页标价为准。一次性设置含部署与 14 天专属客服；托管本身不是 14 天，14 天是密集响应期。企业陪跑不在这三档里，按工作流另报价，区间以
-                <Link href="/enterprise" className="font-semibold text-zinc-950 underline">陪跑页</Link>
-                为准。
-              </p>
-            </div>
-
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-              {pricing.map((plan) => (
-                <a
-                  key={plan.name}
-                  href={plan.detailsHref ?? (plan.checkoutPlan ? `/api/stripe/checkout?plan=${plan.checkoutPlan}` : BOOKING_URL)}
-                  target={plan.detailsHref || plan.checkoutPlan ? undefined : "_blank"}
-                  rel={plan.checkoutPlan ? "nofollow" : plan.detailsHref ? undefined : "noopener noreferrer"}
-                  className={`relative block bg-white rounded-2xl border-2 p-8 ${
-                    plan.recommended
-                      ? "border-blue-600 shadow-xl scale-105"
-                      : "border-zinc-200 hover:border-zinc-300"
-                  } transition-all`}
-                >
-                  {plan.recommended && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                      <span className="inline-flex items-center rounded-full bg-blue-600 px-4 py-1 text-sm font-semibold text-white">
-                        推荐
-                      </span>
-                    </div>
-                  )}
-                  {plan.badge && (
-                    <div className="absolute -top-4 right-8">
-                      <span className="inline-flex items-center rounded-full bg-red-500 px-4 py-1.5 text-sm font-bold text-white shadow-lg">
-                        {plan.badge}
-                      </span>
-                    </div>
-                  )}
-                  <div className="mb-6">
-                    <h3 className="text-2xl font-bold text-zinc-950 mb-2">
-                      {plan.name}
-                    </h3>
-
-                    <p className="text-sm text-zinc-600 mb-4">
-                      {plan.description}
-                    </p>
-
-                    <div className="flex items-baseline gap-3 flex-wrap">
-                      <span className="text-4xl font-bold text-zinc-950">
-                        {plan.price}
-                      </span>
-                      {plan.originalPrice && (
-                        <span className="text-lg text-zinc-400 line-through">
-                          {plan.originalPrice}
-                        </span>
-                      )}
-                      {plan.price !== "联系咨询" && (
-                        <span className="text-zinc-500">一次性</span>
-                      )}
-                    </div>
-                  </div>
-                  <ul className="space-y-3 mb-8">
-                    {plan.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-3">
-                        <svg
-                          className="h-5 w-5 text-emerald-500 flex-shrink-0 mt-0.5"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                        <span className="text-sm text-zinc-700">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  {plan.detailsHref && (
-                    <div className="mt-2 text-sm font-semibold text-red-600">
-                      查看详情 →
-                    </div>
-                  )}
-                </a>
-              ))}
-            </div>
-
-            {/* Satisfaction Guarantee */}
-            <div className="mt-12">
-              <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-8">
-                <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-                  <div className="max-w-3xl">
-                    <h3 className="text-xl font-bold text-zinc-950">100% 满意保证</h3>
-                    <p className="mt-2 text-sm leading-6 text-zinc-700">
-                      如果你对配置不满意，我们将退款——不问理由。We’re here to help, not to nickel and dime.
-                    </p>
-                  </div>
-                  <a
-                    href={BOOKING_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center rounded-lg bg-emerald-600 px-5 py-3 text-sm font-semibold text-white hover:bg-emerald-700"
-                  >
-                    预约咨询
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-12 text-center space-y-4">
-              <p className="text-zinc-600">
-                上面三档是 OpenClaw 安装与托管的一次性设置费，含部署与 14 天专属客服，以本页标价为准。企业陪跑另报价，以
-                <Link href="/enterprise" className="font-semibold text-zinc-950 underline">陪跑页</Link>
-                为准。
-              </p>
-              <div className="bg-zinc-50 rounded-xl p-6 max-w-2xl mx-auto border border-zinc-200">
-                <h3 className="text-lg font-semibold text-zinc-950 mb-3">
-                  持续维护（可选）
-                </h3>
-                <p className="text-sm text-zinc-600 mb-4">
-                  14
-                  天后，您可以选择托管护理计划，获得持续监控、更新和技术支持。
-                </p>
-                <div className="grid md:grid-cols-2 gap-4 text-sm">
-                  <div className="bg-white rounded-lg p-4 border border-zinc-200">
-                    <div className="font-semibold text-zinc-950 mb-2">
-                      基础设施成本
-                    </div>
-                    <div className="text-zinc-600">
-                      • 云 VPS
-                      <br />• Mac Mini 硬件（一次性）
-                    </div>
-                  </div>
-                  <div className="bg-white rounded-lg p-4 border border-zinc-200">
-                    <div className="font-semibold text-zinc-950 mb-2">
-                      托管护理计划
-                    </div>
-                    <div className="text-zinc-600">
-                      具体价格请预约咨询讨论
-                      <br />
-                      包含持续监控、更新和支持
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PricingSection />
 
         {/* FAQ Section */}
         <section id="faq" className="bg-zinc-50 py-20 lg:py-28">
@@ -817,6 +601,12 @@ export default function Home() {
       </main>
 
       {/* Footer */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-3xl px-6 pb-20 lg:px-8">
+          <ContactBlock locale="zh" />
+        </div>
+      </section>
+
       <footer className="border-t border-zinc-200 bg-white">
         <div className="mx-auto max-w-6xl px-6 lg:px-8 py-12">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
@@ -1050,7 +840,7 @@ export default function Home() {
       </footer>
 
       {/* Limited Time Offer Banner */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg border-t border-blue-500">
+      <div className="fixed bottom-14 left-0 right-0 z-50 bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg border-t border-blue-500 md:bottom-0">
         <div className="mx-auto max-w-6xl px-4 py-2.5">
           <div className="flex items-center justify-between gap-4 text-sm">
             <div className="flex items-center gap-3">
