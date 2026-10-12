@@ -230,3 +230,30 @@
 - 首页 H1 已经是「帮企业落地私有可控的 AI 智能体」。pSEO 外壳也是陪跑优先、OpenClaw 可选。两边要继续保持这句，不要有的页改回「我们就是 OpenClaw 托管」。
 
 这些适合单独的文案 PR，不放进上面 20 页。
+
+上面 20 个 slug 已在线上。`WorkBuddy 替代` 的主 URL 仍是 `/compare/workbuddy-tidai`，不再为这个词新开 slug。
+
+## 2026-10-12 这一批（18 页）
+
+词表里的 63 个词要么已有专页，要么明确不再新开。这一批只补还没有 URL 的相邻查询：WorkBuddy 和某一类产品怎么分，以及几条还没有专页的流程。不新增城市页。不写对方价格、客户名、评分和未发布的数字。上门仍只在深圳。
+
+| slug | 路径 | 目标词 |
+|---|---|---|
+| `workbuddy-vs-feishu` | `/compare/workbuddy-vs-feishu` | WorkBuddy 和飞书上的助手 |
+| `workbuddy-vs-dingtalk` | `/compare/workbuddy-vs-dingtalk` | WorkBuddy 和钉钉上的助手 |
+| `workbuddy-vs-doubao` | `/compare/workbuddy-vs-doubao` | WorkBuddy 和豆包 |
+| `workbuddy-vs-qiyeweixin-bot` | `/compare/workbuddy-vs-qiyeweixin-bot` | WorkBuddy 和企业微信机器人 |
+| `liaotian-chanpin-tidai-workbuddy` | `/compare/liaotian-chanpin-tidai-workbuddy` | 聊天产品 替代 WorkBuddy |
+| `workbuddy-vs-ziji-kaifa` | `/compare/workbuddy-vs-ziji-kaifa` | 自建企业助手还是继续用 WorkBuddy |
+| `workbuddy-shihe-huodai` | `/zh/workbuddy-shihe-huodai` | WorkBuddy 货代 |
+| `workbuddy-shihe-dulizhan` | `/zh/workbuddy-shihe-dulizhan` | WorkBuddy 独立站 |
+| `workbuddy-shihe-kefu` | `/zh/workbuddy-shihe-kefu` | WorkBuddy 客服草稿 |
+| `workbuddy-youxiang-rili` | `/zh/workbuddy-youxiang-rili` | WorkBuddy 邮箱日历 |
+| `whatsapp-qiye-zhushou` | `/zh/whatsapp-qiye-zhushou` | WhatsApp 企业助手 |
+| `waimao-gendan-ai` | `/zh/waimao-gendan-ai` | 外贸跟单 AI |
+| `caigou-xunjia-ai` | `/zh/caigou-xunjia-ai` | 采购询价 AI |
+| `qiyeweixin-shenpi-ai` | `/zh/qiyeweixin-shenpi-ai` | 企业微信 审批 AI |
+| `kucun-yichang-tixing` | `/zh/kucun-yichang-tixing` | 库存异常提醒 |
+| `jianli-chusai-ai` | `/zh/jianli-chusai-ai` | 简历初筛 AI |
+| `kehu-tousu-shengji` | `/zh/kehu-tousu-shengji` | 客诉升级 AI |
+| `baoguan-danju-zhengli` | `/zh/baoguan-danju-zhengli` | 报关资料整理 |
