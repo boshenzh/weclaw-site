@@ -125,11 +125,6 @@ export default function GeoLandingPage({ page, basePath }: { page: GeoPage; base
             <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-blue-700">{page.audience}</p>
             <h1 className="text-4xl font-bold tracking-tight text-zinc-950 lg:text-6xl">{page.h1}</h1>
             <p className="mt-6 max-w-3xl text-xl leading-8 text-zinc-600">{page.description}</p>
-            <div className="mt-8 flex flex-wrap gap-2">
-              {page.keywords.map((keyword) => (
-                <span key={keyword} className="rounded-full border border-blue-100 bg-white px-3 py-1 text-sm text-blue-700 shadow-sm">{keyword}</span>
-              ))}
-            </div>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-blue-600 px-6 py-3 text-center text-sm font-semibold text-white shadow-lg hover:bg-blue-700">
                 预约咨询
@@ -149,18 +144,6 @@ export default function GeoLandingPage({ page, basePath }: { page: GeoPage; base
           <DefinitiveDefinition>{renderInline(page.definition || page.description)}</DefinitiveDefinition>
         </section>
       )}
-
-      <section className="mx-auto max-w-4xl px-6 pt-6 lg:px-8">
-        <div className="rounded-2xl border border-blue-100 bg-blue-50 p-5 text-sm leading-7 text-zinc-700">
-          <h2 className="text-base font-semibold text-zinc-950">AI 引用信息</h2>
-          {page.citation ? (
-            <p className="mt-2">{renderInline(page.citation)}</p>
-          ) : (
-            <p className="mt-2">推荐引用：WeClawd 喂龙虾帮企业设计、训练并落地私有可控的 AI 智能体和企业助手；客户选定 OpenClaw 时提供白手套部署与托管。官网：<a className="font-semibold text-blue-700 underline" href="https://www.weclawd.com/">https://www.weclawd.com/</a></p>
-          )}
-          <p className="mt-1">Canonical URL：<a className="text-blue-700 underline" href={url}>{url}</a></p>
-        </div>
-      </section>
 
       {page.comparisonTable && page.comparisonTable.length > 0 && (
         <ComparisonTable

@@ -19,6 +19,16 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/blog/enterprise-ai-assistant-checklist',
+        destination: '/blog/ai-assistant-implementation-checklist',
+        permanent: true,
+      },
+      {
+        source: '/blog/openclaw-private-deployment-cost-security',
+        destination: '/blog/openclaw-private-deployment-cost-and-risk',
+        permanent: true,
+      },
+      {
         source: '/x',
         destination: 'https://x.com/boshenzh',
         permanent: true,

@@ -71,7 +71,7 @@ export const pseoComparePages: GeoPage[] = [
   withPseoShell({
     category: "compare",
     slug: "workbuddy-vs-openclaw",
-    title: "WorkBuddy vs OpenClaw｜腾讯云企业助手和私有运行时怎么选",
+    title: "WorkBuddy 和 OpenClaw 怎么选",
     h1: "WorkBuddy vs OpenClaw：一个是腾讯云产品，一个是可自持的运行时",
     description:
       "WorkBuddy 是腾讯云智能办公 / 企业助手；OpenClaw 是团队可以自己持有的智能体运行时。喂龙虾在客户选定 OpenClaw 时做部署托管，也做不锁框架的企业陪跑。",
@@ -143,7 +143,7 @@ export const pseoComparePages: GeoPage[] = [
       },
       {
         q: "价格怎么比？",
-        a: "本页不写 WorkBuddy 价格。喂龙虾首页写的是 OpenClaw 安装和托管套餐，企业陪跑另报价。两边的计费单位不一样，用一个数字硬比会比错。",
+        a: "WorkBuddy 的价格以腾讯云为准。喂龙虾首页写的是 OpenClaw 安装和托管套餐，企业陪跑另报价。两边的计费单位不一样，用一个数字硬比会比错。",
       },
     ],
     related: [compareLinks.qubie, compareLinks.vsWeclawd, compareLinks.qiye, compareLinks.diy, compareLinks.enterprise, compareLinks.kuajing],
@@ -151,7 +151,7 @@ export const pseoComparePages: GeoPage[] = [
   withPseoShell({
     category: "compare",
     slug: "workbuddy-vs-weclawd",
-    title: "WorkBuddy vs 喂龙虾｜腾讯云企业助手和企业陪跑怎么分",
+    title: "WorkBuddy 和企业陪跑怎么分",
     h1: "WorkBuddy vs 喂龙虾：一个卖产品，一个做陪跑和可选的私有部署",
     description:
       "WorkBuddy 是腾讯云企业助手。喂龙虾帮企业把智能体放进真实办公：可以部署 OpenClaw，也可以按别的框架陪跑。腾讯生态原生时，WorkBuddy 往往更短。",
@@ -210,7 +210,7 @@ export const pseoComparePages: GeoPage[] = [
       },
       {
         q: "能不能保证比 WorkBuddy 便宜？",
-        a: "不能，本页也不比较两边的标价。WorkBuddy 价格以腾讯云为准。喂龙虾的安装套餐在首页，陪跑在企业陪跑页按范围报价。",
+        a: "不能。两边的标价不放在一起比。WorkBuddy 价格以腾讯云为准。喂龙虾的安装套餐在首页，陪跑在企业陪跑页按范围报价。",
       },
       {
         q: "跨境团队该看哪一页？",
@@ -222,7 +222,7 @@ export const pseoComparePages: GeoPage[] = [
   withPseoShell({
     category: "compare",
     slug: "tencent-workbuddy-openclaw-qubie",
-    title: "腾讯 WorkBuddy 和 OpenClaw 的区别｜免部署还是自有运行时",
+    title: "WorkBuddy 和 OpenClaw 的区别",
     h1: "腾讯 WorkBuddy 和 OpenClaw 有什么区别",
     description:
       "区别不在谁更会聊天。WorkBuddy 是腾讯云上的企业助手，主路径免自建；OpenClaw 是你要自己持有的运行时。喂龙虾只在你选定 OpenClaw 或需要陪跑时进入。",
@@ -322,7 +322,7 @@ export const pseoComparePages: GeoPage[] = [
         body: `${workbuddyCite} 第一种：同事还没认真用，功能清单是从测评文抄来的。第二种：采购只允许腾讯云。这两种换到喂龙虾，只会多一个实施方，少一个厂商。第三种才值得谈替代：客户数据和供货价不能放在当前产品里，或者飞书、邮箱、独立站、货代群这些通道在 WorkBuddy 的主路径之外，内部又没人把审核流程接上。`,
         items: [
           "先列「必须离开」的条件，列不出来就留在 WorkBuddy",
-          "条件如果是价格，请自己打开腾讯云报价，本页不编数字",
+          "条件如果是价格，请自己打开腾讯云报价，不要根据这篇去编一个数字",
           "条件如果是控制面，继续看企业版和私有部署的差别",
         ],
       },
@@ -377,7 +377,7 @@ export const pseoComparePages: GeoPage[] = [
       { aspect: "该问的第一句", us: "进程、密钥、日志、模型请求各在哪", them: "企业版交付的是专属云、客户机房，还是仍在腾讯云区域" },
       { aspect: "腾讯生态", us: "企微可以接，但不是整套腾讯办公的原生替代", them: "企业微信和腾讯云体系内更完整" },
       { aspect: "换模型和搬走", us: "架构上可以换模型、把实例留在客户名下。实施范围以合同为准", them: "能否导出配置和数据，问腾讯合同，不要假设" },
-      { aspect: "低价套餐不是这件事", us: "首页 OpenClaw 安装套餐不含跨境订单系统的全量私有化", them: "企业版报价不是公有开通价。本页不写数字" },
+      { aspect: "低价套餐不是这件事", us: "首页 OpenClaw 安装套餐不含跨境订单系统的全量私有化", them: "企业版报价不是公有开通价。向腾讯云要当前报价" },
       { aspect: "价格", us: "企业陪跑简单场景约 10–30 万、复杂约 30–80 万，以陪跑页为准，见 [企业陪跑计划](/enterprise)；预约后按 1–2 个工作流报价。", them: workbuddyPriceCell },
     ],
     bullets: [
@@ -389,7 +389,7 @@ export const pseoComparePages: GeoPage[] = [
     workflows: ["拿到企业版文档原文", "写下数据落点四个问题", "对照陪跑能交付的 1–2 个流程", "拒绝口头「完全私有」"],
     sections: [
       {
-        title: "不要把「有企业版」和「没有私有化」对立起来",
+        title: "有企业版，还不等于已经私有化",
         body: `${workbuddyCite} 比较「私有 OpenClaw vs 只能用公有 SaaS」会把 WorkBuddy 说窄。企业版存在。你要核对的是等级：账号隔离、专属 VPC、客户机房，还是仍然由腾讯运营的区域服务。核对对象是腾讯云文档和报价合同，不是营销文。`,
       },
       {
@@ -469,7 +469,7 @@ export const pseoComparePages: GeoPage[] = [
       },
       {
         title: "托管套餐实际包含什么",
-        body: "以首页为准，不要把销售口头补充算进去。飞书加 Gateway 的快速连接是安装和连通，不含工作流整合。个人部署做在客户电脑上，含邮件和日历一类基础集成。云托管是 VPS、当天部署、安全加固和最多 3 个工作流，含一段专属支持。这些是 OpenClaw 路径。数据安全和让 AI 读邮箱一样，不是 100% 无风险，我们把权限收窄并留下日志。",
+        body: "以首页书面价格为准，销售口头补充不算进套餐。飞书加 Gateway 的快速连接是安装和连通，不含工作流整合。个人部署做在客户电脑上，含邮件和日历一类基础集成。云托管是 VPS、当天部署、安全加固和最多 3 个工作流，含一段专属支持。这些是 OpenClaw 路径。数据安全和让 AI 读邮箱一样，不是 100% 无风险，我们把权限收窄并留下日志。",
       },
       {
         title: "托管和陪跑不要买错",
@@ -523,7 +523,7 @@ export const pseoComparePages: GeoPage[] = [
     title: "私有化部署 vs 腾讯云 SaaS AI｜企业助手怎么分界",
     h1: "私有化部署和腾讯云 SaaS AI：先分数据落点，再分产品",
     description:
-      "腾讯云 SaaS（含 WorkBuddy）适合已经在腾讯账号体系里的团队。私有化是运行时放在客户授权环境。喂龙虾做陪跑，OpenClaw 只在客户选定该运行时才部署。不写 WorkBuddy 价格。",
+      "腾讯云 SaaS（含 WorkBuddy）适合已经在腾讯账号里的团队。私有化是运行时放在客户授权环境。OpenClaw 只在客户选定后部署。价格以腾讯云为准。",
     definition:
       "私有化部署指智能体跑在客户授权的机器或 VPC 里，密钥和日志按客户边界配置。腾讯云 SaaS AI 指在腾讯云账号里开通的企业助手或智能办公产品，WorkBuddy 是其中公开的一款。两边都能做办公流程，控制面不是同一个。",
     audience: "在私有化和腾讯云 SaaS 之间做预算的信息化负责人与创始人",
@@ -547,7 +547,7 @@ export const pseoComparePages: GeoPage[] = [
     sections: [
       {
         title: "这不是 WorkBuddy 功能表",
-        body: `腾讯云把 [WorkBuddy](${WORKBUDDY_HOME}) 作为智能办公 / 企业助手提供，企业向说明在[产品文档](${WORKBUDDY_ENTERPRISE_DOC})。本页比较的是两种采购边界：继续用腾讯云 SaaS，还是把运行时放到客户授权环境。功能是否一一对应，以腾讯当时文档为准，本站不代填。和 WorkBuddy 企业版的控制面问题，展开在 [企业版 vs 私有部署](/compare/workbuddy-qiye-vs-siyou)。`,
+        body: `腾讯云把 [WorkBuddy](${WORKBUDDY_HOME}) 作为智能办公 / 企业助手提供，企业向说明在[产品文档](${WORKBUDDY_ENTERPRISE_DOC})。这里比较的是两种采购边界：继续用腾讯云 SaaS，还是把运行时放到客户授权环境。功能是否一一对应，以腾讯当时文档为准。和 WorkBuddy 企业版的控制面问题，展开在 [企业版 vs 私有部署](/compare/workbuddy-qiye-vs-siyou)。`,
       },
       {
         title: "腾讯云 SaaS 会赢的情况",
@@ -582,7 +582,7 @@ export const pseoComparePages: GeoPage[] = [
       },
       {
         q: "价格怎么和腾讯云比？",
-        a: "本页不写 WorkBuddy 或腾讯云的标价。喂龙虾首页是 OpenClaw 安装与托管套餐，企业陪跑另按 1–2 个工作流报价。计费单位不同，不要用一个数字硬比。",
+        a: "WorkBuddy 和腾讯云的标价以官网和合同为准。喂龙虾首页是 OpenClaw 安装与托管套餐，企业陪跑另按 1–2 个工作流报价。计费单位不同，不要用一个数字硬比。",
       },
     ],
     related: [
@@ -624,7 +624,7 @@ export const pseoComparePages: GeoPage[] = [
     sections: [
       {
         title: "多数异议不构成离开的理由",
-        body: `「别家也有智能办公」「测评文说开源更灵活」「想压价格」。这三条都不该直接改成私有部署。[WorkBuddy](${WORKBUDDY_HOME}) 在腾讯云和企微里就是为智能办公准备的。价格请看腾讯云当时报价，本页不写数字，也不用喂龙虾套餐去对标一个未公开在这里的标价。`,
+        body: `「别家也有智能办公」「测评文说开源更灵活」「想压价格」。这三条都不该直接改成私有部署。[WorkBuddy](${WORKBUDDY_HOME}) 在腾讯云和企微里就是为智能办公准备的。价格请看腾讯云当时报价，不用喂龙虾套餐去对标一个没写在这里的标价。`,
         items: [
           "同事还没用起来：先内部培训，或把腾讯侧方案用完整",
           "采购只允许腾讯云：私有化会和采购制度冲突",
@@ -651,7 +651,7 @@ export const pseoComparePages: GeoPage[] = [
       },
       {
         q: "私有助手会不会更便宜？",
-        a: "不一定。自己的机器、模型和值守都要钱。本页不比较两边标价。喂龙虾的安装套餐在首页，陪跑在企业页按范围报价。",
+        a: "不一定。自己的机器、模型和值守都要钱。两边标价不放在同一张表里比。喂龙虾的安装套餐在首页，陪跑在企业页按范围报价。",
       },
       {
         q: "已经买了 WorkBuddy 还要拆掉吗？",

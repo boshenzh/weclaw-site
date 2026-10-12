@@ -106,7 +106,7 @@ export const pseoLocationPages: GeoPage[] = [
       },
       {
         title: "远程也不改变选型",
-        body: "远程只说明人不到现场。该不该离开腾讯云、要不要 OpenClaw，仍看工具栈和数据落点。腾讯生态里开箱办公，继续用 WorkBuddy，不必为了「远程部署」这个词再装一套。选型步骤在 [企业助手怎么选](/zh/qiye-zhushou-zenme-xuan)。货代流程不要在远程安装里临时加进去，用 [货代 AI 助手](/zh/huodai-ai-zhushou)。跨境团队的时差和双语交接另写在 [跨境团队远程部署](/zh/kuajing-yuancheng-ai-bushu)，不要和本页收成一篇。",
+        body: "远程只说明人不到现场。该不该离开腾讯云、要不要 OpenClaw，仍看工具栈和数据落点。腾讯生态里开箱办公，继续用 WorkBuddy，不必为了「远程部署」这个词再装一套。选型步骤在 [企业助手怎么选](/zh/qiye-zhushou-zenme-xuan)。货代询盘和运价用 [货代 AI 助手](/zh/huodai-ai-zhushou)，不塞进这次远程安装。跨境团队的时差和双语交接在 [跨境团队远程部署](/zh/kuajing-yuancheng-ai-bushu)，和全国远程安装不是同一件事。",
       },
     ],
     faqs: [
@@ -116,7 +116,7 @@ export const pseoLocationPages: GeoPage[] = [
       },
       {
         q: "远程部署是否更便宜？",
-        a: "安装套餐本来就是远程价，写在首页。企业陪跑改成远程并不降价，而且通常更长。不要把两种订单比成「远程就打折」。",
+        a: "安装套餐本来就是远程价，写在首页。企业陪跑改成远程并不降价，而且通常更长。远程安装和远程陪跑是两笔订单，远程并不等于打折。",
       },
       {
         q: "需要把电脑密码交给你们吗？",

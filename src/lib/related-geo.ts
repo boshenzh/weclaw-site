@@ -187,7 +187,7 @@ export function fallbackRelated(page: GeoPage, selfPath: string): Card[] {
       {
         href: "/huodai-ai-assistant",
         title: "货代 AI 助手落地页",
-        description: "货代场景的中文入口，和本页讲同一类买家。",
+        description: "货代场景的中文入口。",
         kicker: "落地页",
       },
       {

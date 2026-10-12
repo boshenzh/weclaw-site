@@ -10,7 +10,7 @@ export const weclawdPriceCell =
   "首页公开的是 OpenClaw 安装与托管套餐；企业陪跑按工作流另报价。没有统一的「替代 WorkBuddy」价格。";
 
 export const workbuddyPriceCell =
-  "本页不写 WorkBuddy 标价。腾讯云按账号、席位或用量计费，以官网和合同为准，数字会变。";
+  "WorkBuddy 的价格以腾讯云官网和合同为准。腾讯云按账号、席位或用量计费，数字会变。";
 
 export type RelatedCard = NonNullable<GeoPage["related"]>[number];
 
