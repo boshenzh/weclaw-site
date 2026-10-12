@@ -41,6 +41,7 @@ const englishCategories: GeoPage["category"][] = ["solutions", "industries", "in
 export default function sitemap(): MetadataRoute.Sitemap {
   const core: MetadataRoute.Sitemap = [
     { url: baseUrl, lastModified: at(CONTENT_DATES.home), changeFrequency: "weekly", priority: 1.0 },
+    { url: `${baseUrl}/pricing`, lastModified: at("2026-10-12"), changeFrequency: "weekly", priority: 0.9 },
     { url: `${baseUrl}/enterprise`, lastModified: at(CONTENT_DATES.enterprise), changeFrequency: "weekly", priority: 0.95 },
     { url: `${baseUrl}/case/huodai-baojia-speed-to-lead`, lastModified: at(CONTENT_DATES.huodaiCase), changeFrequency: "monthly", priority: 0.95 },
     { url: `${baseUrl}/case/freight-auto-outreach`, lastModified: at(CONTENT_DATES.freightCase), changeFrequency: "monthly", priority: 0.9 },

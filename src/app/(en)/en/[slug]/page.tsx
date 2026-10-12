@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import ContactBlock from "@/components/ContactBlock";
 import { enPages, getEnPage } from "@/lib/en-pages";
 import { untitled } from "@/lib/page-title";
 import { alternatesFor, absoluteUrl, SITE_URL as siteUrl } from "@/lib/seo";
@@ -42,11 +43,12 @@ export default async function EnArticlePage({ params }: { params: Promise<{ slug
   const { slug } = await params;
   const page = getEnPage(slug);
   if (!page) notFound();
+  const title = untitled(page.title);
 
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: page.title,
+    headline: title,
     description: page.description,
     author: { "@type": "Organization", name: "WeClawd" },
     publisher: { "@type": "Organization", name: "WeClawd", logo: { "@type": "ImageObject", url: `${siteUrl}/logos/weclaw-logo.png` } },
@@ -67,11 +69,11 @@ export default async function EnArticlePage({ params }: { params: Promise<{ slug
         <nav className="flex flex-wrap items-center gap-2 text-sm" aria-label="Breadcrumb">
           <Link href="/en" className="font-medium text-blue-700 hover:text-blue-900">English overview</Link>
           <span className="text-zinc-400">/</span>
-          <span className="max-w-xl truncate text-zinc-500">{page.title}</span>
+          <span className="max-w-xl truncate text-zinc-500">{title}</span>
         </nav>
         <div className="mt-8 border-b border-zinc-200 pb-10">
           <p className="text-sm font-semibold text-blue-700">{page.audience}</p>
-          <h1 className="mt-4 text-4xl font-bold tracking-tight lg:text-5xl">{page.title}</h1>
+          <h1 className="mt-4 text-4xl font-bold tracking-tight lg:text-5xl">{title}</h1>
           <p className="mt-6 text-xl leading-8 text-zinc-600">{page.summary}</p>
         </div>
         <div className="mt-12 space-y-12">
@@ -106,6 +108,9 @@ export default async function EnArticlePage({ params }: { params: Promise<{ slug
             {page.related.map((item) => <Link key={item.href} href={item.href} className="rounded-xl bg-white p-4 text-sm font-semibold text-blue-700 shadow-sm hover:text-blue-900">{item.title}</Link>)}
           </div>
         </section>
+        <div className="mt-12">
+          <ContactBlock locale="en" />
+        </div>
       </article>
     </main>
   );

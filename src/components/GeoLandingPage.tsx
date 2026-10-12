@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { BOOKING_URL } from "@/lib/contact";
 import { categoryTitle, SITE_LAST_UPDATE, type GeoPage } from "@/lib/geo-pages";
+import { relevantCaseLinks, topicSecondaryCta } from "@/lib/landing-links";
 import { fallbackRelated } from "@/lib/related-geo";
 import { languageCounterpart } from "@/lib/seo";
 import AuthorBio from "@/components/AuthorBio";
+import ContactBlock from "@/components/ContactBlock";
 import { renderInline } from "@/components/inline-link";
 import DefinitiveDefinition from "@/components/DefinitiveDefinition";
 import ComparisonTable from "@/components/ComparisonTable";
@@ -36,6 +38,9 @@ export default function GeoLandingPage({ page, basePath }: { page: GeoPage; base
     });
   }
   related.length = Math.min(related.length, 6);
+  const secondary = topicSecondaryCta(page, chinese);
+  const caseLinks = relevantCaseLinks(page);
+  const showPricingNext = Boolean(basePath?.startsWith("/zh")) || page.category === "compare";
 
   const serviceJsonLd = {
     "@context": "https://schema.org",
@@ -126,11 +131,11 @@ export default function GeoLandingPage({ page, basePath }: { page: GeoPage; base
             <h1 className="text-4xl font-bold tracking-tight text-zinc-950 lg:text-6xl">{page.h1}</h1>
             <p className="mt-6 max-w-3xl text-xl leading-8 text-zinc-600">{page.description}</p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-blue-600 px-6 py-3 text-center text-sm font-semibold text-white shadow-lg hover:bg-blue-700">
-                预约咨询
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" data-fast-goal="book_call" className="rounded-lg bg-blue-600 px-6 py-3 text-center text-sm font-semibold text-white shadow-lg hover:bg-blue-700">
+                {chinese ? "预约咨询" : "Book a call"}
               </a>
-              <Link href={page.secondaryCta?.href || "/huodai-ai-assistant"} className="rounded-lg border border-zinc-300 px-6 py-3 text-center text-sm font-semibold text-zinc-900 hover:bg-zinc-50">
-                {page.secondaryCta?.label || "货代 AI 助手"}
+              <Link href={secondary.href} className="rounded-lg border border-zinc-300 px-6 py-3 text-center text-sm font-semibold text-zinc-900 hover:bg-zinc-50">
+                {secondary.label}
               </Link>
             </div>
             <AuthorBio variant="compact" />
@@ -236,12 +241,54 @@ export default function GeoLandingPage({ page, basePath }: { page: GeoPage; base
         <AuthorBio />
       </section>
 
+      <section className="mx-auto max-w-4xl px-6 py-16 lg:px-8">
+        {showPricingNext && (
+          <>
+            <h2 className="text-3xl font-bold tracking-tight">{chinese ? "价格与下一步" : "Pricing and next step"}</h2>
+            <p className="mt-4 text-sm leading-7 text-zinc-600">
+              {chinese ? (
+                <>
+                  客户选定 OpenClaw 时，公开安装与托管标价是 ¥489、¥1,888 和 ¥3,800，以
+                  <Link href="/pricing" className="font-semibold text-zinc-950 underline">价格页</Link>
+                  为准。企业陪跑不在这三档里，见
+                  <Link href="/enterprise" className="font-semibold text-zinc-950 underline">企业陪跑</Link>
+                  。
+                </>
+              ) : (
+                <>
+                  Published OpenClaw install and hosting prices are ¥489, ¥1,888, and ¥3,800 on the{" "}
+                  <Link href="/pricing" className="font-semibold text-zinc-950 underline">pricing page</Link>
+                  . Enterprise coaching is quoted separately on the{" "}
+                  <Link href="/enterprise" className="font-semibold text-zinc-950 underline">enterprise page</Link>
+                  .
+                </>
+              )}
+            </p>
+          </>
+        )}
+        {caseLinks.length > 0 && (
+          <div className={showPricingNext ? "mt-8" : ""}>
+            <h2 className="text-2xl font-bold tracking-tight">{chinese ? "相关案例" : "Related cases"}</h2>
+            <ul className="mt-3 space-y-2 text-sm">
+              {caseLinks.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="font-semibold text-blue-700 hover:text-blue-900">{item.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        <div className={showPricingNext || caseLinks.length > 0 ? "mt-8" : ""}>
+          <ContactBlock locale={chinese ? "zh" : "en"} />
+        </div>
+      </section>
+
       <section className="bg-blue-600 py-16 text-white">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
           <h2 className="text-3xl font-bold">{page.closingTitle || "先从一个工作流开始，再逐步扩展"}</h2>
           <p className="mt-4 text-blue-100">{page.closingBody || "客服草稿、订单异常、物流协同或开发信，都可以从一个低风险场景开始。预约时说明工具栈。我们按这个说清楚该不该继续用现有产品、要不要私有部署 OpenClaw，或换别的框架。"}</p>
-          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex rounded-lg bg-white px-6 py-3 text-sm font-semibold text-blue-700 hover:bg-blue-50">
-            预约 15 分钟咨询
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" data-fast-goal="book_call" className="mt-8 inline-flex rounded-lg bg-white px-6 py-3 text-sm font-semibold text-blue-700 hover:bg-blue-50">
+            {chinese ? "预约 15 分钟咨询" : "Book a 15-minute call"}
           </a>
         </div>
       </section>
