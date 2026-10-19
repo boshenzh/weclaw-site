@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ContactBlock from "@/components/ContactBlock";
 import SeoHubLinks from "@/components/SeoHubLinks";
 import { chineseBlogPages } from "@/lib/chinese-blog-pages";
 import { allChineseGeoPages, chineseComparePages } from "@/lib/geo-pages";
@@ -91,6 +92,19 @@ export default function ZhIndexPage() {
               <p className="mt-3 text-sm leading-6 text-zinc-600">{page.description}</p>
             </Link>
           ))}
+        </div>
+      </section>
+      <section className="mx-auto max-w-4xl px-6 pb-24 lg:px-8">
+        <h2 className="text-3xl font-bold tracking-tight">价格与下一步</h2>
+        <p className="mt-4 text-sm leading-7 text-zinc-600">
+          客户选定 OpenClaw 时，公开安装与托管标价是 ¥489、¥1,888 和 ¥3,800，以
+          <Link href="/pricing" className="font-semibold text-zinc-950 underline">价格页</Link>
+          为准。企业陪跑不在这三档里，见
+          <Link href="/enterprise" className="font-semibold text-zinc-950 underline">企业陪跑</Link>
+          。
+        </p>
+        <div className="mt-8">
+          <ContactBlock locale="zh" />
         </div>
       </section>
     </main>

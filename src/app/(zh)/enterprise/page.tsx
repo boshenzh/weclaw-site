@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ContactBlock from "@/components/ContactBlock";
 import { BOOKING_URL, CONTACT_EMAIL } from "@/lib/contact";
 
 const PAGE_URL = "https://www.weclawd.com/enterprise";
@@ -508,6 +509,12 @@ export default function EnterprisePage() {
               联系：<a href={`mailto:${CONTACT_EMAIL}`} className="font-semibold text-blue-700 underline">{CONTACT_EMAIL}</a>
             </p>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-white">
+        <div className="mx-auto max-w-3xl px-6 py-16 lg:px-8">
+          <ContactBlock locale="zh" />
         </div>
       </section>
 

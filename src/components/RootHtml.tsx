@@ -1,6 +1,8 @@
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
+import CtaTracker from "@/components/CtaTracker";
 import SiteFooter from "@/components/SiteFooter";
+import StickyContactBar from "@/components/StickyContactBar";
 
 export default function RootHtml({
   lang,
@@ -14,6 +16,9 @@ export default function RootHtml({
       <body>
         {children}
         <SiteFooter />
+        <div className="h-14 md:hidden" aria-hidden="true" />
+        <StickyContactBar />
+        <CtaTracker />
         <Analytics />
         <Script
           defer

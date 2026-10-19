@@ -24,18 +24,14 @@ export default function HomeBottomVideoFloat() {
     };
   }, []);
 
-  if (isDismissed) {
+  if (isDismissed || !isVisible) {
     return null;
   }
 
   return (
     <aside
       aria-label="货代 AI 员工视频演示"
-      className={`fixed inset-x-4 bottom-16 z-40 mx-auto max-w-sm overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-2xl shadow-zinc-950/15 md:left-auto md:right-6 md:mx-0 md:w-[380px] ${
-        isVisible
-          ? "translate-y-0 opacity-100"
-          : "pointer-events-none translate-y-5 opacity-0"
-      }`}
+      className="fixed inset-x-4 bottom-32 z-40 mx-auto max-w-sm overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-2xl shadow-zinc-950/15 md:bottom-16 md:left-auto md:right-6 md:mx-0 md:w-[380px]"
     >
       <div className="flex items-start justify-between gap-4 border-b border-zinc-100 px-4 py-3">
         <div>
@@ -61,7 +57,7 @@ export default function HomeBottomVideoFloat() {
         controls
         muted
         playsInline
-        preload="metadata"
+        preload="none"
         poster="/videos/freight-auto-outreach-poster.jpg"
       >
         <source src="/videos/freight-auto-outreach.mp4" type="video/mp4" />

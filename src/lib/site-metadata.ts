@@ -38,9 +38,9 @@ export const siteMetadata: Metadata = {
   creator: "喂龙虾",
   publisher: "喂龙虾",
   icons: {
-    icon: "/logos/weclaw-logo.png",
-    shortcut: "/logos/weclaw-logo.png",
-    apple: "/logos/weclaw-logo.png",
+    icon: "/logos/weclaw-logo-icon.png",
+    shortcut: "/logos/weclaw-logo-icon.png",
+    apple: "/logos/weclaw-logo-icon.png",
   },
   robots: {
     index: true,

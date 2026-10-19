@@ -10,7 +10,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test src/lib/checkout-plans.test.ts src/lib/page-title.test.ts"
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",

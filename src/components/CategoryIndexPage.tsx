@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ContactBlock from "@/components/ContactBlock";
 import SeoHubLinks from "@/components/SeoHubLinks";
 import { allGeoPages, categoryTitle, type GeoPage } from "@/lib/geo-pages";
 import { untitled } from "@/lib/page-title";
@@ -32,7 +33,7 @@ export default function CategoryIndexPage({
     <main className="min-h-screen bg-white text-zinc-950">
       <section className="border-b border-zinc-200 bg-gradient-to-b from-blue-50 to-white">
         <div className="mx-auto max-w-6xl px-6 py-16 lg:px-8 lg:py-24">
-          <Link href="/" className="text-sm font-medium text-blue-700 hover:text-blue-900">← WeClawd</Link>
+          <Link href="/" className="text-sm font-medium text-blue-700 hover:text-blue-900">{locale === "zh" ? "← 喂龙虾" : "← WeClawd"}</Link>
           <h1 className="mt-8 text-4xl font-bold tracking-tight lg:text-6xl">
             {locale === "zh" ? "对比" : categoryTitle(category)}
           </h1>
@@ -54,6 +55,21 @@ export default function CategoryIndexPage({
             </Link>
           ))}
         </div>
+      </section>
+      {locale === "zh" && (
+        <section className="mx-auto max-w-4xl px-6 pb-8 lg:px-8">
+          <h2 className="text-3xl font-bold tracking-tight">价格与下一步</h2>
+          <p className="mt-4 text-sm leading-7 text-zinc-600">
+            客户选定 OpenClaw 时，公开安装与托管标价是 ¥489、¥1,888 和 ¥3,800，以
+            <Link href="/pricing" className="font-semibold text-zinc-950 underline">价格页</Link>
+            为准。企业陪跑不在这三档里，见
+            <Link href="/enterprise" className="font-semibold text-zinc-950 underline">企业陪跑</Link>
+            。
+          </p>
+        </section>
+      )}
+      <section className="mx-auto max-w-4xl px-6 pb-24 lg:px-8">
+        <ContactBlock locale={locale === "zh" ? "zh" : "en"} />
       </section>
     </main>
   );

@@ -9,3 +9,5 @@ export const BOOKING_URL =
   "https://iiwlyqqrb5e.feishu.cn/scheduler/a1a62db44ecf8796";
 
 export const CONTACT_EMAIL = "boshen233@gmail.com";
+
+export const WECHAT_ID = "zhangboshen5722";
