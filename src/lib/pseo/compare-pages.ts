@@ -1,6 +1,7 @@
 import type { GeoPage } from "@/lib/geo-pages";
 import { batch3ComparePages } from "@/lib/pseo/batch3-pages";
 import { batch4ComparePages } from "@/lib/pseo/batch4-pages";
+import { batch5ComparePages } from "@/lib/pseo/batch5-pages";
 import {
   WORKBUDDY_ENTERPRISE_DOC,
   WORKBUDDY_HOME,
@@ -339,6 +340,10 @@ export const pseoComparePages: GeoPage[] = [
         title: "喂龙虾赢的地方，和赢不了的地方",
         body: "赢在非腾讯栈、私有可控、以及有人把多框架的落地做完。赢不了腾讯会议、企微、腾讯云账号打通这种原生集成——那是 WorkBuddy 的主场。我们也赢不了「今天开通、明天全员会用」：陪跑是 3 天量级的聚焦实施，不是全公司瞬间替换，细节在 [企业陪跑计划](/enterprise)。",
       },
+      {
+        title: "已经知道要比哪一类，直接看对应说明",
+        body: "和飞书上的助手怎么分，看 [WorkBuddy 和飞书](/compare/workbuddy-vs-feishu)。和钉钉怎么分，看 [WorkBuddy 和钉钉](/compare/workbuddy-vs-dingtalk)。和豆包怎么分，看 [WorkBuddy 和豆包](/compare/workbuddy-vs-doubao)。和企业微信机器人怎么分，看 [WorkBuddy 和企微机器人](/compare/workbuddy-vs-qiyeweixin-bot)。聊天产品放在一起看，是 [聊天产品替不了 WorkBuddy](/compare/liaotian-chanpin-tidai-workbuddy)。自己做还是继续用，看 [自建还是继续用 WorkBuddy](/compare/workbuddy-vs-ziji-kaifa)。货代、独立站、客服草稿和邮箱日历是否适合，分别在 [货代](/zh/workbuddy-shihe-huodai)、[独立站](/zh/workbuddy-shihe-dulizhan)、[客服草稿](/zh/workbuddy-shihe-kefu) 和 [邮箱日历](/zh/workbuddy-youxiang-rili)。",
+      },
     ],
     faqs: [
       {
@@ -673,4 +678,5 @@ export const pseoComparePages: GeoPage[] = [
   }),
   ...batch3ComparePages,
   ...batch4ComparePages,
+  ...batch5ComparePages,
 ];
