@@ -7,7 +7,7 @@
  * - `/zh/[slug]` category and selection → `howto-pages.ts`
  * - `/zh/[slug]` WeCom / Feishu / DingTalk → `platform-pages.ts`
  * - `/zh/[slug]` Shenzhen on-site or remote → `location-pages.ts`
- * - later batches are spread from `batch3-pages.ts`, `batch4-pages.ts`, and `batch5-pages.ts`
+ * - later batches are spread from `batch3-pages.ts`, `batch4-pages.ts`, `batch5-pages.ts`, and `batch6-pages.ts`
  *
  * Do not add a new page.tsx. `pseoChinesePages` and `pseoComparePages` are
  * spread into `src/lib/geo-pages.ts`, which feeds the dynamic routes,
@@ -20,6 +20,7 @@ import { pseoHowtoPages } from "@/lib/pseo/howto-pages";
 import { pseoLocationPages } from "@/lib/pseo/location-pages";
 import { pseoPlatformPages } from "@/lib/pseo/platform-pages";
 import { batch5ChinesePages } from "@/lib/pseo/batch5-pages";
+import { batch6ChinesePages } from "@/lib/pseo/batch6-pages";
 
 export { pseoComparePages } from "@/lib/pseo/compare-pages";
 
@@ -29,4 +30,5 @@ export const pseoChinesePages = [
   ...pseoPlatformPages,
   ...pseoLocationPages,
   ...batch5ChinesePages,
+  ...batch6ChinesePages,
 ];

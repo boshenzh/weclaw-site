@@ -257,3 +257,14 @@
 | `jianli-chusai-ai` | `/zh/jianli-chusai-ai` | 简历初筛 AI |
 | `kehu-tousu-shengji` | `/zh/kehu-tousu-shengji` | 客诉升级 AI |
 | `baoguan-danju-zhengli` | `/zh/baoguan-danju-zhengli` | 报关资料整理 |
+
+## 2026-11-02 这一批（2 页）
+
+小团队够不到腾讯云 WorkBuddy 企业私有化版的公开起售。事实只来自 [WorkBuddy Enterprise 产品页](https://cloud.tencent.com.cn/product/workbuddy-enterprise)：旗舰版 1 席起，专享版 100 席起，企业私有化版 300 席起。该页企业私有化版没有单价，文章里不补。不新增城市页。
+
+| slug | 路径 | 目标词 |
+|---|---|---|
+| `workbuddy-siyouhua-bushu` | `/zh/workbuddy-siyouhua-bushu` | WorkBuddy 私有化部署 / WorkBuddy 私有化 |
+| `workbuddy-bendiban` | `/zh/workbuddy-bendiban` | WorkBuddy 本地版 |
+
+同时改了三篇已经在讲私有化的对比，补上这三档和 300 席：`/compare/workbuddy-tidai`、`/compare/workbuddy-qiye-vs-siyou`、`/compare/workbuddy-vs-ziji-kaifa`。`/compare/workbuddy-vs-feishu` 讲的是办公套件，没有私有化段落，这次没改。

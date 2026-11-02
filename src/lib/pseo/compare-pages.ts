@@ -4,6 +4,7 @@ import { batch4ComparePages } from "@/lib/pseo/batch4-pages";
 import { batch5ComparePages } from "@/lib/pseo/batch5-pages";
 import {
   WORKBUDDY_ENTERPRISE_DOC,
+  WORKBUDDY_ENTERPRISE_PRODUCT,
   WORKBUDDY_HOME,
   relatedCard,
   weclawdPriceCell,
@@ -291,6 +292,7 @@ export const pseoComparePages: GeoPage[] = [
     related: [compareLinks.vsOpenclaw, compareLinks.qiye, compareLinks.vsWeclawd, compareLinks.diy, compareLinks.enterprise, compareLinks.kuajing],
   }),
   withPseoShell({
+    updatedAt: "2026-11-02",
     category: "compare",
     slug: "workbuddy-tidai",
     title: "WorkBuddy 替代｜什么时候换，什么时候不该换",
@@ -326,6 +328,10 @@ export const pseoComparePages: GeoPage[] = [
           "条件如果是价格，请自己打开腾讯云报价，不要根据这篇去编一个数字",
           "条件如果是控制面，继续看企业版和私有部署的差别",
         ],
+      },
+      {
+        title: "私有化档的公开起售",
+        body: `想离开的原因如果是「要私有化，但团队没有几百人」，先看 [WorkBuddy Enterprise 产品页](${WORKBUDDY_ENTERPRISE_PRODUCT})上的三档，不要把企业版理解成都能进客户机房。旗舰版 1 席位起，写的是共享网络。专享版 100 席位起，写的是云端专属网络（VPC）。企业私有化版 300 席位起，写的是自备算力与模型、企业内网。单价以该页为准；企业私有化版该页没有标价，这里不补。够不到 300 席、又要运行时放在自己这边的，看 [WorkBuddy 私有化部署](/zh/workbuddy-siyouhua-bushu)。要的是本地或内网这一说，看 [WorkBuddy 本地版](/zh/workbuddy-bendiban)。`,
       },
       {
         title: "替代时长什么样",
@@ -366,6 +372,7 @@ export const pseoComparePages: GeoPage[] = [
     related: [compareLinks.vsWeclawd, compareLinks.qiye, compareLinks.vsOpenclaw, compareLinks.kuajing, compareLinks.enterprise, compareLinks.diy],
   }),
   withPseoShell({
+    updatedAt: "2026-11-02",
     category: "compare",
     slug: "workbuddy-qiye-vs-siyou",
     title: "WorkBuddy 企业版 vs 私有部署｜谁掌握 Gateway 和数据",
@@ -378,7 +385,7 @@ export const pseoComparePages: GeoPage[] = [
     keywords: ["WorkBuddy 企业版", "WorkBuddy 私有化", "私有部署 vs 腾讯云", "企业 AI 助手 私有部署", "OpenClaw 私有部署"],
     comparisonUsLabel: "客户侧私有部署",
     comparisonTable: [
-      { aspect: "公开事实", us: "运行时在客户机器或客户 VPC。选定 OpenClaw 时由喂龙虾部署，也可换别的框架", them: "腾讯云有 WorkBuddy 企业版文档。具体私有化等级以该文档和合同为准", themLabel: "WorkBuddy 企业版" },
+      { aspect: "公开事实", us: "运行时在客户机器或客户 VPC。选定 OpenClaw 时由喂龙虾部署，也可换别的框架", them: "产品页三档：旗舰版 1 席起，专享版 100 席起，企业私有化版 300 席起。单价以该页为准", themLabel: "WorkBuddy 企业版" },
       { aspect: "该问的第一句", us: "进程、密钥、日志、模型请求各在哪", them: "企业版交付的是专属云、客户机房，还是仍在腾讯云区域" },
       { aspect: "腾讯生态", us: "企微可以接，但不是整套腾讯办公的原生替代", them: "企业微信和腾讯云体系内更完整" },
       { aspect: "换模型和搬走", us: "架构上可以换模型、把实例留在客户名下。实施范围以合同为准", them: "能否导出配置和数据，问腾讯合同，不要假设" },
@@ -396,6 +403,10 @@ export const pseoComparePages: GeoPage[] = [
       {
         title: "有企业版，还不等于已经私有化",
         body: `${workbuddyCite} 比较「私有 OpenClaw vs 只能用公有 SaaS」会把 WorkBuddy 说窄。企业版存在。你要核对的是等级：账号隔离、专属 VPC、客户机房，还是仍然由腾讯运营的区域服务。核对对象是腾讯云文档和报价合同，不是营销文。`,
+      },
+      {
+        title: "产品页上的三档，私有化从 300 席起",
+        body: `[WorkBuddy Enterprise 产品页](${WORKBUDDY_ENTERPRISE_PRODUCT})公开列出三档。旗舰版写无需自建、共享网络和多租户逻辑隔离，1 席位起。专享版写云端专属资源池和专属网络（VPC），100 席位起。企业私有化版写自备算力资源与模型服务、企业内网，300 席位起，并写了数据不出域。旗舰版和专享版该页有按人按月的标价；企业私有化版该页没有标价，所以这里不写一个单价。席位和标价都会变，以该页当时显示为准。大约 4 到 50 人按 300 席的起售进不了企业私有化版。进不去，不等于必须离开腾讯云：旗舰版仍是 1 席起的现成办公。只有要求是数据在自己的机器或内网时，才另看 [WorkBuddy 私有化部署](/zh/workbuddy-siyouhua-bushu) 和 [WorkBuddy 本地版](/zh/workbuddy-bendiban)。`,
       },
       {
         title: "私有部署在喂龙虾这边指什么",
@@ -418,7 +429,7 @@ export const pseoComparePages: GeoPage[] = [
     faqs: [
       {
         q: "WorkBuddy 企业版是不是已经等于私有部署？",
-        a: "不能从「企业版」三个字推导。腾讯云文档描述了企业向能力，交付等级以当前文档和合同为准。有的等级仍在腾讯云上，有的更接近客户侧环境。要逐项问数据落点。",
+        a: "不能从「企业版」三个字推导。产品页上企业私有化版从 300 席起，写的是企业内网和自备算力。旗舰版是 1 席起的共享网络，专享版是 100 席起的云上专属网络。交付以当前产品页和合同为准。",
       },
       {
         q: "喂龙虾的私有部署是否一定用 OpenClaw？",
