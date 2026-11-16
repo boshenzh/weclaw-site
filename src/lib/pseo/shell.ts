@@ -5,6 +5,8 @@ export const PSEO_UPDATED_AT = "2026-09-27";
 
 export const WORKBUDDY_HOME = "https://copilot.tencent.com/work/";
 export const WORKBUDDY_ENTERPRISE_DOC = "https://cloud.tencent.com/document/product/1831/134329";
+/** Public tier list. Seat floors and prices change; quote the page, do not invent a missing price. */
+export const WORKBUDDY_ENTERPRISE_PRODUCT = "https://cloud.tencent.com.cn/product/workbuddy-enterprise";
 
 export const weclawdPriceCell =
   "首页公开的是 OpenClaw 安装与托管套餐；企业陪跑按工作流另报价。没有统一的「替代 WorkBuddy」价格。";

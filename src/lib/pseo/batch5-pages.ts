@@ -1,6 +1,7 @@
 import type { GeoPage } from "@/lib/geo-pages";
 import {
   WORKBUDDY_ENTERPRISE_DOC,
+  WORKBUDDY_ENTERPRISE_PRODUCT,
   WORKBUDDY_HOME,
   relatedCard,
   weclawdPriceCell,
@@ -272,7 +273,8 @@ export const batch5ComparePages: GeoPage[] = [
       enterprise,
     ],
   }),
-  page({
+  withPseoShell({
+    updatedAt: "2026-11-02",
     category: "compare",
     slug: "workbuddy-vs-ziji-kaifa",
     title: "自建企业助手还是继续用 WorkBuddy",
@@ -305,9 +307,13 @@ export const batch5ComparePages: GeoPage[] = [
         title: "自建盖不住的部分，也不要许诺成全公司",
         body: `${human} ${remote} 范围锁在 1–2 个流程时，看 [企业陪跑计划](/enterprise)。什么时候根本不该换，看 [WorkBuddy 替代](/compare/workbuddy-tidai)。`,
       },
+      {
+        title: "自己做之前，先看私有化档从多少席起",
+        body: `自建常常被说成「因为 WorkBuddy 不能私有化」。[产品页](${WORKBUDDY_ENTERPRISE_PRODUCT})上企业私有化版是存在的：自备算力与模型、企业内网，起售 300 席。另外两档是旗舰版（1 席起，共享网络）和专享版（100 席起，云上专属 VPC）。单价以该页为准，企业私有化版该页没有标价。大约 4 到 50 人按 300 席的门槛进不去这一档。进不去，也不等于自己起一个项目就更私有。本地这一说看 [WorkBuddy 本地版](/zh/workbuddy-bendiban)，门槛的展开看 [WorkBuddy 私有化部署](/zh/workbuddy-siyouhua-bushu)。`,
+      },
     ],
     faqs: [
-      { q: "自己做是不是一定比 WorkBuddy 更私有？", a: "不一定。私有指运行时、密钥和日志在谁的环境里。自己起一个项目，如果模型和日志仍在别的公有服务上，并不自动更私有。" },
+      { q: "自己做是不是一定比 WorkBuddy 更私有？", a: "不一定。私有指运行时、密钥和日志在谁的环境里。产品页上的企业私有化版从 300 席起，不是「没有私有化」。自己起一个项目，如果模型和日志仍在别的公有服务上，并不自动更私有。" },
       { q: "没有工程师能做吗？", a: "可以请人把一条流程做完。没有人在通道改版时看配置，就不要自己部署 OpenClaw。" },
       { q: "要先买服务器吗？", a: "不必为了讨论自建先买。先写清 WorkBuddy 哪一条盖不住。安装套餐以首页为准。" },
       { q: "上门吗？", a: "上门目前只在深圳。其他城市走远程。" },
